@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <style>
+
+            .container{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background: linear-gradient(90deg, red 50%, white 50%);
+                border: 2px solid black;
+                
+            }
+            .counter{
+                
+             
+                align-items: center;
+            }
+        </style>
+
+        <button onclick="down()">down</button>
+        <button onclick="up()">up</button>
+
+        <div class="container">
+            <div class="counter"></div>
+        </div>
+
+        <script>
+
+            var countUp = 0
+            var countDown = 0
+
+            function down(){
+                countDown = countDown - 10
+                if (countDown < 0){
+                    countDown = 100
+                }
+                document.querySelector('.counter').innerHTML = countDown + '/' + '100'
+            }
+
+            function up(){
+                countUp = countUp + 0
+                if(countUp <= 100){
+                    countUp = 100
+                    countDown = 100
+                }
+                document.querySelector('.counter').innerHTML = countUp + '/' + '100'
+            }
+
+        </script>
+
+    </body>
+</html>

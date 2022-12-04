@@ -1,0 +1,37 @@
+<!-- 
+    create an input and a button
+    when you click on the button display a cat gif if they type meow
+    display an angry cat gif and a message if they dont
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+<input placeholder="meow"type="text" id="myInput">
+
+<button onclick="myFunction()">click</button>
+
+<p id="myPar"></p>
+
+<script>
+
+
+
+function myFunction(){
+    var input1 = document.getElementById('myInput').value
+    
+    if (input1 == 'meow'){
+        document.getElementById('myPar').innerHTML = 'YES :) <br> <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"/>' 
+
+    } else {
+        document.getElementById('myPar').innerHTML = ' please type meow! <br> <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif"/> '
+    }
+    
+}
+
+</script>
+
+</body>
+</html>

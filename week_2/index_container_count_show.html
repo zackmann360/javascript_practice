@@ -1,0 +1,60 @@
+<!-- 
+    creat a program with 2 buttons and three divs
+    when you click the next and backk buttons, change an index between 0 and 3
+    display the div that matches with that index
+ -->
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <style>
+            .hide{
+                display: none;
+            }
+            .show{
+                display: block;
+            }
+        </style>
+
+        <button onclick="back()">back</button>
+        <button onclick="next()">next</button>
+
+        <div class="hide show">one</div>
+        <div class="hide">two</div>
+        <div class="hide">three</div>
+  
+        <script>
+            var index = 0
+
+            function back(){
+                // remove one from index
+                index = index - 1
+                // if index gets to 0 return it to 2
+                if (index < 0){
+                    index = 2
+                }
+                output()
+            }
+
+            function next(){
+                // add one to index
+                index = index + 1
+                // if index goes over 2 return to 0
+                if (index > 2){
+                    index = 0
+                }
+                output()
+            }
+
+            function output(){
+                //remove show class from the currently shown div
+                document.querySelector('.show').classList.remove('show')
+                // add show class to the next div(#div + index)
+                document.querySelectorAll('.hide')[index].classList.add('show')
+                console.log(index)
+            }
+        
+        </script>
+
+    </body>
+</html>

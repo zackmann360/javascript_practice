@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<style>
+.highlight{
+    border: 1px solid black;
+}
+
+</style>
+
+<div class="container0 highlight">123</div> 
+<div class="container1">123</div> 
+<div class="container2">123</div> 
+
+<button onclick="switcher()">clicker</button>
+
+<script>
+    var index = 0
+    function switcher(){
+        index = index + 1
+        if (index > 2){
+            index = 0
+        }
+        document.querySelector('.highlight').classList.remove('highlight')
+        document.querySelector('.container' + index).classList.add('highlight')
+    }
+
+</script>
+
+
+</body>
+</html>

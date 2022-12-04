@@ -1,0 +1,31 @@
+<!-- 
+    creat a button and a par
+    clicking on the button increases a value up to 10
+    display that value in the par
+ -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="output1">0</div>
+
+<button onclick="counter()"> clicker</button>
+    
+<script>
+    var number1 = 0
+    
+
+    function counter(){
+        number1 = number1 + 1
+        if (number1 > 10){
+            number1 = 0
+        
+        }
+        document.querySelector('.output1').innerHTML = number1
+        
+    }
+</script>
+
+
+</body>
+</html>

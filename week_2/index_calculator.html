@@ -1,0 +1,39 @@
+<!-- 
+    create 2 inputs
+    create buttons for add, sub, mult, divide
+    when i click a button output the result on the page
+ -->
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+
+    <button onclick="plus()">add</button>
+    <button onclick="sub()">subtract</button>
+    <button onclick="mult()">multiply</button>
+    <button onclick="divide()">divide</button>
+
+    <p id="myPar"></p>
+
+    <script>
+        var number1 = document.querySelector('#num1')
+        var number2 = document.querySelector('#num2')
+        var eleoutput = document.querySelector('#myPar')
+
+        function plus(){
+            var number4 = number1.value
+            var number5 = number2.value
+            eleoutput.innerHTML = Number(number4) + Number(number5)
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

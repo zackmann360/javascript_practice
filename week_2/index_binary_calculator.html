@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+       <button onclick="zero()">0</button>
+       <button onclick="one()">1</button>
+       <button onclick="clear1()">clear</button>
+
+       <div class="display"></div>
+       <div class="decimal"></div>
+
+
+
+      <script>
+        
+        var num = ''
+        // when i click on button 0 output '0' 
+        function zero(){
+            num = num + '0'
+            console.log(num)
+            document.querySelector('.display').innerHTML = num 
+            document.querySelector('.decimal').innerHTML = parseInt(num, 2)
+        }
+
+        function one(){
+            num = num + '1'
+            document.querySelector('.display').innerHTML = num
+            // display decimal number
+            document.querySelector('.decimal').innerHTML = parseInt(num, 2)
+            console.log(num)
+        }
+
+        function clear1(){
+            //console.log('cats')
+           // when i click the clear button clear the string of numbers
+           num = ''
+           document.querySelector('.display').innerHTML = num
+           document.querySelector('.decimal').innerHTML = num
+           
+           console.log(num)
+        }
+
+      </script>
+    </body>
+</html>

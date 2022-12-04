@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+ 
+<style>
+    .highlight{
+        border: 1px solid red;
+    }
+</style>    
+
+<div class="highlight" id="div0">0</div>
+<div id="div1">1</div>
+<div id="div2">2</div>
+
+<button onclick="previous()">previous</button>
+<button onclick="next()">next</button>
+
+<script>
+
+var count = 0
+
+function previous(){
+    count = count - 1
+    if (count < 0){
+        count = 2
+    }
+    console.log(count)
+    // 1. remove highlight from current higlight
+    document.querySelector('.highlight').classList.remove('highlight')
+    // 2. add highlight to the current count
+    document.querySelector('#div' + count).classList.add('highlight')
+}
+
+function next(){
+    count = count + 1
+    if (count > 2){
+        count = 0
+    }
+    console.log(count)
+    document.querySelector('.highlight').classList.remove('highlight')
+    //document.getElementById('div' + (count - 1)).classList.remove('highlight')
+    document.querySelector('#div' + count).classList.add('highlight')
+    //document.getElementById('div' + count).classList.add('highlight')
+}
+</script>
+
+</body>
+</html>

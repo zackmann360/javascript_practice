@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+        
+            .outer2{
+                border: 2px solid black;
+
+            }
+            .inner2{               
+                padding: 10px 0px 10px 0px;
+                background: red;
+                width: 0%;
+                height: auto;
+            }
+
+            
+        </style>
+
+
+        <button onclick="increase()">add</button>
+        <button onclick="decrease()">decrease</button>
+        <br>
+        <br>
+        
+        <div class="outer2">
+            <div class="inner2"></div>
+        </div>
+
+        <script>
+            var objWidth = 0
+            
+            var object1 = document.querySelector(".inner2")
+            var object2 = document.querySelector(".outer2")
+            
+            function increase(){
+                objWidth = objWidth + 10 
+                
+                if (objWidth > 100){
+                    objWidth = 100
+                }
+                object1.style.width = objWidth + '%'
+                
+                
+            }
+            function decrease(){
+                objWidth = objWidth - 10
+                if(objWidth < 0){
+                    objWidth = 0
+                }
+                object1.style.width = objWidth + '%'
+            }
+            
+        </script>
+    </body>
+</html>
