@@ -13,28 +13,35 @@
             .inner2{               
                 padding: 10px 0px 10px 0px;
                 background: red;
-                width: 0%;
+                width: 10%;
                 height: auto;
+                display: flex;
+                justify-content: center;
+                
             }
-
+            button{
+                background-color: aqua;
+                border: none;
+            }
             
         </style>
 
 
-        <button onclick="increase()">add</button>
         <button onclick="decrease()">decrease</button>
+        <button onclick="increase()">add</button>
         <br>
         <br>
         
         <div class="outer2">
-            <div class="inner2"></div>
+            <div class="inner2">0/100</div>
         </div>
 
         <script>
             var objWidth = 0
             
             var object1 = document.querySelector(".inner2")
-            var object2 = document.querySelector(".outer2")
+            var object2 = document.querySelector('.outer2')
+            
             
             function increase(){
                 objWidth = objWidth + 10 
@@ -43,15 +50,17 @@
                     objWidth = 100
                 }
                 object1.style.width = objWidth + '%'
+                document.querySelector('.inner2').innerHTML = objWidth + '/' + '100'
                 
                 
             }
             function decrease(){
                 objWidth = objWidth - 10
-                if(objWidth < 0){
-                    objWidth = 0
+                if(objWidth < 10){
+                    objWidth = 10
                 }
                 object1.style.width = objWidth + '%'
+                document.querySelector('.inner2').innerHTML = objWidth + '/' + '100'
             }
             
         </script>

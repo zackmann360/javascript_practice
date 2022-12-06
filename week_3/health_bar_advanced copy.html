@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .border{
+                border: 2px solid black;
+            }
+            .fill{
+                background-color: lightgreen;
+                text-align: center;
+                width: 50%;
+            }
+        </style>
+        
+        <button onclick="damage(-10)">damage</button>
+        <button onclick="damage(10)">heal</button>
+
+        <div class="border">
+            <div class="fill">50/100</div>
+        </div>
+
+        <script>
+            var objWidth = 50
+            
+
+            function damage(arg){
+                objWidth = objWidth + arg
+                if (objWidth > 100){
+                    objWidth = 100
+                }
+                if (objWidth < 0){
+                    objWidth = 0
+                }
+                // creat a display code
+                // select ('.fill').style.width = objWidth
+                document.querySelector('.fill').style.width = objWidth + '%'
+                document.querySelector('.fill').innerHTML = objWidth + '/100'
+                console.log(objWidth)
+            }
+        </script>
+    </body>
+</html>

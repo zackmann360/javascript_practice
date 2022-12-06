@@ -4,6 +4,8 @@
 
         <style>
 
+
+
             .container{
                 padding-top: 20px;
                 padding-bottom: 20px;
@@ -33,7 +35,7 @@
             function down(){
                 countDown = countDown - 10
                 if (countDown < 0){
-                    countDown = 100
+                    countDown = 0
                 }
                 document.querySelector('.counter').innerHTML = countDown + '/' + '100'
             }
