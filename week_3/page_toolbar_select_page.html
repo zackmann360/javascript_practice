@@ -1,0 +1,42 @@
+<!-- Make this one exactly like the project -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .container{
+                display: flex;
+                gap: 50px;
+            }
+            .hover:hover{
+                border-bottom: 2px solid red;
+            }
+            .important.border{
+                border-bottom: 2px solid black;
+            }
+            
+        </style>
+        <div>My App</div>
+        <br>
+        <div class="container">
+            <div onclick="selector(0, 'Home page')" class="myDiv0 important hover border">Home</div>
+            <div onclick="selector(1, 'Posts page')" class="myDiv1 important hover">Posts</div>
+            <div onclick="selector(2, 'Apps page')" class="myDiv2 important hover">Apps</div>
+            <div onclick="selector(3, 'Settings page')" class="myDiv3 important hover">Settings</div>
+        </div>
+        <br>
+        <div class="pageName">Home</div>
+
+        <script>
+            function selector(arg1, arg2){
+                console.log('cats')
+                // remove border from the selected ('.border')
+                document.querySelector('.border').classList.remove('border')
+                // add border to the newly selected ('.myDiv' + arg1)
+                document.querySelector('.myDiv' + arg1).classList.add('border')
+                document.querySelector('.pageName').innerHTML = arg2
+
+
+            }
+        </script>
+    </body>
+</html>

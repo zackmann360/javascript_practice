@@ -1,0 +1,35 @@
+<!-- create this one with arguments -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .border{
+                border: 2px solid black;
+            }
+            
+        </style>
+        <button onclick="selector(0)">one</button>
+        <button onclick="selector(1)">two</button>
+        <button onclick="selector(2)">three</button>
+        <button onclick="selector(3)">four</button>
+        
+        <div class="myDiv0 border">One</div>
+        <div class="myDiv1">Two</div>
+        <div class="myDiv2">Three</div>
+        <div class="myDiv3">Four</div>
+
+        <script>
+           function selector(arg1){
+            console.log('cats')
+            // remove border class from the selected ('.border')
+            document.querySelector('.border').classList.remove('border')
+            // add border class to the newly selected ('.myDiv' + arg1)
+            document.querySelector('.myDiv' + arg1).classList.add('border')
+           }
+            
+           
+            
+        </script>
+        
+    </body>
+</html>

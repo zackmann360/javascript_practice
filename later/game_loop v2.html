@@ -1,0 +1,64 @@
+<!-- A game loop is a loop that lasts forever and runs 60 times a second -->
+
+<!doctype html>
+<html>
+    <body>
+        <style>
+            canvas {
+                width: 300px;
+                height: 300px;
+                background: #999;
+            }
+        </style>
+        <canvas width="300" height="300"></canvas>
+        <script>
+            var canvas = document.querySelector('canvas')
+            var ctx = canvas.getContext('2d')
+            var frameDuration = 1000/60 // 60 times per second
+
+            // game loop in javascript
+            setInterval(gameLoop, frameDuration)
+
+
+            // list of balls
+            var listBalls = []
+            for (var i = 0; i < 100; i++) {
+                listBalls.push({
+                    x: 20,
+                    y: 0,
+                    speedX: 5 * Math.random(),
+                    speedY: 10 * Math.random(),
+                })
+            }
+
+            function gameLoop() {
+                // console.log('meow')
+                ctx.clearRect(0, 0, 300, 300)
+                
+                for (var i = 0; i < 100; i++) {
+                    var ball = listBalls[i]
+                    step(ball)
+                    draw(ball)
+                }        
+            }
+
+            function step(ball) {
+                ball.x = ball.x + ball.speedX
+                ball.y = ball.y + ball.speedY
+                
+                if (ball.x > 300 || ball.x < 0) {
+                    ball.speedX = ball.speedX * -1
+                }
+
+                if (ball.y > 300 || ball.y < 0) {
+                    ball.speedY = ball.speedY * -1
+                }
+            }
+
+            function draw(ball) {
+                // draw a rectangle at a place
+                ctx.fillRect(ball.x, ball.y, 10, 10)
+            }
+        </script>
+    </body>
+</html>

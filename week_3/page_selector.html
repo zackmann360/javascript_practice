@@ -1,0 +1,54 @@
+<!-- create this one without arguments -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .border{
+                border: 2px solid black;
+            }
+        </style>
+        <button onclick="selector1()">one</button>
+        <button onclick="selector2()">two</button>
+        <button onclick="selector3()">three</button>
+        <button onclick="selector4()">four</button>
+        
+        <div class="myDiv0 border">One</div>
+        <div class="myDiv1">Two</div>
+        <div class="myDiv2">Three</div>
+        <div class="myDiv3">Four</div>
+
+        <script>
+            function selector1(){
+                console.log('cats')
+                // remove border class from the selected ('.border')
+                document.querySelector('.border').classList.remove('border')
+                // add border class to the newly selected ('.myDiv0')
+                document.querySelector('.myDiv0').classList.add('border')
+            }
+            function selector2(){
+                console.log('cats2')
+                // remove border class from the selected ('.border')
+                document.querySelector('.border').classList.remove('border')
+                // add border class to the newly selected ('.myDiv1')
+                document.querySelector('.myDiv1').classList.add('border')
+            }
+            function selector3(){
+                console.log('cats2')
+                // remove border class from the selected ('.border')
+                document.querySelector('.border').classList.remove('border')
+                // add border class to the newly selected ('.myDiv2')
+                document.querySelector('.myDiv2').classList.add('border')
+            }
+            function selector4(){
+                console.log('cats2')
+                // remove border class from the selected ('.border')
+                document.querySelector('.border').classList.remove('border')
+                // add border class to the newly selected ('.myDiv3')
+                document.querySelector('.myDiv3').classList.add('border')
+            }
+
+            
+        </script>
+        
+    </body>
+</html>

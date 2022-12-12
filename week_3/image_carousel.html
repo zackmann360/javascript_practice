@@ -11,62 +11,56 @@
            img{
             display: none;
             width: 500px;
-
            }
+           
            .show{
             display: inline-block;
            }
-           .dot{
-            width: 15px;
-            height: 15px;
-            background-color: #999;
+           .grey{
+            background-color: rgb(196, 195, 195);
+            height: 10px;
+            width: 10px;
+            margin: 10px;
             border-radius: 100%;
-            }
-            .darkGrey{
-                background-color: #333;
-            }
-           .container{
+           }
+           .darkGrey{
+            background-color: #555;
+           }
+        .container{
             display: flex;
-            gap: 10px;
             justify-content: center;
-            padding-bottom: 10px;
            }
         </style>
 
         <img class="cats0 show" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg">
         <img class="cats1" src="https://media.cnn.com/api/v1/images/stellar/prod/190517103414-01-grumpy-cat-file-restricted.jpg?q=w_3000,h_2049,x_0,y_0,c_fill">
         <img class="cats2" src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__340.jpg">
-        
+        <br>
         <div class="container">
-            
-            <div class="dot dot0 darkGrey"></div>
-            <div class="dot dot1"></div>
-            <div class="dot dot2"></div>
-        </div>
-
-        <button onclick="switcher(-1)">left</button>
-        <button onclick="switcher(1)">right</button>
+            <div class="dot0 grey darkGrey"></div>
+            <div class="dot1 grey"></div>
+            <div class="dot2 grey"></div>
+        </div> 
+        <button onclick="myFunction(-1)">left</button>
+        <button onclick="myFunction(1)">right</button>
+       
 
         <script>
-            var x = 0
-
-            function switcher(arg1){
-                x = x + arg1
-                if (x > 2){
-                    x = 2
-                }
-                if (x < 0){
-                    x = 0
-                }
-                
-                // remove class
-                document.querySelector('.darkGrey').classList.remove('darkGrey')
-                document.querySelector('.show').classList.remove('show')
-                // add class
-                document.querySelector('.dot' + x).classList.add('darkGrey')
-                document.querySelector('.cats' + x).classList.add('show')
-                console.log(x)
+           var x = 0
+           function myFunction(arg){
+            x = x + arg
+            if(x > 2){
+                x = 2
             }
+            if(x < 0){
+                x = 0
+            }
+            document.querySelector('.show').classList.remove('show')
+            document.querySelector('.cats' + x).classList.add('show')
+            document.querySelector('.darkGrey').classList.remove('darkGrey')
+            document.querySelector('.dot' + x).classList.add('darkGrey')
+            console.log(x)
+           }
         </script>
 
     </body>

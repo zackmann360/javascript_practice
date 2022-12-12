@@ -1,0 +1,51 @@
+<!-- just adding background to the button I click -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .color{
+                background: red;
+            }
+        </style>
+        
+        
+        <button class="button0 color" onclick="selector1()">one</button>
+        <button class="button1" onclick="selector2()">two</button>
+        <button class="button2" onclick="selector3()">three</button>
+        <button class="button3" onclick="selector4()">four</button>
+        
+        
+        <script>
+            function selector1(){
+                console.log('cats')
+                // remove color class from the selected button. ('.color')
+                document.querySelector('.color').classList.remove('color')
+                // add color class to the newly selected button 
+                document.querySelector('.button0').classList.add('color')
+            }
+            function selector2(){
+                console.log('cats2')
+                //remove color class from the sellected button ('.color')
+                document.querySelector('.color').classList.remove('color')
+                // add color class to the newly selected ('.button1')
+                document.querySelector('.button1').classList.add('color')
+            }
+            function selector3(){
+                console.log('cats3')
+                //remove color class from the sellected button ('.color')
+                document.querySelector('.color').classList.remove('color')
+                // add color class to the newly selected ('.button2')
+                document.querySelector('.button2').classList.add('color')
+            }
+            function selector4(){
+                console.log('cats3')
+                //remove color class from the sellected button ('.color')
+                document.querySelector('.color').classList.remove('color')
+                // add color class to the newly selected ('.button3')
+                document.querySelector('.button3').classList.add('color')
+            }
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!-- A game loop is a loop that lasts forever and runs 60 times a second -->
+
+<!doctype html>
+<html>
+    <body>
+        <style>
+            html, body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            canvas {
+                background: #999;
+                width: 100%;
+                height: 100%;
+            }
+            
+        </style>
+        <canvas></canvas>
+        <script>
+            var canvas = document.querySelector('canvas')
+            var ctx = canvas.getContext('2d')
+
+            // setup width
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+            var width = canvas.width
+            var height = canvas.height
+            
+            // game loop in javascript
+            var frameDuration = 1000/60 // 60 times per second
+            setInterval(gameLoop, frameDuration)
+
+            // list of balls
+            var listBalls = []
+            for (var i = 0; i < 100; i++) {
+                listBalls.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    speedX: 10 * Math.random() - 5,
+                    speedY: 10 * Math.random() - 5,
+                })
+            }
+
+            function gameLoop() {
+                // console.log('meow')
+                
+                ctx.clearRect(0, 0, width, height)
+                
+                for (var i = 0; i < 100; i++) {
+                    var ball = listBalls[i]
+                    step(ball)
+                    draw(ball)
+                }        
+            }
+
+            function step(ball) {
+                ball.x = ball.x + ball.speedX
+                ball.y = ball.y + ball.speedY
+                
+                if (ball.x > width || ball.x < 0) {
+                    ball.speedX = ball.speedX * -1
+                }
+
+                if (ball.y > height || ball.y < 0) {
+                    ball.speedY = ball.speedY * -1
+                }
+            }
+
+            function draw(ball) {
+                
+                for (var i = 0; i < 100; i++) {
+                    // console.log('help')
+                    var ballOther  = listBalls[i]
+                    var distanceToOther = distanceTo(ball, ballOther)
+                    
+                    
+                    if (distanceToOther < 70) {
+                        ctx.strokeStyle = '#7eaeff'
+                        ctx.beginPath()
+                        ctx.moveTo(ball.x, ball.y)
+                        ctx.lineTo(ballOther.x, ballOther.y)
+                        ctx.stroke()
+                    }
+                }
+                
+                // draw a rectangle at a place
+                ctx.fillStyle = '#7e5ea4'
+                ctx.fillRect(ball.x-5, ball.y-5, 10, 10)
+            }
+
+            function distanceTo(ball0, ball1) {
+                var x = ball0.x - ball1.x
+                var y = ball0.y - ball1.y
+                return Math.sqrt(x * x + y * y);
+            }
+        </script>
+    </body>
+</html>
