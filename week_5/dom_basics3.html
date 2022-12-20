@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <button class="myButton">add</button>
+        <ul class="myList"> 
+
+        </ul>
+
+
+
+        <script>
+            // create a variable to hold the ammount of clicks
+            var x = 0
+
+            var myButton = document.querySelector('.myButton')
+
+            myButton.onclick = clicker
+
+            function clicker(){
+                // check if the function works
+                console.log('cats')
+                console.log(this)
+
+                // add 1 to x
+                x = x + 1
+                // check if it adds 1 
+                console.log(x)
+
+                // create a new element
+                var newElement = document.createElement('li')
+                // add text to the new element
+                // add x to test
+                newElement.innerHTML = 'test' + x
+                
+                // Set onclick event
+                newElement.onclick = selectedItem
+                console.log(newElement)
+
+                // append the newElement to myList
+                var myList = document.querySelector('.myList')
+                myList.appendChild(newElement)
+
+
+            }
+
+            function selectedItem(){
+                console.log(this.innerHTML)
+                
+
+            }
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <ul></ul>
+
+
+        <script>
+            var ul = document.querySelector('ul')
+
+            var myArray = ['apples', 'oranges', 'grapes', 'bananas']
+
+            console.log(myArray)
+
+            for(var item of myArray){
+                console.log(item)
+                var newElement = document.createElement('li')
+                newElement.innerHTML = item
+                ul.appendChild(newElement)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <input type="text">
+        <button class="myButton1">add</button>
+        <button class="myButton2">clear</button>
+        <ul></ul>
+
+
+
+        <script>
+
+            // select my element
+            var input = document.querySelector('input')
+            var buttonAdd = document.querySelector('.myButton1')
+            var buttonClear = document.querySelector('.myButton2')
+
+            var ul = document.querySelector('ul')
+
+            buttonAdd.onclick = onclickAdd
+            buttonClear.onclick = onclickClear
+
+            function onclickAdd(){
+                console.log('test')
+
+                // create a new list element
+                var newElement = document.createElement('li')
+
+                // set innerHTML to input value
+                newElement.innerHTML = input.value
+
+                // append newElement to the ul
+                ul.appendChild(newElement)
+
+                // clear the input value
+                input.value = ''
+
+            }
+
+            function onclickClear(){
+                console.log('cats')
+                // clear innerhtml of the ul
+                ul.innerHTML = ''
+            }
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <input type="text" class="myInput">
+    <button onclick="clicker()" class="myButton">clicker1</button>
+
+    <h1> to do</h1>
+
+    <ul class="myList">
+
+    </ul>
+
+    <h1>finished</h1>
+
+    <ul class="myList2">
+
+    </ul>
+
+
+
+
+    <script>
+            
+        var x = 0
+
+
+        function clicker() {
+            console.log('cats')
+            var myBtn = document.querySelector('.myButton')
+            var inputVal = document.querySelector('.myInput').value
+            var myList = document.querySelector('.myList')
+
+            // how to add 1 to x
+            x = x + 1
+            console.log(inputVal)
+
+
+            // this code is adding a list item to myList
+            myList.innerHTML = myList.innerHTML + `
+                    <li class="listItem item${x}">
+                        <button onclick="clicker2('.item${x}')" class="myButton2">
+                            clicker2
+                        </button>
+                        ${inputVal}
+
+                    </li>
+                `
+
+           
+
+        }
+        function clicker2(arg1){
+            console.log(arg1)
+            
+            console.log('cars')
+            // remove the list item from the to do list
+            var listItem1 = document.querySelector('.listItem' + arg1)
+            console.log(listItem1)
+            listItem1.remove()
+
+            // add the list item innerHTML to myList2
+            var myList2 = document.querySelector('.myList2')
+            myList2.appendChild(listItem1)
+
+            // remove button from the list item
+            var button = listItem1.querySelector('.myButton2')
+            button.remove()
+
+
+        }
+
+        // function clicker2() {
+        //     var myBtn2 = document.querySelector('.myButton2')
+        //     var myList2 = document.querySelector('.myList2')
+        //     var myList = document.querySelector('.myList')
+        //     console.log('cars')
+        //     myList2.innerHTML = '<li>' + myList.innerHTML + '</li>'
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+
+
+            .container{
+                width: 80%;
+                margin: auto;
+                margin-top: 200px;
+            }
+
+            .head{
+                font-size: 100px;
+                text-align: center;
+                margin-bottom: 100px;
+            }
+
+            .myButton{
+                width: 100%;
+                background-color: #777;
+                padding-left: 30px;
+                border-radius: 10px;
+                
+
+            }
+
+            .myButton img{
+                height: 100px;
+
+            }
+            .flip:nth-child(2) {
+                transform: scaleY(-1);
+            }
+
+            .none{
+                display: none;
+            }
+
+        </style>
+
+        <div class="container">
+
+            <div class="head"> Accordian </div>
+        
+            <div class="myButton" onclick="clicker()"> <img src="./images/upload.png" alt=""></div>
+            <div class="myDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eum a repellat! Eius numquam consequatur quis nemo ut quibusdam odit sapiente consequuntur quos voluptate, cum vero facilis error, eum assumenda?</div>
+            
+        </div>
+
+
+        <script>
+
+            function clicker(){
+                console.log('cats')
+                var myButton = document.querySelector('.myButton')
+                var myDiv = document.querySelector('.myDiv')
+
+                if (myButton.classList.contains('flip')){
+                    myButton.classList.remove('flip')
+                    myDiv.classList.remove('none')
+                }else{
+                    myButton.classList.add('flip')
+                    myDiv.classList.add('none')
+
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

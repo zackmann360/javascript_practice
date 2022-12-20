@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <style>
+            .container{
+                display: flex;
+
+            }
+            .side{
+                border: 2px solid black;
+                height: 50px;
+                width: 200px;
+            }
+        </style>
+        
+        <div class="container">
+            <div class="side side1">
+                <button onclick="clicker(1)" class="myButton1">one</button>
+                <button onclick="clicker(2)" class="myButton2">two</button>
+                <button onclick="clicker(3)" class="myButton3">three</button>
+                <button onclick="clicker(4)" class="myButton4">four</button>
+            </div>
+            <div class="side side2">
+
+            </div>
+        </div>
+
+        <script>
+
+            function clicker(arg1){
+                console.log(arg1)
+                var selected = document.querySelector('.myButton' + arg1)
+                console.log(selected)
+                var side1 = document.querySelector('.side1')
+                var side2 = document.querySelector('.side2')
+
+                if(selected.parentElement == side1){
+                    side2.appendChild(selected)
+                } else{
+                    side1.appendChild(selected)
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
+
+<!-- Create two divs labeled side one and side two
+Create four buttons that will go in one div 
+use javascript to move those four buttons from div side1 to div side2 -->
+

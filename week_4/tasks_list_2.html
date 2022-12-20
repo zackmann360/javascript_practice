@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <input class="myInput" type="text">
+        <button onclick="clicker()">Add</button>
+        <div class="error"></div>
+        <ul class="myList">
+
+        </ul>
+        <script>
+            function clicker(){
+                console.log('cats')
+                var inputValue = document.querySelector('.myInput').value
+                console.log(inputValue)
+                var list = document.querySelector('.myList')
+                var error = document.querySelector('.error')
+                
+                if(inputValue > 0){
+                    list.innerHTML = list.innerHTML + '<li>' + inputValue + '</li>'
+                    error.innerHTML = ''
+                } else{
+                    error.innerHTML = 'error'
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- function clicker(){
+    
+    // create a variable for the input value
+    // var inputValue = document.querySelector('.myInput').value
+
+    // if the input value > 0 
+    // if (inputVlaue) is also == to if (inputVlaue > 0)
+    if(inputValue)
+        // create a variable for the list items
+        // Var list = document.querySelector('.myList')
+
+        // make the innerHTML of the list items = to the input Value
+        // list.innerHTML = list.innerHTML + '<li' + inputValue + '</li>'
+
+        // if inputValue is greater than 0 dont output error in the div here
+        // document.querySelector ('.error').innerHTML = ''
+
+    }else{
+        // when input value is nothing output error in the div.
+        // document.querySelector('.error').innerHTML = 'error'
+
+    }
+
+} -->

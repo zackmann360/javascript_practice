@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        
+        <input type="text" class="myInput">
+        <button class="myButton" onclick="clicker()">Add</button>
+        <ul class="myList">
+
+        </ul>
+
+
+
+        <script>
+
+            function clicker(){
+                console.log('cars')
+                var inputValue = document.querySelector('.myInput').value
+                var list = document.querySelector('ul')
+                
+                list.innerHTML = list.innerHTML + '<li>' + inputValue + '</li>'
+
+            }
+
+        </script>
+    </body>
+</html>
+
+<!-- create an input, a button, and a list. -->
+<!-- when you click the button the input value will be added to the list -->
+
+<!-- if input has a value then add it to the list  
+if input has no value then dont add it to the list -->
+
+
+
+
+
+
+<!-- 
+input 
+button   
+heading 
+list 
+    item1
+    item2
+    item3
+
+
+type into the input  
+clicked the button 
+when clicking the button the input got added to the list 
+
+
+function clickedAdd(){
+    read the input value
+
+    output the input value to a list item
+}
+
+how do you read an input value
+var inputValue = document.querySelector(input class).value
+
+how do I add that value into a list item
+var list = document.querySelector('ul')
+list.innerHTML = list.innerHTML + inputValue
+
+function clickerAdd(){
+// read the input value
+var inputVaue = document.querySelector('.input1').value
+// output the input value to a list item
+var list = document.querySelector('ul')
+list.innerHTML = list.innerHTML + inputValue
+
+} -->
+
+

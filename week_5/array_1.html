@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+
+        <ul></ul>
+
+
+        <script>
+            var ul = document.querySelector('ul')
+
+            var myArray = [1,2,3,4,5,6,7,8,9,10]
+            console.log(myArray)
+
+            for(var item of myArray){
+                console.log(item)
+                var listItems = document.createElement('li')
+                listItems.innerHTML = item
+                ul.appendChild(listItems)
+            }
+
+
+            // // creat a list element
+            // var listItems = document.createElement('li')
+            // listItems.innerHTML = 1
+            // // append it
+            // ul.appendChild(listItems)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 2
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 3
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 4
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 5
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 6
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 7
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 8
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 9
+            // ul.appendChild(listItems2)
+
+            // var listItems2 = document.createElement('li')
+            // listItems2.innerHTML = 10
+            // ul.appendChild(listItems2)
+
+        </script>
+    </body>
+</html>

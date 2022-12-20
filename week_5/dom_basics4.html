@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <button>click</button>
+        <ul></ul>
+
+
+
+        <script>
+
+            // create a variable for button
+            var button = document.querySelector('button')
+
+            // create a variable for the ul
+            var ul = document.querySelector('ul')
+
+            // set buttons onclick event to clicker
+            button.onclick = clicker
+
+            function clicker(){
+                console.log(this)
+
+                // create a new list element
+                var newElement = document.createElement('li')
+                console.log(newElement)
+
+                // set the new list innerhtml to test
+                newElement.innerHTML = newElement.innerHTML + 'test'
+                
+
+                // append the list element to the ul
+                ul.appendChild(newElement)
+            }
+
+        </script>
+    </body>
+</html>

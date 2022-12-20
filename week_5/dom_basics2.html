@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <button onclick="clicker()" class="myButton">add</button>
+        <ul class="myList">
+
+        </ul>
+
+
+        <script>
+
+            function clicker(){
+                // test the function 
+                console.log('cats')
+
+
+                // create a list element
+                var newElement = document.createElement('li')
+                console.log(newElement)
+                newElement.innerHTML = 'test'
+
+                // append it to myList
+                var myList = document.querySelector('.myList')
+                myList.appendChild(newElement)
+                
+
+            }
+
+        </script>
+    </body>
+</html>

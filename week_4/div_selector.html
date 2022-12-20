@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1> Select a Button</h1>
+
+        <button onclick="clicker(0, 1)"> one </button>
+        <button onclick="clicker(1, 2)"> two </button>
+        <button onclick="clicker(2, 3)"> three </button>
+        <button onclick="clicker(3, 4)"> four </button>
+        <div class="flex">
+            <div class="div"></div>
+        </div>
+
+        <script>
+
+            function clicker(arg1, arg2){
+                console.log('cats')
+                var display = document.querySelector('.div')
+                console.log(display)
+                display.innerHTML = arg2
+               
+                
+            }
+
+        </script>
+
+    </body>
+</html>
+<!-- If I click on button one -->
+<!-- display the first div -->
+<!-- If I click on another button remove display from the previously selected and add it to the newly selected -->

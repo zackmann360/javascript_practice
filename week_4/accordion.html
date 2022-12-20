@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <style>
+        .none{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        button{
+            display: block;
+        }
+        
+    </style>
+
+    <!-- Create 2 buttons and 2 divs -->
+
+    <!-- create an onclick function -->
+    <!-- use arguments to select the unique class -->
+    <button onclick="clicker(0)">Click</button>
+    <!-- Give the first div a unique class -->
+    <!-- hide the text with display none -->
+    <div class="text0 none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sed corrupti ad porro atque dolore quidem necessitatibus quas enim ullam incidunt minima maxime nisi deleniti, est et ipsum doloribus quis.</div>
+    <!-- create an onclick function -->
+    <!-- use arguments to select the unique class -->
+    <button onclick="clicker(1)" >Click</button>
+    <!-- give the secomnd div a unique class -->
+    <!-- hide the text with display none -->
+    <div class="text1 none">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum consequatur delectus laborum sunt velit esse mollitia veniam minima eligendi doloremque quo, illum ducimus, deserunt corrupti natus voluptas, eaque quasi blanditiis?</div>
+    
+    
+
+
+    <!-- functin click(){
+        if (text box contains show){
+            remove show class from the text
+        } else {
+            add show to the text box
+        }
+    } -->
+
+    <script>
+        // create a function
+        function clicker(arg1){
+            console.log(arg1)
+            if (document.querySelector('.text' + arg1).classList.contains('show')){
+                document.querySelector('.show').classList.remove('show')
+            } else {
+                document.querySelector('.text' + arg1).classList.add('show')
+            }
+        }
+       
+       
+    </script>
+</body>
+
+</html>
+
+<!-- 
+button
+text box
+
+
+when i click the button 
+- then the text box is shown
+
+when i click the button again
+- the text box is removed
+
+when i click the button 
+- then the text box is shown
+
+when i click the button again
+- the text box is removed
+
+
+add show when the text box is hidden 
+remove show when the text box is shown
+add show when the text box is hidden
+remove show when the text box is shown
+
+
+How do i know that the text box is hidden?
+- The text box is hidden because it doesnt have the class show 
+
+How do I know if the text box is shown?
+- The text box is shown because it has the class show
+
+
+functin click(){
+    if (text box contains show){
+        remove show class from the text box
+    } else {
+        add show to the text box
+    }
+}
+
+
+
+<button>click</button>
+<div class='textBox'> 12345</div>
+
+function clicker(){
+    var text = document.querySelector('.textBox')
+    // if text box is hidden
+    // 
+    if(text.classList.contains('show')){
+        //remove show class on textBox
+        text.classList.remove('show')
+    } else {
+        // if text box is hidden then add show class
+        // I know it is hidden now because it doesnt have the class show
+        text.classList.add('show')
+        
+    }
+} -->

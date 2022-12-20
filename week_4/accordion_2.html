@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        .textBox {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+        button{
+            display:block;
+        }
+    </style>
+
+    <button class="myButton button-0" onclick="clicker(0)">close</button>
+    <div class="textBox text-0 show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis fuga odit blanditiis
+        numquam consectetur, voluptatem dolores rerum molestiae sint facere magnam porro et, reiciendis perferendis,
+        accusantium qui suscipit nemo aliquam.</div>
+
+    <button class="myButton button-1" onclick="clicker(1)">close</button>
+    <div class="textBox text-1 show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis fuga odit blanditiis
+        numquam consectetur, voluptatem dolores rerum molestiae sint facere magnam porro et, reiciendis perferendis,
+        accusantium qui suscipit nemo aliquam.</div>
+
+
+    <script>
+
+       function clicker(arg1){
+        console.log('cats')
+        var text = document.querySelector('.text-' + arg1)
+        var myButton = document.querySelector('.button-' + arg1)
+        console.log(text)
+        console.log(myButton)
+
+        
+        if (text.classList.contains('show')){
+            text.classList.remove('show')
+            myButton.innerHTML = 'open'
+        }else{
+            text.classList.add('show')
+            myButton.innerHTML = 'close'
+        }
+
+       }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- function clicker(arg1, arg2) {
+    console.log('cats')
+    // check if the textBox contains show
+
+    // console log textBox class names
+
+    // if textBox has the class show then remove it
+    if (document.querySelector('.text-' + arg1).classList.contains('show')) {
+        document.querySelector('.text-' + arg1).classList.remove('show')
+        document.querySelector('.button-' + arg1).innerHTML = 'open'
+    } else {
+        // if it doesnt have the class show then add it
+        document.querySelector('.text-' + arg1).classList.add('show')
+        document.querySelector('.button-' + arg1).innerHTML = 'close'
+    }
+} -->
