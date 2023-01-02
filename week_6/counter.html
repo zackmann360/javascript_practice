@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div>0</div>
+    <button>start</button>
+
+    <script>
+        // create a variable for the div
+        var div = document.querySelector('div')
+        //create a variable for button
+        var button = document.querySelector('button')
+        //create an oncluick for the bbutton
+        button.onclick = onClick
+
+        //create a var for x
+        var x = 0
+        // define a variable witha boolean
+        var isIntervalRunning = false
+
+        function onClick(){
+            //console.log('cats')
+            // create an interval
+            if(isIntervalRunning == false){
+                setInterval(addOne, 1000) 
+                isIntervalRunning = true
+            }
+            // set is interval running to true
+
+            // if the interval is going the button shouldnt work
+            
+        }
+        
+        //create a function for interval
+        function addOne(){
+            console.log('cars')
+            // add 1 to x
+            x = x + 1
+            div.innerHTML = x
+
+        }
+
+    </script>
+</body>
+
+</html>

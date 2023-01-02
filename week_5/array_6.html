@@ -1,0 +1,95 @@
+<!-- create a table and put an array inside of it -->
+<!DOCTYPE html>
+<html>
+    <body>
+        
+
+        <ul></ul>
+        <form action="#">
+
+            <input type="text" placeholder="fruit">
+            <button class="add">add</button>
+            <button class="clear">clear</button>
+            
+        </form>
+        
+
+        <script>
+            // select the ul
+            var ul = document.querySelector('ul')
+
+            // create an array
+            // var myArray = ['oranges', 'grapes', 'apples']
+
+            
+            // read myArray from my hard drive
+            var myArray = localStorage.getItem('myArray')
+
+            // if myArray exists on my hard drive 
+            if(myArray){
+                // parse the string into an array
+                myArray = JSON.parse(myArray)
+
+            }else {
+                // else just create a new empty array
+                myArray = [] 
+            }
+
+            // call render
+            render()
+
+            // render the for loop
+            function render(){
+
+                // clear everything before you render 
+                ul.innerHTML = ''
+
+
+                for(var item of myArray){
+                    //console.log(item)
+                    
+                    // create a li for item
+                    var li = document.createElement('li')
+                    // set inner html of li it item
+                    li.innerHTML = item
+                    
+                    //append li to ul
+                    ul.appendChild(li)
+                    
+                }
+            }
+
+            // select the input
+            var input = document.querySelector('input')
+            
+            // create a function for button
+            var button = document.querySelector('.add')
+            var button2 = document.querySelector('.clear')
+            button2.onclick = clearFruit
+            button.onclick = addFruit
+
+            function addFruit(){
+                //console.log('cats')
+                //console.log(input.value)
+                
+                myArray.push(input.value)
+                console.log(myArray)
+
+                // save myArray to my hard drive 
+                localStorage.setItem('myArray', JSON.stringify(myArray))
+                render()
+            }
+
+            function clearFruit(){
+                //console.log('cars')
+                localStorage.setItem('myArray', '')
+                myArray = []
+                render()
+            }
+
+        
+
+            
+        </script>
+    </body>
+</html>

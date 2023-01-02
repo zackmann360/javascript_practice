@@ -6,17 +6,28 @@
 
 
         <script>
+            var car1 = {
+                color : 'red', 
+                brand : 'ford',
+                type : 'truck'
+            }
+            var car2 = { 
+                color : 'green',
+                brand : 'lambo', 
+                type : 'supercar'
+            }
+
             var ul = document.querySelector('ul')
 
-            var myArray = ['apples', 'oranges', 'grapes', 'bananas']
-
-            console.log(myArray)
+            var myArray = [car1, car2]
 
             for(var item of myArray){
                 console.log(item)
-                var newElement = document.createElement('li')
-                newElement.innerHTML = item
-                ul.appendChild(newElement)
+
+                var newElementLi = document.createElement('li')
+                newElementLi.innerHTML = item.type + ' - ' + item.color + ' - ' + item.brand
+
+                ul.appendChild(newElementLi)
             }
         </script>
     </body>

@@ -17,34 +17,49 @@
         <script>   
         
             // select my elements
-            var input = document.querySelector('input')
-            var button = document.querySelector('button')
             var ol = document.querySelector('ol')
+            var button = document.querySelector('button')
+            var input = document.querySelector('input')
 
             // set button onclick 
-            button.onclick = onclickAdd
+            button.onclick = addLI
 
-            function onclickAdd(){
+            function addLI(){
+
+                var newElementLI = document.createElement('li')
+                newElementLI.innerHTML = input.value
+
+                newElementLI.onclick = done
+
+                ol.appendChild(newElementLI)
+            }
+
+            function done(){
                 console.log('cats')
+                this.classList.add('done')
+                console.log(this)
+            }
+            
+            
 
                 // create 
-                var newElement = document.createElement('li')
-                newElement.onclick = onclickLi
+            
+            
 
                 // set the innerhtml
-                newElement.innerHTML = input.value
+            
 
                 // append
-                ol.appendChild(newElement)
-            }
+            
+            
 
-            function onclickLi(){
-                console.log(this)
+            
+            
                 // add class done when clicked
-                this.classList.add('done')
+            
                 
                 
-            }
+            
             
         
         </script>

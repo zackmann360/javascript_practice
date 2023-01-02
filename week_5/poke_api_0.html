@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <body>
+        <style>
+
+            img{
+                display: block;
+            }
+
+        </style>
+        <ul></ul>
+
+        <script>
+            // fetch, then convert, then use it
+            fetch('https://pokeapi.co/api/v2/pokemon?limit=100000').then((result) => result.json()).then(parseResult)
+
+            var ul = document.querySelector('ul')
+
+            function parseResult(allPokemon) {
+                console.log(allPokemon.results)
+
+                for(var item of allPokemon.results){
+                    console.log(item.name)
+
+                    var newElement = document.createElement('li')
+                    newElement.innerHTML = item.name
+
+                    ul.appendChild(newElement)
+                }
+            }
+        </script>
+    </body>
+</html>

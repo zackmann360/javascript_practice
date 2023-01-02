@@ -1,11 +1,117 @@
 <html>
     <body>
+        <style>
+            img{
+                width: 200px;
+                height: 150px;
+            }
+            .container{
+                background: red;
+            }
+            .images{
+                display: flex;
+                gap: 20px;
+            }
+            .images2{
+                display: flex;
+                gap: 20px;
+            }
+        </style>
 
-        <div id="images">
-            <!-- put them inside here -->
-        </div>
+        
+
+            <div class="images">
+                <!-- put them inside here -->
+                
+
+            </div>
+            <div class="images2">
+
+            </div>
+
+        
 
         <script>
+            var images = document.querySelector('.images')
+            var images2 = document.querySelector('.images2')
+            
+
+            var animals = [
+                {image: 'https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?cs=srgb&dl=pexels-pixabay-247502.jpg&fm=jpg',
+                name: 'lion'
+
+            },
+            {image: 'https://imageio.forbes.com/specials-images/imageserve/5faad4255239c9448d6c7bcd/Best-Animal-Photos-Contest--Close-Up-Of-baby-monkey/960x0.jpg?format=jpg&width=960',
+                name: 'monkey'
+
+            },
+            {image: 'https://a-z-animals.com/media/tiger_laying_hero_background.jpg',
+                name: 'tiger'
+
+            }
+
+            ]
+            var animals2 = [
+                {image: 'https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?cs=srgb&dl=pexels-pixabay-247502.jpg&fm=jpg',
+                name: 'lion'
+
+            },
+            {image: 'https://imageio.forbes.com/specials-images/imageserve/5faad4255239c9448d6c7bcd/Best-Animal-Photos-Contest--Close-Up-Of-baby-monkey/960x0.jpg?format=jpg&width=960',
+                name: 'monkey'
+
+            },
+            {image: 'https://a-z-animals.com/media/tiger_laying_hero_background.jpg',
+                name: 'tiger'
+
+            }
+
+            ]
+            
+
+            for ( var item of animals){
+                console.log(item)
+                //crete an image element
+                var newImages = document.createElement('img')
+                newImages.src = item.image
+                //create a div element
+                var newName = document.createElement('div')
+                newName.innerHTML = item.name
+                console.log(newName)
+
+                var newContainer = document.createElement('div')
+                newContainer.appendChild(newImages)
+                newContainer.appendChild(newName)
+                console.log(newContainer)
+
+
+                images.appendChild(newContainer)
+
+                console.log(newImages)
+                
+               
+
+            }
+            for (var item of animals2){
+                console.log(item)
+
+                var newImages = document.createElement('img')
+                newImages.src = item.image
+
+                var newName = document.createElement('div')
+                newName.innerHTML = item.name
+                console.log(newName)
+
+                var newContainer = document.createElement('div')
+                newContainer.appendChild(newImages)
+                newContainer.appendChild(newName)
+                console.log(newContainer)
+
+
+                images2.appendChild(newContainer)
+
+                console.log(newImages)
+            }
+
             // using arrays create a display of animals with an image and a title
 
             // loop over the array of animals

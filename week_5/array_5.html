@@ -1,1 +1,133 @@
 <!-- Find a list online. Render a display of that list. The items should have at least three properties (ex. name, price, image, etc) -->
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        body {
+            background-color: #333;
+        }
+        .child2{
+            display: flex;
+            gap: 10px;
+        }
+        .water{
+            background-color: blue;
+        }
+        .fire{
+            background: red;
+        }
+    </style>
+
+
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+
+    </div>
+
+
+
+
+    <script>
+        var mainContainer = document.querySelector('.mainContainer')
+        var card = document.querySelector('.card')
+        var upperContainer = document.querySelector('.upperContainer')
+        var imgContainer = document.querySelector('.imgContainer')
+        var lowerContainer = document.querySelector('.lowerContainer')
+        var pokeNum = document.querySelector('.pokeNum')
+        var pokeName = document.querySelector('pokeName')
+        var poketype = document.querySelector('.pokeType')
+        
+
+        // create a array for the pokemon
+        var myArray = [
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/060.png',
+                number: '#060',
+                name: 'polywag',
+                type: ['water']
+
+            },
+            {
+                image: 'https://static.pokemonpets.com/images/monsters-images-800-800/25-Pikachu.webp',
+                number: '#025',
+                name: 'pikachu',
+                type: ['electric']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png',
+                number: '#006',
+                name: 'charizard',
+                type: ['fire', 'flying']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
+                number: '#004',
+                name: 'charmander',
+                type: ['fire']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
+                number: '#007',
+                name: 'squirtle',
+                type: ['water']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png',
+                number: '#007',
+                name: 'caterpie',
+                type: ['bug']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png',
+                number: '#007',
+                name: 'venmouth',
+                type: ['bug']
+            },
+            {
+                image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png',
+                number: '#007',
+                name: 'lukario',
+                type: ['normal']
+            }
+        ]
+
+        
+        for(var item of myArray){
+            // console.log(item)
+
+            var itemImg = document.createElement('img')
+            itemImg.src = item.image
+            // console.log(itemImg)
+
+            var itemNum = document.createElement('div')
+            itemNum.innerHTML = item.number
+            console.log(itemNum)
+
+            var itemName = document.createElement('div')
+            itemName.innerHTML = item.name
+            console.log(itemName)
+
+            for(var type of item.type){
+                console.log(type)
+                var itemType = document.createElement('div')
+                itemType.innerHTML = type
+                itemType.classList.add(type)
+                console.log(itemType)
+
+                document.querySelector('.child2').appendChild(itemType)
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+
+    </script>
+</body>
+
+</html>
