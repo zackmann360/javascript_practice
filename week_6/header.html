@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #999;
+            font-family: monospace;
+            color: white;
+        }
+
+        .mainContainer {
+            width: 100%;
+            background-color: #333;
+        }
+
+        .logo {
+            font-size: 15px;
+        }
+
+        .upperContainer {
+            display: flex;
+            padding: 10px 8px 10px 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .upperButtons {
+            display: flex;
+            font-size: 10px;
+        }
+
+        .lowerContainer {
+            height: 35%;
+            background-color: silver;
+            
+
+        }
+
+        .lowerButtons {
+            display: flex;
+            font-size: 10px;
+            padding-left: 12px;
+            height: 100%;
+            background-color: rgb(30, 29, 29);
+
+
+        }
+
+        .button {
+            height: 100%;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .text{
+            background-color: purple;
+            
+        }
+        .primary{
+            background-color: rgb(114, 194, 221);
+            border-radius: 5px;
+        }
+        .underline{
+            border-bottom: 2px solid white;
+        }
+        .indicator{
+            position: absolute;
+            top: 0px;
+            right: 2px;
+            background-color: rgb(114, 194, 221);
+            border-radius: 100%;
+            height: 6px;
+            width: 6px;
+            
+        }
+        .position{
+            position: relative;
+        }
+        .lowerButtons .button{
+            padding: 9px 10px;
+        }
+        
+    </style>
+    <img src="../images/blender_header.png" height="auto" width="100%">
+
+    <div class="mainContainer">
+        <div class="upperContainer">
+            <div class="logo">
+                blender
+            </div>
+            <div class="upperButtons">
+                <div class="button">Features</div>
+                <div class="button">Downloads</div>
+                <div class="button">Support</div>
+                <div class="button">Get Involved</div>
+                <div class="button">About</div>
+                <div class="button">Jobs
+                    <div class="indicator"></div>
+                </div>
+                <div class="button">Store</div>
+                <div class="button primary">♡ Donate</div>
+            </div>
+        </div>
+        <div class="lowerContainer">
+
+            <div class="lowerButtons">
+                <div class="button underline">Blog</div>
+                <div class="button">Developer Portal</div>
+                <div class="button">Wiki</div>
+                <div class="button">Forum</div>
+                <div class="button">About</div>
+                <div class="button">U</div>
+                <div class="button">T</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // put the lowerbuttons in a var
+        var lowerButtons = document.querySelectorAll('.lowerButtons .button')
+        //console.log(lowerButtons)
+
+        for(var item of lowerButtons){
+            //console.log(item)
+            // create an onclick function for items
+            item.onclick = activate
+        }
+
+        function activate(){
+            console.log('cats')
+            var currentlySelected = document.querySelector('.button.underline')
+            //console.log(currentlySelected)
+            // remove underline from selected
+            currentlySelected.classList.remove('underline')
+            // add underline to selected
+            // this is whoever is calling that function
+            this.classList.add('underline')
+        }
+
+
+
+    </script>
+</body>
+
+</html>
