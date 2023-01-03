@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        img{
+            width: 75%;
+            margin-top: 20px;
+        }
+        html body{
+            background-color: #555;
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(1, 1, 39);
+        }
+        .mainContainer{
+            display: flex;
+            padding: 2rem;
+        }
+        .leftSide{
+            width: 50%;
+            margin: .8rem 3rem 1rem .2rem;
+        }
+        .item1{
+            font-size: .7rem;
+       
+            color: #4a85c6;
+        }
+        .item2{
+            font-size: 1.6rem;
+            padding: .5rem 0;
+            font-weight: bolder;
+        }
+        .item3{
+            font-size: .7rem;
+        }
+        .card{
+            border: 2px solid transparent;
+            ccborder-radius: 5px;
+            margin-top: 1.75rem;
+            display: flex;
+        }
+        .icon{
+            padding: 1rem 1rem;
+        }
+        .content{
+            padding: 1rem 0rem;
+        }
+        .headText{
+            padding-bottom: .5rem;
+        }
+        .description{
+            font-size: .7rem;
+        }
+        .learMore{
+            padding-top: 1rem;
+            color: #4a85c6;
+        }
+
+        .rightSide{
+            width: 50%;
+            background-color: #122f4c;
+            margin: 1rem;
+            color: white;
+            font-size: 3rem;
+        }
+        .box{
+            padding: 2rem;
+        }
+        .card.activated{
+            border: 2px solid #4a85c6;
+            border-radius: .5rem;
+            background-color: #122f4c;
+        }
+        .card:hover{
+            background-color: #122f4c;
+            border-radius: .5rem;
+        }
+        .blueText{
+            color: #4a85c6;
+        }
+
+    </style>
+
+
+<div class="mainContainer">
+    <div class="leftSide">
+        <div class="item1">Products</div>
+        <div class="item2">Every component you need is <span class="blueText">ready for production</span></div>
+        <div class="item3">Build at an accelerated pace without sacrificing flexibility or control.</div>
+        <div class="card activated">
+            <div class="icon">
+                <img src="https://mui.com/static/branding/product-core-dark.svg">
+            </div>
+            <div class="content">
+                <div class="headText">MUI Core</div>
+                <div class="description">Foundational components for shipping features faster. includes material UI.</div>
+                <div class="learMore">Learn more ></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="https://mui.com/static/branding/product-core-dark.svg">
+            </div>
+            <div class="content">
+                <div class="headText">MUI X</div>
+                <div class="description">Advanced components for complex use cases.</div>
+                <div class="learMore">Learn more ></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="https://mui.com/static/branding/product-core-dark.svg">
+            </div>
+            <div class="content">
+                <div class="headText">Templates</div>
+                <div class="description">Professionally designed UI layouts to jumpstart your net project.</div>
+                <div class="learMore">Learn more ></div>
+            </div>
+        </div>
+         <div class="card">
+            <div class="icon">
+                <img src="https://mui.com/static/branding/product-core-dark.svg">
+            </div>
+            <div class="content">
+                <div class="headText">Design kits</div>
+                <div class="description">Bring components to your favorite desgn tool.</div>
+                <div class="learMore">Learn more ></div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="rightSide">
+        <div class="box">
+            
+        </div>
+    </div>
+</div>
+
+<!-- <img src="../images/mui.png"> -->
+
+
+    <script>
+        var cards = document.querySelectorAll('.card')
+        var textBox = document.querySelector('.box')
+        
+
+        for(var item of cards){
+            //console.log(item)
+            //create an onclick for cards
+            item.onclick = activate
+        }
+
+        function activate(){
+            //select the card that is currentlu selected
+            var selected = document.querySelector('.card.activated')
+            // console.log(selected)
+            selected.classList.remove('activated')
+            // add activated to this
+            this.classList.add('activated')
+            
+            // textBox.innerHTML = 
+            console.log(this)
+            var text = this.querySelector('.headText')
+            console.log(text.innerHTML)
+            textBox.innerHTML = text.innerHTML
+            
+        }
+
+    </script>
+</body>
+</html>
