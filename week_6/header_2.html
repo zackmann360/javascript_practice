@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        img{
+            width: 100%;
+        }
+        html body{
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+            color: white;
+            background-color: #555;
+        }
+        .mainContainer{
+            background-color: #171b21;
+        }
+        .inner{
+            display: flex;
+            font-size: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .button{
+            padding: 2rem .75rem;
+        }   
+        .activated{
+            border-bottom: 3px solid #fff;
+        }     
+    </style>
+
+    <img src="../images/header_2.png">
+
+    <div class="mainContainer">
+        <div class="inner">
+            <div class="button activated">Pull request</div>
+            <div class="button">Issues</div>
+            <div class="button">Codespace</div>
+            <div class="button">Marketplace</div>
+            <div class="button">Explore</div>
+        </div>
+    </div>
+    <div class="content"></div>
+
+    <script>
+
+        // put all buttons in a variable
+        var buttons = document.querySelectorAll('.button')
+        // select the content div 
+        var content = document.querySelector('.content')
+
+        // loop over the buttons
+        for(var item of buttons){
+            //console.log(item)
+            //create an onclick for item
+            item.onclick = activated
+        }
+        
+        function activated(){
+            console.log('cats')
+            // select the currently activated button
+            var activated = document.querySelector('.button.activated')
+            // remove activated from it
+            activated.classList.remove('activated')
+            // add activated to this
+            this.classList.add('activated')
+            // change the innerhtml of content to this
+            content.innerHTML = this.innerHTML
+            
+        }
+        
+
+    </script>
+</body>
+
+</html>
