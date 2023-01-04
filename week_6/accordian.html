@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            html body{
+                padding: 0;
+                margin: 0;
+                background-color: #444;
+                font-family: sans-serif;
+                color: white;
+            }
+            img{
+                width: 100%;
+                margin-top: 5rem;
+            }
+            .button{
+                background-color: #222;
+                display: flex;
+                padding: 1.5rem;
+                align-items: center;
+                border: 1px solid #555;
+                cursor: pointer;
+            }
+            .button .buttonText{
+                padding-left: 1rem;
+                font-size: 1.5rem;
+                
+            }
+            
+            .textBox{
+                background-color: #999;
+                padding: 1rem;
+            }
+            .hide{
+                display: none;
+            }
+            .rotate{
+                transform: rotate(90deg);
+            }
+        </style>
+
+        <div class="mainContainer">
+            <div number="1" class="button">
+                <div class="icon">➡</div>
+                <div class="buttonText">
+                    Collapsible #1
+                </div>
+            </div>
+            <div class="textBox1 hide">
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                </div>
+            </div>
+            <div number="2" class="button">
+                <div class="icon">➡</div>
+                <div class="buttonText">
+                    Collapsible #1
+                </div>
+            </div>
+            <div class="textBox2 hide">
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                </div>
+            </div>
+            <div number="3" class="button">
+                <div class="icon">➡</div>
+                <div class="buttonText">
+                    Collapsible #1
+                </div>
+            </div>
+            <div class="textBox3 hide">
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                </div>
+            </div>
+        </div>
+
+        <img src="../images/accordian.png">
+
+
+        <script>
+           // get all the buttons
+           var button = document.querySelectorAll('.button')
+        //    console.log(button)
+           // loop over the button 
+           for(var item of button){
+            // console.log(item)
+            // create an onclikc for buttons
+            item.onclick = activate
+           }
+
+           // create a function
+           function activate(){
+            console.log(this)
+            var num = this.getAttribute('number')
+            console.log(num)
+            var remove = document.querySelector('.textBox' + num)
+            remove.classList.toggle('hide')
+
+            // add rotate to icon
+            var icon = this.querySelector('.icon')
+            icon.classList.toggle('rotate')
+            console.log(icon)
+           }
+        </script>
+    </body>
+</html>
