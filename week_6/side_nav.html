@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        :root {
+            --background: rgb(36, 0, 36);
+            --background_active: #6366f1;
+            --background_hover: rgb(165, 151, 255, .25);
+            --space-half: .5rem;
+            --space-34: .75rem;
+            --space-1: 1rem;
+            --space-2: 2rem;
+            --space-3: 3rem;
+            --space-4: 4rem;
+            --space_top_half: .5rem;
+            --space-top-1: 1rem;
+            font-family: sans-serif;
+        }
+
+        html body{
+            padding: 0;
+            margin: 0;
+            background-color: var(--background);
+            color: white;
+        }
+        .mainContainer{
+            display: flex;
+        }
+        .right  {
+            background-color: #999;
+            flex: 1;
+        }
+        img{
+            width: 20rem;
+        }
+        .upper{
+            text-align: center;
+            padding-top: var(--space-3);
+        }
+        .profileImg img{
+            width: 8rem;
+
+        }
+        .profileName{
+            padding-top: var(--space_top_half);
+        }
+        .profileEmail{
+            padding-top: var(--space_top_half);
+            color: #999;
+        }
+        .navBar{
+            padding: var(--space-2) 2rem;
+        }
+        .button{
+            display: flex;
+            padding: 1rem 1rem .75rem 1rem;
+            border-radius: .5rem;
+            min-width: 20rem;
+            cursor: pointer;
+        }
+        .button:hover{
+            background-color: rgba( 0, 0, 255, .25);
+        }
+        .button.active{
+            background-color: #6366f1;
+        }
+        .icon img{
+            width: 1.5rem;
+            padding-right: var(--space-1);
+            padding-left: var(--space-1);
+            align-items: center;
+            filter: invert(100%);
+        }
+        .buttonText{
+            padding-top: .1rem;
+        }
+        .textBox{
+            padding: var(--space-4);
+        }
+
+    </style>
+
+    <div class="mainContainer">
+        <div class="left">
+            <div class="upper">
+                <div class="profileImg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                </div>
+                <div class="profileName">
+                    <div class="name">
+                        Who Dis
+                    </div>
+                </div>
+                <div class="profileEmail">
+                    <div class="email">
+                        WhoDis@yahoo.com
+                    </div>
+                </div>
+            </div>
+            <div class="navBar">
+                <div class="button active">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Account Details
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Security
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Notifications
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Messages
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Saved Items
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        My Collections
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Payment Details
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="icon">
+                        <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/settings-512.png">
+                    </div>
+                    <div class="buttonText">
+                        Sign Out
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="textBox">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- <img src="../images/side_nav.png"> -->
+
+
+    <script>
+        //select the buttons
+        var buttons = document.querySelectorAll('.button')
+        // console.log(buttons)
+        // loop over the buttons
+        for(var item of buttons){
+            // console.log(item)
+            // set an onclick for item
+            item.onclick = activate
+        }
+
+        // create a funciton for activate
+        function activate(){
+            // console.log(this)
+            // select the active button
+            var active = document.querySelector('.active')
+            // console.log(active)
+            // remove active from active
+            active.classList.remove('active')
+            // add active to this
+            this.classList.add('active')
+
+            // get the inner html of this
+            // console.log(this)
+            var buttonText = this.querySelector('.buttonText')
+            // console.log(buttonText)
+            // get innerHtml of buttonText
+            var text = buttonText.innerHTML
+            // console.log(text)
+            // trim the innerhtml
+            var result = text.trim()
+            console.log(result)
+
+            // get the textBox
+            var textBox = document.querySelector('.textBox')
+            // set innerhtml of textBox to result
+            textBox.innerHTML = result
+            
+        }
+        
+    </script>
+</body>
+
+</html>
