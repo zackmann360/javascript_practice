@@ -3,105 +3,101 @@
     <body>
         <style>
             html body{
-                padding: 0;
-                margin: 0;
                 background-color: #444;
-                font-family: sans-serif;
+                padding: 0 ;
+                margin: 0;
                 color: white;
             }
             img{
                 width: 100%;
-                margin-top: 5rem;
+                margin-top: 2rem;
+            }
+            .inner{
+                display: flex;
+                align-items: center;
+                background-color: #222;
+                padding: 1.25rem;
+                border: 1px solid #444;
+            }
+            .icon{
+                ccpadding-right: 1rem;
             }
             .button{
-                background-color: #222;
-                display: flex;
-                padding: 1.5rem;
-                align-items: center;
-                border: 1px solid #555;
-                cursor: pointer;
-            }
-            .button .buttonText{
                 padding-left: 1rem;
-                font-size: 1.5rem;
-                
-            }
-            
-            .textBox{
-                background-color: #999;
-                padding: 1rem;
             }
             .hide{
                 display: none;
             }
             .rotate{
-                transform: rotate(90deg);
+                transform: rotate(180deg);
             }
+
+            
+
         </style>
 
         <div class="mainContainer">
-            <div number="1" class="button">
-                <div class="icon">➡</div>
-                <div class="buttonText">
-                    Collapsible #1
-                </div>
+            <div class="inner">
+                <div class="icon1">⬆</div>
+                <div number="1" class="button">Collapsible Group item # 1</div>
             </div>
-            <div class="textBox1 hide">
+            <div class="hide textBox1">
                 <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi deserunt consequatur repudiandae in. Tempora placeat harum ratione dolorem autem optio, delectus corporis temporibus error dicta cupiditate cumque, fuga odio.
                 </div>
             </div>
-            <div number="2" class="button">
-                <div class="icon">➡</div>
-                <div class="buttonText">
-                    Collapsible #1
-                </div>
+        </div>
+        <div class="mainContainer">
+            <div class="inner">
+                <div class="icon2">⬆</div>
+                <div number="2" class="button">Collapsible Group item # 1</div>
             </div>
-            <div class="textBox2 hide">
+            <div class="hide textBox2">
                 <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi deserunt consequatur repudiandae in. Tempora placeat harum ratione dolorem autem optio, delectus corporis temporibus error dicta cupiditate cumque, fuga odio.
                 </div>
             </div>
-            <div number="3" class="button">
-                <div class="icon">➡</div>
-                <div class="buttonText">
-                    Collapsible #1
-                </div>
+        </div>
+        <div class="mainContainer">
+            <div class="inner">
+                <div class="icon3">⬆</div>
+                <div number="3" class="button">Collapsible Group item # 1</div>
             </div>
-            <div class="textBox3 hide">
+            <div class="hide textBox3">
                 <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quis laudantium sint nobis veritatis. Molestiae animi deserunt, voluptas, corporis dignissimos, praesentium consectetur mollitia asperiores fugiat quaerat soluta. Magni, optio ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi deserunt consequatur repudiandae in. Tempora placeat harum ratione dolorem autem optio, delectus corporis temporibus error dicta cupiditate cumque, fuga odio.
                 </div>
             </div>
         </div>
 
         <img src="../images/accordian.png">
 
-
         <script>
-           // get all the buttons
-           var button = document.querySelectorAll('.button')
-        //    console.log(button)
-           // loop over the button 
-           for(var item of button){
-            // console.log(item)
-            // create an onclikc for buttons
-            item.onclick = activate
-           }
 
-           // create a function
-           function activate(){
-            console.log(this)
-            var num = this.getAttribute('number')
-            console.log(num)
-            var remove = document.querySelector('.textBox' + num)
-            remove.classList.toggle('hide')
+            // select all the buttons
+            var button = document.querySelectorAll('.button')
+            // console.log(button)
 
-            // add rotate to icon
-            var icon = this.querySelector('.icon')
-            icon.classList.toggle('rotate')
-            console.log(icon)
-           }
+            // loop over the button
+            for(var item of button){
+                // console.log(item)
+                item.onclick = activate
+            }
+
+            function activate(){
+                console.log(this)
+                var number = this.getAttribute('number')
+                // console.log(number)
+                var text = document.querySelector('.textBox' + number)
+                // console.log(text)
+                text.classList.toggle('hide')
+                //select the icons
+                var icon = document.querySelector('.icon' + number)
+                console.log(icon)
+                icon.classList.toggle('rotate')
+                
+            }
+
         </script>
     </body>
 </html>
