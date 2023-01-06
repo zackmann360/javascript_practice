@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        :root {
+            --space-twofive: .25rem;
+            --space-half: .5rem;
+            --space-three-four: .75rem;
+            --space-1: 1rem;
+            --space-2: 2rem;
+            --space-3: 3rem;
+        }
+        
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #777;
+        }
+
+        img {
+            width: 50rem;
+            margin-top: 5rem;
+        }
+        .mainContainer{
+            box-shadow: 7px 10px 3px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 10rem auto;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .inner {
+            padding: var(--space-2);
+            background-color: white;
+            
+           
+        }
+
+        /* --top-- */
+        .top {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .header {
+            margin-right: var(--space-1);
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        .border {
+            border-bottom: .25rem solid #999;
+            flex: 1;
+        }
+
+        .seeAll {
+            margin-left: var(--space-1);
+            font-size: .75rem;
+            cursor: pointer;
+        }
+        .seeAll:hover{
+            text-decoration: underline;
+        }
+        .lowerContainer{
+            display: flex;
+        }
+
+        /* --items-- */
+        
+        .item {
+            display: flex;
+            padding-top: var(--space-1);
+            ccbackground-color: red;
+            padding-top: 0;
+            margin-top: var(--space-1);
+            height: 3.5rem;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .icon img {
+            width: 3rem;
+            margin: 0;
+            padding-right: var(--space-1);
+        }
+
+        .textBox {
+            flex: 1;
+        }
+
+        .textBox .heading {
+            padding-bottom: var(--space-half);
+        }
+
+        .heart img {
+            width: 1rem;
+            margin: 0;
+            padding-top: var(--space-three-four);
+        }
+        .heart img.black {
+            filter: opacity(.25);
+
+        }
+        .heading{
+            font-weight: bolder;
+            color: darkgreen;
+        }
+        .item:hover .icon img{
+            display: none;
+        }
+        .textBox .description{
+            color: rgb(16, 176, 27);
+            font-size: .75rem;
+            font-weight: bold;
+        }
+        .item:hover .description{
+            display: none;
+        }
+        .item:hover .heading{
+            display: none;
+        }
+        .textBox .hoverItem{
+            display: none;
+        }
+        .item:hover .hoverItem{
+            display: block;
+        }
+        .left{
+            flex: 1;
+            padding-right: var(--space-2);
+        }
+        .right {
+            flex: 1;
+        }
+        
+        
+        .hide{
+            display: none;
+        }
+        .outPut{
+            background-color: green;
+            padding: var(--space-3);
+            text-align: center;
+            color: white;
+            
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="mainContainer">
+        <div class="inner">
+            <!-- Header -->
+            <div class="top">
+                <div class="header">
+                    QUICKLINKS
+                </div>
+                <div class="border">
+                </div>
+                <div class="seeAll">
+                    See All
+                </div>
+            </div>
+            <!-- left side -->
+            <div class="lowerContainer">
+                <div class="left">
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                IvyLearn
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <!-- --------------- -->
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Schedule Builder
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Degree Completion Tracker
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Knowledge Assesment
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                WhitePages
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Student Email
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Student Email
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Google Drive
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="icon">
+                            <img src="../images/ivy_Tech_Icon.png">
+                        </div>
+                        <div class="textBox">
+                            <div class="heading">
+                                Unofficial Transcript
+                            </div>
+                            <div class="description">
+                                Academics & Advising
+                            </div>
+                            <div class="hoverItem">
+                                hello
+                            </div>
+                        </div>
+                        <div class="heart">
+                            <img class="black" src="../images/icon-heart-filled.png">
+                            <img class="red hide" src="../images/heart_red_filled.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outPut">
+            You Clicked: <span class="underline">None yet!</span> 
+        </div>
+    </div>
+
+
+    <!-- <img src="../images/ivyTech.png"> -->
+
+    <script>
+        // select the heart container
+        var heart = document.querySelectorAll('.heart')
+        // console.log(heart)
+        // loop over heart to select all of them
+        for(var item of heart){
+            // console.log(item)
+            //set an onclick for item
+            item.onclick = activate
+        }
+        
+        // create a function
+        function activate(){
+            // console.log('cats')
+            // select the black heart
+            var black = this.querySelector('.black')
+            // console.log(black)
+            // toggle hide on black
+            black.classList.toggle('hide')
+            // select the red heart
+            var red = this.querySelector('.red')
+            // console.log(red)
+            red.classList.toggle('hide')
+        }   
+
+        // select the items
+        var items = document.querySelectorAll('.item')
+        // console.log(items)
+
+        //loop over items
+        for(var item of items){
+            // console.log(item)
+            // set an onclick for item
+            item.onclick = setHTML
+        }
+
+        // create a function 
+        function setHTML(){
+            // console.log('cats')
+            // read innerhmtl of this
+            // console.log(this)
+            // select heading innerhtml
+            var input = this.querySelector('.heading')
+            // console.log(input)
+            var inputHTML = input.innerHTML
+            // console.log(inputHTML)
+            var result = inputHTML.trim()
+            console.log(result)
+            var outPut = document.querySelector('.underline')
+            console.log(outPut)
+            outPut.innerHTML = result
+
+        }
+        
+
+    </script>
+ </body>
+
+</html>
