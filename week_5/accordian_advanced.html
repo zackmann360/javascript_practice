@@ -49,6 +49,7 @@
             <div class="button">
                 <div class="arrow rotate">⬇</div>
                 <div class="buttText">Closed</div>
+                <div class="buttText2 hide">Opened</div>
             </div>
             <div class="content">
                 <div class="conText hide">
@@ -60,7 +61,7 @@
         <script>
             // select the button
             var button = document.querySelector('.button')
-            console.log(button)
+            // console.log(button)
 
             // set an onclick for button
             button.onclick = activate
@@ -74,9 +75,17 @@
                 conText.classList.toggle('hide')
                 //select the button arrow
                 var arrow = document.querySelector('.arrow')
-                console.log(arrow)
+                // console.log(arrow)
                 //toggle rotate on arrow
                 arrow.classList.toggle('rotate')
+                // select the button text
+                var buttText = document.querySelector('.buttText')
+                console.log(buttText)
+                buttText.classList.toggle('hide')
+                // select button text 2
+                var buttText2 = document.querySelector('.buttText2')
+                console.log(buttText2)
+                buttText2.classList.toggle('hide')
 
             }
         </script>
