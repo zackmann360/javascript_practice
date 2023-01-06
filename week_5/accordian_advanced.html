@@ -2,71 +2,83 @@
 <html>
     <body>
         <style>
-
-
-            .container{
-                width: 80%;
-                margin: auto;
-                margin-top: 200px;
+            :root{
+                --space-half: .5rem;
+                --space-1: 1rem;
+                --space-2: 2rem;
+                --space-3: 3rem;
             }
-
-            .head{
-                font-size: 100px;
-                text-align: center;
-                margin-bottom: 100px;
-            }
-
-            .myButton{
-                width: 100%;
-                background-color: #777;
-                padding-left: 30px;
-                border-radius: 10px;
+            html body{
+                padding: 0;
+                margin: 0;
+                background-color: #444;
                 
-
             }
-
-            .myButton img{
-                height: 100px;
-
+            .mainContainer{
+                max-width: 500px;
+                margin: 20rem auto;
             }
-            .flip:nth-child(2) {
-                transform: scaleY(-1);
+            .button{
+                border: none;
+                background-color: white;
+                border-radius: 8px 8px 0 0;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: var(--space-1);
+                cursor: pointer;
             }
-
-            .none{
+            .content .conText{
+                ccdisplay: none;
+                background-color: #999;
+                width: 100%;
+                border-radius: 0 0 8px 8px;
+                padding: var(--space-1);
+            }
+            .rotate{
+                transform: rotate(180deg);
+            }
+            .hide{
                 display: none;
             }
+            
 
         </style>
 
-        <div class="container">
-
-            <div class="head"> Accordian </div>
-        
-            <div class="myButton" onclick="clicker()"> <img src="./images/upload.png" alt=""></div>
-            <div class="myDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eum a repellat! Eius numquam consequatur quis nemo ut quibusdam odit sapiente consequuntur quos voluptate, cum vero facilis error, eum assumenda?</div>
-            
+        <div class="mainContainer">
+            <div class="button">
+                <div class="arrow rotate">⬇</div>
+                <div class="buttText">Closed</div>
+            </div>
+            <div class="content">
+                <div class="conText hide">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quae consectetur aliquam soluta fugiat laborum, vero corporis asperiores dignissimos, placeat sequi illum consequatur vitae quo, eveniet iusto expedita assumenda iste.
+                </div>
+            </div>
         </div>
 
-
         <script>
+            // select the button
+            var button = document.querySelector('.button')
+            console.log(button)
 
-            function clicker(){
-                console.log('cats')
-                var myButton = document.querySelector('.myButton')
-                var myDiv = document.querySelector('.myDiv')
+            // set an onclick for button
+            button.onclick = activate
+            //create a function
+            function activate(){
+                // console.log('cats')
+                // select conText
+                var conText = document.querySelector('.conText')
+                // console.log(conText)
+                // toggle hide on conText
+                conText.classList.toggle('hide')
+                //select the button arrow
+                var arrow = document.querySelector('.arrow')
+                console.log(arrow)
+                //toggle rotate on arrow
+                arrow.classList.toggle('rotate')
 
-                if (myButton.classList.contains('flip')){
-                    myButton.classList.remove('flip')
-                    myDiv.classList.remove('none')
-                }else{
-                    myButton.classList.add('flip')
-                    myDiv.classList.add('none')
-
-                }
             }
-
         </script>
-
     </body>
 </html>
