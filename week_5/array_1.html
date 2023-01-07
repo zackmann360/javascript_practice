@@ -7,84 +7,25 @@
 
 
         <script>
-            // create a var for ul
+            // select the ul
             var ul = document.querySelector('ul')
+            // console.log(ul)
+            // create an array of numbers
+            var numbers = [1,2,3,4,5]
             
-            // create an array
-            var myArray = [1,2,3,4,5,6,7]
+            // loop over the numbers
+            for(var item of numbers){
+                // console.log(item)
+                // create an li
+                var li = document.createElement('li')
+                // console.log(li)
+                li.innerHTML = item
+                // append li to ul
+                ul.appendChild(li)
 
-            for(var items of myArray){
-                console.log(items)
-                var newElementLi = document.createElement('li')
-                newElementLi.innerHTML = items
-
-                ul.appendChild(newElementLi)
+                
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
-            
-            // var ul = document.querySelector('ul')
-
-            // var myArray = [1,2,3,4,5,6,7,8,9,10]
-            // console.log(myArray)
-
-            // for(var item of myArray){
-            //     console.log(item)
-            //     var listItems = document.createElement('li')
-            //     listItems.innerHTML = item
-            //     ul.appendChild(listItems)
-            // }
         </script>
     </body>
 </html>
