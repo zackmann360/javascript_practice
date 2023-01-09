@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        
-        <ul></ul>
+
+<body>
+
+    <ul></ul>
 
 
-        <script>
-            var ul = document.querySelector('ul')
+    <script>
+        var ul = document.querySelector('ul')
 
-            
-            var products = [
-                {
-                    image: 'https://c1.neweggimages.com/ProductImageCompressAll300/1Z4-0002-017H9-V07.jpg',
-                    name: 'wd black 1',
-                    price: '54.99'
-                },
-                {
-                    image: 'https://c1.neweggimages.com/ProductImageCompressAll300/22-179-107-S01.jpg',
-                    name: 'seagate black 1',
-                    price: '73.99'
-                },
-                {
-                    image: 'https://c1.neweggimages.com/ProductImageCompressAll300/22-179-104-S01.jpg',
-                    name: 'seagate barracude 1',
-                    price: '117.99'
-                }
-            ]
 
-            for (var item of products) {
-                console.log(item)
-                // create an image
-                var newImage = document.createElement('img')
-                newImage.src = item.image
-
-                // create a div for the title
-                var newName = document.createElement('div')
-                newName.innerHTML = item.name
-                
-                // create a div for the price
-                var newPrice = document.createElement('div')
-                newPrice.innerHTML = item.price
-                
-                // stuff these new stuff into a container
-                var newContainer = document.createElement('div')
-                newContainer.appendChild(newImage)
-                newContainer.appendChild(newName)
-                newContainer.appendChild(newPrice)
-
-                // append it to the page
-                ul.appendChild(newContainer)
+        var products = [
+            {
+                image: 'https://c1.neweggimages.com/ProductImageCompressAll300/1Z4-0002-017H9-V07.jpg',
+                name: 'wd black 1',
+                price: '54.99'
+            },
+            {
+                image: 'https://c1.neweggimages.com/ProductImageCompressAll300/22-179-107-S01.jpg',
+                name: 'seagate black 1',
+                price: '73.99'
+            },
+            {
+                image: 'https://c1.neweggimages.com/ProductImageCompressAll300/22-179-104-S01.jpg',
+                name: 'seagate barracude 1',
+                price: '117.99'
             }
+        ]
 
-        </script>
-    </body>
+        // loop over the products
+        for (var item of products) {
+            console.log(item.name)
+            // create an img
+            var img = document.createElement('img')
+            img.src = item.image
+            // console.log(img)
+            var newName = document.createElement('div')
+            console.log(name)
+            // name.innerHTML = item.name
+            // console.log(name)
+        }
+
+    </script>
+</body>
+
 </html>

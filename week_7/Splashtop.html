@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            html body{
+                padding: 0;
+                margin: 0;
+                background-color: #333;
+                font-family: sans-serif;
+                color: #222;
+            }
+
+            img{
+                width: 100%;
+                margin-top: 5rem;
+            }
+
+            .mainContainer{
+                background-color: rgb(241, 241, 241);
+                padding: 2rem;
+            }
+            .header{
+                text-align: center;
+            }
+            .headItem1{
+                font-size: 2.2rem;
+                font-weight: bolder;
+                padding: 1rem 1rem;
+            }
+            .headItem2{
+                font-size: .7rem;
+                font-weight: bolder;
+                color: #555;
+            }
+            .navBar{
+                display: flex;
+                padding: 2.5rem 0 0 0;
+                justify-content: center;
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+                
+            }
+            .button{
+                margin: 0 2rem;
+                padding: .5rem 1rem;
+                font-size: .75rem;
+                color: #555;
+                font-weight: bolder;
+                cursor: pointer;
+                position: relative;
+            }
+            .navBar .button:hover{
+                color: #111;
+                
+            }
+            .navBar .button.active{
+                color: #111;
+            }
+            .cardBox{
+                display: none;
+                padding-top: 1rem;
+            }
+            .activeCardBox{
+                display: block;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .card{
+                width: 33.3333%;
+                padding: 1rem;
+
+                box-sizing: border-box;
+            }
+            .cardCont{
+                background-color: rgb(248, 248, 248);
+                padding: 1rem;
+                border-radius: .5rem;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+                
+            }
+            .cardHead{
+                font-weight: bolder;
+                font-size: 1.1rem;
+            }
+            .cardText{
+                margin-top: .75rem;
+                font-size: .75rem;
+                color: #555;
+            }
+            .cardButton{
+                background-color: #2d72c7;
+                display: table;
+                padding: .5rem 1.5rem;
+                margin-top: .75rem;
+                border-radius: 1rem;
+                font-size: .75rem;
+                font-weight: bolder;
+                color: white;
+                cursor: pointer;
+                user-select: none;
+            }
+            .cardButton:hover{
+                background-color: #a8bdd7;
+
+            }
+            
+            .displayNone{
+                display: none;
+            }
+            .activeDiv{
+                display: block;
+            }
+            .underLine{
+                width: 0% ;
+                height: 4px;
+                background-color: #999;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all .2s;
+                
+            }
+            .button:hover .underLine{
+                width: 100%;
+            }
+            .button.active .underLine{
+                background-color: #4fb35b;
+                width: 100%;
+            }
+            
+        </style>
+
+        <div class="mainContainer">
+            <div class="header">
+                <div class="headItem1">
+                    Splashtop Solutions
+                </div>
+                <div class="headItem2">
+                    There's a solutiono for every use, need and industry. Find the one that's right for you.
+                </div>
+            </div>
+            <div class="navBar">
+                <div number="1" class="button active">
+                    By Role
+                    <div class="underLine"></div>
+                </div>
+                
+                <div number="2" class="button">
+                    By Need
+                    <div class="underLine"></div>
+                </div>
+                <div number="3" class="button">
+                    By Industry
+                    <div class="underLine"></div>
+                </div>
+            </div>
+
+                <!-- ----Card Container---- -->
+                <div class="cardBox num1 activeCardBox">
+
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Role
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Role
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Role
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Role
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+
+
+                <!-- ----Card Container---- -->
+                <div class="cardBox num2">
+
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Need
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Need
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Need
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Need
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- ----Card Container---- -->
+                <div class="cardBox num3">
+
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Industry
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Industry
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Industry
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----Each Cards----- -->
+                    <div class="card">
+
+                        <!-- ----Card Content---- -->
+                        <div class="cardCont">
+
+                            <div class="cardHead">
+                                By Industry
+                            </div>
+                            <div class="cardText">
+                                This is text.
+                            </div>
+                            <div class="cardButton">
+                                Button
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+            
+        </div>
+        
+
+        <!-- <img src="../images/splashtop.png"> -->
+
+        <script>
+            // select all the buttons
+            var buttons = document.querySelectorAll('.button')
+            // console.log(buttons)
+            // loop over the buttons
+            for(var item of buttons){
+                // console.log(item)
+                // set an onclick for item
+                item.onclick = activate
+            }
+            
+            // create a function
+            function activate(){
+                // console.log(this)
+                // ------Button border-------
+                // select the currently active button
+                var activeButt = document.querySelector('.active')
+                // console.log(activeButt)
+                // remove active from activeButt
+                activeButt.classList.remove('active')
+                // add active to the newly selected
+                this.classList.add('active')
+
+
+                // --------Remove activeCardBox from current----------
+                // select the curently selected
+                var current = document.querySelector('.activeCardBox')
+                // console.log(current)
+                // remove activeCardBox from current
+                current.classList.remove('activeCardBox')
+
+
+                // -------- add activeCardBox to the newly selected----------
+                // select the number attribute
+                var number = this.getAttribute('number')
+                // console.log(number)
+                // select the newly selected
+                var newlySelected = document.querySelector('.num' + number)
+                // console.log(newlySelected)
+                // add activeCardBox to the newlyselected
+                newlySelected.classList.add('activeCardBox')
+
+
+            }
+        </script>
+    </body>
+</html>

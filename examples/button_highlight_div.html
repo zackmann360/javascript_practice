@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .highlight{
+                border: 2px solid black;
+                display: block;
+            }
+            .active{
+                background-color: orange;
+            }
+            div{
+                display: none;
+            }
+        </style>
+        
+        <button number="1" class="button active">one</button>
+        <button number="2" class="button">two</button>
+        <button number="3" class="button">three</button>
+
+        <div class="myDiv1 highlight">1</div>
+        <div class="myDiv2">2</div>
+        <div class="myDiv3">3</div>
+
+
+        <script>
+            // select the buttons
+            var buttons = document.querySelectorAll('.button')
+            // console.log(buttons)
+            // loop over the buttons
+            for(var item of buttons){
+                // console.log(item)
+                // set an onclick for item
+                item.onclick = activate
+            }
+            // create a function 
+            function activate(){
+                // console.log(this)
+                //set number to  variable
+                var number = this.getAttribute('number')
+                // console.log(number)
+                // set divs to a variable
+                var myDivs = document.querySelector('.myDiv' + number)
+                // console.log(myDivs)
+                // set currently selected div to a variable
+                var current = document.querySelector('.highlight')
+                // console.log(current)
+                // remove highlight from current
+                current.classList.remove('highlight')
+                // add highlight to the newly selected
+                myDivs.classList.add('highlight')
+
+
+                console.log(this)
+                // select the currently active button
+                var activeButton = document.querySelector('.active')
+                console.log(activeButton)
+                activeButton.classList.remove('active')
+                // add active to this
+                this.classList.add('active')
+                
+            }
+        </script>
+    </body>
+</html>
