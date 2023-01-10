@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            :root{
+                --space-1: 1rem;
+                --space-2: 2rem;
+                --space-3: 3rem;
+                --space-half: .5rem;
+                --space-three-forth: .75rem;
+            }
+            html body{
+                padding: 0;
+                margin: 0;
+                color: #fff;
+                background-color: rgb(222, 157, 168);
+                font-family: sans-serif;
+            }
+            img{
+                width: 50%;
+                margin: 5rem auto;
+                display: block;
+            }
+            .mainContainer{
+                background-color: #222;
+                width: 50%;
+                margin: 10rem auto;
+                border-radius: var(--space-three-forth);
+                padding: var(--space-3);
+            }
+            .header{
+                font-size: 2.25rem;
+                font-weight: bold;
+                padding-bottom: var(--space-3);
+                padding-top: var(--space-1);
+            }
+            .input{
+                display: flex;
+                gap: var(--space-1);
+            }
+            input{
+                width: 100%;    
+                border: none;
+                border-bottom: 2px solid white;
+                background-color: transparent;
+                font-size: 1.5rem;
+                padding-top: var(--space-1);
+                padding-bottom: var(--space-1);
+                color: white;
+            }
+            .input button{
+                border-radius: 100%;
+                width: 4rem;
+                background-color: rgb(222, 157, 168);
+                border: none;
+            }
+            button .icon{
+                font-size: 2rem;
+                color: #fff;
+                
+            }
+            .list{
+                padding-top: var(--space-1);
+            }
+            ul{
+                padding-left: 0;
+                padding-right: var(--space-2);
+            }
+            li{
+                margin-top: var(--space-1);
+                list-style-type: none;
+                background-color: #999;
+                width: 100%;
+                padding: var(--space-1);
+                font-size: 1.5rem;
+                border-radius: var(--space-half);
+            }
+            
+        </style>
+
+        <div class="mainContainer">
+            <div class="header">
+                <div class="headText">
+                    TO DO LIST
+                </div>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Add New Task">
+                <button class="button1"><span class="icon">＋</span></button>
+            </div>
+            <div class="list">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        
+        <img src="../images/to-do-list.png">
+
+        <script>
+            var myArray = []
+
+            myArray.push('cars')
+            myArray.push('cats')
+            myArray.push('wood')
+
+            console.log(myArray)
+
+            function render(){
+                // clear the page
+                var ul = document.querySelector('ul')
+                ul.innerHTML = ''
+
+                //create an index 
+                var index = 0
+
+                // loop over myarray
+                for(var item of myArray){
+
+                    //create a button
+                    var deleteButton = docuemnt.createElement('button')
+                    deleteButton.innerHTML = 'delete'
+
+
+                    // create an li 
+                    var li = document.createElement('li')
+                    li.innerHTML = item
+
+                    ul.appendChild(li)
+                    
+                }
+
+            }
+            render()
+
+
+            var addButton = document.querySelector('.button1')
+                addButton.onclick = addLi
+
+                function addLi(){
+                    var input = document.querySelector('input')
+
+                    myArray.push(input.value)
+
+                    input.value = ''
+                    
+                    render()
+                }
+        </script>
+    </body>
+</html>
