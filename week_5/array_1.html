@@ -7,25 +7,21 @@
 
 
         <script>
-            // select the ul
-            var ul = document.querySelector('ul')
-            // console.log(ul)
-            // create an array of numbers
-            var numbers = [1,2,3,4,5]
-            
-            // loop over the numbers
-            for(var item of numbers){
-                // console.log(item)
-                // create an li
-                var li = document.createElement('li')
-                // console.log(li)
-                li.innerHTML = item
-                // append li to ul
-                ul.appendChild(li)
+            //create an array
+            var myArray = [1, 2, 3, 4, 5]
+            //loop over myArray
+            for(var item of myArray){
+                console.log(item)
+                //create an li ele
+                var newLi = document.createElement('li')
+                console.log(newLi)
+                // set li inner html to item
+                newLi.innerHTML = item
+                // append it
+                var ul = document.querySelector('ul')
+                ul.appendChild(newLi)
 
-                
             }
-
         </script>
     </body>
 </html>

@@ -6,30 +6,53 @@
 
 
         <script>
+            // create two objects
             var car1 = {
-                brand : "ford",
-                type : "truck",
-                model : "f150"
+                type : 'sedan',
+                brand : 'lexus',
+                model : 'is300'
             }
-
             var car2 = {
-                brand : "lexus",
-                type : "sedan",
-                model : "is300"
+                type : 'truck',
+                brand : 'ford',
+                model : 'f150'
             }
 
+            // create am array for car1 and car2
             var myArray = [car1, car2]
 
-            var ul = document.querySelector('ul')
-            console.log(ul)
-
+            // loop over myArray
             for(var item of myArray){
                 console.log(item)
+                // create a new li for type
+                var typeDiv = document.createElement('div')
+                typeDiv.innerHTML = item.type
+                console.log(typeDiv)
+
+                // create a new li for brand
+                var brandDiv = document.createElement('div')
+                brandDiv.innerHTML = item.brand
+                console.log(brandDiv)
+
+
+                // create a new li for model
+                var modelDiv = document.createElement('div')
+                modelDiv.innerHTML = item.model
+                console.log(modelDiv)
+
+                // create an li
                 var li = document.createElement('li')
                 console.log(li)
-                li.innerHTML = item.brand + '-' + item.type + '-' + item.model
+                li.appendChild(typeDiv)
+                li.appendChild(brandDiv)
+                li.appendChild(modelDiv)
+
+                // append them
+                var ul = document.querySelector('ul')
                 ul.appendChild(li)
-             }
+
+
+            }
         </script>
     </body>
 </html>
