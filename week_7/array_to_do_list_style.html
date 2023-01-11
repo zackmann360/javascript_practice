@@ -69,13 +69,21 @@
             li{
                 margin-top: var(--space-1);
                 list-style-type: none;
-                background-color: #999;
+                background-color: rgba(0, 0, 100, .2);
                 width: 100%;
                 padding: var(--space-1);
                 font-size: 1.5rem;
                 border-radius: var(--space-half);
+                position: relative;
             }
-            
+            .style{
+                position: absolute;
+                right: 1rem;
+                top: .75rem;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+            }
         </style>
 
         <div class="mainContainer">
@@ -118,13 +126,23 @@
                 for(var item of myArray){
 
                     //create a button
-                    var deleteButton = docuemnt.createElement('button')
-                    deleteButton.innerHTML = 'delete'
-
-
+                    var deleteButton = document.createElement('button')
+                    deleteButton.innerHTML = '🚮'
+                    deleteButton.setAttribute('index', index)
+                    deleteButton.setAttribute('class', 'style')
+                    //set an onclick for deleteButton
+                    deleteButton.onclick = deleteLI
+                    console.log(deleteButton)
+                    
+                    console.log(index)
+                    index = index + 1
+                    
+                    
                     // create an li 
                     var li = document.createElement('li')
                     li.innerHTML = item
+                    // append deleteButton to the li
+                    li.appendChild(deleteButton)
 
                     ul.appendChild(li)
                     
@@ -144,6 +162,14 @@
 
                     input.value = ''
                     
+                    render()
+                }
+
+                function deleteLI(){
+                    var attribute = this.getAttribute('index')
+                    console.log(attribute)
+                    myArray.splice(attribute, 1)
+
                     render()
                 }
         </script>
