@@ -1,177 +1,140 @@
 <!DOCTYPE html>
 <html>
-    <body>
+    <body>  
         <style>
             :root{
+                --space-half:.5rem;
+                --space-three-four: .75rem;
                 --space-1: 1rem;
+                --space-1-half: 1.5rem;
                 --space-2: 2rem;
-                --space-3: 3rem;
-                --space-half: .5rem;
-                --space-three-forth: .75rem;
+                --space-2-half: 2.5rem;
+                --space-3: 3rem
+
             }
             html body{
                 padding: 0;
                 margin: 0;
-                color: #fff;
-                background-color: rgb(222, 157, 168);
-                font-family: sans-serif;
+                background-color: pink;
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
+
             img{
-                width: 50%;
+                width: 75%;
                 margin: 5rem auto;
-                display: block;
+                display: flex;
+
             }
+            /* -----main container----- */
             .mainContainer{
                 background-color: #222;
-                width: 50%;
-                margin: 10rem auto;
-                border-radius: var(--space-three-forth);
                 padding: var(--space-3);
+                margin: var(--space-3);
+                border-radius: 1rem;
             }
-            .header{
-                font-size: 2.25rem;
-                font-weight: bold;
-                padding-bottom: var(--space-3);
-                padding-top: var(--space-1);
-            }
-            .input{
-                display: flex;
-                gap: var(--space-1);
-            }
-            input{
-                width: 100%;    
-                border: none;
-                border-bottom: 2px solid white;
-                background-color: transparent;
-                font-size: 1.5rem;
-                padding-top: var(--space-1);
-                padding-bottom: var(--space-1);
-                color: white;
-            }
-            .input button{
-                border-radius: 100%;
-                width: 4rem;
-                background-color: rgb(222, 157, 168);
-                border: none;
-            }
-            button .icon{
+            .mainContainer .upper .header{
                 font-size: 2rem;
-                color: #fff;
-                
+                padding-bottom: var(--space-2-half);
             }
-            .list{
-                padding-top: var(--space-1);
+            .mainContainer .middle{
+                align-items: center;
+                display: flex;
             }
-            ul{
-                padding-left: 0;
+            .middle .input{
+                flex: 1;
+                width: 100%;
                 padding-right: var(--space-2);
             }
-            li{
-                margin-top: var(--space-1);
-                list-style-type: none;
-                background-color: rgba(0, 0, 100, .2);
+            .middle input{
                 width: 100%;
-                padding: var(--space-1);
+                padding-bottom: var(--space-1);
+                padding-top: var(--space-1);
                 font-size: 1.5rem;
-                border-radius: var(--space-half);
-                position: relative;
-            }
-            .style{
-                position: absolute;
-                right: 1rem;
-                top: .75rem;
-                font-size: 1.5rem;
-                background: none;
+                background-color: transparent;
                 border: none;
+                border-bottom: 2px solid white;
             }
+            .middle .button{
+                padding-bottom: var(--space-1);
+            }
+            .middle button{
+                border-radius: 100%;
+                padding: var(--space-half) var(--space-three-four);
+                background-color: pink;
+                border: none;
+                font-size: 1.5rem;
+                color: white;
+            }
+
         </style>
 
         <div class="mainContainer">
-            <div class="header">
-                <div class="headText">
+            <div class="upper">
+                <div class="header">
                     TO DO LIST
                 </div>
             </div>
-            <div class="input">
-                <input type="text" placeholder="Add New Task">
-                <button class="button1"><span class="icon">＋</span></button>
+            <div class="middle">
+                <div class="input">
+                    <input type="text">
+                </div>
+                <div class="button">
+                    <button>＋</button>
+                </div>
             </div>
-            <div class="list">
-                <ul>
-
-                </ul>
+            <div class="lower">
+                <div class="list">
+                    <ul></ul>
+                </div>
             </div>
         </div>
+
+
         
         <img src="../images/to-do-list.png">
 
         <script>
+            // create an empty array
             var myArray = []
-
-            myArray.push('cars')
-            myArray.push('cats')
-            myArray.push('wood')
-
+            // push some items to the array
+            myArray.push('shower')
+            myArray.push('have fun')
+            myArray.push('sleep')
             console.log(myArray)
 
+
+            // create a render function
             function render(){
-                // clear the page
+                // set the ul and clear it
                 var ul = document.querySelector('ul')
                 ul.innerHTML = ''
-
-                //create an index 
-                var index = 0
-
-                // loop over myarray
+                // loop over myArray
                 for(var item of myArray){
-
-                    //create a button
-                    var deleteButton = document.createElement('button')
-                    deleteButton.innerHTML = '🚮'
-                    deleteButton.setAttribute('index', index)
-                    deleteButton.setAttribute('class', 'style')
-                    //set an onclick for deleteButton
-                    deleteButton.onclick = deleteLI
-                    console.log(deleteButton)
+                    // console.log(item)
                     
-                    console.log(index)
-                    index = index + 1
-                    
-                    
-                    // create an li 
+                    // create li
                     var li = document.createElement('li')
                     li.innerHTML = item
-                    // append deleteButton to the li
-                    li.appendChild(deleteButton)
+                    console.log(li)
 
+                    //append li
                     ul.appendChild(li)
+
                     
                 }
-
             }
             render()
 
+            // add button
+            var addButton = document.querySelector('button')
+            addButton.onclick = addLi
+            console.log(addButton)
 
-            var addButton = document.querySelector('.button1')
-                addButton.onclick = addLi
-
-                function addLi(){
-                    var input = document.querySelector('input')
-
-                    myArray.push(input.value)
-
-                    input.value = ''
-                    
-                    render()
-                }
-
-                function deleteLI(){
-                    var attribute = this.getAttribute('index')
-                    console.log(attribute)
-                    myArray.splice(attribute, 1)
-
-                    render()
-                }
+            function addLi(){
+                console.log('cats')
+            }
+                
         </script>
     </body>
 </html>
