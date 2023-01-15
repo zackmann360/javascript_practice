@@ -52,9 +52,11 @@
                 padding-top: var(--space-1);
                 font-size: 1.5rem;
                 background-color: transparent;
+                color: white;
                 border: none;
                 border-bottom: 2px solid white;
-            }
+                
+            }   
             .middle .button{
                 padding-bottom: var(--space-1);
             }
@@ -65,6 +67,26 @@
                 border: none;
                 font-size: 1.5rem;
                 color: white;
+            }
+            .list ul{
+                margin: 0;
+                padding: 0;
+            }
+            .listItem{
+                background-color: #333;
+                margin-top: var(--space-1);
+                padding: var(--space-1);
+                list-style-type: none;
+                font-size: 1.2rem;
+                border-radius: .25rem;
+                position: relative;
+            }
+            .listButton{
+                position: absolute;
+                right: var(--space-1);
+                background-color: transparent;
+                border: none;
+                font-size: 1.25rem;
             }
 
         </style>
@@ -103,20 +125,38 @@
             myArray.push('sleep')
             console.log(myArray)
 
-
             // create a render function
             function render(){
                 // set the ul and clear it
                 var ul = document.querySelector('ul')
                 ul.innerHTML = ''
+
+                index = 0
                 // loop over myArray
                 for(var item of myArray){
                     // console.log(item)
                     
                     // create li
                     var li = document.createElement('li')
+                    //set an attribute to li
+                    li.setAttribute('class', 'listItem')
                     li.innerHTML = item
                     console.log(li)
+                    //ceate a button for list item
+                    var listButton = document.createElement('button')
+                    console.log(listButton)
+                    listButton.innerHTML = '🗑️'
+                     
+                    // set an attribute for listbutton
+                    listButton.setAttribute('index', index)
+                    listButton.setAttribute('class', 'listButton')
+                    
+                    //set an onclick for listbutton
+                    listButton.onclick = deleteItem
+                    
+                    index = index + 1
+                    // apeend listbutton to the li
+                    li.appendChild(listButton)
 
                     //append li
                     ul.appendChild(li)
@@ -126,6 +166,15 @@
             }
             render()
 
+            function deleteItem(){
+                console.log(this)
+                var attribute = this.getAttribute('index')
+
+                myArray.splice(attribute, 1)
+
+                render()
+            }
+
             // add button
             var addButton = document.querySelector('button')
             addButton.onclick = addLi
@@ -133,6 +182,13 @@
 
             function addLi(){
                 console.log('cats')
+                // select the input
+                var input = document.querySelector('input')
+                if(input.value){
+                    myArray.push(input.value) 
+
+                }
+                render()
             }
                 
         </script>
