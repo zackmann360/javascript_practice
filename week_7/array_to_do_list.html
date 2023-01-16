@@ -33,81 +33,91 @@
         
         
         <script>
+
             // create an empty array
-            var myArry = []
+            var myArray = []
 
-            // push some items to myArray
-            myArry.push('clean')
-            myArry.push('sleep')
+            // push a couple items
+            myArray.push('clean')
+            myArray.push('sleep')
 
-            console.log(myArry)
+            console.log(myArray)
 
-            
-            
-            // create a render function
+            // create a render function 
             function render(){
-                // create an index must be inside the render function
-                var index = 0
-                // select the ul
+                // select the ul and clear it
                 var ul = document.querySelector('ul')
-                // clear the ul 
                 ul.innerHTML = ''
                 
-                //loop over myArray
-                for(var item of myArry){
+                // create an index 
+                var index = 0
+
+                for(var item of myArray){
                     console.log(item)
 
-                    // create an li
+                    //create an li
                     var li = document.createElement('li')
                     li.innerHTML = item
-                    console.log(li)
 
-                    // create a delete button
+                    // create a delete button 
                     var deleteButton = document.createElement('button')
                     deleteButton.innerHTML = 'delete'
                     deleteButton.setAttribute('index', index)
-                    deleteButton.onclick = deleteLI
-                    li.appendChild(deleteButton)
-                    
-                    ul.appendChild(li)
+                    deleteButton.onclick = deleteLi
+
                     index = index + 1
+
+                    // append the button to the li
+                    li.appendChild(deleteButton)
+
+                    ul.appendChild(li)
                 }
+
 
             }
             render()
 
+            // create var for the add item button
             var addButton = document.querySelector('.button1')
             addButton.onclick = addItem
 
+            // create a function for addItem
             function addItem(){
+                console.log('cars')
+
+                // select the input
                 var input = document.querySelector('input')
-
-
                 if(input.value){
-                    myArry.push(input.value)
-
+                    myArray.push(input.value)
+                    
 
                 }
                 input.value = ''
                 render()
             }
 
-            function deleteLI(){
+            // delete li button
+            function deleteLi(){
                 console.log(this)
                 var attribute = this.getAttribute('index')
                 console.log(attribute)
-                myArry.splice(attribute, 1)
+                myArray.splice(attribute, 1)
+
                 render()
             }
 
+            // clear button
             var clearButton = document.querySelector('.button2')
-            clearButton.onclick = clearItems
+            clearButton.onclick = clearList
 
-            function clearItems(){
-                myArry = []
-                console.log('cars')
+            function clearList(){
+                console.log('hello')
+                myArray = []
+
                 render()
             }
+
+
             
         </script>
     </body>
