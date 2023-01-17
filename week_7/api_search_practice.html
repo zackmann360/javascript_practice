@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                background-color: #444;
+            }
+            *{
+                font-family: monospace;
+                color:#fff;
+                box-sizing: border-box;
+            }
+            .container {
+                max-width: 30rem;
+                margin: 10rem auto;
+            }
+            /*---------------------------------------------------------- 
+            -----------------------input group------------------------
+            ----------------------------------------------------------*/
+            .container .input-group {
+                display: flex;
+                gap: 1rem;
+
+            }
+            .container .input-group input {
+                flex: 1;
+                background: none;
+                border: none;
+                border-bottom: 2px solid #999;
+                outline: none;
+                padding: 1rem 0;
+            }
+            .container .input-group input:focus {
+                border-bottom: 2px solid #fff;
+            }
+            .container .input-group button {
+                background-color: #c61919;
+                border: none;
+                padding: 1rem 2rem;
+                font-weight: bolder;
+            }
+            /*---------------------------------------------------------- 
+            -----------------------List Stuff------------------------
+            ----------------------------------------------------------*/
+            .container .list {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+            .container .list .item {
+                width: 33.3333333333%;
+                padding: 1rem;
+            }
+            .container .list .item .gap {
+                background-color: #fff;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+            .container .list .item .text {
+                color: #333;
+                padding: 1rem;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .container .list .item .picture {
+                height: 10rem;
+                
+
+            }
+            .container .list .item .picture img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+
+        <div class="container">
+            <div class="input-group">
+                <input type="text" placeholder="search for an anime">
+                <button>Search</button>
+                
+            </div>
+            <div class="list">
+                <div class="item">
+                    <div class="gap">
+
+                        <div class="picture">
+                            <img src="https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg">
+                        </div>
+                        <div class="text">
+                            Some Text
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="gap">
+
+                        <div class="picture">
+                            <img src="https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg">
+                        </div>
+                        <div class="text">
+                            Some Text
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="gap">
+
+                        <div class="picture">
+                            <img src="https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg">
+                        </div>
+                        <div class="text">
+                            Some Text
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="gap">
+
+                        <div class="picture">
+                            <img src="https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg">
+                        </div>
+                        <div class="text">
+                            Some Text
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // search button
+            var button = document.querySelector('button')
+            button.onclick = onclickSearch
+
+            function onclickSearch(){
+                // console.log('test')
+                // select input
+                var input = document.querySelector('input')
+                if(input.value){
+                    // console.log(input.value)
+                    callAPI(input.value)
+                }
+
+                input.value = ''
+                
+            }
+
+
+
+            var myArray = []
+
+            function render(){
+
+                // console.log('cats')
+
+                // 1. clear
+                var list = document.querySelector('.list')
+                list.innerHTML = ''
+
+                // 2. create
+
+                for(var item of myArray){
+                    // console.log(item)
+                    var container = document.createElement('div')
+                    container.classList.add('item')
+
+                    container.innerHTML = `
+                        <div class="gap">
+                            <div class="picture">
+                                <img src="${item.image}">
+                            </div>
+                            <div class="text">
+                                ${item.text}
+                            </div>
+                        </div>
+                    `
+                    list.append(container)
+                }
+
+
+            }
+            render()
+
+            async function callAPI(arg1) {
+                console.log(arg1)
+                // clear myArray
+                myArray = []
+
+
+                // fetch the api
+                var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
+                var data = await rawData.json()
+                // console.log(data)
+                // console.log(data.data[0])
+                // console.log(firstItem)
+                // console.log(text)
+                // console.log(image)
+
+
+                for(var item of data.data){
+                    // read image and text from an item 
+                    // var firstItem = data.data[0]
+
+                    var image = item.images.jpg.image_url
+                    var text = item.title
+                    // console.log(image, text)
+                    myArray.push({
+                        image: image,
+                        text: text
+                    })
+                }
+
+                render()
+            }
+
+
+        </script>
+    </body>
+</html>
