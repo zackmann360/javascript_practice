@@ -1,196 +1,272 @@
 <!DOCTYPE html>
 <html>
-    <body>  
-        <style>
-            :root{
-                --space-half:.5rem;
-                --space-three-four: .75rem;
-                --space-1: 1rem;
-                --space-1-half: 1.5rem;
-                --space-2: 2rem;
-                --space-2-half: 2.5rem;
-                --space-3: 3rem
 
-            }
-            html body{
-                padding: 0;
-                margin: 0;
-                background-color: pink;
-                color: white;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
+<body>
+    <style>
+        :root {
+            --space-two-five: .25rem;
+            --space-half: .5rem;
+            --space-three_four: .75rem;
+            --space-1: 1rem;
+            --space-1-half: 1.5rem;
+            --space-2: 2rem;
+            --space-3: 3rem;
+            --text-normal: 1.25rem;
+            --color-blue-dark: #191a31;
+            --button-size: 3rem;
+        }
 
-            img{
-                width: 75%;
-                margin: 5rem auto;
-                display: flex;
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            color: white;
+            background-color: #444;
+            background-color: pink;
+        }
 
-            }
-            /* -----main container----- */
-            .mainContainer{
-                background-color: #222;
-                padding: var(--space-3);
-                margin: var(--space-3);
-                border-radius: 1rem;
-            }
-            .mainContainer .upper .header{
-                font-size: 2rem;
-                padding-bottom: var(--space-2-half);
-            }
-            .mainContainer .middle{
-                align-items: center;
-                display: flex;
-            }
-            .middle .input{
-                flex: 1;
-                width: 100%;
-                padding-right: var(--space-2);
-            }
-            .middle input{
-                width: 100%;
-                padding-bottom: var(--space-1);
-                padding-top: var(--space-1);
-                font-size: 1.5rem;
-                background-color: transparent;
-                color: white;
-                border: none;
-                border-bottom: 2px solid white;
-                
-            }   
-            .middle .button{
-                padding-bottom: var(--space-1);
-            }
-            .middle button{
-                border-radius: 100%;
-                padding: var(--space-half) var(--space-three-four);
-                background-color: pink;
-                border: none;
-                font-size: 1.5rem;
-                color: white;
-            }
-            .list ul{
-                margin: 0;
-                padding: 0;
-            }
-            .listItem{
-                background-color: #333;
-                margin-top: var(--space-1);
-                padding: var(--space-1);
-                list-style-type: none;
-                font-size: 1.2rem;
-                border-radius: .25rem;
-                position: relative;
-            }
-            .listButton{
-                position: absolute;
-                right: var(--space-1);
-                background-color: transparent;
-                border: none;
-                font-size: 1.25rem;
-            }
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-        </style>
+        }
 
-        <div class="mainContainer">
-            <div class="upper">
-                <div class="header">
+        img {
+            width: 75%;
+            margin-top: 2rem;
+        }
+
+        .mainContainer {
+            background-color: #10101c;
+            width: 75%;
+            margin: 10rem auto;
+            padding: var(--space-2) var(--space-1-half);
+            border-radius: .5rem;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+        }
+
+        .header .text {
+            font-size: 1.5rem;
+        }
+
+        .middle {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .button button {
+            border-radius: 100%;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: pink;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255, .5);
+        }
+
+        .button button:hover {
+            background-color: rgb(254, 216, 222);
+        }
+
+        .input {
+            width: 100%;
+            margin-right: var(--space-three_four);
+
+        }
+
+        .input input {
+            width: 100%;
+            font-size: var(--text-normal);
+            padding: var(--space-1) 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #aaa;
+            color: white;
+            cursor: pointer;
+        }
+
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid #fff;
+        }
+
+        .list {
+            padding-top: var(--space-two-five);
+        }
+
+        .list ul {
+            padding: 0;
+
+        }
+
+        .listItem {
+            list-style: none;
+            background-color: #191a31;
+            font-size: 1.25rem;
+            margin-bottom: var(--space-1);
+            padding: var(--space-three_four);
+            position: relative;
+            border-radius: .5rem;
+        }
+
+
+        .list {
+            ccbackground-color: red;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+
+        }
+
+        .list .item {
+            display: flex;
+            background-color: var(--color-blue-dark);
+            padding: var(--space-1);
+            align-items: center;
+        }
+
+        .list .item .text {
+            flex: 1;
+            font-size: var(--text-normal);
+        }
+
+        .list .item .button {
+            display: flex;
+            border-radius: 100%;
+            width: var(--button-size);
+            height: var(--button-size);
+        }
+
+        .list .item .button .icon {
+            margin: auto;
+        }
+
+        .list .item .button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+    </style>
+
+    <div class="mainContainer">
+
+        <div class="upper">
+            <div class="header">
+                <div class="text">
                     TO DO LIST
-                </div>
-            </div>
-            <div class="middle">
-                <div class="input">
-                    <input type="text">
-                </div>
-                <div class="button">
-                    <button>＋</button>
-                </div>
-            </div>
-            <div class="lower">
-                <div class="list">
-                    <ul></ul>
                 </div>
             </div>
         </div>
 
+        <div class="middle">
+            <div class="input">
+                <input type="text" placeholder="Add New Task">
+            </div>
+            <div class="button">
+                <button class="addButton">＋</button>
+            </div>
+        </div>
 
-        
-        <img src="../images/to-do-list.png">
+        <div class="list">
+            
+            <div class="item">
+                <div class="text">some text</div>
+                <div class="button">
+                    <div class="icon">🗑️</div>
+                </div>
+            </div>
 
-        <script>
-            // create an empty array
-            var myArray = []
-            // push some items to the array
-            myArray.push('shower')
-            myArray.push('have fun')
-            myArray.push('sleep')
-            console.log(myArray)
 
-            // create a render function
-            function render(){
-                // set the ul and clear it
-                var ul = document.querySelector('ul')
-                ul.innerHTML = ''
+            <div class="item">
+                <div class="text">
+                    some text
+                </div>
+                <div class="button">
+                    <div class="icon">🗑️</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                index = 0
-                // loop over myArray
-                for(var item of myArray){
-                    // console.log(item)
-                    
-                    // create li
-                    var li = document.createElement('li')
-                    //set an attribute to li
-                    li.setAttribute('class', 'listItem')
-                    li.innerHTML = item
-                    console.log(li)
-                    //ceate a button for list item
-                    var listButton = document.createElement('button')
-                    console.log(listButton)
-                    listButton.innerHTML = '🗑️'
-                     
-                    // set an attribute for listbutton
-                    listButton.setAttribute('index', index)
-                    listButton.setAttribute('class', 'listButton')
-                    
-                    //set an onclick for listbutton
-                    listButton.onclick = deleteItem
-                    
-                    index = index + 1
-                    // apeend listbutton to the li
-                    li.appendChild(listButton)
 
-                    //append li
-                    ul.appendChild(li)
 
-                    
-                }
-            }
-            render()
 
-            function deleteItem(){
-                console.log(this)
-                var attribute = this.getAttribute('index')
 
-                myArray.splice(attribute, 1)
+    <!-- <img src="../images/to-do-list.png"> -->
 
-                render()
-            }
+    <script>
+        var myArray = []
+        // push two items
+        myArray.push('newPen')
+        myArray.push('wake up on time')
 
-            // add button
-            var addButton = document.querySelector('button')
-            addButton.onclick = addLi
-            console.log(addButton)
+        function render(){
+            // 1. clear
+            var list = document.querySelector('.list')
+            list.innerHTML = ''
+            console.log(list)
 
-            function addLi(){
-                console.log('cats')
-                // select the input
-                var input = document.querySelector('input')
-                if(input.value){
-                    myArray.push(input.value) 
+            var index = 0
 
-                }
-                render()
-            }
+            // 2. create 
+            for(var item of myArray){
+                console.log(item)
+
+                // create a cpntiner
+                var newItem = document.createElement('div')
+                newItem.classList.add('item')
+
+                // pust your stuff in that conatiner
+                newItem.innerHTML = `
+                    <div class="text">${item}</div>
+                    <div class="button" index="${index}">
+                        <div class="icon">🗑️</div>
+                    </div>
+                `
+                // append it to the main list
+                list.append(newItem)
+
+                // select the button
+                var button = newItem.querySelector('.button')
+                button.onclick = onclickDeleteButton
+
+                console.log(button)
                 
-        </script>
-    </body>
+                index = index + 1
+            }
+
+        }
+        render()
+
+        function onclickDeleteButton(){
+            var index = this.getAttribute('index')
+            console.log('index', index)
+
+
+            myArray.splice(index, 1)
+
+            render()
+        }
+
+        // select add button
+        var addButton = document.querySelector('.addButton')
+        // set an onclick for add button
+        addButton.onclick = onclickAddButton
+
+        function onclickAddButton(){
+            // get the input
+            var input = document.querySelector('input')
+            console.log('cats', input.value)
+            if(input.value){
+                myArray.push(input.value)
+            }
+
+            input.value = ''
+
+            render()
+        }
+    </script>
+</body>
+
 </html>
