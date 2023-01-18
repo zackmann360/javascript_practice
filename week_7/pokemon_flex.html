@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    </head>
+
+<body>
+    <style>
+        :root {
+            --space-half: .5rem;
+            --space-three-four: .75rem;
+            --space-1: 1rem;
+            --space-one-half: 1.5rem
+        }
+        *{
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .pokemonContainer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: var(--space-1);
+        }
+
+        /* ------------------------------------------------------- 
+        | responsive stuff
+        |------------------------------------------------------- */
+        
+        .pokemonContainer .card {
+            text-align: center;
+            width: 100%;
+            
+        }
+        
+        @media (min-width: 400px) {
+            .pokemonContainer .card {
+                width: 50%;
+            }
+        }
+        @media (min-width: 700px) {
+            .pokemonContainer .card {
+                width: 33.333333%;
+            }
+        }
+        @media (min-width: 1000px) {
+            .pokemonContainer .card {
+                width: 16.6666667%;
+            }
+        }
+
+        .pokemonContainer .card .image {
+            width: 100%;
+            padding: var(--space-1);
+            position: relative;
+            ccbackground-color: red;
+        }
+        .pokemonContainer .card .image .overlay {
+            background-color: #fff;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        } 
+
+        .pokemonContainer .card .image:hover .overlay {
+            opacity: .25;
+        }
+
+        .pokemonContainer .card .text {
+            font-weight: bolder;
+            padding-top: var(--space-half);
+            color: #444;
+        }
+        .pokemonContainer .card .text:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="pokemonContainer">
+        <div class="card">
+            <div class="image">
+                <img src="../images/pokemon_images/pikachu.jpeg">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">Pikachu</div>
+
+        </div>
+        <div class="card">
+            <div class="image">
+                <div class="overlay"></div>
+                <img src="../images/pokemon_images/evvee.jpeg">
+            </div>
+            <div class="text">Eevee</div>
+
+        </div>
+        <div class="card">
+            <div class="image">
+                <div class="overlay"></div>
+                <img src="../images/pokemon_images/gengar.jpeg">
+            </div>
+            <div class="text">Gengar</div>
+
+        </div>
+        <div class="card">
+            <div class="image">
+                <div class="overlay"></div>
+                <img src="../images/pokemon_images/charizard.gif">
+            </div>
+            <div class="text">Charizard</div>
+
+        </div>
+        <div class="card">
+            <div class="image">
+                <div class="overlay"></div>
+                <img src="../images/pokemon_images/piplup.gif">
+            </div>
+            <div class="text">Piplup</div>
+
+        </div>
+        <div class="card">
+            <div class="image">
+                <div class="overlay"></div>
+                <img src="../images/pokemon_images/snorlax.gif">
+            </div>
+            <div class="text">Snorlax</div>
+
+        </div>
+    </div>
+
+
+    <!-- <img src="../images/pokemon_flex.png"> -->
+
+</body>
+
+</html>

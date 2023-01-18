@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        :root {
+            --color-background: #312f36;
+            --color-text: #9f97a8;
+            --color-buttons: #655f6b;
+            --color-buttons-hover: #837f88;
+            --color-white: #e5e3e6;
+        }
+
+        html,
+        body {
+            background: var(--color-background);
+            font-family: monospace;
+            color: var(--color-text);
+            font-size: 1.25rem;
+        }
+
+        img {
+            width: 100%;
+            margin-top: 10rem;
+        }
+
+        .mainContainer {
+            max-width: 30rem;
+            margin: 5rem auto;
+        }
+
+        .mainContainer .text {
+            padding-bottom: 1rem;
+        }
+
+        .mainContainer .buttons {
+            display: flex;
+            border: 3px solid var(--color-buttons);
+            justify-content: center;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .buttons .button {
+            border-right: 4px solid var(--color-buttons);
+            padding: .5rem 2rem;
+            flex: 1;
+            cursor: pointer;
+
+        }
+
+        .buttons .button:hover {
+            background-color: var(--color-buttons-hover);
+
+        }
+
+        .buttons .button:last-child {
+            border-right: none;
+        }
+
+        .buttons .button.active {
+            background: var(--color-buttons);
+            color: var(--color-white);
+        }
+    </style>
+
+
+    <div class="mainContainer">
+        <div class="text">
+            Numbers of colors:
+        </div>
+        <div class="buttons">
+            <div class="button active">Any</div>
+            <div class="button">Max</div>
+            <div class="button">Min</div>
+            <div class="button">Exact</div>
+        </div>
+    </div>
+
+    <!-- <img src="../images/render_links.png"> -->
+
+    <script>
+    // data
+    // create an array of strings
+    var myArray = ['Any', 'Max', 'Min', 'Exact']
+    var selectedIndex = 0
+
+
+    // program
+    function onclickSelected(){
+        // console.log('test', this)
+        var thisIndex = this.getAttribute('index')
+        selectedIndex = thisIndex
+        // console.log(thisIndex)
+
+        render()
+    }
+    
+    // render
+    function render(){
+        // clear
+        var buttonsDiv = document.querySelector('.buttons')
+        buttonsDiv.innerHTML = ''
+
+        var index = 0
+
+        // create
+        for(var item of myArray){
+            // console.log(item)
+            // create a newDiv 
+            var newDiv = document.createElement('div')
+            newDiv.innerHTML = item
+            newDiv.classList.add('button')
+            newDiv.setAttribute('index', index)
+            newDiv.onclick = onclickSelected
+            
+            if(index == selectedIndex){
+                newDiv.classList.add('active')
+            }
+
+            // console.log(newDiv)
+            index = index + 1
+
+            // append it
+            buttonsDiv.append(newDiv)
+        }
+        
+    }
+    render()
+
+        
+    </script>
+</body>
+
+</html>
