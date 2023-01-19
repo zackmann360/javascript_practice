@@ -3,184 +3,100 @@
 
 <body>
     <style>
-        :root {
-            --space-two-five: .25rem;
-            --space-half: .5rem;
-            --space-three_four: .75rem;
+        :root{
             --space-1: 1rem;
             --space-1-half: 1.5rem;
             --space-2: 2rem;
-            --space-3: 3rem;
-            --text-normal: 1.25rem;
-            --color-blue-dark: #191a31;
-            --button-size: 3rem;
+            --space-4: 4rem;
+            --space-half: .5rem
         }
-
-        html,
-        body {
-            padding: 0;
+        html, body {
             margin: 0;
+            padding: 0;
+            background: #e3a0a8;
+            font-family: sans-serif;
             color: white;
-            background-color: #444;
-            background-color: pink;
         }
 
-        * {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-        }
-
-        img {
-            width: 75%;
-            margin-top: 2rem;
-        }
-
-        .mainContainer {
-            background-color: #10101c;
-            width: 75%;
+        .container {
+            background: #0f0f1c;
+            width: 1000px;
             margin: 10rem auto;
-            padding: var(--space-2) var(--space-1-half);
-            border-radius: .5rem;
+            padding: var(--space-4);
+            border-radius: var(--space-1);
+        }
+
+        /* -------------header--------------- */
+        .container .header{
+            font-weight: bolder;
+            font-size: 2rem;
+            padding-bottom: var(--space-2);
+        }
+
+        /* ------------input/button------------ */
+        .container .input-group {
             display: flex;
-            flex-direction: column;
-            gap: var(--space-1);
         }
-
-        .header .text {
-            font-size: 1.5rem;
-        }
-
-        .middle {
-            display: flex;
-            align-items: baseline;
-        }
-
-        .button button {
+        .container .input-group button{
             border-radius: 100%;
-            width: 2.5rem;
-            height: 2.5rem;
-            background-color: pink;
+            height: var(--space-4);
+            width: var(--space-4);
+            font-size: 2rem;
+            color: #fff;
             border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px rgb(255, 255, 255, .5);
+            background-color: #e3a0a8;
         }
-
-        .button button:hover {
-            background-color: rgb(254, 216, 222);
-        }
-
-        .input {
-            width: 100%;
-            margin-right: var(--space-three_four);
-
-        }
-
-        .input input {
-            width: 100%;
-            font-size: var(--text-normal);
-            padding: var(--space-1) 0;
+        .container .input-group input {
+            flex: 1;
+            margin-right: var(--space-1);
             background-color: transparent;
             border: none;
-            border-bottom: 2px solid #aaa;
-            color: white;
-            cursor: pointer;
-        }
-
-        input:focus {
+            border-bottom: 4px solid #ccc;
             outline: none;
-            border-bottom: 2px solid #fff;
-        }
-
-        .list {
-            padding-top: var(--space-two-five);
-        }
-
-        .list ul {
-            padding: 0;
-
-        }
-
-        .listItem {
-            list-style: none;
-            background-color: #191a31;
-            font-size: 1.25rem;
-            margin-bottom: var(--space-1);
-            padding: var(--space-three_four);
-            position: relative;
-            border-radius: .5rem;
+            color: white;
+            font-size: 1.5rem;
         }
 
 
-        .list {
-            ccbackground-color: red;
+        /* -----------items------------------- */
+        .container .list .item {
             display: flex;
-            flex-direction: column;
-            gap: var(--space-1);
-
-        }
-
-        .list .item {
-            display: flex;
-            background-color: var(--color-blue-dark);
-            padding: var(--space-1);
             align-items: center;
+            justify-content: center;
+            background-color: #191a31;
+            padding: var(--space-1);
+            margin: var(--space-1-half) 0;
+            border-radius: var(--space-half);
+            font-size: 1.5rem;
         }
-
-        .list .item .text {
+        .container .list .item .text {
             flex: 1;
-            font-size: var(--text-normal);
-        }
-
-        .list .item .button {
-            display: flex;
-            border-radius: 100%;
-            width: var(--button-size);
-            height: var(--button-size);
-        }
-
-        .list .item .button .icon {
-            margin: auto;
-        }
-
-        .list .item .button:hover {
-            background-color: rgba(255, 255, 255, 0.25);
         }
     </style>
+ 
 
-    <div class="mainContainer">
 
-        <div class="upper">
-            <div class="header">
-                <div class="text">
-                    TO DO LIST
-                </div>
-            </div>
+    <div class="container">
+        <div class="header">
+            TO DO LIST
         </div>
-
-        <div class="middle">
-            <div class="input">
-                <input type="text" placeholder="Add New Task">
-            </div>
-            <div class="button">
-                <button class="addButton">＋</button>
-            </div>
+        <div class="input-group">
+            <input type="text" placeholder="Add Your Task">
+            <button>＋</button>
         </div>
 
         <div class="list">
-            
             <div class="item">
-                <div class="text">some text</div>
+                <div class="text">
+                    build a race car
+                </div>
                 <div class="button">
                     <div class="icon">🗑️</div>
                 </div>
             </div>
-
-
             <div class="item">
                 <div class="text">
-                    some text
+                    build a race car
                 </div>
                 <div class="button">
                     <div class="icon">🗑️</div>
@@ -190,82 +106,79 @@
     </div>
 
 
-
-
-
     <!-- <img src="../images/to-do-list.png"> -->
 
     <script>
+
+        // create an empty array
         var myArray = []
-        // push two items
-        myArray.push('newPen')
-        myArray.push('wake up on time')
+
+        // push a couple item to the array
+        myArray.push('cats')
+        myArray.push('cars')
+
+        console.log(myArray)
 
         function render(){
-            // 1. clear
+            // 1. clear 
             var list = document.querySelector('.list')
             list.innerHTML = ''
-            console.log(list)
 
             var index = 0
 
-            // 2. create 
+            // 2. create
             for(var item of myArray){
                 console.log(item)
-
-                // create a cpntiner
-                var newItem = document.createElement('div')
-                newItem.classList.add('item')
-
-                // pust your stuff in that conatiner
-                newItem.innerHTML = `
-                    <div class="text">${item}</div>
-                    <div class="button" index="${index}">
-                        <div class="icon">🗑️</div>
-                    </div>
+                // create a newDiv
+                var newDiv = document.createElement('div')
+                newDiv.innerHTML = `
+                <div class="text">
+                    ${item}
+                </div>
+                <div class="button">
+                    <div class="icon">🗑️</div>
+                </div>
                 `
-                // append it to the main list
-                list.append(newItem)
+                newDiv.classList.add('item')
 
-                // select the button
-                var button = newItem.querySelector('.button')
-                button.onclick = onclickDeleteButton
+                // apend the newDiv
+                list.append(newDiv)
 
-                console.log(button)
-                
+                // select the delete button, where is the delete button?
+                var deleteButton = newDiv.querySelector('.button')
+                deleteButton.setAttribute('index', index)
                 index = index + 1
+                deleteButton.onclick = onclickDelete
+                
             }
-
         }
         render()
 
-        function onclickDeleteButton(){
-            var index = this.getAttribute('index')
-            console.log('index', index)
-
-
-            myArray.splice(index, 1)
+        function onclickDelete(){
+            console.log('test', this)
+            var attribute = this.getAttribute('index')
+            myArray.splice(attribute, 1)
 
             render()
         }
 
-        // select add button
-        var addButton = document.querySelector('.addButton')
-        // set an onclick for add button
-        addButton.onclick = onclickAddButton
+        // select the add button
+        var addItem = document.querySelector('button')
+        addItem.onclick = onclickAdd
 
-        function onclickAddButton(){
-            // get the input
+        function onclickAdd(){
+            console.log('cats')
+            // select the input
             var input = document.querySelector('input')
-            console.log('cats', input.value)
             if(input.value){
                 myArray.push(input.value)
             }
 
             input.value = ''
-
             render()
         }
+
+        
     </script>
 </body>
 
