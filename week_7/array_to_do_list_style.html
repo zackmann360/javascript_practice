@@ -3,14 +3,16 @@
 
 <body>
     <style>
-        :root{
+        :root {
             --space-1: 1rem;
             --space-1-half: 1.5rem;
             --space-2: 2rem;
             --space-4: 4rem;
             --space-half: .5rem
         }
-        html, body {
+
+        html,
+        body {
             margin: 0;
             padding: 0;
             background: #e3a0a8;
@@ -27,7 +29,7 @@
         }
 
         /* -------------header--------------- */
-        .container .header{
+        .container .header {
             font-weight: bolder;
             font-size: 2rem;
             padding-bottom: var(--space-2);
@@ -37,7 +39,8 @@
         .container .input-group {
             display: flex;
         }
-        .container .input-group button{
+
+        .container .input-group button {
             border-radius: 100%;
             height: var(--space-4);
             width: var(--space-4);
@@ -45,16 +48,26 @@
             color: #fff;
             border: none;
             background-color: #e3a0a8;
+            box-shadow: 0px 0px 10px rgb(252, 252, 252);
+            cursor: pointer;
         }
+        .container .input-group button:hover {
+            background-color: rgb(212, 135, 149);
+        }
+
         .container .input-group input {
             flex: 1;
             margin-right: var(--space-1);
             background-color: transparent;
             border: none;
-            border-bottom: 4px solid #ccc;
+            border-bottom: 4px solid #aaa;
             outline: none;
             color: white;
             font-size: 1.5rem;
+        }
+        .container .input-group input:focus {
+            border-bottom: 4px solid #fff;
+            
         }
 
 
@@ -69,11 +82,15 @@
             border-radius: var(--space-half);
             font-size: 1.5rem;
         }
+        
         .container .list .item .text {
             flex: 1;
         }
+        .container .list .item .hover {
+            cursor: pointer;
+        }
     </style>
- 
+
 
 
     <div class="container">
@@ -113,61 +130,66 @@
         // create an empty array
         var myArray = []
 
-        // push a couple item to the array
-        myArray.push('cats')
-        myArray.push('cars')
+        // push a couple items to myArray
+        // myArray.push('cats')
+        // myArray.push('cars')
 
         console.log(myArray)
 
-        function render(){
-            // 1. clear 
+        function render() {
+            // clear
             var list = document.querySelector('.list')
             list.innerHTML = ''
 
             var index = 0
 
-            // 2. create
-            for(var item of myArray){
-                console.log(item)
-                // create a newDiv
+            // create
+            for (var item of myArray) {
+
                 var newDiv = document.createElement('div')
-                newDiv.innerHTML = `
-                <div class="text">
-                    ${item}
-                </div>
-                <div class="button">
-                    <div class="icon">🗑️</div>
-                </div>
-                `
                 newDiv.classList.add('item')
+                newDiv.innerHTML = `
+                    <div class="text">
+                        ${item}
+                    </div>
+                    <div class="button">
+                        <div class="icon">🗑️</div>
+                    </div>
+                 `
 
-                // apend the newDiv
-                list.append(newDiv)
+                 // append the newDiv
+                 list.append(newDiv)
 
-                // select the delete button, where is the delete button?
-                var deleteButton = newDiv.querySelector('.button')
-                deleteButton.setAttribute('index', index)
-                index = index + 1
-                deleteButton.onclick = onclickDelete
-                
+                 // select the delete button
+                 // delete button is inside the newDiv
+                 var deleteButton = newDiv.querySelector('.button')
+                 // set an index attribute for deleteButton
+                 deleteButton.setAttribute('index', index)
+                 deleteButton.classList.add('hover')
+                 deleteButton.onclick = onclickDelete
+
+                 index = index + 1
             }
+
+
         }
         render()
 
         function onclickDelete(){
             console.log('test', this)
-            var attribute = this.getAttribute('index')
-            myArray.splice(attribute, 1)
+            var indexAttribute = this.getAttribute('index')
+            myArray.splice(indexAttribute, 1)
 
             render()
-        }
+        }   
 
         // select the add button
-        var addItem = document.querySelector('button')
-        addItem.onclick = onclickAdd
+        var addButton = document.querySelector('button')
+        addButton.onclick = onclickAdd
 
+        // create the add function
         function onclickAdd(){
-            console.log('cats')
+            console.log('test', this)
             // select the input
             var input = document.querySelector('input')
             if(input.value){
@@ -175,10 +197,10 @@
             }
 
             input.value = ''
+
             render()
         }
 
-        
     </script>
 </body>
 
