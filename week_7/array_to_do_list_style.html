@@ -19,7 +19,10 @@
             font-family: sans-serif;
             color: white;
         }
-
+        
+        body{
+            padding: var(--space-2);
+        }
         .container {
             background: #0f0f1c;
             max-width: 1000px;
@@ -89,8 +92,12 @@
             flex: 1;
         }
 
-        .container .list .item .hover {
+        .container .list .item .button {
+            opacity: 0.75;
             cursor: pointer;
+        }
+        .container .list .item .button:hover {
+            opacity: 1;
         }
     </style>
 
@@ -160,7 +167,6 @@
 
                 // select the delete button
                 var deleteButton = newItemDiv.querySelector('.button')
-                deleteButton.classList.add('hover')
                 deleteButton.setAttribute('index', index)
                 deleteButton.onclick = onclickDelete
 
