@@ -5,6 +5,7 @@
     <style>
         :root {
             --space-half: .5rem;
+            --space-three-four: .75rem;
             --space-1: 1rem;
             --space-2: 2rem;
         }
@@ -33,6 +34,34 @@
         }
         .container .input-group .input-Button {
             display: flex;
+            gap: .5rem;
+        }
+        .container .input-group .input-Button .searchButton {
+            background-color: #222;
+            color: white;
+            box-shadow: 0px 0px 5px #777;
+            cursor: pointer;
+            border: none;
+            border-radius: .5rem;
+            padding: var(--space-1);
+            font-weight: bolder;
+        }
+        .container .input-group .input-Button .searchButton:hover {
+            background-color: rgba(112, 244, 158, 0.5);
+        }
+        .container .input-group .input-Button .clearButton {
+            cursor: pointer;
+            box-shadow: 0px 0px 5px #777;
+            border: none;
+            border-radius: .5rem;
+            background: red;
+            padding: var(--space-half) var(--space-1);
+            color: #fff;
+            font-weight: bolder;
+            
+        }
+        .container .input-group .input-Button .clearButton:hover {
+            background-color: transparent;
         }
 
         .container .input-group input {
@@ -142,80 +171,84 @@
 
     <script>
 
-        // select the search button
-        var searchButton = document.querySelector('.searchButton')
-        // console.log(searchButton)
-        searchButton.onclick = onclickSearch
+        // create an empty array
+        var myArray = []
 
-        // create the function for search button
-        function onclickSearch(){
-            // console.log('test')
-            // select the input
-            var input = document.querySelector('input')
-            if(input.value){
-                callApi(input.value)
-            }
+        // select the clear button
+        var clearButton = document.querySelector('.clearButton')
+        clearButton.onclick = onclickClear
+
+        function onclickClear(){
+            console.log('test')
+            myArray = []
 
             render()
         }
 
-        // create an empty array
-        var myArray = []
+        // select the searchButton
+        var searchButton = document.querySelector('.searchButton')
+        searchButton.onclick = onclickSearch
+
+        function onclickSearch(){
+            console.log('test')
+            // select the input
+            var input = document.querySelector('input')
+
+            if(input.value){
+                callApi(input.value)
+            }
+
+            input.value = ''
+            render()
+        }
 
         // create a render function
         function render(){
-            // clear
-            var list = document.querySelector('.list')
-            list.innerHTML = ''
-
-            
-            // create
-            // loop over myArray
+            // clear 
+            var myList = document.querySelector('.list')
+            myList.innerHTML = ''
+            //create
             for(var item of myArray){
-
+                console.log(item)
                 var newContainer = document.createElement('div')
                 newContainer.classList.add('item')
                 newContainer.innerHTML = `
                 <div class="image">
                     <img
-                    src="${item.image}">
-                    </div>
-                    <div class="text">
-                        ${item.text}
-                        </div>
-                        `
-                        
-                        list.append(newContainer)
-                        
+                        src="${item.image}">
+                </div>
+                <div class="text">
+                    ${item.title}
+                </div>
+                `
+
+                myList.append(newContainer)
             }
         }
         render()
 
-        // create a callApi function 
+        // create a async callApi funcitn
         async function callApi(arg1){
-            // clear the array
-            myArray = []
-
-            // select the raw data
-            var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
-            // set rawData to data
+            // get the raw data
+            var rawData = await fetch(` https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
+            // get the real data from raw data
             var data = await rawData.json()
-            // console.log(data)
-            // loop over the data
+            // since this is an array of objects loop over it
+
             for(var item of data.data){
-                // console.log(item)
-                // get the item image
+                // get the image
                 var image = item.images.jpg.image_url
-                // get the image title
-                var text = item.title
-                // push items to myArray
+                // get the title
+                var title = item.title
+
                 myArray.push({
                     image: image,
-                    text: text
+                    title: title
+                    
                 })
                 // console.log(myArray)
-            }
 
+            }
             render()
         }
         callApi()
