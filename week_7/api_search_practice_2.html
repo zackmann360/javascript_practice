@@ -3,200 +3,185 @@
     <body>
         <style>
             :root{
-                --marg-1: 1rem;
-                --gap-1: 1rem;
-                --padd-half: 0.5rem;
-                --padd-1: 1rem;
-                --pad-1-half: 1.5rem;
+                --space-1: 1rem;
+                --space-half:0.5rem;
+
+            }
+            *{
+                font-size: 1.1rem;
             }
             html, body{
                 padding: 0;
                 margin: 0;
                 background: #444;
-                font-family: sans-serif;
-            }
-            *{
-                color: white;
-                font-size: 1.1rem;
+                color: #fff;
             }
             .mainContainer {
-                max-width: 1000px;
+                background-color: #222;
+                max-width: 800px;
                 margin: 5rem auto;
+                padding: var(--space-1);
+                border-radius: .5rem;
             }
-            /* ---------------input group------------------- */
-
-            .mainContainer .inputGroup {
+            .mainContainer .inputGroup{
                 display: flex;
-                padding: var(--padd-1) 0;
-                ccbackground-color: red;
+            }
+            .mainContainer .inputGroup .button button {
+                border-radius: .25rem;
+                border: none;
+                background-color: #999;
+                color: #fff;
+                cursor: pointer;
             }
             .mainContainer .inputGroup .input {
                 flex: 1;
+                margin-right: 1rem;
             }
             .mainContainer .inputGroup .input input {
-                width: 98%;
-                height: 100%;
+                width: 100%;
                 border: none;
-                outline: none;
                 background-color: transparent;
-                border-bottom: 2px solid #999;
+                border-bottom: 1px solid #aaa;
+                outline: none;
             }
-            .mainContainer .inputGroup .button button {
+            .mainContainer .inputGroup .input input:focus {
+                border-bottom: 1px solid #fff;
             }
-            .mainContainer .inputGroup .button button {
-                border-radius: 0.5rem;
-                height: 100%;
-                border: none;
-                background-color: #222;
-                padding: var(--padd-half) var(--padd-1);
-            }
-
-            /* ---------------grid------------------- */
-
             .mainContainer .gridContainer {
+                margin-top: 1rem;
                 display: grid;
+                gap: 1rem;
                 grid-template-columns: auto auto auto auto;
-                gap: var(--gap-1);
-                padding-top: var(--padd-1);
             }
             .mainContainer .gridContainer .item {
-                background-color: #777;
-                border-radius: 0.5rem;
+                background-color: #555;
+                border-radius: .25rem;
                 overflow: hidden;
-            }
-            .mainContainer .gridContainer .item .text {
-                text-align: center;
-                padding: var(--padd-1);
+                cursor: pointer;
             }
             .mainContainer .gridContainer .item .image img {
                 width: 100%;
             }
+            .mainContainer .gridContainer .item .text {
+                text-align: center;
+                padding: var(--space-half);
+            }
         </style>
-
-    <div class="mainContainer">
-        <div class="inputGroup">
-            <div class="input">
-                <input type="text" placeholder="Enter an Anime">
+        <div class="mainContainer">
+            <div class="inputGroup">
+                <div class="input">
+                    <input type="text" placeholder="Enter an Anime">
+                </div>
+                <div class="button">
+                    <button>Search</button>
+                </div>
             </div>
-            <div class="button">
-                <button>Search</button>
+            <div class="gridContainer">
+                <div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div><div class="item">
+                    <div class="image">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        some text
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="gridContainer">
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
-                </div>
-                <div class="text">
-                    Some Text
-                </div>
-            </div>
-        </div>
-    </div>
+        <script>
 
-    </body>
+            var searchButton = document.querySelector('.button')
+            searchButton.onclick = onclickSearch
 
-    <script>
+            function onclickSearch(){
+                var input = document.querySelector('input')
+                console.log('test')
+                if(input.value){
+                    callApi(input.value)
+                }
+                render()
+            }
 
-        // Search button
-        var searchButton = document.querySelector('button')
-        searchButton.onclick = onclickSearch
-        function onclickSearch(){
-            console.log('searchButton')
-            var input = document.querySelector('input')
-            if(input.value){
-                callApi(input.value)
+            var myArray = []
+
+            function render(){
+                var grid = document.querySelector('.gridContainer')
+                console.log(grid)
+                grid.innerHTML = ''
+
+                for(var item of myArray){
+                    var newContainer = document.createElement('div')
+                    console.log(newContainer)
+                    newContainer.classList.add('item')
+                    newContainer.innerHTML = `
+                    <div class="image">
+                        <img src="${item.image}" alt="">
+                    </div>
+                    <div class="text">
+                        ${item.text}
+                    </div>
+                    `
+
+                    grid.appendChild(newContainer)
+                }
             }
             render()
-        }
 
-        // create an empy array
-        var myArray = []
-        // render function
-        function render(){
-            // clear 
-            var grid = document.querySelector('.gridContainer')
-            grid.innerHTML = ''
-            // create
-            for(var item of myArray){
-                var newContainer = document.createElement('div')
-                newContainer.classList.add('item')
-                newContainer.innerHTML = `
-                <div class="image">
-                    <img src="${item.image}">
-                </div>
-                <div class="text">
-                    ${item.text}
-                </div>
-                `
-                grid.append(newContainer)
-            }
-
-        }
-        render()
-
-        async function callApi(arg1) {
-                myArray = []
-
-
-                // fetch the api
+            async function callApi(arg1){
                 var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
                 var data = await rawData.json()
 
-
                 for(var item of data.data){
-
                     var image = item.images.jpg.image_url
+                    console.log(image)
                     var text = item.title
-                    // console.log(image, text)
+
                     myArray.push({
                         image: image,
                         text: text
                     })
                 }
-
                 render()
             }
             callApi()
-    </script>
+        </script>
+    </body>
 </html>
