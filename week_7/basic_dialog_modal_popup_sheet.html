@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        :root{
+            --space-half: 0.5rem;
+            --space-1: 1rem;
+            --space-2: 2rem;
+            --border: 1px solid rgba(255, 255, 255, 0.25); 
+            --color-primary: rgb(83, 214, 83);
+            --color-primary-hover: rgb(178, 241, 178);
+            --color-grey: #888;
+            --color-grey-hover: #ccc;
+        }
+        html, body{
+            padding: 0;
+            margin: 0;
+            background-color: #222;
+            font-family: sans-serif;
+            font-size: larger;
+        }
+        *{
+            font-size: 1.1rem;
+            color: white;
+        }
+        img{
+            width: 75%;
+            display: block;
+            ccmargin: 5rem auto;
+            position: absolute;
+        }
+        
+        .dialog {
+            max-width: 25rem;
+            background-color: #444;
+            border-radius: .5rem;
+            position: fixed;
+            width: 100%;
+            top: 1rem;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%) translateY(0%) scale(0) rotate(360deg);
+            /* hide motal without display none so we can transition */
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.75s;
+        }
+        .dialog.show{
+            transform: translateX(-50%) translateY(0%) scale(1) rotate(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        
+        /* -------------title--------------- */
+        .dialog .titleBar {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-1);
+            border-bottom: var(--border);
+        }
+        .dialog .titleBar .title {
+            
+        }
+        .dialog .titleBar .close  {
+            position: relative;
+            width: var(--space-2);
+        }
+        .dialog .titleBar .close .icon {
+            transform: rotate(45deg) translateX(-50%) translateY(-50%);
+            position: absolute;
+            font-size: 2rem;
+            top: 50%;
+            left: 50%;
+            font-weight: 100;
+        }
+        /* -------------content--------------- */
+        .dialog .content {
+            padding: var(--space-1);
+            border-bottom: var(--border);
+            color: #999;
+        }
+
+        /* -------------actions--------------- */
+        .dialog .actions {
+            padding: var(--space-1);
+            display: flex;
+            justify-content: flex-end;
+            gap: var(--space-half);
+            
+        }
+        
+        /* -------------overlay--------------- */
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100% ;
+            height: 100%;
+            /* display: none; */
+            /* hide motal without display none so we can transition */
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s;
+        }
+        .dialog.show ~ .overlay{
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        
+        
+        /* -------------action component--------------- */
+        .action {
+            border: none;
+            background-color: var(--color-grey);
+            padding: var(--space-half);
+            border-radius: var(--space-half);
+        }
+        .action:hover {
+            background-color: var(--color-grey-hover);
+        }
+        .action.primary {
+            background-color: var(--color-primary)
+        }
+        .action.primary:hover {
+            
+            background-color: var(--color-primary-hover)
+        }
+
+        .slowMe img{
+            width: 100%;
+        }
+        
+        </style>
+    <div class="dialog">
+        <div class="titleBar">
+            <div class="title">Modal title</div>
+            <div class="close">
+                <div class="icon">+</div>
+            </div>
+        </div>
+        <div class="content">
+            You clicked my Motal
+        </div>
+        <div class="actions">
+            <button class="closeButton action">Close</button>
+            <button class="action primary">Save Changes</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    
+    <button class="openButton action primary">Open</button>
+
+    <div class="slowMe">
+        <x-gif src="https://i.pinimg.com/originals/fb/e7/11/fbe71166c47f641d03d22c80eb49cc99.gif"></x-gif>
+    </div>
+
+
+    <script>
+
+        // select the open button
+        var openButton = document.querySelector('.openButton')
+        openButton.onclick = onclickOpen
+
+        var dialog = document.querySelector('.dialog')
+
+        function onclickOpen(){
+            // console.log('test')
+            dialog.classList.toggle('show')
+
+        }
+
+        // select the close button
+        var closeButton = document.querySelector('.closeButton')
+        closeButton.onclick = onclickClose
+
+        function onclickClose(){
+            console.log('test', this)
+            dialog.classList.remove('show')
+        }
+        
+    </script>
+</body>
+</html>

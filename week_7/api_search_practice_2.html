@@ -1,139 +1,91 @@
 <!DOCTYPE html>
 <html>
+    <body>
+        <style>
+            :root{
+                --marg-1: 1rem;
+                --gap-1: 1rem;
+                --padd-half: 0.5rem;
+                --padd-1: 1rem;
+                --pad-1-half: 1.5rem;
+            }
+            html, body{
+                padding: 0;
+                margin: 0;
+                background: #444;
+                font-family: sans-serif;
+            }
+            *{
+                color: white;
+                font-size: 1.1rem;
+            }
+            .mainContainer {
+                max-width: 1000px;
+                margin: 5rem auto;
+            }
+            /* ---------------input group------------------- */
 
-<body>
-    <style>
-        :root {
-            --space-half: .5rem;
-            --space-three-four: .75rem;
-            --space-1: 1rem;
-            --space-2: 2rem;
-        }
+            .mainContainer .inputGroup {
+                display: flex;
+                padding: var(--padd-1) 0;
+                ccbackground-color: red;
+            }
+            .mainContainer .inputGroup .input {
+                flex: 1;
+            }
+            .mainContainer .inputGroup .input input {
+                width: 98%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 2px solid #999;
+            }
+            .mainContainer .inputGroup .button button {
+            }
+            .mainContainer .inputGroup .button button {
+                border-radius: 0.5rem;
+                height: 100%;
+                border: none;
+                background-color: #222;
+                padding: var(--padd-half) var(--padd-1);
+            }
 
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            background-color: #444;
+            /* ---------------grid------------------- */
 
-        }
+            .mainContainer .gridContainer {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: var(--gap-1);
+                padding-top: var(--padd-1);
+            }
+            .mainContainer .gridContainer .item {
+                background-color: #777;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+            .mainContainer .gridContainer .item .text {
+                text-align: center;
+                padding: var(--padd-1);
+            }
+            .mainContainer .gridContainer .item .image img {
+                width: 100%;
+            }
+        </style>
 
-        .container {
-            margin: 5rem auto;
-            max-width: 768px;
-            ccbackground-color: orange;
-        }
-
-        /* ----------Input Group------------- */
-
-        .container .input-group {
-            display: flex;
-            ccwidth: 100%;
-            ccbackground-color: green;
-            padding-bottom: var(--space-1);
-        }
-        .container .input-group .input-Button {
-            display: flex;
-            gap: .5rem;
-        }
-        .container .input-group .input-Button .searchButton {
-            background-color: #222;
-            color: white;
-            box-shadow: 0px 0px 5px #777;
-            cursor: pointer;
-            border: none;
-            border-radius: .5rem;
-            padding: var(--space-1);
-            font-weight: bolder;
-        }
-        .container .input-group .input-Button .searchButton:hover {
-            background-color: rgba(112, 244, 158, 0.5);
-        }
-        .container .input-group .input-Button .clearButton {
-            cursor: pointer;
-            box-shadow: 0px 0px 5px #777;
-            border: none;
-            border-radius: .5rem;
-            background: red;
-            padding: var(--space-half) var(--space-1);
-            color: #fff;
-            font-weight: bolder;
-            
-        }
-        .container .input-group .input-Button .clearButton:hover {
-            background-color: transparent;
-        }
-
-        .container .input-group input {
-            background: none;
-            border: none;
-            border-bottom: 2px solid #999;
-            outline: none;
-            margin-right: var(--space-1);
-            font-size: 1.5rem;
-            color: #fff;
-        }
-
-        .container .input-group input:focus {
-            border-bottom: 2px solid #fff;
-        }
-
-        .container .input-group input {
-            width: 100%;
-        }
-
-        /* ----------List / Item------------- */
-        .container .list {
-            display: flex;
-            gap: var(--space-1);
-            text-align: center;
-            ccbackground-color: green;
-            flex-wrap: wrap;
-            margin-right: -1rem; 
-        }
-
-        .container .list .item {
-            border-radius: var(--space-1);
-            overflow: hidden;
-            background-color: #fff;
-            cursor: pointer;
-            ccbackground-color: red;
-            width: calc(25% - 1rem);
-        }
-        .container .list .item .image {
-            height: 15rem;
-        }
-        
-        .container .list .item .image img {
-            width: 100%;
-            height: 100%;
-            /* fit an image to a specific size */
-            object-fit: cover;
-        }
-        
-        .container .list .item .text {
-            padding: var(--space-1);
-            /* Turn text into dots if its too long */
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    </style>
-
-    <div class="container">
-        <div class="input-group">
-            <input type="text" placeholder="Enter an Anime name">
-            <div class="input-Button">
-                <button class="searchButton">Search</button>
-                <button class="clearButton">clear</button>
+    <div class="mainContainer">
+        <div class="inputGroup">
+            <div class="input">
+                <input type="text" placeholder="Enter an Anime">
+            </div>
+            <div class="button">
+                <button>Search</button>
             </div>
         </div>
-
-        <div class="list">
+        <div class="gridContainer">
             <div class="item">
                 <div class="image">
-                    <img
-                        src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
                 </div>
                 <div class="text">
                     Some Text
@@ -141,8 +93,7 @@
             </div>
             <div class="item">
                 <div class="image">
-                    <img
-                        src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
                 </div>
                 <div class="text">
                     Some Text
@@ -150,8 +101,7 @@
             </div>
             <div class="item">
                 <div class="image">
-                    <img
-                        src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
                 </div>
                 <div class="text">
                     Some Text
@@ -159,8 +109,23 @@
             </div>
             <div class="item">
                 <div class="image">
-                    <img
-                        src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
+                </div>
+                <div class="text">
+                    Some Text
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
+                </div>
+                <div class="text">
+                    Some Text
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png">
                 </div>
                 <div class="text">
                     Some Text
@@ -169,91 +134,69 @@
         </div>
     </div>
 
+    </body>
+
     <script>
 
-        // create an empty array
-        var myArray = []
-
-        // select the clear button
-        var clearButton = document.querySelector('.clearButton')
-        clearButton.onclick = onclickClear
-
-        function onclickClear(){
-            console.log('test')
-            myArray = []
-
-            render()
-        }
-
-        // select the searchButton
-        var searchButton = document.querySelector('.searchButton')
+        // Search button
+        var searchButton = document.querySelector('button')
         searchButton.onclick = onclickSearch
-
         function onclickSearch(){
-            console.log('test')
-            // select the input
+            console.log('searchButton')
             var input = document.querySelector('input')
-
             if(input.value){
                 callApi(input.value)
             }
-
-            input.value = ''
             render()
         }
 
-        // create a render function
+        // create an empy array
+        var myArray = []
+        // render function
         function render(){
             // clear 
-            var myList = document.querySelector('.list')
-            myList.innerHTML = ''
-            //create
+            var grid = document.querySelector('.gridContainer')
+            grid.innerHTML = ''
+            // create
             for(var item of myArray){
-                console.log(item)
                 var newContainer = document.createElement('div')
                 newContainer.classList.add('item')
                 newContainer.innerHTML = `
                 <div class="image">
-                    <img
-                        src="${item.image}">
+                    <img src="${item.image}">
                 </div>
                 <div class="text">
-                    ${item.title}
+                    ${item.text}
                 </div>
                 `
-
-                myList.append(newContainer)
+                grid.append(newContainer)
             }
+
         }
         render()
 
-        // create a async callApi funcitn
-        async function callApi(arg1){
-            // get the raw data
-            var rawData = await fetch(` https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
-            // get the real data from raw data
-            var data = await rawData.json()
-            // since this is an array of objects loop over it
+        async function callApi(arg1) {
+                myArray = []
 
-            for(var item of data.data){
-                // get the image
-                var image = item.images.jpg.image_url
-                // get the title
-                var title = item.title
 
-                myArray.push({
-                    image: image,
-                    title: title
-                    
-                })
-                // console.log(myArray)
+                // fetch the api
+                var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
+                var data = await rawData.json()
 
+
+                for(var item of data.data){
+
+                    var image = item.images.jpg.image_url
+                    var text = item.title
+                    // console.log(image, text)
+                    myArray.push({
+                        image: image,
+                        text: text
+                    })
+                }
+
+                render()
             }
-            render()
-        }
-        callApi()
-
+            callApi()
     </script>
-</body>
-
 </html>

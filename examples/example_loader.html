@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        .padding{
+            padding: 2rem;
+
+        }
+        .loader{
+            width: 5rem;
+            height: 5rem;
+            border: 0.75rem solid #222;
+            border-right: 0.75rem solid transparent;
+            border-radius: 100%;
+            animation: spin 1s infinite;
+        }
+
+        @keyframes spin {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    
+    <div class="padding">
+        <div class="loader">
+
+        </div>
+    </div>
+</body>
+</html>
