@@ -43,6 +43,7 @@
                 background-color: transparent;
                 border-bottom: 1px solid #aaa;
                 outline: none;
+                color: white;
             }
             .mainContainer .inputGroup .input input:focus {
                 border-bottom: 1px solid #fff;
@@ -61,16 +62,23 @@
             }
             .mainContainer .gridContainer .item .image img {
                 width: 100%;
+                height: 15rem;
             }
             .mainContainer .gridContainer .item .text {
                 text-align: center;
                 padding: var(--space-half);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                background-color: red;
+                height: 100%;
+                width: 100%;
             }
         </style>
         <div class="mainContainer">
             <div class="inputGroup">
                 <div class="input">
-                    <input type="text" placeholder="Enter an Anime">
+                    <input value="hunter" type="text" placeholder="Enter an Anime">
                 </div>
                 <div class="button">
                     <button>Search</button>
