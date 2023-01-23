@@ -25,6 +25,7 @@
             }
             .mainContainer .inputGroup{
                 display: flex;
+                gap: 1rem;
             }
             .mainContainer .inputGroup .button button {
                 border-radius: .25rem;
@@ -35,7 +36,6 @@
             }
             .mainContainer .inputGroup .input {
                 flex: 1;
-                margin-right: 1rem;
             }
             .mainContainer .inputGroup .input input {
                 width: 100%;
@@ -52,7 +52,8 @@
                 margin-top: 1rem;
                 display: grid;
                 gap: 1rem;
-                grid-template-columns: auto auto auto auto;
+                grid-template-columns:  auto auto auto auto;
+
             }
             .mainContainer .gridContainer .item {
                 background-color: #555;
@@ -70,7 +71,6 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-                background-color: red;
                 height: 100%;
                 width: 100%;
             }
@@ -99,7 +99,7 @@
                     </div>
                     <div class="text">
                         some text
-                    </div>
+                    </div>   
                 </div>
                 <div class="item">
                     <div class="image">
@@ -138,7 +138,6 @@
 
             var searchButton = document.querySelector('.button')
             searchButton.onclick = onclickSearch
-
             function onclickSearch(){
                 var input = document.querySelector('input')
                 console.log('test')
