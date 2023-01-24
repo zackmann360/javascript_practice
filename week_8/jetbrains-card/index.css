@@ -1,0 +1,57 @@
+:root{
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-containers: 2.1rem;
+}
+.html, body{
+    background-color: #444;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.bg-1 {
+    background-image: linear-gradient(rgb(2, 2, 84), rgb(122, 153, 239));
+    margin: 5rem auto;
+    width: 60%;
+    border-radius: 1.5rem;
+}
+.bg-1 .bg-2 {
+    background-image: url(../../images/Grid_practice_2/space-on-premises-bg.png);
+    min-height: 30rem;
+    
+    
+    background-repeat: no-repeat;
+}
+.bg-1 .bg-2 .text-container {
+    max-width: 50%;
+    padding: var(--space-2);
+}
+.bg-1 .bg-2 .text-container .icon img {
+    display: inline-block;
+    height: 5rem;
+}
+.bg-1 .bg-2 .text-container .title {
+    font-size: 3.5rem;
+    padding-top: var(--space-containers);
+    font-weight: bold;
+}
+.bg-1 .bg-2 .text-container .text {
+    padding-top: var(--space-containers);
+    font-size: 1.4rem;
+}
+.bg-1 .bg-2 .text-container .button {
+    padding-top: var(--space-containers);
+}
+.bg-1 .bg-2 .text-container .button button {
+    font-size: 1.4rem;
+    padding: var(--space-1) var(--space-2);
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.bg-1 .bg-2 .text-container .button button:hover {
+    background-color: rgb(0, 0, 254);
+    color: white;
+}

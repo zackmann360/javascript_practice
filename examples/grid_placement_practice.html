@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            html, body{
+                background-color: #999;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                background-color: #555;
+                margin: 2rem;
+                display: inline-grid;
+                grid-template-columns: 40rem 10rem;
+                grid-template-rows: 20rem;
+                gap: 1rem;
+            }
+            .container .item1 {
+                background-color: red;
+            }
+            .container .items {
+                background-color: green;
+                display: grid;
+                gap: 1rem;
+            }
+            .container .items .item2 {
+                
+                background-color: silver;
+            }
+            .container .items .item3 {
+                background-color: purple;
+            }
+        </style>
+        
+        <div class="container">
+            <div class="item1">1</div>
+            <div class="items">
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+            </div>
+        </div>
+    </body>
+</html>

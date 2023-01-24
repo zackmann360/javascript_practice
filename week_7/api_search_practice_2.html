@@ -1,164 +1,226 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <style>
-            :root{
-                --space-1: 1rem;
-                --space-half:0.5rem;
 
-            }
-            *{
-                font-size: 1.1rem;
-            }
-            html, body{
-                padding: 0;
-                margin: 0;
-                background: #444;
-                color: #fff;
-            }
-            .mainContainer {
-                background-color: #222;
-                max-width: 800px;
-                margin: 5rem auto;
-                padding: var(--space-1);
-                border-radius: .5rem;
-            }
-            .mainContainer .inputGroup{
-                display: flex;
-                gap: 1rem;
-            }
-            .mainContainer .inputGroup .button button {
-                border-radius: .25rem;
-                border: none;
-                background-color: #999;
-                color: #fff;
-                cursor: pointer;
-            }
-            .mainContainer .inputGroup .input {
-                flex: 1;
-            }
-            .mainContainer .inputGroup .input input {
-                width: 100%;
-                border: none;
-                background-color: transparent;
-                border-bottom: 1px solid #aaa;
-                outline: none;
-                color: white;
-            }
-            .mainContainer .inputGroup .input input:focus {
-                border-bottom: 1px solid #fff;
-            }
-            .mainContainer .gridContainer {
-                margin-top: 1rem;
-                display: grid;
-                gap: 1rem;
-                grid-template-columns:  auto auto auto auto;
+<body>
+    <style>
+        :root {
+            --space-1: 1rem;
+            --space-half: 0.5rem;
 
-            }
-            .mainContainer .gridContainer .item {
-                background-color: #555;
-                border-radius: .25rem;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            .mainContainer .gridContainer .item .image img {
-                width: 100%;
-                height: 15rem;
-            }
-            .mainContainer .gridContainer .item .text {
-                text-align: center;
-                padding: var(--space-half);
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                height: 100%;
-                width: 100%;
-            }
-        </style>
-        <div class="mainContainer">
-            <div class="inputGroup">
-                <div class="input">
-                    <input value="hunter" type="text" placeholder="Enter an Anime">
+        }
+
+        * {
+            font-size: 1.1rem;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            background: #444;
+            color: #fff;
+        }
+
+        .mainContainer {
+            background-color: #222;
+            max-width: 800px;
+            margin: 5rem auto;
+            padding: var(--space-1);
+            border-radius: .5rem;
+        }
+
+        .mainContainer .inputGroup {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mainContainer .inputGroup .button button {
+            border-radius: .25rem;
+            border: none;
+            background-color: #999;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .mainContainer .inputGroup .input {
+            flex: 1;
+        }
+
+        .mainContainer .inputGroup .input input {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid #aaa;
+            outline: none;
+            color: white;
+        }
+
+        .mainContainer .inputGroup .input input:focus {
+            border-bottom: 1px solid #fff;
+        }
+
+        .mainContainer .gridContainer {
+            margin-top: 1rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: auto auto auto auto;
+
+        }
+
+        .mainContainer .gridContainer .item {
+            background-color: #555;
+            border-radius: .25rem;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .mainContainer .gridContainer .item .image img {
+            width: 100%;
+            height: 15rem;
+        }
+
+        .mainContainer .gridContainer .item .text {
+            text-align: center;
+            padding: var(--space-half);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="inputs">
+            <input type="text" placeholder="search">
+            <button>search</button>
+        </div>
+        <div class="results">
+            <div class="result">
+                <div class="image">
+                    <img src="https://placekitten.com/200" alt="iauerfg">
                 </div>
-                <div class="button">
-                    <button>Search</button>
+                <div class="text">what ever</div>   
+            </div>
+            <div class="result">
+                <div class="image">
+                    <img src="https://placekitten.com/200" alt="">
+                </div>
+                <div class="text">what ever</div>
+            </div>
+            <div class="result">
+                <div class="image">
+                    <img src="https://placekitten.com/200" alt="">
+                </div>
+                <div class="text">what ever</div>
+            </div>
+            <div class="result">
+                <div class="image">
+                    <img src="https://placekitten.com/200" alt="">
+                </div>
+                <div class="text">what ever</div>
+            </div>
+            <div class="result">
+                <div class="image">
+                    <img src="https://placekitten.com/200" alt="">
+                </div>
+                <div class="text">what ever</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContainer">
+        <div class="inputGroup">
+            <div class="input">
+                <input value="hunter" type="text" placeholder="Enter an Anime">
+            </div>
+            <div class="button">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="gridContainer">
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
+                </div>
+                <div class="text">
+                    some text
                 </div>
             </div>
-            <div class="gridContainer">
-                <div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
                 </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>   
+                <div class="text">
+                    some text
                 </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
                 </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>
+                <div class="text">
+                    some text
                 </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>
-                </div><div class="item">
-                    <div class="image">
-                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        some text
-                    </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
+                </div>
+                <div class="text">
+                    some text
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
+                </div>
+                <div class="text">
+                    some text
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                        alt="">
+                </div>
+                <div class="text">
+                    some text
                 </div>
             </div>
         </div>
-        <script>
+    </div>
+    <script>
 
-            var searchButton = document.querySelector('.button')
-            searchButton.onclick = onclickSearch
-            function onclickSearch(){
-                var input = document.querySelector('input')
-                console.log('test')
-                if(input.value){
-                    callApi(input.value)
-                }
-                render()
+        var searchButton = document.querySelector('.button')
+        searchButton.onclick = onclickSearch
+        function onclickSearch() {
+            var input = document.querySelector('input')
+            console.log('test')
+            if (input.value) {
+                callApi(input.value)
             }
+            render()
+        }
 
-            var myArray = []
+        var myArray = []
 
-            function render(){
-                var grid = document.querySelector('.gridContainer')
-                console.log(grid)
-                grid.innerHTML = ''
+        function render() {
+            var grid = document.querySelector('.gridContainer')
+            console.log(grid)
+            grid.innerHTML = ''
 
-                for(var item of myArray){
-                    var newContainer = document.createElement('div')
-                    console.log(newContainer)
-                    newContainer.classList.add('item')
-                    newContainer.innerHTML = `
+            for (var item of myArray) {
+                var newContainer = document.createElement('div')
+                console.log(newContainer)
+                newContainer.classList.add('item')
+                newContainer.innerHTML = `
                     <div class="image">
                         <img src="${item.image}" alt="">
                     </div>
@@ -167,28 +229,29 @@
                     </div>
                     `
 
-                    grid.appendChild(newContainer)
-                }
+                grid.appendChild(newContainer)
+            }
+        }
+        render()
+
+        async function callApi(arg1) {
+            var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
+            var data = await rawData.json()
+
+            for (var item of data.data) {
+                var image = item.images.jpg.image_url
+                console.log(image)
+                var text = item.title
+
+                myArray.push({
+                    image: image,
+                    text: text
+                })
             }
             render()
+        }
+        callApi()
+    </script>
+</body>
 
-            async function callApi(arg1){
-                var rawData = await fetch(`https://api.jikan.moe/v4/anime?q=${arg1}&sfw`)
-                var data = await rawData.json()
-
-                for(var item of data.data){
-                    var image = item.images.jpg.image_url
-                    console.log(image)
-                    var text = item.title
-
-                    myArray.push({
-                        image: image,
-                        text: text
-                    })
-                }
-                render()
-            }
-            callApi()
-        </script>
-    </body>
 </html>
