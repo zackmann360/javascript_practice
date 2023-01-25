@@ -1,0 +1,64 @@
+:root{
+    --color-green-dark: rgb(0, 124, 128);
+    --color-green-light: rgb(109, 246, 180);
+    --color-white: #fff;
+    --color-black: #222;
+    --color-light-black: #333;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    /* --size-half: 0.5rem; */
+    --size-1: 1.5rem;
+    --size-2: 1.2rem;
+    --image-mountains: url(../../images/background_adobe_card.jpg);
+}
+html, body {
+    background-color: #444;
+    font-family: sans-serif;
+    color: var(--color-black);
+    padding: var(--space-1);
+    background: linear-gradient(to right, var(--color-green-dark), var(--color-green-light));
+    font-size: 11px;
+}
+body {
+    display: flex;
+}
+.card {
+    display: flex;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+}
+
+.card .bg-1 {
+    background-image: url(../../images/background_adobe_card.jpg);
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+}
+
+.card .textbox {
+    background-color: #fff;
+    display: flex;
+    padding: 0 calc(var(--space-1)*5);
+}
+.card .textbox .center {
+    margin: auto;
+}
+
+
+.card .textbox .text {
+    font-size: var(--size-1);
+}
+
+/*------------------------------------------------------
+| utility
+------------------------------------------------------*/
+.space-t-1 {
+    margin-top: var(--space-1);
+}
+.text-light {
+    color: var(--color-light-black);
+}
+.text-bold {
+    font-weight: bolder;
+}

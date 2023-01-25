@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            :root{
+                --space-1: 1rem;
+                --space-2: 2rem;
+                --font-small: 1.2rem;
+                --font-large: 2.5rem;
+            }
+            html, body{
+                background-color: #444;
+                padding: 0;
+                margin: 0;
+                color: #555;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(77, 112, 96);
+            }
+            .container {
+                margin: 5rem auto;
+                width: 75%;
+                border-radius: .6rem;
+                overflow: hidden;
+                border: 1.5px solid #eaeaea;
+            }
+            .container .image {
+                background-image: url(../images/background_adobe_card.jpg);
+                background-size: cover;
+                width: 100%;
+                height: 30rem;
+
+            }
+            .container .image img {
+                width: 100%;
+                height: 30rem;
+            }
+            .container .textBox {
+                background-color: #fff;
+                padding: var(--space-2);
+            }
+            .container .textBox .text1 {
+                font-size: var(--font-small);
+                padding-top: var(--space-1);
+                color: #888;
+            }
+            .container .textBox .text2 {
+                font-size: var(--font-large);
+                font-weight: bolder;
+                padding-top: var(--space-1);
+                padding-bottom: var(--space-1);
+            }
+
+        </style>
+
+        <div class="container">
+            <div class="image"></div>
+            <div class="textBox">
+                <div class="text1">ILLUSTRATION · HOW-TO</div>
+                <div class="text2">Jing Zhang's home is where the art is.</div>
+            </div>
+        </div>
+        
+        <!-- <img src="../images/art.png" width="100%"> -->
+    </body>
+</html>
