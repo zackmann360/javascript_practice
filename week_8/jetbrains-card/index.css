@@ -3,12 +3,13 @@
     --space-2: 2rem;
     --space-containers: 2.1rem;
 }
-.html, body{
+html, body{
     background-color: #444;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: #fff;
+    font-size: 10px;
 }
 
 .bg-1 {
@@ -19,9 +20,8 @@
 }
 .bg-1 .bg-2 {
     background-image: url(../../images/Grid_practice_2/space-on-premises-bg.png);
-    min-height: 30rem;
-    
-    
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-1 .bg-2 .text-container {

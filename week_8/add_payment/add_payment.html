@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <style>
+        :root {
+            --space-2-5: 0.25rem;
+            --space-half: 0.5rem;
+            --space-1: 1rem;
+            --space-1-half: 1.5rem;
+            --space-2: 2rem;
+            --icon-size: 4rem;
+            --border-radius: 0.25rem;
+            --button-padding: .5rem 1rem;
+            --color-white: #fff;
+            --color-red: rgb(226, 60, 60);
+            --color-purple: #636ae9;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            background: #444;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .container .addItem {
+            margin-top: 1rem;
+        }
+
+        .container {
+            background-color: #111;
+            margin: 5px auto;
+            max-width: 80%;
+            padding: var(--space-1-half);
+        }
+
+        .container .header {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            padding-bottom: var(--space-1);
+        }
+
+        .container .save-payment {
+            font-weight: bolder;
+            color: #636ae9;
+            padding-bottom: var(--space-1);
+        }
+
+        .container .row .icon img {
+            width: var(--icon-size);
+            padding-right: var(--space-1);
+        }
+
+        .container .row {
+            display: flex;
+            background-color: #222;
+            border-radius: .2rem;
+            padding: var(--space-1);
+            align-items: center;
+            margin-top: var(--space-1);
+        }
+
+        .container .row .actions {
+            gap: var(--space-half);
+            display: flex;
+        }
+
+        .container .rows .cardInformation {
+            flex: 1;
+        }
+
+        .container .rows .cardInformation .cardNumber {
+            padding-bottom: .2rem;
+        }
+
+        .container .rows .cardInformation .expiration {
+            font-size: .8rem;
+            color: #888;
+        }
+
+        .container .rows .cardInformation .cardNumber .primary {
+            background-color: #5bc169;
+            color: white;
+            border: none;
+            border-radius: .2rem;
+            cursor: pointer;
+        }
+
+        .container .rows .cardInformation .cardNumber .primary:hover {
+            background-color: #008a12;
+        }
+
+        /* -------------------------------------------------------------------
+        | utility 
+        --------------------------------------------------------------------*/
+        .space-t-1half {
+            margin-top: var(--space-1-half);
+        }
+
+        /* -------------------------------------------------------------------
+        | button 
+        --------------------------------------------------------------------*/
+        .button {
+            display: flex;
+            align-items: center;
+            gap: var(--space-half);
+            padding: var(--space-2-5) var(--space-half);
+            border: none;
+            background-color: transparent;
+            color: var(--color-white);
+            border: 1px solid var(--color-white);
+            border-radius: var(--border-radius);
+        }
+
+        /* red */
+        .button.red {
+            color: var(--color-red);
+            border-color: var(--color-red);
+        }
+
+        /* primary */
+        .button.primary {
+            background-color: var(--color-purple);
+            border: none;
+        }
+    </style>
+
+    <div class="container">
+        <div class="header">Payment Details</div>
+        <div class="save-payment">Your saved payments methods</div>
+        <div class="rows">
+            <template class="templateRow">
+                <div class="row">
+                    <div class="icon">
+                        <img src="../../images/icons/mastercard.png" alt="">
+                    </div>
+                    <div class="cardInformation">
+                        <div class="cardNumber">**** **** **** 4298 <button class="primary">primary</button></div>
+                        <div class="expiration">Expirtation 09/26</div>
+                    </div>
+                    <div class="actions">
+                        <button class="button">
+                            <div class="icon material-symbols-outlined">edit_note</div>
+                            <div class="text">Edit</div>
+                        </button>
+                        <button class="button red">
+                            <div class="icon material-symbols-outlined">delete_forever</div>
+                            <div class="text">Delete</div>
+                        </button>
+                    </div>
+                </div>
+            </template>
+            
+        </div>
+            
+
+        <div class="space-t-1half">
+            <button class="button primary addPayment">
+                <div class="icon material-symbols-outlined">add</div>
+                <div class="text">Add new payment method</div>
+            </button>
+        </div>
+    </div>
+
+    <img src="../../images/Add_ a_payment.png " width="80%" alt="">
+    <script src="./script.js"></script>
+</body>
+
+</html>
