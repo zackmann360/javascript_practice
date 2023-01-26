@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="pageTitle">BLOGS</div>
+        <div class="navBar">
+            <div class="link active">
+                All</div>
+            <div class="link">
+                Community</div>
+            <div class="link">
+                Horizon</div>
+            <div class="link">
+                Motorsport</div>
+            <div class="link">
+                Gameplay</div>
+        </div>
+        <div class="cardContainer">
+            <template class="myTemplate">
+                <div class="card">
+                    <div class="image">
+                        <img src="https://www.cnet.com/a/img/resize/5cded6494c6ecfb6aad831adf5483377d5a3ca87/hub/2021/11/03/0f437d6c-d6b6-4b95-8291-d9b0c4b54d1d/forzahorizon5-launch-preview-04-16x9-wm.jpg?auto=webp&fit=crop&height=675&width=1200" alt="">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="contentContainer">
+                        <div class="date">25 January 2023</div>
+                        <div class="header">FORZA MOTORSPORTS DRIVING EXPERIECE IS A an amazing thing</div>
+                        <div class="content">Discover how wer'er building cara, tracks and audio to take full advantage of xbox sries x play online too</div>
+                        <div class="button">
+                            <button>
+                                <div class="text">View Article</div>
+                                <div class="icon">＞</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <img src="../../images/forza.png" width="100%">
+
+    <script>
+        var template = document.querySelector('.myTemplate')
+        var loopTime = 9
+        
+
+        // how to manually loop  number of times
+        var myArray = [1, 2, 3 ,4 ,5 ,6, 7, 8, 9]
+        // for(var item of myArray){
+        for(var index = 0; index < myArray.length; index++ ){
+            
+            // console.log(item)
+            var clone = template.content.cloneNode(true)
+            var cardContainer = document.querySelector('.cardContainer')
+
+            var colors = ["pink", "yellow", "green"]
+            // pink a random item from an array
+            var randomeIndex = [Math.floor(Math.random()*colors.length)]
+            var color = colors[randomeIndex]
+
+            var images = [
+                "https://www.cnet.com/a/img/resize/5cded6494c6ecfb6aad831adf5483377d5a3ca87/hub/2021/11/03/0f437d6c-d6b6-4b95-8291-d9b0c4b54d1d/forzahorizon5-launch-preview-04-16x9-wm.jpg?auto=webp&fit=crop&height=675&width=1200",
+                "https://placekitten.com/400",
+                "https://placekitten.com/500",
+                "https://placekitten.com/200"
+            ]
+
+            var image = images[[Math.floor(Math.random()*images.length)]]
+            clone.querySelector("img").src = image
+
+
+
+            console.log(clone)
+            clone.querySelector('.card').classList.add(color)
+
+
+
+            cardContainer.append(clone)
+        }
+
+
+
+
+    </script>
+</body>
+</html>

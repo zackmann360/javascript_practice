@@ -1,0 +1,175 @@
+:root{
+    --space-half: .5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --border-left: 8px solid yellow;
+    --gap-grid: 1rem;
+    --font-page-title: 2.5rem;
+    --font-color-off-white: #aaa;
+    --card-background: #333;
+    --card-border: .2rem 0 1.5rem .2rem;
+    --border-left-pink: 8px solid pink;
+    --border-left-green: 8px solid lightgreen;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+    font-family: sans-serif;
+    color: white;
+}
+
+.mainContainer {
+    max-width: 1000px;
+    padding: var(--space-2);
+    margin: 1rem auto;
+
+}
+.mainContainer .pageTitle {
+    font-size: var(--font-page-title);
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainContainer .navBar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding-top: var(--space-1);
+    font-size: .8rem;
+    padding-bottom: var(--space-2);
+}
+.mainContainer .navBar .link {
+    border-bottom: 2px solid transparent;
+    padding-bottom: var(--space-half);
+    cursor: pointer;
+    user-select: none;
+}
+.mainContainer .navBar .link:hover,
+.mainContainer .navBar .active {
+    border-bottom: 2px solid #fff;
+}
+
+.mainContainer .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-grid);
+}
+
+/* -------------------------------------------
+| responsive grid
+---------------------------------------------*/
+
+@media (max-width: 800px) {
+    .mainContainer .cardContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+@media (max-width: 500px) {
+    .mainContainer .cardContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+.mainContainer .cardContainer .card {
+    min-width: 0;
+    background-color: var(--card-background);
+    border-radius: var(--card-border);
+    border: var(--border-reset);
+    border-left: var(--border-left);
+}
+.mainContainer .cardContainer .card.pink {
+    border-left: var(--border-left-pink);
+    
+}
+.mainContainer .cardContainer .card.green {
+    border-left: var(--border-left-green);
+}
+.mainContainer .cardContainer .card .image {
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+    
+}
+.mainContainer .cardContainer .card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.25s;
+}
+.mainContainer .cardContainer .card:hover .image img {
+    transform: scale(1.2);
+}
+.mainContainer .cardContainer .card .image .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mainContainer .cardContainer .card .contentContainer {
+    padding: var(--space-1-5);
+    
+}
+.mainContainer .cardContainer .card .contentContainer .date {
+    color: var(--font-color-off-white);
+    font-size: .8rem;
+    padding-bottom: var(--space-half);
+}
+.mainContainer .cardContainer .card .contentContainer .header {
+    font-weight: bolder;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: var(--space-1);
+}
+
+.mainContainer .cardContainer .card .contentContainer .content {
+    color: var(--font-color-off-white);
+    padding-bottom: var(--space-1);
+}
+
+.mainContainer .cardContainer .card .contentContainer .button button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: bolder;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+.mainContainer .cardContainer .card .contentContainer .button button .text {
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+.mainContainer .cardContainer .card .contentContainer .button button:hover .text {
+    border-bottom: 2px solid #fff;
+}
+
+}
+.mainContainer .cardContainer .card .contentContainer .button button .icon {
+    padding-left: var(--space-1);
+}
+.mainContainer .cardContainer .card .contentContainer .button button .icon {
+    transition: transform 0.25s;
+}
+.mainContainer .cardContainer .card .contentContainer .button button:hover .icon {
+    transform: translateX(0.5rem);
+}
+
+/* ---------------------------------------------------
+| utility
+----------------------------------------------------*/
+body .mainContainer. .cardContainer .card2 {
+    grid-column: 2/3;
+}
+

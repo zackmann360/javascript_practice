@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #444;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        .card {
+            width: 50rem;
+            height: 20rem;
+            background-color: #999;
+            margin: 10rem auto;
+            display: grid;
+        }
+
+        .card .image,
+        .card .overlay,
+        .card .content {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .card .image {
+            background-image: url(../images/art.png);
+            background-position: cover;
+        }
+
+        .card .overlay {
+            background-color: rgba(255,0,0,0.4);
+        }
+        .card .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        </style>
+    
+    <div class="card">  
+        <div class="image"></div>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="text">
+                some text inside
+            </div>
+            <div class="date">1/2/2022</div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
