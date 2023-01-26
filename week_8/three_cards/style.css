@@ -1,103 +1,105 @@
 :root{
-    --color-off-white: #ddd;
-    --color-black: #000;
-    --border-radius: 0.35rem;
-    --space-half: 0.5rem;
     --space-1: 1rem;
     --space-1-5: 1.5rem;
     --space-2: 2rem;
+    --space-2-5: 2.5rem;
     --space-3: 3rem;
-    --color-green: #4f9b7a;
+    --header-font: 2rem;
+    --font-time: 1.2rem;
+    --font-white: #fff;
+    --content-size: 1.5rem;
+    --border-radius: 0.5rem;
 }
 html, body {
     padding: 0;
     margin: 0;
-    color: white;
-    background-color: #444;
-    font-family: sans-serif;
-    font-size: 8px;
+    background: #444;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.mainContainer {
+    padding: var(--space-2);
+    background-color: #fff;
+    margin-bottom: var(--space-1);
+}
+/* ------------------------------ */
+/* header */
+/* ------------------------------ */
+
+.mainContainer .header {
+    font-size: var(--header-font);
+    font-weight: bolder;
+    padding-bottom: var(--space-2);
 }
 
-img {
-    width: 100%;
-    margin-top: 5rem;
-}
-.mainContainer{
-    padding: var(--space-1-5);
-    background-color: #fff;
-}
-.mainContainer .header {
-    font-weight: bolder;
-    font-size: 2rem;
-    color: var(--color-black);
-    padding-bottom: var(--space-1-5);
-}
-.gridContainer{
+/* ------------------------------ */
+/* Grid */
+/* ------------------------------ */
+.mainContainer .gridContainer {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: 150px;
-    gap: 3rem;
-
+    grid-template-rows: 18rem;
+    gap: var(--space-3);
 }
-.gridContainer .gridItem {
-    ccbackground-color: var(--color-green);
+
+.mainContainer .gridContainer .gridItem {
+    color: var(--font-white);
     border-radius: var(--border-radius);
     overflow: hidden;
+    background-size: cover;
 }
-.gridContainer .gridItem .b-g1 {
-    background-position: center;
-    background-size: cover ;
-    background-repeat: no-repeat;
-    width: 100%;
+
+/* ------------------------------ */
+/* faded background */
+/* ------------------------------ */
+
+.mainContainer .gridContainer .gridItem .bgFade {
+    background: linear-gradient(rgba(0,0,0, 0.1), #000);
     height: 100%;
     position: relative;
 }
-.gridContainer .gridItem .b-g2 {
-    background: linear-gradient(rgba(255, 0, 0, .1), rgba(0, 0, 0, 0.8)) ;   
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;        
-}
-.gridContainer .gridItem .b-g2 .onDemand {
-    background-color: var(--color-green);
+
+/* ------------------------------ */
+/* content */
+/* ------------------------------ */
+
+.mainContainer .gridContainer .gridItem .bgFade .onDemand {
+    font-weight: bolder;
+    background-color: #4e9b7a;
+    color: #000;
     display: inline;
     position: absolute;
-    top: var(--space-1);
+    top: var(--space-1-5);
     right: 0;
-    padding: var(--space-1);
+    padding: var(--space-1) var(--space-1-5);
     border-radius: var(--border-radius) 0 0 var(--border-radius);
-    color: var(--color-black);
+}
+.mainContainer .gridContainer .gridItem .bgFade .content {
+    position: absolute;
+    bottom: var(--space-3);
+    left: var(--space-2);
+}
+.mainContainer .gridContainer .gridItem .bgFade .content .text {
+    font-size: var(--content-size);
     font-weight: bolder;
+    padding-bottom: var(--space-1);
 }
-.gridContainer .gridItem .b-g2 .content {
-    ccbackground-color: red;
-    font-size: 1.4rem;
-    padding: var(--space-2);
-    
-}
-.gridContainer .gridItem .b-g2 .content .text {
-    font-weight: bold;
-}
-.gridContainer .gridItem .b-g2 .content .time {
-    font-size: 1.1rem;
-    color: var(--color-off-white);
-    padding-top: var(--space-half);
+.mainContainer .gridContainer .gridItem .bgFade .content .time {
+    font-weight: ;
+    font-size: var(--font-time);
 }
 
 
 
-/*------------------------------------------------------------------
-| utility
-------------------------------------------------------------------*/
-.bg-1 {
-    background-image: url("../../images/three_cards/purple_background.png");
+/* ------------------------------ */
+/* utility */
+/* ------------------------------ */
+
+.bg1 {
+    background-image: url('../../images/three_cards/purple_background.png');
 }
-.bg-2 {
-    background-image: url("../../images/three_cards/orange_background.png");
+.bg2 {
+    background-image: url('../../images/three_cards/orange_background.png');
 }
-.bg-3 {
-    background-image: url("../../images/three_cards/blue_background.png");
+.bg3 {
+    background-image: url('../../images/three_cards/blue_background.png');
 }
