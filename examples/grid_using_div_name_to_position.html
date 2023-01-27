@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <title>Positioning a grid with container names</title>
+</head>
+<body>
+<style>
+    html, body {
+        background: #444;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    .gridContainer {
+        background-color: #999;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header header header header header header"
+            "sidebar content content content item item"
+            "sidebar content content content item item"
+            "sidebar content content content item item"
+            "sidebar content content content item item"
+            "footer footer footer footer footer footer"
+        ;
+    }
+    .header{
+        grid-area: header;
+        background-color: lightblue;
+        height: 5rem;
+        width: 50rem;
+        text-align: center;
+    }
+    .content {
+        grid-area: content;
+        background-color: greenyellow;
+        height: 5rem;
+        width: 20rem;
+    }
+    .sideBar {
+        grid-area: sidebar;
+        background-color: red;
+        height: 20rem;
+        width: 10rem;
+    }
+    .item {
+        grid-area: item;
+        background-color: bisque;
+        height: 7rem;
+        width: 30rem;
+    }
+    .footer {
+        grid-area: footer;
+        background-color: purple;
+        width: 20rem;
+    }
+
+</style>
+
+
+    <div class="gridContainer">
+        <div class="header">This is the header positioned with css grid</div>
+        <div class="content">This is content posistioned with css grid</div>
+        <div class="sideBar">This is a side bar positioned with css grid</div>
+        <div class="item">This is an item position with css grid</div>
+        <div class="footer">This is a footer positioned with css grid</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+:root {
+    --space-half: 0.2rem;
+    --space-3-4: .75rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-heading: 0.8rem;
+    --font-size-smaller: .8rem;
+    --font-size-larger: 1.5rem;
+    --font-size-header: 3.5rem;
+    --font-color-header: #f3f1ca;
+    --background-color-black: #110f1a;
+    --background-color-tan: #f3f1ca;
+    --background-color-red: #be2c26;
+}
+html, body {
+    background: #444;
+    padding: 0;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;;
+    text-transform: uppercase;
+}
+
+.mainGrid {
+    display: grid;
+    background-color: var(--background-color-black);
+    grid-template-columns: 100% 100%;
+    grid-template-rows: 80% 100%;
+    grid-template-areas: 
+    "grid1 grid3"
+    "grid2 grid3"
+    ;
+    width: 800px;
+    height: 400px;
+    border: 10px solid red;
+    margin-bottom: 2rem;
+}
+
+/* ----------------------------------------------------
+|grid 1
+---------------------------------------------------- */
+
+.mainGrid .grid1 {
+    display: grid;
+    grid-area: grid1;
+    gap: .3rem;
+    border: 5px solid green;
+    max-width: 100%;
+    height: 400px;
+    grid-template-columns: repeat(6, .8fr) 1.2fr .5fr repeat(2, 0.7fr);
+    grid-template-rows: repeat(4, 1fr) 0.8fr 0.5fr;
+    grid-template-areas: 
+    "header    header    header    header    header    header    header       rightItem1  rightItem2  rightItem3"
+    "passenger passenger passenger passenger passenger passenger platFormNum  rightItem1  rightItem2  rightItem3" 
+    "depart    depart    depart    arrive    arrive    arrive    platFormNum  rightItem1  rightItem2  rightItem3"
+    "date      date      time      time      car       seat      platFormNum  rightItem1  rightItem2  rightItem3"
+    "info      info      info      info      info      cart      barcode1     barcode2    barcode2    barcode2"
+    "noRefun   noRefund  noRefund  noRefund  noRefund  cart      barcodeNum1  barcodeNum2 barcodeNum2 barcodeNum2"
+    ;
+}
+.mainGrid .grid1 .item1 {
+    font-size: var(--font-size-header);
+    font-family: 'Kanit', sans-serif;;
+    font-weight: 700;
+    text-align: center;
+    ccfont-stretch: extra-expanded;
+    line-height: 4.5rem;
+    letter-spacing: 8px;
+}
+.mainGrid .grid1 .item  {
+    background: var(--background-color-tan);
+    padding-left: var(--space-3-4);
+}
+.mainGrid .grid1 .item .heading {
+    padding-top: var(--space-heading);
+    color: #555;
+}
+.mainGrid .grid1 .item .description {
+    margin-top: -0.5rem;
+    font-size: var(--font-size-larger);
+    letter-spacing: 1px;
+} 
+.mainGrid .grid1 .platForm  {
+    padding-left: var(--space-half);
+}
+.mainGrid .grid1 .platForm .text1  {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.mainGrid .grid1 .platForm .text2  {
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: -1.5rem;
+    text-align: center;
+}
+.mainGrid .grid1 .platForm .text3  {
+    font-size: 1.6rem;
+    margin-top: -1.2rem;
+    margin-right: .3rem;
+    font-weight: 500;
+    text-align: center;
+}
+.mainGrid .grid1 .platForm .number {
+    display: flex;
+    justify-content: center;
+    margin-left: -0.75rem;
+    padding-top: 0.5rem;
+}
+.mainGrid .grid1 .platForm .number .fractionItem1  {
+    font-family: 'Yeseva One', cursive;
+    font-size: 6rem;
+    line-height: 6rem;
+}
+.mainGrid .grid1 .platForm .number2 .fractionItem2  {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    text-align: center;
+}
+.mainGrid .grid1 .platForm .number2 .fractionLine  {
+    font-size: 5rem;
+    line-height: 1rem;
+    padding-bottom: var(--space-3-4);
+    text-align: center;
+}
+/* --------------------------------------------------
+| grid 2
+-------------------------------------------------- */
+.mainGrid .grid2{
+    display: grid;
+    grid-area: grid2;
+    color: white;
+    grid-template-columns: 70% 10% 20%;
+    grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas: 
+    "boardingInformation cart barcode"
+    "noRefund            cart barcode"
+    ;
+    
+}
+
+
+/* ------------------------------------------------
+| utility |
+-------------------------------------------------*/
+.header {
+    grid-area: header;
+    background: #111;
+    color: var(--font-color-header);
+}
+.passenger {
+    grid-area: passenger;
+    background: #999;
+}
+.depart {
+    grid-area: depart;
+    background: #888;
+}
+.arrive {
+    grid-area: arrive;
+    background: #777;
+}
+.date {
+    grid-area: date;
+    background: #666;
+}
+.time {
+    grid-area: time;
+    background: #555;
+}
+.car {
+    grid-area: car;
+    background: #444;
+}
+.seat {
+    grid-area: seat;
+    background: #333;
+}
+.platFormNum {
+    grid-area: platFormNum;
+    background-color: var(--background-color-red);
+    color: #fff;
+    height: 100%;
+}
+.bordingGridLocation {
+    grid-area: boardingInformation;
+}
+
+.noRefundGridLoaction {
+    grid-area: noRefund;
+}

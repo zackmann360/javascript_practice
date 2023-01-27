@@ -1,0 +1,137 @@
+
+/*-------------------------------------------------------------------------
+| setup 
+-------------------------------------------------------------------------*/
+:root{
+    --space-half: .5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --radius-card: 0.5rem;
+    --border-card: 1px solid #555;
+    --font: sans-serif;
+    --font-size: 1.2rem;
+    --color-button: #555;
+    --button-size: 3rem;
+    --box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+html, body{
+    background-color: #2e3533;
+    color: #fff;
+    font-family: var(--font);
+}
+
+* {
+
+}
+
+
+.componentHeading {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
+    max-width: 25rem;
+    padding: var(--space-half);
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+/*--------------------------------------------------------------------------
+| card
+---------------------------------------------------------------------------*/
+
+.card {
+    max-width: 20rem;
+    border-radius: var(--radius-card);
+    padding: var(--space-1);
+    border: var(--border-card);
+}
+.card .text {
+    padding-top: var(--space-1);
+    font-size: var(--font-size);
+}
+.card .image img{
+    width: 100%;
+
+}
+
+
+/*--------------------------------------------------------------------------
+| button
+---------------------------------------------------------------------------*/
+
+.button {
+    border-radius: 100%;
+    height: var(--button-size);
+    width: var(--button-size);
+    border: none;
+    background: #555;
+    box-shadow: var(--box-shadow);
+}
+.button span {
+    color: #fff;
+}
+
+.slideContainer .leftButton.hide{
+    display: none;
+}
+
+/*--------------------------------------------------------------------------
+| Slide
+---------------------------------------------------------------------------*/
+
+.slideContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideContainer .slides {
+    height: 15rem;
+    display: flex;
+    transition: all 0.5s;
+    gap: 0.5rem;
+}
+.slideContainer .slides .slide {
+    min-width: 40%;
+}
+.slideContainer .leftButton,
+.slideContainer .rightButton {
+    width: var(--button-size);
+    height: var(--button-size);
+    position: absolute;
+    top: 50%;
+    right: var(--space-1);
+    transform: translateY(-50%);
+}
+.slideContainer .leftButton {
+    right: unset;
+    left: var(--space-1);
+
+}
+
+
+/* Control the movement */
+.slideContainer .slides.move-0 {
+    ccbackground-color: #555;
+} 
+.slideContainer .slides.move-1 {
+    ccbackground-color: #666;
+    transform: translateX(-40%);
+}
+.slideContainer .slides.move-2 {
+    ccbackground-color: #777;
+    transform: translateX(-80%);
+}
+.slideContainer .slides.move-3 {
+    ccbackground-color: #888;
+    transform: translateX(-120%);
+}
+.slideContainer .slides.move-4 {
+    ccbackground-color: #999;
+    transform: translateX(-160%);
+}
+.slideContainer .slides.move-5 {
+    ccbackground-color: #aaa;
+    transform: translateX(-200%);
+}
