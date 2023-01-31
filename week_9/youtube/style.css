@@ -1,116 +1,105 @@
 :root {
-    --image-size: 3.5rem;
-    --gap-: 1rem;
-    --font-size-header: 1.5rem;
     --space-half: 0.5rem;
     --space-1: 1rem;
     --space-1-5: 1.5rem;
-    --space-2: 2rem;
+    --font-size-header: 2rem;
+    --top-font-color: #999;
+    --image-size: 3rem;
 }
 
 html,
 body {
-    background-color: #444;
-    color: white;
+    background: #444;
+    color: #fff;
     font-family: sans-serif;
     font-size: .9rem;
 }
 
-/* -----------------------------------header---------------------------- */
-.componentHeader {
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;
-    padding: 1rem;
-    margin: 2rem 0;
+.mainContainer {
+    margin-bottom: var(--space-1-5);
+    background-color: #000;
+    padding: var(--space-1-5);
 }
 
-.header {
-    font-size: var(--font-size-header);
-    font-weight: bolder;
-    padding: var(--space-half) 0;
+.mainContainer .top {
+    color: var(--top-font-color);
 }
 
-/* --------------------------------image---------------------------------- */
-.cardImage {
-    height: var(--image-size);
-    width: var(--image-size);
-    background-color: red;
-    display: grid;
-
-}
-.cardImage .image {
-    grid-row: 1;
-    grid-column: 1;
-    ccbackground-color: purple;
-}
-.cardImage .image img {
-    width: 100%;
-    height: 100%;
-}
-.cardImage .image.hover {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-.cardImage .image.hover img {
-    filter: invert(1);
-    margin: auto;
-    width: 50%;
-    height: 50%;
-}
-.cardImage:hover .image.hover {
-    display: flex;
-}
-.item{
-    padding-left: var(--space-half);
-}
-
-
-
-
-
-
-/* -------------------------------text------------------------------------ */
-.textBox {
-    padding: var(--space-1);
-}
-
-.textBox .title {
-    padding-bottom: .5rem;
-}
-
-.textBox .artist {
-    color: #bbb;
-}
-
-/* -------------------------------actions------------------------------------ */
-.actions {
-    gap: 2rem;
-    color: #aaa;
-    display: flex;
-}
-.actions:hover {
-}
-
-/* -------------------------------card1------------------------------------ */
-.card {
-    display: flex;
-    align-items: center;
-}
-/* -------------------------------grid------------------------------------ */
-.grid {
+.mainContainer .cardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 0 var(--space-1-5);
 }
-.grid.demo .item{
-    background-color: #999;
+@media screen {
+    
 }
-.item:hover {
-    background-color: rgba(83, 83, 83, 0.5);
-    cursor: pointer;
+@media (max-width:1200px) {
+    .mainContainer .cardContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
 }
 
-.mainContainer{
-    background: #000;
-    padding: var(--space-1);
+@media (max-width:800px) {
+    .mainContainer .cardContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
+    }
+    .fontSmaller {
+        font-size: 10rem;
+    }
+    .header {
+
+    }
+}
+
+.mainContainer .card1 {
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.mainContainer .card2 {
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+
+}
+
+.mainContainer .card3 {
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+}
+
+.mainContainer .header {
+    font-size: var(--font-size-header);
+    font-weight: bolder;
+    padding: var(--space-1-5) 0;
+}
+
+.mainContainer .image img {
+    width: var(--image-size);
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.content .artist {
+    color: var(--top-font-color);
+}
+
+.mainContainer .content .title {
+    font-size: 1.1rem;
+    padding-bottom: 0.4rem;
+}
+
+/*--------------------utility---------------------------------*/
+.displayFlex {
+    display: flex;
+    gap: 2rem;
+    padding-left: 1.5rem;
+    color: var(--top-font-color);
 }

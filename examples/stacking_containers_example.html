@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        html, body {
+            background: #444;
+        }
+        .mainContainer{
+            display: grid;
+            padding: 10rem;
+        }
+        .mainContainer .container1 {
+            grid-column: 1;
+            grid-row: 1;
+            background-color: red;
+            color: white;
+        }
+        .mainContainer .container2 {
+            grid-column: 1;
+            grid-row: 1;
+            background: rgba(0, 255, 0, 0.25);
+            text-align: center;
+            color: greenyellow;
+        }
+        .mainContainer .container3 {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: end;
+        }
+        .mainContainer .container3:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        
+
+
+    </style>
+    <div class="mainContainer">
+        <div class="container1">first, color red</div>
+        <div class="container2">second, color green with low oopacity</div>
+        <div class="container3">third, changes when hovered</div>
+    </div>
+    
+</body>
+</html>
