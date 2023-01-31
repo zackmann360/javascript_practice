@@ -1,0 +1,152 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --color-black: #111;
+    --color-black-2: #222;
+    --color-black-3: #333;
+    --color-white-2: #999;
+    --color-white: #fff;
+    --font-family: sans-serif;
+    --font-size-h2: 1.35rem;
+    --font-size-p: 1rem;
+    --play-button-size: 3rem;
+    --color-green: #1ddf63;
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    --border-radius: 0.5rem;
+}
+html, body {
+    background-color: var(--color-black);
+    font-family: var(--font-family);
+    color: var(--color-white);
+}
+
+.componentHeader {
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    
+}
+.app {
+    max-width: 70rem;
+    margin: 5rem auto;
+}
+
+
+/*--------------------------------------------------------------------
+| Text
+--------------------------------------------------------------------*/
+.h2 {
+    font-size: var(--font-size-h2);
+}
+
+.p {
+    font-size: var(--font-size-p);
+    color: var(--color-white);
+}
+
+.p.darker {
+ color: var(--color-white-2);   
+}
+.marginTop1 {
+    margin-top: var(--space-1);
+}
+.marginTop2 {
+    margin-top: 2rem;
+}
+/*--------------------------------------------------------------------
+| play button
+--------------------------------------------------------------------*/
+
+.playButton {
+    width: var(--play-button-size);
+    height: var(--play-button-size);
+    background-color: var(--color-green);
+    border-radius: 100%;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+.playButton img {
+    width: 65%;
+    height: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+/*--------------------------------------------------------------------
+|song image
+--------------------------------------------------------------------*/
+
+.songImage {
+    background:#999;
+    padding-top: 100%;
+    position: relative;
+    border-radius: var(--border-radius);
+}
+.songImage .action {
+    position: absolute;
+    bottom: var(--space-1);
+    right: var(--space-1);
+    opacity: 0;
+    transition: all 0.15s;
+}
+.songImage:hover .action {
+    opacity: 1;
+}
+
+.bg1 {
+    background: url(../../../images/background_adobe_card.jpg);
+    background-size: cover;
+}
+
+
+/*--------------------------------------------------------------------
+| card
+--------------------------------------------------------------------*/
+.card {
+    background: var(--color-black-2);
+    padding: var(--space-1);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+.card:hover {
+    background: var(--color-black-3);
+}
+.card .bottom {
+    padding-top: var(--space-1);
+}
+
+/*--------------------------------------------------------------------
+| grid
+--------------------------------------------------------------------*/
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: var(--space-1);
+}
+
+@media (max-width:1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
+@media (max-width:800px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}
+@media (max-width:500px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}

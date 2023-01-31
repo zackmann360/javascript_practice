@@ -1,0 +1,166 @@
+:root { 
+    --color-green: #3c8426;
+    --color-green-2: #2a631d;
+    --color-green-3: #6bc349;
+    --color-white: #fff;
+    --color-white-2: #ddd;
+    --color-black: #000;
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --font-family: monospace;
+    --font-size-h2: 1.35rem;
+    --font-size-p: 1.1rem;
+
+}
+
+html, body {
+    background: var(--color-white-2);
+    font-family: var(--font-family);
+}
+.componentHeader {
+    padding: var(--space-half);
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+
+
+/* ------------------------------------------------
+| Text
+--------------------------------------------------*/
+
+.h2 {
+    font-size: var(--font-size-h2);
+}
+.p {
+    font-size: var(--font-size-p);
+}
+
+.center {
+    text-align: center;
+}
+.m-t-1 {
+    margin-top: 1rem;
+}
+.m-t-2 {
+    margin-top: 2rem;
+}
+.centerSerious {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* ------------------------------------------------
+| explore button
+--------------------------------------------------*/
+.button-no-bg {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+.button-no-bg .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    
+}
+.button-no-bg .icon img {
+    width: 100%;
+}
+
+.button-load-more {
+    border: none;
+    background: var(--color-green);
+    border-top: 3px solid var(--color-green-3);
+    border-bottom: 3px solid var(--color-green-2);
+    padding: var(--space-half) var(--space-1);
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* ------------------------------------------------
+|  Box
+--------------------------------------------------*/
+
+.box {
+    background-color: #333;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.bg1 {
+    background: url("../../../images/background_adobe_card.jpg");
+    background-size: cover;
+}
+.bg2 {
+    background: url("../../../images/art.png");
+    background-size: cover;
+}
+.bg3 {
+    background: url("../../../images/art.png");
+    background-size: cover;
+}
+.bg4 {
+    background: url("../../../images/art.png");
+    background-size: cover;
+}
+.box:hover .content {
+    padding-bottom: 5rem;
+}
+.box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    text-align: center;
+    color: var(--color-white);
+    transition: all 0.25s;
+}
+
+.box .content .title {
+    background: var(--color-white-2);
+    display: inline-block;    
+    padding:  var(--space-half) var(--space-1);
+    color: var(--color-black);
+    text-transform: uppercase;
+    margin-top: -1rem;
+}
+.box .content .info {
+    padding: var(--space-1);
+}
+.box .content .info .bottom {
+    padding-top: var(--space-2);
+    margin-bottom: -3rem;
+}
+.box .content .info {
+
+}
+
+/* ------------------------------------------------
+|  grid
+--------------------------------------------------*/
+
+.grid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+
+}
+@media (max-width: 800px) {
+    .grid{
+        grid-template-columns: 1fr 1fr ;
+    }
+    
+}

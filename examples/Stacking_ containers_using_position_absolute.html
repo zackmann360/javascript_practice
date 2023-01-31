@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        :root {
+            --space-1:1rem;
+        }
+        html, body {
+            background: #444;
+        }
+        .mainContainer {
+            height: 10rem;
+            width: 10rem;
+            background-color: red;
+            position: relative;
+        }
+        .mainContainer .container {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            bottom: var(--space-1);
+            right: var(--space-1);
+            background: #444;
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: all 0.2s;
+        }
+        .mainContainer:hover .container {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    </style>
+
+    <div class="mainContainer">
+        <div class="container"></div>
+    </div>
+    
+</body>
+</html>
