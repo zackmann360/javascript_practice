@@ -1,0 +1,164 @@
+:root {
+    --cards-gap: 1rem;
+    --color-white: #fff;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --header-font-size: 1.5rem;
+    --bold-text: bolder;
+    --border-radius: 0.5rem;
+    --transistion-time: 0.2s;
+    --font-size-p: 1rem;
+}
+
+html, body {
+    background: #444;
+    font-family: monospace;
+}
+
+.componentHeader {
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    padding: 1rem;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.app {
+    max-width: 80rem;
+    margin: 5rem auto;
+    padding: 0 var(--space-2);
+}
+
+
+/* -----------------------------header---------------------------- */
+
+.header {
+    font-size: var(--header-font-size);
+    font-weight: var(--bold-text);
+}
+/* ------------------------text / utility------------------------- */
+.p {
+    font-size: var(--font-size-p);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.textWhite{
+    color: var(--color-white);
+}
+
+.cardActive.bg2 {
+    background-image: url("../../images/background/game_cards_background_2.png");
+}
+.cardActive.bg3 {
+    background-image: url("../../images/background/game_cards_background_3.png");
+}
+.cardActive.bg4 {
+    background-image: url("../../images/background/game_cards_background_4.png");
+}
+
+.m-t-1 { margin-top: var(--space-1); }
+.m-t-2 { margin-top: var(--space-2); }
+.m-t-3 { margin-top: var(--space-3); }
+.m-t-4 { margin-top: var(--space-4); }
+.m-b-1 { margin-bottom: var(--space-1); }
+.m-b-2 { margin-bottom: var(--space-2); }
+.m-b-3 { margin-bottom: var(--space-3); }
+.m-b-4 { margin-bottom: var(--space-4); }
+
+
+
+
+
+/* ----------------------------card-------------------------------- */
+
+.card {
+    background-image: url("../../images/background/game_cards_background.png");
+    height: 20rem;
+    width: 15rem;
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+}
+
+/* -----------------------------active------------------------------ */
+.cardActive {
+    background-image: url("../../images/background/game_cards_background.png");
+    height: 20rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+    transition: all var(--transistion-time);
+    position: relative;
+    overflow: hidden;
+}
+.cardactive:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    
+}
+
+.cardActive .overlay {
+    position: absolute;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, .5)
+    );
+    height: 100%;
+    width: 100%;
+
+}
+
+.activeText {
+    color: var(--color-white);
+    position: absolute;
+    bottom: 0;
+    padding: var(--space-1);
+    opacity: 0;
+    transition: all var(--transistion-time);
+    z-index: 1;
+}
+.cardActive:hover .activeText {
+    opacity: 1;
+}
+
+.activeText .gameTitle {
+    font-size: 1.2rem;
+    padding-bottom: var(--space-1);
+}
+.activeText .console {
+    padding-bottom: var(--space-1);
+}
+/* ------------------------Grid---------------------------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--cards-gap);
+    width: 100%;
+}
+
+@media (max-width:900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid.demo {
+        background-color: red;
+        
+    }
+    .cardActive {
+        height: 40rem;
+    }
+    
+}
+
+.grid.demo .item {
+    background-color: white;
+}
