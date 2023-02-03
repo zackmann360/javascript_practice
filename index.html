@@ -1,0 +1,241 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --font: 'Space Mono', monospace;
+            --space-1: 1rem;
+            --space-1-5: 1.5rem;
+            --space-2: 2rem;
+        }
+
+        * {
+            font-family: var(--font);
+        }
+        a {
+            display: block;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: var(--space-2);
+        }
+
+        .card {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: var(--space-1);
+        }
+        .card .frame {
+            padding-top: 100%;
+            background: #999;
+            position: relative;
+        }
+        .card .frame > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .card .frame.medium > * {
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            transform: scale(0.3333333);
+        }
+        .card .frame.big > * {
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 400%;
+            height: 400%;
+            transform: scale(0.25);
+        }
+
+
+
+        /*-------------------------------------------------------
+        | utility
+        -------------------------------------------------------*/
+        .m-t-1 { margin-top: 1rem;}
+        .m-t-2 { margin-top: 2rem;}
+        .m-t-3 { margin-top: 3rem;}
+        .p-05 { padding: 0.5rem;}
+        .p-1 { padding: 1rem;}
+        .p-2 { padding: 2rem;}
+        
+    </style>
+    <div class="grid">
+        <template>
+
+            <div class="card">
+                <div class="frame medium">
+                    <iframe src="./week_9/game_cards/" frameborder="0"></iframe>
+                    
+                </div>
+                <div class="info p-05">
+                    <div class="p title">project title</div>
+                    <div class="p m-t-1">
+                        <a href="#" target="_blank">Open Project</a>
+                        <a class="github" href="#"  target="_blank">view code</a>
+                    </div>
+                </div>
+                
+            </div>
+        </template>
+    </div>
+    <div class="count"></div>
+
+    <div class="projects"></div>
+
+
+    <script>
+        // select any element
+        // var element = document.querySelector('.grid')
+        // console.log(element)
+
+
+
+
+
+        // make a template 
+        var template = document.querySelector('template')
+        // console.log(template)
+        // for(var i = 0; i < 50 ; i += 1){
+        //     // console.log(i)
+        
+        
+        
+        
+        // }
+        
+        async function callApi(){
+            var rawData = await fetch('./projects.json')
+            // console.log(rawData)
+            var data = await rawData.json()
+            // console.log(data)
+            // sort projects backwards
+            data.projects.reverse()
+            var i = 0
+            for(var item of data.projects){
+                // console.log("test", item.name)
+                var clone = template.content.cloneNode(true)
+                var frame = item.frame
+                // console.log(frame)
+                
+                // change iFrame url
+                var iFrame = clone.querySelector('iFrame')
+                watchForContentWindowDisableConsoleLog(iFrame)
+                
+                // set the project title
+                var title = clone.querySelector('.title')
+                title.innerHTML = item.name
+
+
+                // set the project url
+                var url = clone.querySelector('a')
+                // console.log(url)
+                url.href = item.link
+
+                // set the github url
+                var github = clone.querySelector('.github')
+                // console.log(github)
+                github.href = `https://github.com/zackmann360/javascript_practice/tree/main/${item.link}`
+
+                iFrame.setAttribute('src', item.link )
+                var container = document.querySelector('.grid')
+                container.append(clone)
+                
+                i += 1
+
+            }
+            
+        }
+        callApi()
+
+
+
+
+
+
+
+
+        // function for turning console log off. 
+        function watchForContentWindowDisableConsoleLog(iFrame){
+            var interval = setInterval(function(arg1){
+                if(arg1.contentWindow){
+                    arg1.contentWindow.console.log = function (){}
+                    clearInterval(interval)
+                }
+            }, 1, iFrame)
+
+        }
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Call api practice
+
+        async function callApiPractice() {
+        
+            var rawData = await fetch('./projects.json')
+            var data = await rawData.json()
+            // console.log(data)
+
+            // loop over projects
+            for (var item of data.projects) {
+                // console.log(item.name)
+                // create a link for each
+                var links = document.createElement('a')
+                links.innerHTML = item.name
+                links.href = item.link
+                // append them to the container
+                document.querySelector('.projects').append(links)
+
+            }
+
+            // display the count
+            // console.log(data.projects.length)
+            var count = data.projects.length
+            var countContainer = document.querySelector('.count')
+            countContainer.innerHTML = "Count: " + count
+
+
+        }
+        callApiPractice()
+    </script>
+</body>
+
+</html>

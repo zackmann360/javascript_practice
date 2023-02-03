@@ -54,13 +54,13 @@ html, body {
 }
 
 .cardActive.bg2 {
-    background-image: url("../../images/background/game_cards_background_2.png");
+    background-image: url("../../images/background/background_1_game_cards.png");
 }
 .cardActive.bg3 {
-    background-image: url("../../images/background/game_cards_background_3.png");
+    background-image: url("../../images/background/background_2_game_cards.png");
 }
 .cardActive.bg4 {
-    background-image: url("../../images/background/game_cards_background_4.png");
+    background-image: url("../../images/background/background_3_game_cards.png");
 }
 
 .m-t-1 { margin-top: var(--space-1); }
@@ -79,7 +79,7 @@ html, body {
 /* ----------------------------card-------------------------------- */
 
 .card {
-    background-image: url("../../images/background/game_cards_background.png");
+    background-image: url("../../images/background/background_4_game_cards.png");
     height: 20rem;
     width: 15rem;
     border-radius: var(--border-radius);
@@ -89,7 +89,7 @@ html, body {
 
 /* -----------------------------active------------------------------ */
 .cardActive {
-    background-image: url("../../images/background/game_cards_background.png");
+    background-image: url("../../images/background/background_4_game_cards.png");
     height: 20rem;
     width: 100%;
     border-radius: var(--border-radius);

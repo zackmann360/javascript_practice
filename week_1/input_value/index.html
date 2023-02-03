@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<p>Get input value. Change innerHTML of Paragraph to input value.</p>
+<input id="input" type="text">
+<button>click</button>
+<p id="paragraph"></p>
+
+<script>
+
+    var button = document.querySelector('button')
+    button.onclick = onclickChange
+
+
+    function onclickChange() {
+        // console.log('cats')
+        var input = document.querySelector('input')
+        // console.log(input.value)
+        var p = document.querySelector("#paragraph")
+        // console.log(p)
+        p.innerHTML = input.value
+        input.value = ""
+    }
+
+    
+
+</script>    
+
+</body>
+
+</html>

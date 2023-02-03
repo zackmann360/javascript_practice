@@ -1,0 +1,246 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-3-4: 0.75rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --gap: 10rem;
+    --color-font-blue: #5e65dc;
+    --color-font-red: #b44643;
+    --color-font-white-2: #cbcbcd;   
+}
+
+html, body{ 
+    background: #000;
+    font-family: monospace;
+    color: #fff;
+}
+
+.componentHeader {
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/*-------------------------------------------------------------
+| header
+-------------------------------------------------------------*/
+
+.header {
+    font-weight: 600;
+}
+
+/*-------------------------------------------------------------
+| drop down
+-------------------------------------------------------------*/
+
+.dropDown button{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    background-color: transparent;
+    border: 1px solid #999;
+    border-radius: 0.25rem;
+    color: var(--color-font-white-2);
+    padding: var(--space-half);
+}
+
+.dropDown button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/*-------------------------------------------------------------
+| image
+-------------------------------------------------------------*/
+
+.image{
+    background: red;
+    padding-top: 100%;
+    position: relative;
+}
+.image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.test {
+    max-width: 20rem;
+
+}
+/*-------------------------------------------------------------
+| utilities
+-------------------------------------------------------------*/
+
+.p-1 { padding: var(--space-1);}
+.p-1-5 { padding: var(--space-1-5);}
+.p-2 { padding: var(--space-2);}
+.p-3 { padding: var(--space-3);}
+.m-t-1 { margin-top: 1rem;}
+.m-t-2 { margin-top: 2rem;}
+
+
+/*-------------------------------------------------------------
+| text container
+-------------------------------------------------------------*/
+
+.textContainer .date {
+    color: var(--color-font-white-2);
+}
+.textContainer .title {
+    font-size: 1.6rem;
+    padding: var(--space-1) 0;
+}
+.textContainer .design {
+    color: var(--color-font-white-2);
+}
+
+/*-------------------------------------------------------------
+| three buttons
+-------------------------------------------------------------*/
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.buttonContainer .lowerButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--space-3-4) var(--space-2);
+    ccborder: 2px solid var(--color-font-white-2);
+    background: transparent;
+    border-radius: .5rem;
+}
+
+.lowerButtons.red {
+    color: var(--color-font-red);
+    border: 2px solid rgba(200, 0, 0, 0.25);
+}
+
+.lowerButtons.blue {
+    color: var(--color-font-blue);
+    border: 2px solid rgba(78, 78, 243, 0.25);   
+}
+
+.lowerButtons.white {
+    color: var(--color-font-white-2);
+    border: 2px solid rgba(97, 97, 97, 0.25);   
+}
+.lowerButtons:hover.blue {
+    border: 2px solid var(--color-font-blue);
+}
+.lowerButtons:hover.red {
+    border: 2px solid var(--color-font-red);
+}
+.lowerButtons:hover.white {
+    border: 2px solid var(--color-font-white-2);
+}
+
+
+/*-------------------------------------------------------------
+| card container
+-------------------------------------------------------------*/
+.card {
+    display: flex;
+    width: 100%;
+    background-color: #212;
+    border-radius: var(--space-half);
+    overflow: hidden;
+}
+
+.card .left {
+    width: 20rem;
+}
+.card .right {
+    
+}
+
+.card.test .left {
+    background: red;
+    height: 10rem;
+}
+.card.test .right {
+    background-color: blue;
+    height: 10rem;
+    flex: 1;
+}
+
+@media (max-width:800px) {
+    .card {
+        ccbackground: red;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card .left {
+        width: 100%;
+    }
+    
+}
+/*-------------------------------------------------------------
+| tempate
+-------------------------------------------------------------*/
+
+.template {
+    display: flex;
+    min-width: 700px;
+    background: #212;
+    position: relative;
+    border-radius: 0.5rem;
+    margin: var(--space-2) auto;
+}
+.template .left .image img {
+    width: 20rem;
+    height: 18rem;
+}
+.template .right {
+    padding: var(--space-2);
+}
+.template .right .buttonContainer {
+    position: absolute;
+    bottom: var(--space-2);
+}
+
+.app {
+    background: #000;
+    padding: var(--space-2);
+    max-width: 1000px;
+}
+
+.app .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*-------------------------------------------------------------
+| flex utility
+-------------------------------------------------------------*/
+
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--space-1);
+}
+.flex.alingnCenter{
+    align-items: center;
+}
+
+.flex.vertical {
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+.flex.vertical.test {
+    height: 200px;
+    background-color: red;
+}
+
