@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -14,41 +14,60 @@
     <style>
         :root {
             --font: 'Space Mono', monospace;
+            --space-half: 0.5rem;
             --space-1: 1rem;
             --space-1-5: 1.5rem;
             --space-2: 2rem;
+            --border-radius: 0.4rem;
+            --color-white: #fff;
+            --font-size-larger: 1.8rem;
+
         }
 
         * {
             font-family: var(--font);
+            color: var(--color-black);
+            text-transform: capitalize;
         }
+
         a {
             display: block;
         }
+        html, body {
+            padding: var(--space-2);
+            
+        }
+
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
             margin-bottom: var(--space-2);
         }
 
         .card {
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            padding: var(--space-1);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+            padding: var(--space-half);
+            border-radius: var(--border-radius);
         }
+        
         .card .frame {
             padding-top: 100%;
-            background: #999;
             position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
-        .card .frame > * {
+
+        
+        .card .frame>* {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
         }
-        .card .frame.medium > * {
+        
+        .card .frame.medium>* {
             position: absolute;
             top: -100%;
             left: -100%;
@@ -56,7 +75,8 @@
             height: 300%;
             transform: scale(0.3333333);
         }
-        .card .frame.big > * {
+        
+        .card .frame.big>* {
             position: absolute;
             top: -150%;
             left: -150%;
@@ -65,35 +85,81 @@
             transform: scale(0.25);
         }
 
+        .card .info .link {
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            display: inline-block;
+            padding: var(--space-half) var(--space-1);
+        }
+        
+        .card .info .title {
+            text-align: center;
+            border-radius: var(--border-radius);
+            padding: var(--space-1) 0;
+            display: flex;
+            justify-content: center;
+        }
 
 
         /*-------------------------------------------------------
         | utility
         -------------------------------------------------------*/
-        .m-t-1 { margin-top: 1rem;}
-        .m-t-2 { margin-top: 2rem;}
-        .m-t-3 { margin-top: 3rem;}
-        .p-05 { padding: 0.5rem;}
-        .p-1 { padding: 1rem;}
-        .p-2 { padding: 2rem;}
+        .m-t-1 {
+            margin-top: 1rem;
+        }
+
+        .m-t-2 {
+            margin-top: 2rem;
+        }
+
+        .m-t-3 {
+            margin-top: 3rem;
+        }
+
+        .p-05 {
+            padding: 0.5rem;
+        }
+
+        .p-1 {
+            padding: 1rem;
+        }
+
+        .p-2 {
+            padding: 2rem;
+        }
+
+        .font-larger{
+            font-size: var(--font-size-larger);
+        }
+
+        .no-text-decoration{
+            text-decoration: none;
+        }
+        .card .info .link1:hover {
+            background: rgba(31, 31, 31, 0.5);
+        }
+        .card .info .link2:hover {
+            background: #afc8c9;
+        }
         
+
     </style>
     <div class="grid">
         <template>
 
             <div class="card">
-                <div class="frame medium">
+                <div class="frame ">
                     <iframe src="./week_9/game_cards/" frameborder="0"></iframe>
-                    
+
                 </div>
                 <div class="info p-05">
-                    <div class="p title">project title</div>
+                    <div class="p title m-t-1  font-larger">project title</div>
                     <div class="p m-t-1">
-                        <a href="#" target="_blank">Open Project</a>
-                        <a class="github" href="#"  target="_blank">view code</a>
+                        <a class="link1 link m-t-1 no-text-decoration" href="#" target="_blank">Open Project</a>
+                        <a class="link2 link github m-t-1 no-text-decoration" href="#" target="_blank">View code</a>
                     </div>
                 </div>
-                
+
             </div>
         </template>
     </div>
@@ -116,13 +182,13 @@
         // console.log(template)
         // for(var i = 0; i < 50 ; i += 1){
         //     // console.log(i)
-        
-        
-        
-        
+
+
+
+
         // }
-        
-        async function callApi(){
+
+        async function callApi() {
             var rawData = await fetch('./projects.json')
             // console.log(rawData)
             var data = await rawData.json()
@@ -130,16 +196,21 @@
             // sort projects backwards
             data.projects.reverse()
             var i = 0
-            for(var item of data.projects){
-                // console.log("test", item.name)
+            // var oneProject = [data.projects[0]]
+            for (var item of data.projects) {
+                console.log("test", item.frame)
                 var clone = template.content.cloneNode(true)
                 var frame = item.frame
-                // console.log(frame)
-                
+                // console.log(this.frame)
+                //change the frame size
+                var frameSize = clone.querySelector('.frame')
+                console.log(frameSize)
+                frameSize.classList.add(item.frame)
+
                 // change iFrame url
                 var iFrame = clone.querySelector('iFrame')
                 watchForContentWindowDisableConsoleLog(iFrame)
-                
+
                 // set the project title
                 var title = clone.querySelector('.title')
                 title.innerHTML = item.name
@@ -155,14 +226,14 @@
                 // console.log(github)
                 github.href = `https://github.com/zackmann360/javascript_practice/tree/main/${item.link}`
 
-                iFrame.setAttribute('src', item.link )
+                iFrame.setAttribute('src', item.link)
                 var container = document.querySelector('.grid')
                 container.append(clone)
-                
+
                 i += 1
 
             }
-            
+
         }
         callApi()
 
@@ -174,10 +245,10 @@
 
 
         // function for turning console log off. 
-        function watchForContentWindowDisableConsoleLog(iFrame){
-            var interval = setInterval(function(arg1){
-                if(arg1.contentWindow){
-                    arg1.contentWindow.console.log = function (){}
+        function watchForContentWindowDisableConsoleLog(iFrame) {
+            var interval = setInterval(function (arg1) {
+                if (arg1.contentWindow) {
+                    arg1.contentWindow.console.log = function () { }
                     clearInterval(interval)
                 }
             }, 1, iFrame)
@@ -188,7 +259,7 @@
 
 
 
-        
+
 
 
 
@@ -209,7 +280,7 @@
         // Call api practice
 
         async function callApiPractice() {
-        
+
             var rawData = await fetch('./projects.json')
             var data = await rawData.json()
             // console.log(data)

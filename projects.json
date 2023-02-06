@@ -4,7 +4,9 @@
             "name" : "Input Value",
             "link" : "./week_1/input_value/",
             "descrition" : "Get input value. Change innerHTML of Paragraph to input value.",
-            "week" : 1
+            "week" : 1,
+            "frame" : "small"
+
             
     
         },
@@ -12,346 +14,433 @@
             "name" : "Binary Calculator",
             "link" : "./week_2/binary_calculator/",
             "descrition" : "A binary calculator. It changes numbers to binary",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
 
         },
         {
             "name" : "border Switch",
             "link" : "./week_2/border_switcher/",
             "descrition" : "click the button to switch the containers border",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "border Switch advanced",
             "link" : "./week_2/border_switcher_advanced/",
             "descrition" : "use the four bottons to move the border right, down, left, or up.",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "calculator",
             "link" : "./week_2/calculator/",
             "descrition" : "Enter two numbers and select how you want to calculate them",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "container count",
             "link" : "./week_2/container_count/",
             "descrition" : "Use the two buttons to move the border to the next or previous container",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "container count show",
             "link" : "./week_2/container_count_show/",
             "descrition" : "press the button to select a container from 0 to 3",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "count 10 advanced",
             "link" : "./week_2/count_10_advanced/",
             "descrition" : "press the button to add 1 each time untill it reached 10",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "count up or down",
             "link" : "./week_2/count_up_or_down/",
             "descrition" : "use the button to add one or subtract one from the number shown",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "health bar",
             "link" : "./week_2/health_bar/",
             "descrition" : "add or decrease health",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "increase and decrease fill",
             "link" : "./week_2/increase_and_decrease_fill/",
             "descrition" : "increase fill to 100 or decrease it down to 10",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "score loop",
             "link" : "./week_2/score_loop/",
             "descrition" : "fill out the pop up to continue, enter 0 or press enter with no value to quite",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "typed meow",
             "link" : "./week_2/typed_meow/",
             "descrition" : "type meow",
-            "week" : 2
+            "week" : 2,
+            "frame" : "small"
+
         },
         {
             "name" : "div grid advanced",
             "link" : "./week_3/div_grid_advanced/",
             "descrition" : "",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "game loop",
             "link" : "./week_3/game_loop/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "health bar advanced",
             "link" : "./week_3/health_bar_advanced/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "healt bar v3",
             "link" : "./week_3/health_bar_v3/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "image carousel",
             "link" : "./week_3/image_carousel/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "page selector",
             "link" : "./week_3/page_selector/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "page selector arguments",
             "link" : "./week_3/page_selector_arguments/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "page toolbar select",
             "link" : "./week_3/page_toolbar_select/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+
         },
         {
             "name" : "page toolbar select page",
             "link" : "./week_3/page_toolbar_select_page/",
             "descrition" : "Onset",
-            "week" : 3
+            "week" : 3,
+            "frame" : "small"
+,
+            "frame" : "small"
+
         },
         {
             "name" : "accordion",
             "link" : "./week_4/accordion/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "accordion 2",
             "link" : "./week_4/accordion_2/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "clicker",
             "link" : "./week_4/clicker/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "column transfer",
             "link" : "./week_4/column_transfer/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "div selector",
             "link" : "./week_4/div_selector/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "task list 2",
             "link" : "./week_4/task_list_2/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "to do list",
             "link" : "./week_4/to_do_list/",
             "descrition" : "Onset",
-            "week" : 4
+            "week" : 4,
+            "frame" : "small"
+
         },
         {
             "name" : "accordian advanced",
             "link" : "./week_5/accordian_advanced/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "small"
         },
         {
             "name" : "array basics",
             "link" : "./week_5/array_basics/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "small"
         },
         {
             "name" : "dom basics",
             "link" : "./week_5/dom_basics/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "small"
         },
         {
             "name" : "pokemon api",
             "link" : "./week_5/poke_api/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "medium"
         },
         {
             "name" : "anime api",
             "link" : "./week_5/anime_api/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "medium"
         },
         {
             "name" : "to do list advanced",
             "link" : "./week_5/to_do_list_advanced/",
             "descrition" : "Onset",
-            "week" : 5
+            "week" : 5,
+            "frame" : "small"
         },
         {
             "name" : "accordian",
             "link" : "./week_6/accordian/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "small"
         },
         {
             "name" : "counter",
             "link" : "./week_6/counter/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "small"
         },
         {
             "name" : "header",
             "link" : "./week_6/header/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "small"
         },
         {
             "name" : "header 2",
             "link" : "./week_6/header_2/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "medium"
         },
         {
             "name" : "home page",
             "link" : "./week_6/home_page/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "medium"
         },
         {
             "name" : "ivytech",
             "link" : "./week_6/ivyTech/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "medium"
         },
         {
             "name" : "side nav",
             "link" : "./week_6/side_nav/",
             "descrition" : "Onset",
-            "week" : 6
+            "week" : 6,
+            "frame" : "small"
         },
         {
             "name" : "api search practice",
             "link" : "./week_7/api_search_practice/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "api search practice 2",
             "link" : "./week_7/api_search_practice_2/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "array to do list",
             "link" : "./week_7/array_to_do_list/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "array to do list style",
             "link" : "./week_7/array_to_do_list_style/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "medium"
         },
         {
             "name" : "basic dialog modal popup sheet",
             "link" : "./week_7/basic_dialog_modal_popup_sheet/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "nav bar button highligt",
             "link" : "./week_7/nav_bar_button_highlight/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "pokemon flex",
             "link" : "./week_7/pokemon_flex/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "splashtop",
             "link" : "./week_7/splashtop/",
             "descrition" : "Onset",
-            "week" : 7
+            "week" : 7,
+            "frame" : "small"
         },
         {
             "name" : "add payment",
             "link" : "./week_8/add_payment/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "small"
         },
         {
             "name" : "adobe card",
             "link" : "./week_8/adobe_card/",
             "descrition" : "Onset",
             "week" : 8,
-            "frame" : "big"
+            "frame" : "small"
         
         },
         {
             "name" : "cards",
             "link" : "./week_8/cards/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "small"
         },
         {
             "name" : "carousel",
             "link" : "./week_8/carousel/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "small"
         },
         {
             "name" : "drink menu",
             "link" : "./week_8/drink_menu/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "medium"
         },
         {
             "name" : "drink menu description",
             "link" : "./week_8/drink_menu_description/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "medium"
         },
         {
             "name" : "forza",
             "link" : "./week_8/forza/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "medium"
+
         },
         {
             "name" : "grids",
             "link" : "./week_8/grids/",
             "descrition" : "Onset",
             "week" : 8
+
         },
         {
             "name" : "jetbrains grid",
@@ -363,39 +452,44 @@
             "name" : "three cards",
             "link" : "./week_8/three_cards/",
             "descrition" : "Onset",
-            "week" : 8
+            "week" : 8,
+            "frame" : "small"
         },
         {
             "name" : "game cards",
             "link" : "./week_9/game_cards/",
             "descrition" : "Onset",
             "week" : 9,
-            "frame" : "medium"
+            "frame" : "small"
         },
         {
             "name" : "minecraft card hover",
             "link" : "./week_9/minecraft_card_hover/",
             "descrition" : "Onset",
-            "week" : 9
+            "week" : 9,
+            "frame" : "small"
         },
         {
             "name" : "spotify grid",
             "link" : "./week_9/spotify_grid/",
             "descrition" : "Onset",
-            "week" : 9
+            "week" : 9,
+            "frame" : "small"
         },
         {
             "name" : "youtube",
             "link" : "./week_9/youtube/",
             "descrition" : "Onset",
-            "week" : 9
+            "week" : 9,
+            "frame" : "medium"
+            
         },
         {
             "name" : "Icon Select",
             "link" : "./week_9/icon_select/",
             "descrition" : "I found this project on the Team Viewer website. When you hover over the icons they lift up slightly. Then when you cick on them an animation plays. I noticed on the team viewer site the hover and the pin animation had a bit of a jump inbetween them. I tried to make the transition more smooth by connecting the hover lift and the animatin together.",
             "week" : 9,
-            "frame" : "small"
+            "frame" : "big"
         }
         
 

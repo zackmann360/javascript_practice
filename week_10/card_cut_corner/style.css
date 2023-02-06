@@ -1,0 +1,69 @@
+:root {
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --text-color-blue: #7f8cd4;
+
+
+}
+
+.app   {
+    font-family: monospace;
+    padding: 2rem;
+}
+
+.componentHeader {
+    border: 2px solid black;
+    padding: .5rem;
+    margin: 2rem 0;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+}
+
+.image img{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+
+}
+.image .cutOut {
+    position: absolute;
+    transform: rotate(-45deg);
+    background: #fff;
+    bottom: -5rem;
+    right: -5rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+.text .tag  {
+    margin-top: var(--space-2);
+    color: var(--text-color-blue);
+}
+.text .h2  {
+    margin: var(--space-1) 0;
+    font-size: 1.5rem;
+}
+
+
+.gridContainer{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+    .gridContainer{
+        grid-template-columns:1fr 1fr ;
+    }
+    
+}
+@media (max-width: 600px) {
+    .gridContainer{
+        grid-template-columns:1fr ;
+    }
+    
+}

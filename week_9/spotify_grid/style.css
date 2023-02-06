@@ -101,7 +101,7 @@ html, body {
 }
 
 .bg1 {
-    background: url(../../../images/background_adobe_card.jpg);
+    background: url("../../images/background/background_adobe_card.jpg");
     background-size: cover;
 }
 
