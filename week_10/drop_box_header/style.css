@@ -1,0 +1,220 @@
+:root {
+    --font-size-h2: 1.5rem;
+    --color-blue: #2165f5;
+    --color-blue-hover: #5177c6;
+    --color-background: #444;
+    --color-white: #fff;
+    --color-white-2: #eee;
+    --color-black-2: #444;
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+}
+
+html ,body {
+    background: var(--color-background);
+    font-family: monospace;
+}
+
+.app {
+    margin: 4rem auto 20rem auto;
+    max-width: 800px;
+    padding: 0 var(--space-2);
+    
+}
+
+.componentHeader {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+/*-----------------------------------------------------------
+| icon
+-----------------------------------------------------------*/
+
+
+.icon {
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+}
+.icon img {
+    filter: invert(100%);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height:100%;
+}
+
+icon.demo {
+    background-color: var(--color-blue);
+    
+}
+
+/*-----------------------------------------------------------
+| h2
+-----------------------------------------------------------*/
+
+.h2 {
+    font-weight: bolder;
+    font-size: var(--font-size-h2);
+    
+}
+
+
+
+/*-----------------------------------------------------------
+| login
+-----------------------------------------------------------*/
+
+.login {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-half);
+}
+.login:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+button.primary {
+    background: var(--color-blue);
+    border: none;
+    align-items: center;
+    padding: var(--space-half);
+    display: flex;
+    gap: 1rem; 
+    color: var(--color-white);  
+    cursor: pointer;
+}
+button.primary .left {
+    
+}
+
+button.primary .right {
+    width: 1rem;
+}
+
+button.primary:hover {
+    background: var(--color-blue-hover);
+}
+
+/*-----------------------------------------------------------
+| menu button
+-----------------------------------------------------------*/
+
+.menuButton {
+    max-width: 5rem;
+    filter: invert(100%);    
+}
+.menuButton .icon.close{
+    display: none;
+}
+.menuButton.isOpened .open{
+    display: none;
+}
+.menuButton.isOpened .close{
+    display: block;
+}
+
+/*-----------------------------------------------------------
+| tool bar demo
+-----------------------------------------------------------*/
+
+.toolBar {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolBar .left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.toolBar .right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.toolBar .toolBarIcon { 
+    width: 2rem;
+    padding: var(--space-half);
+    background-color: var(--color-blue);
+
+}
+
+.toolBarMenuButton {
+    width: 2rem;
+    padding-right: var(--space-half);
+
+}
+
+/*-----------------------------------------------------------
+| dropDown
+-----------------------------------------------------------*/
+.dropDownWrapper {
+    position: relative;
+}
+.dropDown {
+    background-color: var(--color-white-2);
+    padding: var(--space-1) 0;
+    /* animation: slideDown 4s; */
+    position: absolute;
+    max-height: 0px;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.dropDown.show {
+    display: block;
+    max-height: 1000px;
+    padding: var(--space-1) 0;
+    opacity: 1;
+}
+.dropDown .link{
+    color: var(--color-black-2);
+    padding: var(--space-1) var(--space-2);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.dropDown.show .link {
+    display: flex;
+}
+.dropDown .link:nth-of-type(2) {animation-delay: 0.25s;}
+.dropDown .link:nth-of-type(3) {animation-delay: 0.5s;}
+.dropDown .link:nth-of-type(4) {animation-delay: 0.75s;}
+
+
+.dropDown .link:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.dropDown .link .right {
+    width: 1rem;
+    filter: invert(100%);    
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes slideDown {
+    0% {max-height: 0;}
+    100% {max-height: 1000px;}
+}
