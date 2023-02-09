@@ -19,7 +19,7 @@ html ,body {
 }
 
 .app {
-    margin: 4rem auto 20rem auto;
+    margin: 5rem auto 20rem auto;
     max-width: 800px;
     padding: 0 var(--space-2);
     

@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        html, body {
+            background-color: #fff;
+        }
+        .card {
+            width: 25rem;
+            height: 25rem;
+            position: relative;
+            perspective: 500px;
+            margin: 5rem auto;
+
+        }
+        
+        .card .pad {
+            height: 50%;
+            width: 50%;
+            background: #666;
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            
+        }
+        .card .topright {
+            top: 0;
+            right: 0;
+            background: #777;
+        } 
+        .card .bottomLeft {
+            bottom: 0;
+            left: 0;
+            background: #888;
+        }
+        .card .bottomright {
+            right: 0;
+            bottom: 0;
+            background: #999;
+        }
+        .card .pad:hover {
+            background: #f22;
+        }
+        .card .content {
+            transform-style: preserve-3d;
+            background: url("../images/background/background_3_game_cards.png");
+            background-size: cover;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 1.5s;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card .topLeft:hover ~ .content {
+            transform: rotateY(20deg) rotateX(-20deg);
+            box-shadow: -20px -20px 10px rgba(0, 0, 0, 0.2);
+            
+        }
+        .card .topRight:hover ~ .content {
+            transform: rotateY(-20deg) rotateX(-20deg);
+            box-shadow: 20px -20px 10px rgba(0, 0, 0, 0.2);
+            
+        }
+        .card .bottomLeft:hover ~ .content {
+            transform: rotateY(10deg) rotateX(10deg);
+            box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.2);
+            
+        }
+        .card .bottomRight:hover ~ .content {
+            transform: rotateY(-10deg) rotateX(10deg);
+            box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+
+        }
+
+        </style>
+
+    <div class="card">
+        <div class="pad topLeft"></div>
+        <div class="pad topRight"></div>
+        <div class="pad bottomLeft"></div>
+        <div class="pad bottomRight"></div>
+        <div class="content"></div>
+    </div>
+    
+</body>
+</html>
