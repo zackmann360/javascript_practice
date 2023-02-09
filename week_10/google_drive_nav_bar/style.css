@@ -1,7 +1,8 @@
 :root {
-    --font-color: #444;
-    --input-color: #eee;
-    --profile-color: #bf360d;
+    --color-hover: rgba(0, 0, 0, 0.05);
+    --color-font: #444;
+    --color-input: #eee;
+    --color-profile: #bf360d;
     --gap: 1rem;
     --space-half:0.5rem;
     --space-1: 1rem;
@@ -17,7 +18,7 @@
 
 html, body {
     font-family: sans-serif;
-    color: var(--font-color);
+    color: var(--color-font);
 }
 
 .componentHeader {
@@ -41,9 +42,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 button:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--color-hover);
 }
 
 button .icon {
@@ -91,7 +93,7 @@ button .icon img {
     border: none;
     border-radius: 0.5rem;
     padding-left: var(--space-3-5);
-    background: #eee;
+    background: var(--color-input);
 }
 .input .icon {
     position: absolute;
@@ -110,7 +112,7 @@ button .icon img {
 ----------------------------------------------------------------*/
 
 .profile {
-    background: var(--profile-color);
+    background: var(--color-profile);
     width: 2.5rem;
     height: 2.5rem;
     text-align: center;
@@ -154,11 +156,26 @@ button .icon img {
     position: absolute;
     background-color: #fff;
     top: 0;
+    left: 0;
+    ccopacity: 1;
+    transition: all 0.5s;
 }
 .displayNone {
-    display: none;
+    ccdisplay: none;
+    ccopacity: 0;
+    ccpointer-events: none;
+    /* slide it off the side of the screen */
+    
+    /* left works off the size of the container */
+    ccleft: -20rem;
 
+    /* transform works off the size of its self */
+    transform: translate(-100%, 0);
 }
+
+
+
+
 .dropDown .title {
     padding: var(--space-1) var(--space-half);
     font-size: 1.5rem;
@@ -168,6 +185,10 @@ button .icon img {
     gap: var(--gap);
     align-items: center;
     padding: var(--space-half);
+    cursor: pointer;
+}
+.dropDown .button:hover {
+    background: var(--color-hover);
 }
 
 .dropDown .button .icon {

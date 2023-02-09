@@ -17,7 +17,7 @@ body.onclick = close
 
 function close(){
     console.log(this)
-    dropdown.classList.toggle('displayNone')
+    dropdown.classList.add('displayNone')
 }
 
 function notAButton(not){
