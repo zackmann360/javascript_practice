@@ -1,0 +1,179 @@
+:root {
+    --font-color: #444;
+    --input-color: #eee;
+    --profile-color: #bf360d;
+    --gap: 1rem;
+    --space-half:0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --icon-size: 2rem;
+    --pageSelect-icon: 3rem;
+    --pageSelect-text: 1.4rem;
+}
+
+html, body {
+    font-family: sans-serif;
+    color: var(--font-color);
+}
+
+.componentHeader {
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 0.5rem;
+    margin-top: 2rem ;
+    margin-bottom: 1rem ;
+}
+
+/*----------------------------------------------------------------
+| buttons
+----------------------------------------------------------------*/
+
+button {
+    border: none;
+    background: transparent;
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+button .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+button .icon img {
+    width: 100%;
+    opacity: 0.75;
+}
+
+/*----------------------------------------------------------------
+| Selected page
+----------------------------------------------------------------*/
+
+.pageSelected {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.pageSelected .text {
+    font-size: var(--pageSelect-text);
+}
+.pageSelected .icon {
+    width: var(--pageSelect-icon);
+    height: var(--pageSelect-icon);
+}
+
+.pageSelected .icon img {
+    width: 100%;
+}
+
+/*----------------------------------------------------------------
+| Input
+----------------------------------------------------------------*/
+
+.input {
+    height: 3rem;
+    position: relative;
+}
+.input input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    padding-left: var(--space-3-5);
+    background: #eee;
+}
+.input .icon {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    height: var(--icon-size);
+    width: var(--icon-size);
+}
+
+.input .icon img {
+    width: 100%;
+}     
+
+/*----------------------------------------------------------------
+| profile
+----------------------------------------------------------------*/
+
+.profile {
+    background: var(--profile-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 100%;
+    color: #eee;
+    font-size: 1.25rem;
+}
+
+/*----------------------------------------------------------------
+| toolbar
+----------------------------------------------------------------*/
+
+.toolbar {
+    display: flex;    
+    justify-content: space-between;
+    padding: 0 var(--space-1);
+}
+.toolbar .center {
+    max-width: 800px;
+    flex: 1;
+    padding: 0 var(--space-1);
+}
+
+
+.toolbar .left,
+.toolbar .right{
+    display: flex;
+    gap: var(--gap);
+}
+
+
+/*----------------------------------------------------------------
+| dropDown
+----------------------------------------------------------------*/
+.dropDown {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 20rem;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+}
+.displayNone {
+    display: none;
+
+}
+.dropDown .title {
+    padding: var(--space-1) var(--space-half);
+    font-size: 1.5rem;
+}
+.dropDown .button {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    padding: var(--space-half);
+}
+
+.dropDown .button .icon {
+    width: 2rem;
+    height: 2rem;
+}
+.dropDown .button .icon img {
+    width: 100%;
+}
