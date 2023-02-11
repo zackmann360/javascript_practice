@@ -1,133 +1,450 @@
 :root {
-    --gap-1: 1rem;
-    --gap-2: 2rem;
-    --gap-3: 3rem;
+    --space-half: 0.5rem;
     --space-1: 1rem;
+    --space-1-5: 1.5rem;
     --space-2: 2rem;
+    --space-2-5: 2.5rem;
     --space-3: 3rem;
     --space-4: 4rem;
-    --color-black-font-2: rgba(0, 0, 0, 0.5);
-    --color-black-font: #333;
-    --color-red: #e60012; 
-    --color-red-2:  rgba(230, 0, 10, 0.5);
-    --icon-size-bread: 1.5rem;
-}
+    --space-5: 5rem;
+    --space-6: 6rem;
+    --space-8: 8rem;
+    --gap-half: 0.5rem;
+    --gap-1: 1rem;
+    --gap-1-5: 1.5rem;
+    --gap-2: 2rem;
+    --gap-3: 3rem;
+    --gap-4: 4rem;
+    --color-red: #e60012;
+    --color-background-tag: #f6e0e2;
+    --border: 2px solid rgba(0, 0, 0, 0.25);
+    --color-background: #e60012;
+    --color-font: rgba(0, 0, 0, 0.75);
+    --color-chevron: 0.25;
+    --icon-size: 2rem;
+    --text-size-game-title: 2rem;
+    --font-type-size: 1.2rem;
+    --background-color: #ac40af;
 
-html, body {
-    background-color: #888;
-    font-family: sans-serif;
 }
 
 .componentHeader {
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
     padding: 0.5rem;
-    margin: 2rem 0; 
+    margin: 2rem 0;
 }
 
-/*--------------------------------------------------------------------------------------------
-| Breadcrumb
---------------------------------------------------------------------------------------------*/
+html, body { 
+    color: var(--color-font);
+    background-color: var(--background-color);
+}
+
+* {
+    font-family: sans-serif;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    padding: var(--space-2) var(--space-3);
+    gap: var(--gap-3);
+    background-color: #eee;
+    margin: var(--space-2);
+    border-radius: 0.5rem;
+}
+.app .left,
+.app .right{
+    padding-right: var(--space-1);
+}
+
+
+
+/* utilities */
+.height {
+    height: 30rem;
+}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+.m-t-6 {margin-top: 6rem;}
+.m-t-7 {margin-top: 7rem;}
+.m-t-10 {margin-top: 15rem;}
+
+.m-b-1 {margin-bottom: 1rem;}
+.m-b-2 {margin-bottom: 2rem;}
+.m-b-6 {margin-bottom: 6rem;}
+
+span {
+    color: var(--color-red);
+    font-weight: bold;
+    border-bottom: 3px solid red;
+    cursor: pointer;
+}
+
+
+
+/*---------------------------------------------------------------
+| bread crumb
+---------------------------------------------------------------*/
+
 .breadCrumb {
     display: flex;
     align-items: center;
-    color: var(--color-black-font-2);
-}
-.breadCrumb .text {
-    cursor: pointer;
 }
 .breadCrumb .icon {
-    width: var(--icon-size-bread);
-    height: var(--icon-size-bread);
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 .breadCrumb .icon img {
     width: 100%;
-    opacity: 0.5;
-}
-.selected { 
-    color: #000;
+    opacity: var(--color-chevron);
 }
 
-/*--------------------------------------------------------------------------------------------
-| gallery
---------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------
+| carousel
+---------------------------------------------------------------*/
 
-.gallery {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.gallery .slides {
-    width: 40rem;
+body {
+    ccmargin: 0;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
-.gallery .slides .mySlides img {
-    width: 100%;
+.carousel>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.displayNone {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
-.buttons {
-    width: 40rem;
-    display: flex;
-    justify-content: space-between;
+.slide {
     position: absolute;
-    top: 24rem;
+    inset: 0;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    transition-delay: 0.2s;
 }
-.button button {
-    background: rgba(0, 0, 0, 0.25);
+
+.slide>img {
+    border-radius: 0.5rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
     border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+.carousel-button img{
+    filter: invert(1);
+    opacity: 0.5;
+}
+.carousel-button:hover img{
+    opacity: 1;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+/*---------------------------------------------------------------
+| image row
+---------------------------------------------------------------*/
+.gridContainer {
+    padding-top: var(--space-1);
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: var(--gap-1);
+}
+.grid .item img{
+    width: 100%;
     border-radius: 0.5rem;
 }
-.button button:hover {
-    background: rgba(0, 0, 0, 0.5);
+
+/*---------------------------------------------------------------
+| gallery
+---------------------------------------------------------------*/
+
+.gallery {
+    height: 28rem;
+    width: 100%;
+}
+.gallery .imageRow {
+    height: 12rem;
+    width: 100%;
+    padding-top: var(--space-1);
+    ccbackground-color: red;
+}
+.gallery .imageRow .images img {
+    width: 100%;
+    background-color: green;
+    height: 100%;
 }
 
-.button button img {
-    filter: invert(1);
+/*---------------------------------------------------------------
+| tag
+---------------------------------------------------------------*/
+.tag {
+    background: var(--color-background-tag);
+    display: inline;
+    padding: var(--space-half) var(--space-1);
+    border-radius: 0.5rem;
+    color: var(--color-red);
+    font-weight: bolder;
 }
 
-.row {
+/*---------------------------------------------------------------
+| rating container
+---------------------------------------------------------------*/
+
+.ratingContainer {
+
+}
+.ratingContainer .top {
+    padding-bottom: var(--space-2);
+    padding-top: 6rem;
+    
+}
+.ratingContainer .bottom {
     display: flex;
     gap: var(--gap-1);
-    width: 40rem;
-    height: 3.5rem;
+    align-items: center;
 }
-
-.row .column img {
+.ratingContainer .bottom .content .text {
+    font-size: 0.9rem;
+}
+.ratingContainer .bottom .image {
+    width: 4rem;
+    height: 6rem;
+}
+.ratingContainer .bottom .image img {
     width: 100%;
     height: 100%;
 }
 
-/*--------------------------------------------------------------------------------------------
-| rating
---------------------------------------------------------------------------------------------*/
-.gameRating {
-    width: 20rem;
+/*---------------------------------------------------------------
+| console tag
+---------------------------------------------------------------*/
+.consoleTag .text {
+    border-left: 3px solid var(--color-red);
+    padding-left: var(--space-half);
 }
-.gameRating .voucher {
-    background: var(--color-red-2);
-    padding: 0.25rem .5rem;
+
+/*---------------------------------------------------------------
+| game title
+---------------------------------------------------------------*/
+
+.gameTitle .text {
+    font-size: var(--text-size-game-title);
+    font-weight: bold;
+}
+
+/*---------------------------------------------------------------
+| product box Icon
+---------------------------------------------------------------*/
+
+.productBox .icon {
+    background: var(--color-red);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 100%;
+    
+}
+.productBox .icon img {
+    width: 100%;
+    filter: invert(1);
+}
+
+/*---------------------------------------------------------------
+| product box text
+---------------------------------------------------------------*/
+
+.textContainer .type .text {
+    padding-bottom: var(--space-1) ;
+    font-size: var(--font-type-size);    
+    color: rgba(0, 0, 0, 1);
+}
+
+/*---------------------------------------------------------------
+| product box price
+---------------------------------------------------------------*/
+
+.price .text {
+    font-size: var(--font-type-size);    
+    color: rgba(0, 0, 0, 1);
+    
+}
+
+/*---------------------------------------------------------------
+| product box layout
+---------------------------------------------------------------*/
+
+.productBox {
+    border: var(--border);
     border-radius: 0.25rem;
-    display: inline;
-}
-.gameRating .rating {
+    padding: var(--space-1);
     display: flex;
     gap: var(--gap-1);
-    font-size: 0.8rem;
+    cursor: pointer;
+}
+.productBox:hover {
+    border: 2px solid #000;
+}
+.productBox .left {
+    display: flex;
     align-items: center;
-    padding-top: var(--space-2);
 }
-
-
-.gameRating .rating .esrb {
-    width: 4rem;
-}
-.gameRating .rating .esrb img {
+.productBox .right {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game .item .type {
+    padding-bottom: var();
+}
+
+/*---------------------------------------------------------------
+| selected product price
+---------------------------------------------------------------*/
+
+.selectedPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.selectedPrice .left .text {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.75);
+}
+.selectedPrice .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.selectedPrice .icon img{
+    width: 100%;
+}
+
+/*---------------------------------------------------------------
+| gold information
+---------------------------------------------------------------*/
+
+.goldInfo {
+    display: flex;
+    gap: var(--gap-half);
+    align-items: center;
+}
+.goldInfo .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.goldInfo .icon img {
+    width: 100%;
+}
+
+/*---------------------------------------------------------------
+| download button
+---------------------------------------------------------------*/
+
+.downloadButton button {
+    background-color: rgb(237, 75, 75);
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: var(--space-1);
+    border-radius: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    gap: var(--gap-1);
+    cursor: pointer;
+}
+.downloadButton button:hover {
+    background: var(--color-red);
+}
+.downloadButton button .text {
+    font-size: 1.5rem;
+    font-weight: bold ;
+}
+.downloadButton button .icon {
+    width: 3rem;
+    height: 3rem;
+}
+.downloadButton button .icon img {
+    width: 100%;
+    filter: invert(1);
+}
+
+/*---------------------------------------------------------------
+| download information
+---------------------------------------------------------------*/
+
+.downloadInformation .item {
+    padding-top: var(--space-1);
+    display: flex;
+    gap: var(--gap-1);
+    align-items: center;
+    
+}
+.downloadInformation .item .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.downloadInformation .item .icon img {
+    width: 100%;
+}
+
+.textRed {
+    font-weight: bold;
+    color: var(--color-red);
 }

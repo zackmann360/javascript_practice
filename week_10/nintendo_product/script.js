@@ -1,17 +1,18 @@
-var breadCrumb = document.querySelectorAll('.text')
-console.log(breadCrumb)
+var buttons = document.querySelectorAll("[data-carousel-button]")
 
-for(var text of breadCrumb){
-    // console.log(text)
-    text.onclick = selected
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                var offset = button.dataset.carouselButton === "next" ? 1 : -1
+                var slides = button
+                    .closest("[data-carousel]")
+                    .querySelector("[data-slides]")
 
-    function selected(){
-        // console.log(this)
-        this.classList.toggle('selected')
-    }
-}
+                var activeSlide = slides.querySelector("[data-active]")
+                var newIndex = [...slides.children].indexOf(activeSlide) + offset
+                if (newIndex < 0) newIndex = slides.children.length - 1
+                if (newIndex >= slides.children.length) newIndex = 0
 
-
-
-
- 
+                slides.children[newIndex].dataset.active = true
+                delete activeSlide.dataset.active
+            })
+        })

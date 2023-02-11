@@ -113,10 +113,8 @@ html, body{
 
 /* Control the movement */
 .slideContainer .slides.move-0 {
-    ccbackground-color: #555;
 } 
 .slideContainer .slides.move-1 {
-    ccbackground-color: #666;
     transform: translateX(-40%);
 }
 .slideContainer .slides.move-2 {

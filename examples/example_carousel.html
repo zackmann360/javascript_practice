@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .carousel {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .carousel>ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: 200ms opacity ease-in-out;
+            transition-delay: 200ms;
+        }
+
+        .slide>img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .slide[data-active] {
+            opacity: 1;
+            z-index: 1;
+            transition-delay: 0ms;
+        }
+
+        .carousel-button {
+            position: absolute;
+            z-index: 2;
+            background: none;
+            border: none;
+            font-size: 4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, .5);
+            cursor: pointer;
+            border-radius: .25rem;
+            padding: 0 .5rem;
+            background-color: rgba(0, 0, 0, .1);
+        }
+        .carousel-button img{
+            filter: invert(1);
+            opacity: 0.5;
+        }
+        .carousel-button:hover img{
+            opacity: 1;
+        }
+
+        .carousel-button:hover,
+        .carousel-button:focus {
+            color: white;
+            background-color: rgba(0, 0, 0, .2);
+        }
+
+        .carousel-button:focus {
+            outline: 1px solid black;
+        }
+
+        .carousel-button.prev {
+            left: 1rem;
+        }
+
+        .carousel-button.next {
+            right: 1rem;
+        }
+    </style>
+
+    
+    <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">
+                <img src="../images/icons/icon_chevron_left.png" alt="">
+            </button>
+            <button class="carousel-button next" data-carousel-button="next">
+                <img src="../images/icons/icon_chevron_right.png" alt="">
+            </button>
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="../images/background/background_pokemon.avif" alt="">
+                </li>
+                <li class="slide">
+                    <img src="../images/background/background_pokemon2.jpeg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="../images/background/background_pokemon_3.webp" alt="">
+                </li>
+                <li class="slide">
+                    <img src="../images/background/background_pokemon_4.jpeg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="../images/background/background_pokemon_5.jpeg" alt="">
+                </li>
+                <li class="slide">
+                    <img src="../images/background/background_pokemon_6.jpeg" alt="">
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <script>
+
+        var buttons = document.querySelectorAll("[data-carousel-button]")
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                var offset = button.dataset.carouselButton === "next" ? 1 : -1
+                var slides = button
+                    .closest("[data-carousel]")
+                    .querySelector("[data-slides]")
+
+                var activeSlide = slides.querySelector("[data-active]")
+                var newIndex = [...slides.children].indexOf(activeSlide) + offset
+                if (newIndex < 0) newIndex = slides.children.length - 1
+                if (newIndex >= slides.children.length) newIndex = 0
+
+                slides.children[newIndex].dataset.active = true
+                delete activeSlide.dataset.active
+            })
+        })
+
+    </script>
+</body>
+
+</html>
