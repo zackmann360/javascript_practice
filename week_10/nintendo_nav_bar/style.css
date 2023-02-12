@@ -1,0 +1,103 @@
+:root {
+    --border-left-blue: 1rem solid #6dcff6;
+    --border-left-green: 1rem solid #84c590;
+    --border-left-red: 1rem solid #ee4749;
+    --border-left-purple: 1rem solid #a186be;
+    --border-left-yellow: 1rem solid #ffc011;
+
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+}
+
+html, body {
+    background-color: #666;
+    
+}
+
+* {
+    font-family: sans-serif;
+}
+
+.grid{
+    display: grid;
+    background-color: #999;
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-4);
+    width: 50rem;
+    margin: 5rem auto;
+    ccbox-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .2);
+}
+
+.grid .left{
+    background-color: #666;
+    padding: var(--space-2);
+    box-shadow: -2px 0px 10px 2px rgba(0, 0, 0, .2);
+    
+}
+.grid .right{
+    background: #444;
+    padding: var(--space-4);
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: 2px 0px 5px 2px rgba(0, 0, 0, .2);
+    
+}
+
+.grid .right,
+.grid .left{
+
+}
+
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+    padding: var(--space-half);
+    margin: var(--space-half);
+    border: none;
+    cursor: pointer;
+}
+button .text {
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.5);
+    padding-left: var(--space-half);
+}
+
+button:hover {
+    background-color: rgba(250, 247, 247, 0.75);
+}
+
+
+/*---------------------utility--------------------*/
+.borderBlue {
+    
+    border-left: var(--border-left-blue);
+    
+}
+.borderGreen {
+    
+    border-left: var(--border-left-green);
+    
+}
+.borderRed {
+    
+    border-left: var(--border-left-red);
+    
+}
+.borderPurple {
+    
+    border-left: var(--border-left-purple);
+    
+}
+.borderYellow {
+    
+    border-left: var(--border-left-yellow);
+    
+}
