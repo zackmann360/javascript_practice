@@ -1,18 +1,33 @@
 var buttons = document.querySelectorAll("[data-carousel-button]")
 
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                var offset = button.dataset.carouselButton === "next" ? 1 : -1
-                var slides = button
-                    .closest("[data-carousel]")
-                    .querySelector("[data-slides]")
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        var offset = button.dataset.carouselButton === "next" ? 1 : -1
+        var slides = button
+            .closest("[data-carousel]")
+            .querySelector("[data-slides]")
 
-                var activeSlide = slides.querySelector("[data-active]")
-                var newIndex = [...slides.children].indexOf(activeSlide) + offset
-                if (newIndex < 0) newIndex = slides.children.length - 1
-                if (newIndex >= slides.children.length) newIndex = 0
+        var activeSlide = slides.querySelector("[data-active]")
+        var newIndex = [...slides.children].indexOf(activeSlide) + offset
+        if (newIndex < 0) newIndex = slides.children.length - 1
+        if (newIndex >= slides.children.length) newIndex = 0
 
-                slides.children[newIndex].dataset.active = true
-                delete activeSlide.dataset.active
-            })
-        })
+        slides.children[newIndex].dataset.active = true
+        delete activeSlide.dataset.active
+    })
+})
+
+var productBox = document.querySelectorAll('.productBox')
+
+console.log(productBox)
+
+for(var item of productBox){
+    // item.classList.toggle('active')
+    item.onclick = onclickActive
+
+    function onclickActive(){
+        // console.log('test')
+        this.classList.toggle('active')
+        
+    }
+}

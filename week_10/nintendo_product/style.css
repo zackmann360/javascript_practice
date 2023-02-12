@@ -157,9 +157,8 @@ body {
     z-index: 2;
     background: none;
     border: none;
-    font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30rem;
+    cctransform: translateY(-50%);
     color: rgba(255, 255, 255, .5);
     cursor: pointer;
     border-radius: .25rem;
@@ -185,11 +184,10 @@ body {
 }
 
 .carousel-button.prev {
-    left: 1rem;
 }
 
 .carousel-button.next {
-    right: 1rem;
+    right: 0rem;
 }
 
 /*---------------------------------------------------------------
@@ -336,7 +334,7 @@ body {
     gap: var(--gap-1);
     cursor: pointer;
 }
-.productBox:hover {
+.active {
     border: 2px solid #000;
 }
 .productBox .left {
