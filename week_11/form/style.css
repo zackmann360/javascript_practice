@@ -1,0 +1,247 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1-5: 1.5rem;
+    --space-1: 1rem;
+    --space-2-5: 2.5rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --space-10: 10rem;
+    --border-color: rgba(0, 0, 0, 0.15);
+    --text-color-light: rgba(0, 0, 0, 0.6);
+    --color-white: #fefefe;
+    --font-size-header: 2rem;
+    --font-weight-header: bolder;
+
+    --color-primary: #7e56d9;
+
+    --icon-size: 1.25rem;
+
+    --input-height: 3rem;
+}
+
+.componentHeader {
+    padding: var(--space-1);
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    margin: var(--space-2) 0;
+}
+
+html, body {
+    background-color: #d3d0df;
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: sans-serif;
+}
+
+body {
+    padding: var(--space-2);
+}
+
+
+.app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.app .leftSide {
+    background: #fff;
+    flex: 1;
+}
+.app .leftSide .wrapper {
+    max-width: 25rem;
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-2);
+}
+.app .rightSide {
+    background-color: green;
+    position: relative;
+    flex: 1;
+    
+}
+
+.app .rightSide .image {
+}
+.app .rightSide .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+@media (max-width:825px){
+    .app {
+        display: block;
+    }
+    .app .leftSide .wrapper {
+        max-width: 30rem;
+    }
+}
+
+
+
+/* --------------utitity-------------- */
+.m-t-1{margin-top: 1rem;}
+.m-t-1-5{margin-top: 1.5rem;}
+.m-t-2{margin-top: 2rem;}
+.m-t-3{margin-top: 3rem;}
+/*-------------------------------------------------------------
+| header
+-------------------------------------------------------------*/
+
+.header .text {
+    font-size: var(--font-size-header);
+    font-weight: var(--font-weight-header);
+    padding-bottom: var(--space-2);
+}
+
+/*-------------------------------------------------------------
+| welcome back
+-------------------------------------------------------------*/
+.welcomeBack .text {
+    padding-bottom: var(--space-2);
+    color: var(--text-color-light);
+}
+
+/*-------------------------------------------------------------
+| input title
+-------------------------------------------------------------*/
+
+.title .text {
+    color: var(--text-color-light);
+    font-weight: bolder;
+}
+
+/*-------------------------------------------------------------
+| input 
+-------------------------------------------------------------*/
+.input input {
+    padding: var(--space-1) var(--space-half);
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 2px solid #eee;
+}
+
+
+/*-------------------------------------------------------------
+| input layout
+-------------------------------------------------------------*/
+
+.inputLayout {
+    padding: var(--space-half) 0;
+
+}
+.inputLayout .title {
+    padding-bottom: var(--space-half);
+}
+
+/*-------------------------------------------------------------
+| checkBox
+-------------------------------------------------------------*/
+
+.checkBox {
+    display: flex;
+    gap: var(--space-half);
+    color: var(--text-color-light);
+}
+/* .checkBox input, 
+.checkBox label {
+    cursor: pointer;
+} */
+.checkBox * {
+    cursor: pointer;
+}
+
+.icon {
+    cccursor: pointer;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.icon img {
+    width: 100%;
+}
+
+/*-------------------------------------------------------------
+| links
+-------------------------------------------------------------*/
+
+.link .text {
+    color: var(--color-primary);
+    display: inline;
+    cursor: pointer;
+}
+
+.link .text:hover {
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/*-------------------------------------------------------------
+| forgot password
+-------------------------------------------------------------*/
+.password {
+    padding-top: var(--space-1);
+    display: flex;
+    justify-content: space-between;
+}
+label {
+    user-select: none;
+    cccursor: pointer;
+}
+input{
+    cccursor: pointer;
+}
+
+/*-------------------------------------------------------------
+| button
+-------------------------------------------------------------*/
+
+.button {
+    width: 100%;
+    height: var(--input-height);
+    border-radius: 0.5rem;
+    border: 2px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-white);
+}
+.button:hover {
+    background-color: rgba(201, 197, 197, 0.2);
+}
+
+.button.primary {
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+}
+.button.primary:hover {
+    background: #6939d6;
+}
+
+/*-------------------------------------------------------------
+| sign up
+-------------------------------------------------------------*/
+
+.signup {
+    padding-top: var(--space-2);
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+} 
+.signup .text {
+    
+}
+
+.textColorLighter {
+    color: var(--text-color-light);
+
+}

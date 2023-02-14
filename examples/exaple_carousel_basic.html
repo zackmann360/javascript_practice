@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        html, body {
+            background-color: #444;
+            color: #fff;
+            font-family: sans-serif;
+
+        }
+
+        .gallery {
+            position: relative;
+        }
+        .gallery .big {
+            height: 10rem;
+            background: #888;
+            padding: 1rem;
+        }
+        .gallery .smalls {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+        .gallery .smalls .small {
+            flex: 1;
+            padding: 1rem;
+            background: #888;
+        }
+        .gallery .smalls .small.active {
+            border: 2px solid black;            
+        }
+        
+        .gallery .smalls .small:hover {
+            background: #777;
+        }
+
+        .gallery .left, 
+        .gallery .right {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            background: #222;
+            padding: 1rem;
+            user-select: none;
+            cursor: pointer;
+        }
+        .gallery .left {
+            left: 0;
+        } 
+        .gallery .right {
+            right: 0;
+        }
+
+        .gallery .left:hover, 
+        .gallery .right:hover {
+            background-color: #333;
+        }
+    </style>
+
+    <div class="gallery">
+        <div class="big">0</div>
+        <div class="smalls">
+            <div class="small active">0</div>
+            <div class="small">1</div>
+            <div class="small">2</div>
+            <div class="small">3</div>
+        </div>
+        
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    
+    <script>
+        // state
+        var index = 0
+        
+        var gallery = document.querySelector('.gallery')
+        // console.log(gallery)
+        var smalls = gallery.querySelectorAll('.small')
+        var big = gallery.querySelector('.big')
+        var left = gallery.querySelector('.left')
+        left.onclick = onclickLeft
+        var right = gallery.querySelector('.right')
+        right.onclick = onclickRight
+
+        // console.log(big)
+        // console.log(smalls)
+        for(var small of smalls){
+            small.onclick = onclickSmall
+        }
+
+        function onclickSmall(){
+                // console.log('cats', this)
+                var clickedNumber = Number(this.innerText)
+                // console.log(clickedNumber)
+                index = clickedNumber
+                update()
+            }
+
+        function onclickLeft() {
+            // console.log('test')
+            index = Math.max(0, index - 1) 
+            // console.log(index)
+            
+            update()
+        }
+        
+        function onclickRight(){
+            // console.log('right')
+            index = Math.min(3, index + 1)
+            
+            update()
+        }
+
+        function update(){
+            // console.log('test', index)
+            var currentActive = gallery.querySelector('.active')
+                // console.log(currentActive)
+            currentActive.classList.remove('active')
+            var nextActive = smalls[index]
+            nextActive.classList.add('active')
+            
+            big.innerHTML = index
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

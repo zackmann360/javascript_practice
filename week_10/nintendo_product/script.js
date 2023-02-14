@@ -1,33 +1,60 @@
-var buttons = document.querySelectorAll("[data-carousel-button]")
+// what state is it in
+// its in the index of 0
+var index = 0
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        var offset = button.dataset.carouselButton === "next" ? 1 : -1
-        var slides = button
-            .closest("[data-carousel]")
-            .querySelector("[data-slides]")
+// click on right button index goes up by one
+    // if the index goes to 5 then return to 0
+    // render the page
 
-        var activeSlide = slides.querySelector("[data-active]")
-        var newIndex = [...slides.children].indexOf(activeSlide) + offset
-        if (newIndex < 0) newIndex = slides.children.length - 1
-        if (newIndex >= slides.children.length) newIndex = 0
+// click on the left button index goes down by one 
+    // if the index is less than 0 go to index 5
+    // render the page
 
-        slides.children[newIndex].dataset.active = true
-        delete activeSlide.dataset.active
-    })
-})
-
-var productBox = document.querySelectorAll('.productBox')
-
-console.log(productBox)
-
-for(var item of productBox){
-    // item.classList.toggle('active')
-    item.onclick = onclickActive
-
-    function onclickActive(){
-        // console.log('test')
-        this.classList.toggle('active')
-        
-    }
+// render
+    // get all he iimages queryselectorAll 
+    // loop over the array
+    // 
+function render() {
+    var gallery = document.querySelector('#gallery-final')
+    var slides = gallery.querySelectorAll('.slide')
+    console.log(slides)
+    
+    var currentSlide = slides[index]
+    var img = currentSlide.querySelector('img')
+    var imcSrc = img.src
 }
+
+render()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var productBox = document.querySelectorAll('.productBox')
+
+// console.log(productBox)
+
+// for(var item of productBox){
+//     // item.classList.toggle('active')
+//     item.onclick = onclickActive
+
+//     function onclickActive(){
+//         // console.log('test')
+//         this.classList.toggle('active')
+        
+//     }
+// }
