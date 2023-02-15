@@ -146,7 +146,7 @@ body {
     object-position: center;
 }
 
-.slide[data-active] {
+.slide {
     opacity: 1;
     z-index: 1;
     transition-delay: 0ms;
@@ -183,9 +183,6 @@ body {
     outline: 1px solid black;
 }
 
-.carousel-button.prev {
-}
-
 .carousel-button.next {
     right: 0rem;
 }
@@ -206,6 +203,13 @@ body {
 .grid .item img{
     width: 100%;
     border-radius: 0.5rem;
+}
+.grid .item {
+    opacity: 0.5;
+
+}
+.grid .item.active {
+    opacity: 1;
 }
 
 /*---------------------------------------------------------------
@@ -244,9 +248,7 @@ body {
 | rating container
 ---------------------------------------------------------------*/
 
-.ratingContainer {
 
-}
 .ratingContainer .top {
     padding-bottom: var(--space-2);
     padding-top: 6rem;
@@ -333,9 +335,6 @@ body {
     display: flex;
     gap: var(--gap-1);
     cursor: pointer;
-}
-.active {
-    border: 2px solid #000;
 }
 .productBox .left {
     display: flex;

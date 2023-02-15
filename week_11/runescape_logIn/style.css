@@ -1,0 +1,214 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+
+    --input-height: 3.25rem;
+
+    --gap-two-five: 0.25rem;
+    --gap-half: 0.5rem;
+    --gap-seven-five: 0.75rem;
+    --gap-1: 1rem;
+    --gap-1-5: 1.5rem;
+    --gap-2: 2rem;
+    --gap-2-5: 2.5rem;
+
+    --color-blue: #11426b;
+    --color-blue-hover: #2d4c65;
+    --color-text-blue: #39aafc;
+    --color-text-blue-hover: #67bbf7;
+    --color-text-white: #fff;
+    --color-text-white-2: #aaa;
+    --color-background-blue: #0b111a;
+
+    --text-larger: 1.5rem;
+    
+    --icon-size: 2rem;
+    --icon-size-larger: 3.5rem;
+
+}
+
+.componentHeader {
+    padding: var(--space-half);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: var(--space-2) 0;
+}
+
+html, body {
+    background: #444;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+.backgroundImage {
+    background-image: url("../../images/background/background_runescape.jpg");
+    height: 50rem;
+    padding-top: 10rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.app {
+    max-width: 20rem;
+    background-color: var(--color-background-blue);
+    margin: 2rem auto;
+    padding: var(--space-3);
+    border-radius: 0.5rem;
+}
+
+/* utility */
+.center {
+    text-align: center;
+}
+
+.m-t-1{margin-top: 1rem;}
+.m-t-2{margin-top: 2rem;}
+.m-t-3{margin-top: 3rem;}
+.m-t-4{margin-top: 4rem;}
+.m-t-5{margin-top: 5rem;}
+
+
+
+
+
+
+/*-------------------------------------------
+| create an account
+-------------------------------------------*/
+.wrapper {
+    display: flex;
+    gap: var(--gap-two-five);
+}
+.text {
+    color: var(--color-text-white);
+}  
+
+a {
+    color: var(--color-text-blue);
+    text-decoration: none;
+
+}
+
+/*-------------------------------------------
+| icons
+-------------------------------------------*/
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-half);
+    justify-content: center;
+}
+
+.icons .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.icons .icon img {
+    width: 100%;
+}
+.icons .icon.larger {
+    width: var(--icon-size-larger);
+    height: var(--icon-size-larger);
+}
+
+/*-------------------------------------------
+| login text
+-------------------------------------------*/
+.login .text{
+    font-size: var(--text-larger);
+}
+
+/*-------------------------------------------
+| login text
+-------------------------------------------*/
+.input {
+    position: relative;
+    
+}
+.input input{
+    width: 100%;
+    height: var(--input-height);
+    padding-left: var(--space-1);
+    padding-top: var(--space-1);
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-blue);
+    background-color: transparent;
+    color: #eee;
+}
+.input input:focus {
+    outline: 2px dotted white;
+}
+
+.input .floatingLabel {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 1rem;
+    color: #999;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+}
+
+.input input:not(:placeholder-shown) ~ .floatingLabel,
+.input input:focus ~ .floatingLabel
+{
+
+    top: 1rem;
+}
+
+/*-------------------------------------------
+| button
+-------------------------------------------*/
+
+.button button {
+    width: 100%;
+    color: var(--color-text-white);
+    padding: var(--space-1);
+    border-radius: 0.5rem;
+    background-color: var(--color-text-blue);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.button button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button button:hover:not(:disabled) {
+    background-color: var(--color-text-blue-hover);
+}
+
+/*-------------------------------------------
+| lower icons
+-------------------------------------------*/
+.lowerIcons {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-seven-five);
+}
+.lowerIcons .icon {
+    background-color: #212736;
+    padding: var(--space-half);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/*-------------------------------------------
+| lower labels
+-------------------------------------------*/
+.labels .text {
+    color: var(--color-text-blue);
+    text-align: center;
+
+}

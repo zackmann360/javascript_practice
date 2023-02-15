@@ -14,17 +14,7 @@ var index = 0
     // get all he iimages queryselectorAll 
     // loop over the array
     // 
-function render() {
-    var gallery = document.querySelector('#gallery-final')
-    var slides = gallery.querySelectorAll('.slide')
-    console.log(slides)
-    
-    var currentSlide = slides[index]
-    var img = currentSlide.querySelector('img')
-    var imcSrc = img.src
-}
-
-render()
+        
 
 
 

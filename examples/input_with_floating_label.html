@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .input-group {
+            margin-top: 5rem;
+            height: 4rem;
+            position: relative;
+        }
+        .input-group input {
+            height: 100%;
+            width: 100%;
+            padding-left: 1rem;
+        }
+        .input-group .label,
+        .input-group input:focus ~ .label {
+            position: absolute;
+            top: 0;
+            left: 1rem;
+        }
+        .input-group input:placeholder-shown:not(:focus) ~ .label{
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1rem;
+        }
+    </style>
+
+    <div class="input-group">
+        <input type="text" placeholder=" ">
+        <div class="label">label</div>
+    </div>
+    
+</body>
+</html>
