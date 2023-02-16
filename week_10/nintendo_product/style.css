@@ -335,7 +335,7 @@ body {
     display: flex;
     align-items: center;
 }
-.productBox .right {
+.productBox .right { 
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -344,6 +344,9 @@ body {
 
 .game .item .type {
     padding-bottom: var();
+}
+.productBox.active {
+    border: 2px solid black;
 }
 
 /*---------------------------------------------------------------
