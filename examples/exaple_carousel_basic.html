@@ -83,7 +83,7 @@
         
         var gallery = document.querySelector('.gallery')
         // console.log(gallery)
-        var smalls = gallery.querySelectorAll('#small')
+        var smalls = gallery.querySelectorAll('.small')
         var big = gallery.querySelector('.big')
         var left = gallery.querySelector('.left')
         left.onclick = onclickLeft
@@ -99,7 +99,7 @@
         function onclickSmall(){
                 // console.log('cats', this)
                 var clickedNumber = Number(this.innerText)
-                // console.log(clickedNumber)
+                console.log(clickedNumber)
                 index = clickedNumber
                 update()
             }
@@ -121,7 +121,7 @@
 
         function update(){
             // console.log('test', index)
-            var currentActive = gallery.querySelector('#active')
+            var currentActive = gallery.querySelector('.active')
                 // console.log(currentActive)
             currentActive.classList.remove('active')
             var nextActive = smalls[index]

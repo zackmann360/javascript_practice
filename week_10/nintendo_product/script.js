@@ -11,9 +11,65 @@ var index = 0
     // render the page
 
 // render
-    // get all he iimages queryselectorAll 
-    // loop over the array
-    // 
+    var gallery = document.querySelector('.gallery')
+    var mainImage = gallery.querySelector('.slide')
+    // console.log(mainImage)
+    // get all he images
+    var images = gallery.querySelectorAll('.item')
+
+    var leftButton = document.querySelector('.prev')
+    // console.log(leftButton)
+    leftButton.onclick = onclickLeft
+
+    var rightButton = document.querySelector('.next')
+    // console.log(rightButton)
+    rightButton.onclick = onclickRight
+
+    // loop over the images
+    
+    for(var item of images){
+        item.onclick = onclickClicked
+    }
+
+    function onclickClicked(){
+        // console.log(this)
+        var imageNum = Number(this.getAttribute('num'))
+            
+        console.log(imageNum)
+        index = imageNum 
+        // console.log(imageNum)
+        render()
+    }
+
+    function onclickLeft(){
+        console.log(this)
+        index = Math.max(0, index - 1)
+        
+        render()
+    }
+
+    function onclickRight(){
+        index = Math.min(5, index + 1)
+
+        render()
+    }
+
+    // render the page
+    function render(){
+        
+        // get the selected image src
+        var currentImage = gallery.querySelector('.active')
+        currentImage.classList.remove('active')
+        var newSelectedImage = images[index]
+        newSelectedImage.classList.add('active')
+        var newSelectedImagesrc = newSelectedImage.querySelector('img')
+        console.log(newSelectedImagesrc.src)
+
+        var mainImageSrc = mainImage.querySelector('img')
+        mainImageSrc.src = newSelectedImagesrc.src
+
+    }
+    // render()
         
 
 
@@ -48,3 +104,7 @@ var index = 0
         
 //     }
 // }
+
+// console.log(item)
+// var src = item.querySelector('img')
+// console.log(src.src)
