@@ -1,0 +1,147 @@
+:root {
+    --color-text-blue: #276cf6;
+    --color-button-blue: #2464e3;
+    --color-text-white: #fff;
+
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+
+    --gap-: 0.5rem;
+
+    --icon-size: 1.5rem;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2fa;
+}
+
+.componentHeader {
+    padding: var(--space-1);
+    margin: 2rem 0;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.wrapper {
+    min-height: 100vh;
+
+}
+.app {
+    width: 25rem;
+    margin: 5rem auto;
+    padding: var(--space-2);
+    border: 1px solid #ddd;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25) ;
+    background-color: #fff;
+}
+
+
+
+
+.successPage {
+    display: none;
+}
+
+.app.success .successPage {
+    display: block;
+    font-size: 2rem;
+    color: rgb(38, 231, 38);
+}
+
+.app.success .loginPage {
+    display: none;
+}
+.loginHint {
+    color: red;
+    padding-top: var(--space-half);
+    text-align: center;
+}
+.app .loginHint {
+    display: none;
+}
+
+.app.hint .loginHint{
+    display: block;
+}
+/* --------------------------utility------------------------ */
+.m-t-1{margin-top: 1rem;}
+/* --------------------------text------------------------ */
+a {
+    color: var(--color-text-blue);
+    font-family: 'Roboto Mono', monospace;
+}
+
+p {
+    color: var(--color-text-blue);
+}
+
+.text span {
+    color: red;
+}
+
+/* -------------------------input----------------------- */
+
+.inputGroup input {
+    width: 100%;
+    padding: var(--space-1);
+    border-radius: 0.5rem;
+    border: 1px solid #999;
+}
+.inputGroup .text {
+    padding-bottom: 0.25rem;
+    color: var(--color-text-blue);
+}
+
+/* hide error */
+
+.inputGroup .error {
+    display: none;
+    color: red;
+}
+
+/* show error on input group when it has the class errro */
+.inputGroup.error .error{
+    display: block;
+}
+.inputGroup.error input{
+    border: 1px solid red;
+}
+.inputGroup.error .text{
+    color: red;
+}
+
+/* -------------------------button----------------------- */
+button {
+    background: var(--color-button-blue);
+    border: none;
+    padding: var(--space-1);
+    width: 100%;
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+
+/* -------------------------button with icon----------------------- */
+
+.button button .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.button button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #999;
+}
+
+.button button .icon img {
+    width: 100%;
+}
