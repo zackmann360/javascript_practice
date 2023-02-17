@@ -123,6 +123,7 @@ button {
     width: 100%;
     border-radius: 0.5rem;
     color: #fff;
+    cursor: pointer;
 }
 
 
@@ -141,7 +142,6 @@ button {
     color: #000;
     border: 1px solid #999;
 }
-
 .button button .icon img {
     width: 100%;
 }

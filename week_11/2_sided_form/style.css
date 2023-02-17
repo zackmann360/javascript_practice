@@ -48,6 +48,7 @@ body {
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 5rem 0rem 50rem 0rem;
 }
 .app .leftSide {
     background: #fff;
@@ -63,9 +64,6 @@ body {
     position: relative;
     flex: 1;
     
-}
-
-.app .rightSide .image {
 }
 .app .rightSide .image img {
     width: 100%;
@@ -161,7 +159,6 @@ body {
 }
 
 .icon {
-    cccursor: pointer;
     width: var(--icon-size);
     height: var(--icon-size);
 }
@@ -193,10 +190,6 @@ body {
 }
 label {
     user-select: none;
-    cccursor: pointer;
-}
-input{
-    cccursor: pointer;
 }
 
 /*-------------------------------------------------------------
@@ -237,9 +230,6 @@ input{
     gap: 0.25rem;
     justify-content: center;
 } 
-.signup .text {
-    
-}
 
 .textColorLighter {
     color: var(--text-color-light);
