@@ -1,0 +1,162 @@
+:root {
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --space-4: 4rem;
+    --color-blue: #287ffe;
+    --color-blue-header: #365179;
+    --color-blue-background: #f3f5ff;
+    --color-text-lighter: #aaa;
+    --icon-size: 5rem;
+    --border-radius: 0.5rem;
+    --border: 2px solid #eee;
+    --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    --height-input: 3.5rem;
+}
+
+html, body {
+    background: var(--color-blue-background);
+}
+* {
+    font-family: sans-serif;
+
+}
+
+.componentHeader {
+    padding: 1rem;
+    margin: 2rem 0;
+    border: 2px solid #000;
+}
+
+.form {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    max-width: 30rem;
+    padding: var(--space-3);
+    margin: 3rem auto;
+    border-radius: var(--border-radius);
+}
+
+.form .errorMessage {
+    color: red;
+    margin-top: 0.25rem;
+    text-align: center;
+    display: none;
+}
+
+.form.error .errorMessage{
+    display: block;
+}
+
+.app{
+    margin-top: 5rem;
+    min-height: 100vh;
+    cctext-align: center;
+}
+
+.app #successPage {
+    display: none;
+    font-size: 2rem;
+    color: rgb(3, 169, 3);
+}
+
+.app.success #loginPage {
+    display: none;
+}
+
+.app.success #successPage {
+    display: block;
+}
+
+.app.success .forgotPass {
+    display: none;
+}
+/*-----------------------------------utility----------------------------- */
+.m-t-25{margin-top: 0.25rem;}
+.m-t-1{margin-top: 1rem;}
+.m-t-1-5{margin-top: 1.5rem;}
+.m-t-2{margin-top: 2rem;}
+.m-t-3{margin-top: 3rem;}
+.m-t-4{margin-top: 4rem;}
+
+.center{text-align: center;}
+.green{color: rgb(6, 207, 6);}
+
+/*-----------------------------------text---------------------------------*/
+
+h1 {
+    color: var(--color-blue-header);
+}
+p{
+    color: var(--color-text-lighter);
+}
+a{
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+/*-----------------------------------icons---------------------------------*/
+
+.icon .image {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: 0 auto;
+    
+}
+.icon .image img {
+    width: 100%;
+}
+
+
+/*-----------------------------------input---------------------------------*/
+.inputGroup {
+    position: relative;
+}
+.inputGroup input{
+    width: 100%;
+    height: var(--height-input);
+    padding-left: var(--space-3);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background: none;
+    font-size: 1rem;
+}
+
+.inputGroup .icon {
+    position: absolute;
+    top: calc(var(--height-input) / 2);
+    transform: translateY(-50%);
+    padding-left: var(--space-1);
+    color: var(--color-blue);
+}
+
+.inputGroup .error {
+    color: red;
+    display: none;
+}
+
+.inputGroup.error .error{
+    display: block;
+}
+
+.inputGroup.error input {
+    border-color: red;
+}
+
+.inputGroup.error .icon {
+    color: red;
+}
+
+
+/*-----------------------------------button---------------------------------*/
+
+button {
+    padding: var(--space-1);
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-blue);
+    color: #fff;
+    font-size: 1.1rem;
+}
