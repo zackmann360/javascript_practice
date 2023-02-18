@@ -1,237 +1,161 @@
-:root {
+:root { 
     --space-half: 0.5rem;
-    --space-1-5: 1.5rem;
     --space-1: 1rem;
-    --space-2-5: 2.5rem;
+    --space-1-5: 1.5rem;
     --space-2: 2rem;
+    --space-2-5: 2.5rem;
     --space-3: 3rem;
     --space-4: 4rem;
-    --space-5: 5rem;
-    --space-10: 10rem;
-    --border-color: rgba(0, 0, 0, 0.15);
-    --text-color-light: rgba(0, 0, 0, 0.6);
-    --color-white: #fefefe;
-    --font-size-header: 2rem;
-    --font-weight-header: bolder;
+    --height-button-input: 3rem;
+    --icon-size: 1.75rem;
 
-    --color-primary: #7e56d9;
+    --color-backgroung: #d2cfe0;
+    --color-button-purple: #7e57d9;
+    --color-button-white: #fff;
+    --color-text-purple: #7e57d9;
+    --color-text-lighter: #9da2a9;
+    --color-text-black-2: #555;
+    --color-border: #ddd;
 
-    --icon-size: 1.25rem;
-
-    --input-height: 3rem;
+    --border-radius: 0.5rem;    
+    
 }
 
 .componentHeader {
     padding: var(--space-1);
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
+    border: 2px solid red;
     margin: var(--space-2) 0;
+    font-size: 2rem;
 }
 
-html, body {
-    background-color: #d3d0df;
-    margin: 0;
-    padding: 0;
-}
 * {
     font-family: sans-serif;
 }
-
-body {
-    padding: var(--space-2);
+html, body {
+    padding: 0;
+    margin: 0;
 }
-
 
 .app {
+    padding: var(--space-4);
+    background-color: var(--color-backgroung);
+    height: 100vh;
+}
+.app .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    margin: 5rem 0rem 50rem 0rem;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
 }
-.app .leftSide {
-    background: #fff;
-    flex: 1;
+.app .wrapper .left {
+    max-width: 30rem;
+    margin: 4rem auto;
+    padding: 8rem;
 }
-.app .leftSide .wrapper {
-    max-width: 25rem;
-    margin: 0 auto;
-    padding: var(--space-10) var(--space-2);
-}
-.app .rightSide {
-    background-color: green;
+.right {
     position: relative;
-    flex: 1;
-    
 }
-.app .rightSide .image img {
+.right .image {
     width: 100%;
+}
+.right .image img{
     height: 100%;
+    width: 100%;
     object-fit: cover;
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
-
 }
 
-@media (max-width:825px){
-    .app {
-        display: block;
-    }
-    .app .leftSide .wrapper {
-        max-width: 30rem;
-    }
-}
-
-
-
-/* --------------utitity-------------- */
+/* utilty */
 .m-t-1{margin-top: 1rem;}
 .m-t-1-5{margin-top: 1.5rem;}
 .m-t-2{margin-top: 2rem;}
 .m-t-3{margin-top: 3rem;}
-/*-------------------------------------------------------------
-| header
--------------------------------------------------------------*/
+.m-t-4{margin-top: 4rem;}
 
-.header .text {
-    font-size: var(--font-size-header);
-    font-weight: var(--font-weight-header);
-    padding-bottom: var(--space-2);
+/*-----------------------------------Text------------------------------*/
+a{
+    text-decoration: none;
+    color: var(--color-text-purple);
+    font-weight: bold;
 }
 
-/*-------------------------------------------------------------
-| welcome back
--------------------------------------------------------------*/
-.welcomeBack .text {
-    padding-bottom: var(--space-2);
-    color: var(--text-color-light);
+p {
+    color: var(--color-text-lighter);
 }
 
-/*-------------------------------------------------------------
-| input title
--------------------------------------------------------------*/
-
-.title .text {
-    color: var(--text-color-light);
-    font-weight: bolder;
-}
-
-/*-------------------------------------------------------------
-| input 
--------------------------------------------------------------*/
-.input input {
-    padding: var(--space-1) var(--space-half);
-    width: 100%;
-    border-radius: 0.5rem;
-    border: 2px solid #eee;
-}
-
-
-/*-------------------------------------------------------------
-| input layout
--------------------------------------------------------------*/
-
-.inputLayout {
-    padding: var(--space-half) 0;
-
-}
-.inputLayout .title {
-    padding-bottom: var(--space-half);
-}
-
-/*-------------------------------------------------------------
-| checkBox
--------------------------------------------------------------*/
-
-.checkBox {
+.remember {   
     display: flex;
-    gap: var(--space-half);
-    color: var(--text-color-light);
-}
-/* .checkBox input, 
-.checkBox label {
-    cursor: pointer;
-} */
-.checkBox * {
-    cursor: pointer;
-}
-
-.icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
-}
-.icon img {
-    width: 100%;
-}
-
-/*-------------------------------------------------------------
-| links
--------------------------------------------------------------*/
-
-.link .text {
-    color: var(--color-primary);
-    display: inline;
-    cursor: pointer;
-}
-
-.link .text:hover {
-    border-bottom: 2px solid var(--color-primary);
-}
-
-/*-------------------------------------------------------------
-| forgot password
--------------------------------------------------------------*/
-.password {
-    padding-top: var(--space-1);
-    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-label {
-    user-select: none;
+
+.remember .checkbox label {
+    color: var(--color-text-black-2);
+}
+.remember .checkbox input {
+    cursor: pointer;
+    background-color: var(--color-button-purple);
 }
 
-/*-------------------------------------------------------------
-| button
--------------------------------------------------------------*/
-
-.button {
+/*---------------------------------input-------------------------------*/
+.inputGroup .text {
+    padding-bottom: var(--space-half);
+    color: var(--color-text-black-2);
+    font-weight: bold;
+}
+.inputGroup input {
+    height: var(--height-button-input);
+    border-radius: var(--border-radius);
+    border:2px solid var(--color-border);
+    padding-left: var(--space-1);
+    font-size: 1rem;
     width: 100%;
-    height: var(--input-height);
-    border-radius: 0.5rem;
-    border: 2px solid var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--color-white);
 }
-.button:hover {
-    background-color: rgba(201, 197, 197, 0.2);
+.inputGroup.error .text {
+    color: red;
+}
+.inputGroup .error {
+    display: none;
+    color: red;
+}
+.inputGroup.error .error{
+    display: block;
+}
+.inputGroup.error input {
+    border-color: red;
 }
 
-.button.primary {
-    background: var(--color-primary);
+/*---------------------------------button-------------------------------*/
+button {
+    background: var(--color-button-purple);
+    height: var(--height-button-input);
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
     border: none;
-    color: var(--color-white);
-}
-.button.primary:hover {
-    background: #6939d6;
+    border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
-/*-------------------------------------------------------------
-| sign up
--------------------------------------------------------------*/
-
-.signup {
-    padding-top: var(--space-2);
+.button button {
     display: flex;
-    gap: 0.25rem;
+    align-items: center;
     justify-content: center;
-} 
+    gap: var(--space-half);
+    background: var(--color-button-white);
+    border: 2px solid var(--color-border);
+    color: var(--color-text-black-2);
+}
 
-.textColorLighter {
-    color: var(--text-color-light);
-
+.button button .icon {
+    height: var(--icon-size);
+    width: var(--icon-size);
+}
+.button button .icon img {
+    width: 100%;
 }
