@@ -50,9 +50,9 @@ html, body {
     background-color: #fff;
 }
 .app .wrapper .left {
-    max-width: 30rem;
+    min-width: 25rem;
     margin: 4rem auto;
-    padding: 8rem;
+    padding: 8rem 6rem;
 }
 .right {
     position: relative;
