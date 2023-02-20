@@ -34,3 +34,5 @@ inputPass.onkeyup = onkeyupPass
 function onkeyupPass(){
     inputgroupPass.classList.remove('error')
 }
+
+
