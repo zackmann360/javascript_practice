@@ -34,7 +34,7 @@ html, body {
     padding: 1rem 3rem; 
     opacity: 0.3;
     transition: all 0.05s;
-    border-radius: 2rem;
+    border-radius: 2.5rem;
 }
 .wrapper a:hover img{
     
