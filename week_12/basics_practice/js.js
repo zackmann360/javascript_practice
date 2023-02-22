@@ -78,13 +78,13 @@ function onclickDown(){
 // -------------------------------------------
 
 var third = document.querySelector('.third')
-var left = third.querySelector('.leftButton')
-left.onclick = onclickLeft
-var right = third.querySelector('.rightButton')
-right.onclick = onclickRight
+var leftThree = third.querySelector('.leftButton')
+leftThree.onclick = onclickLeftThree
+var rightThree = third.querySelector('.rightButton')
+rightThree.onclick = onclickRightThree
 
 x = 1
-function onclickLeft(){
+function onclickLeftThree(){
     // console.log(this)
     x -= 1
     if(x < 1){
@@ -92,12 +92,14 @@ function onclickLeft(){
     }
     console.log(x)
     third.querySelector('.show').classList.remove('show')
-    var imageLeft = third.querySelector('.img' + x)
-    imageLeft.classList.add('show')
-    console.log(imageLeft)
+    var images = third.querySelector('.img' + x)
+    images.classList.add('show')
+    third.querySelector('.lightGrey').classList.remove('lightGrey')
+    third.querySelector('.num' + x).classList.add('lightGrey')
+
 }
 
-function onclickRight(){
+function onclickRightThree(){
     // console.log(this)
     x += 1
     if(x > 3){
@@ -105,7 +107,29 @@ function onclickRight(){
     }
     console.log(x)
     third.querySelector('.show').classList.remove('show')
-    var imageLeft = third.querySelector('.img' + x)
-    imageLeft.classList.add('show')
-    console.log(imageLeft)
+    var images = third.querySelector('.img' + x)
+    images.classList.add('show')
+    third.querySelector('.lightGrey').classList.remove('lightGrey')
+    third.querySelector('.num' + x).classList.add('lightGrey')
+}
+
+// -------------------------------------------
+// forth
+// -------------------------------------------
+
+var forth = document.querySelector('.forth')
+var input = forth.querySelector('input')
+var button = forth.querySelector('.button')
+button.onclick = onclickMeow
+
+function onclickMeow(){
+    // console.log(this)
+    if(input.value == "meow"){
+        console.log("meow")
+        forth.querySelector('.text').innerHTML = "meow meow meeeoooowww!"
+    }
+    if(input.value != "meow"){
+        console.log("meow")
+        forth.querySelector('.text').innerHTML = "Enter meow Please!"
+    }
 }
