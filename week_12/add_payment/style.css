@@ -1,0 +1,218 @@
+:root {
+    --space-025: 0.2rem;
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --gap-1: 1rem;
+    --gap-1-5: 1.5rem;
+    --gap-2: 2rem;
+    --gap-2-5: 2.5rem;
+    --gap-3: 3rem;
+    --gap-4: 4rem;
+    --input-height: 3.25rem;
+    --input-width: 10rem;
+
+    --text-smaller: 0.9rem;
+    --text-larger: 1.75rem;
+    --text-larger-2: 1rem;
+
+    --icon-size-height: 2.8rem;
+    --icon-size-width: 3.8rem;
+
+    --color-text-white: #fff;
+    --color-text-white-card: #c1c3c9;
+    --color-text-black-input: #333;
+    --color-button-blue: #2364d2;
+    --color-background: #d3e4f5;
+
+    --border-radius: 0.25rem;
+    --border-radius-card: 1rem;
+    --border: 1px solid #999
+
+}
+html, body {
+    background-color: var(--color-background);
+}
+* {
+    font-family: sans-serif;
+}
+
+.componentHeader {
+    border: 2px solid #fff;
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    color: #fff;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.app .card {
+    background-image: url('../../images/background/background_adobe_card.jpg');
+    background-position: center;
+    text-align: center;
+    width: 26rem;
+    height: 14rem;
+    border-radius: var(--border-radius-card);
+    padding: var(--space-1-5);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+}
+.app .card .top {
+    margin: 0;
+    padding: 0;
+}
+.app .card .middle {
+    padding-top: var(--space-4);
+}
+.app .card .bottom {
+    padding-top: var(--space-2-5);
+}
+
+.app .userInput {
+    width: 33rem;
+    background-color: #fff;
+    padding: 12rem var(--space-3) var(--space-3) var(--space-3);
+    border-radius: var(--border-radius-card);
+    position: absolute;
+    top: 14rem;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    
+}
+
+/* utility */
+.m-t-1 {margin-top: 1rem;}
+.m-t-1-5 {margin-top: 1.5rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+
+/* ---------------------------card icons------------------------- */
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--icon-size-height);
+}
+.icon {
+    width: var(--icon-size-width);
+    height: var(--icon-size-height);
+}
+.icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.icon img.filter {
+    filter: grayscale(1);
+}
+.icon img.invert {
+    filter: invert(1);
+    padding: 0;
+}
+
+.icon.larger {
+    width: 5rem;
+    height: 4.5rem;
+}
+/* ---------------------------card nums------------------------- */
+.cardNum {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-2);
+}
+.cardNum .col {
+    display: flex;
+}
+
+.cardNum .col .num {
+    font-size: var(--text-larger);
+    color: var(--color-text-white);
+}
+/* ---------------------------card credentials------------------------- */
+.credentials {
+    display: flex;
+    justify-content: space-between;
+}
+.credentials .left {
+    text-align: left;
+}
+.credentials .right {
+    text-align: left;
+}
+
+.text.larger {
+    font-size: var(--text-larger-2);
+    color: var(--color-text-white);
+}
+.text.smaller {
+    font-size: var(--text-smaller);
+    color: var(--color-text-white-card);
+    padding-bottom: var(--space-half);
+}
+/* ---------------------------input------------------------- */
+
+.inputGroup .text {
+    color: var(--color-text-black-input);
+    padding-bottom: var(--space-025);
+}
+.inputGroup input {
+    height: var(--input-height);
+    width: 100%;
+    padding: var(--space-1);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    font-size: 1rem;
+    color: var(--color-text-black-input);
+}
+
+.inputSelect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputSelect .expireDate label{
+    display: block;
+    color: var(--color-text-black-input);
+    padding-bottom: var(--space-025);
+    
+}
+.inputSelect .expireDate select{
+    color: var(--color-text-black-input);
+    height: var(--input-height);
+    width: var(--input-width);
+    padding: var(--space-1) 1rem ;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+.inputSelect .expireDate select.marginLeft{
+    margin-left: var(--space-half);
+}
+
+.inputSelect .inputGroup input{
+    width: var(--input-width);
+}
+
+/* ---------------------------button------------------------- */
+.button button {
+    width: 100%;
+    height: var(--input-height);
+    border-radius: var(--border-radius);
+    background-color: var(--color-button-blue);
+    border: none;
+    color: var(--color-text-white);
+    font-size: var(--text-larger);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------card------------------------- */
+
