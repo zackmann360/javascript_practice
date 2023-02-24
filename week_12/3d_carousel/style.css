@@ -16,7 +16,7 @@ html, body {
     top: 20px;
     transform-style: preserve-3d;
     left: 20px;
-    transition: all 0.25s;
+    transition: all 0.35s;
 }
 .cell{
     width: 300px;
