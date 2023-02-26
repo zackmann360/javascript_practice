@@ -3,7 +3,8 @@ body {
     margin: 0;
     background: linear-gradient(90deg, rgba(46,44,45,1) 0%, rgba(66, 64, 67, 1) 100%);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 5rem;
     align-items: center;
 }
 .btn {
