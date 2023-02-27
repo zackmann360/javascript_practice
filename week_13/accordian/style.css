@@ -1,0 +1,78 @@
+:root {
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --text-color-lighter: #444;
+    --icon-size: 2rem;
+}
+
+.componentHeader {
+    border: 2px solid #000;
+    padding: var(--space-1);
+    margin: 2rem 0;
+}
+
+*{
+    font-family: sans-serif;
+}
+
+
+
+
+.app {
+    padding: var(--space-1-5);
+    height: 100vh;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* -------------------text---------------- */
+h2 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+p {
+    color: var(--text-color-lighter);
+}
+.card {
+    padding: var(--space-1);
+    border: 2px solid #999;
+    border-radius: 0.25rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordian .title .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.accordian {
+    cursor: pointer;
+    user-select: none;
+}
+.accordian .title .icon img {
+    width: 100%;
+    transition: all 0.25s;
+}
+.accordian .content {
+    display: none;
+}
+.accordian.active .content {
+    display: block;
+}
+.accordian.active .title .icon img {
+    transform: rotate(180deg);
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+}
+

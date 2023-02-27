@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Thor Ragnorok",
+        "genre": ["action", "adventure","super hero"],
+        "actors": ["Chis Hemsworth", "Tom hiddleston", "Anthony Hopkins"],
+        "production company": "Marvel Studios",
+        "release date": "november 3, 2017",
+        "quantity": 10,
+        "cost": 180000000
+    },
+    {
+        "title": "Bright",
+        "genre": "action",
+        "cast": ["will smith", "joel edgerton", "lucy fry"],
+        "production company": ["netflix", "overbrook entertainment"],
+        "release date": "december 13, 2017",
+        "quantity": 25,
+        "cost": 90000000  
+    },
+    {
+        "title": "Thor Ragnorok",
+        "genre": ["action", "adventure","super hero"],
+        "cast": [
+            {
+                "actor": "Chis Hemsworth"
+            },
+            {
+                "actor": "Tom hiddleston"
+            },
+            {
+                "actor": "Anthony Hopkins"
+            }
+        ],
+        "production company": "Marvel Studios",
+        "release date": "november 3, 2017",
+        "quantity": "worldwide",
+        "cost": 180000000
+
+        
+    }
+]
