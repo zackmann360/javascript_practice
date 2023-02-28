@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movieList title="movies">
+    <movie>
+        <title>Thor Ragnorok</title>
+        <genre>action, adventure, and super hero</genre>
+        <actors>
+            chris hemswort, tom hiddleston, and anthony hopkins
+        </actors>
+        <productionCompany>
+            marvel studios
+        </productionCompany>
+        <releaseDate>
+            november 3, 2017
+        </releaseDate>
+        <quantity>10</quantity>
+        <cost>$180,000,000</cost>
+    </movie>
+    <movie>
+        <title>Bright</title>
+        <genre>action, adventure, and super hero</genre>
+        <actors>
+            will smith, joel edgerton, and lucy fry
+        </actors>
+        <productionCompany>
+        netflix, overbrook entertainment
+        </productionCompany>
+        <releaseDate>
+            december 13, 2017
+        </releaseDate>
+        <quantity>25</quantity>
+        <cost>$90,000,000</cost>
+    </movie>
+    <movie>
+        <title>up</title>
+        <genre>adventure, childrens film, drama, and comedy drama</genre>
+        <actors>
+            pete docter, ed asner, and bob peterson
+        </actors>
+        <productionCompany>
+            pixar, walt disney
+        </productionCompany>
+        <releaseDate>
+            may 29, 2009
+        </releaseDate>
+        <quantity>15</quantity>
+        <cost>$175,000,000</cost>
+    </movie>
+</movieList>

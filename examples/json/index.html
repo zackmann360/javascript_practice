@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie json</title>
+</head>
+<body>
+    <style>
+        * {
+            font-family: monospace;
+        }
+        .wrapper {
+            margin: 0 auto;
+            width: 33rem;
+            ccdisplay: flex;
+        }
+        @media (max-width: 800px){
+
+        }
+        .item {
+            border: 2px solid #000;
+            padding: 1rem 0;
+        }
+        .item ol li {
+            padding: 1rem;
+            text-decoration: underline;
+        }
+        .heading {
+            font-size: 1.5rem;
+            padding-left: 1rem;
+        }
+    </style>
+
+    <div class="wrapper">
+        <div class="item">
+            <div class="heading">titles</div>
+            <ol class="titles"></ol>
+        </div>
+        <div class="item">
+            <div class="heading">genre</div>
+            <ol class="genre"></ol>
+        </div>
+        <div class="item">
+            <div class="heading">actors</div>
+            <ol class="actors"></ol>
+        </div>
+        <div class="item">
+            <div class="heading">production company</div>
+            <ol class="production"></ol>
+        </div>
+        <div class="item">
+            <div class="heading">release date</div>
+            <ol class="release"></ol>
+        </div>
+        <div class="item">
+            <div class="heading">quantity</div>
+            <ol class="quantity"></ol>
+        </div>
+        <div class="item">    
+            <div class="heading">cost</div>
+            <ol class="cost"></ol>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        fetch('./movies.json').then((result) => result.json()).then(parseResult)
+
+var titles = document.querySelector('.titles')
+var genre = document.querySelector('.genre')
+var actors = document.querySelector('.actors')
+var production = document.querySelector('.production')
+var release = document.querySelector('.release')
+var quantity = document.querySelector('.quantity')
+var cost = document.querySelector('.cost')
+
+function parseResult(movies) {
+
+    for(var item of movies){
+        // console.log(JSON.stringify(item.quantity))
+        var quantityNumString = JSON.stringify(item.quantity)
+        var costNumString = JSON.stringify(item.cost)
+        console.log(quantityNumString)
+
+        var titleLi = document.createElement('li')
+        titleLi.innerHTML = item.title
+        titles.appendChild(titleLi)
+        
+        var genreLi = document.createElement('li')
+        genreLi.innerHTML = item.genre
+        genre.append(genreLi)
+
+        var actorsLi = document.createElement('li')
+        actorsLi.innerHTML = item.actors
+        actors.append(actorsLi)
+
+        var productionLi = document.createElement('li')
+        productionLi.innerHTML = item.productionCompany
+        production.append(productionLi)
+
+        var releaseLi = document.createElement('li')
+        releaseLi.innerHTML = item.releaseDate
+        release.append(releaseLi)
+
+        var quantityLi = document.createElement('li')
+        quantityLi.innerHTML = "$" + quantityNumString
+        quantity.append(quantityLi)
+
+        var costLi = document.createElement('li')
+        costLi.innerHTML = "$" + costNumString
+        cost.append(costLi)
+
+
+
+        
+    }
+}
+       
+    </script>
+
+
+</body>
+</html>

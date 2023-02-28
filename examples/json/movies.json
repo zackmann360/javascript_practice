@@ -2,39 +2,29 @@
     {
         "title": "Thor Ragnorok",
         "genre": ["action", "adventure","super hero"],
-        "actors": ["Chis Hemsworth", "Tom hiddleston", "Anthony Hopkins"],
-        "production company": "Marvel Studios",
-        "release date": "november 3, 2017",
+        "actors": ["Chris Hemsworth", "Tom hiddleston", "Anthony Hopkins"],
+        "productionCompany": "Marvel Studios",
+        "releaseDate": "november 3, 2017",
         "quantity": 10,
-        "cost": 180000000
+        "cost": 18
     },
     {
         "title": "Bright",
         "genre": "action",
-        "cast": ["will smith", "joel edgerton", "lucy fry"],
-        "production company": ["netflix", "overbrook entertainment"],
-        "release date": "december 13, 2017",
+        "actors": ["will smith", "joel edgerton", "lucy fry"],
+        "productionCompany": ["netflix", "overbrook entertainment"],
+        "releaseDate": "december 13, 2017",
         "quantity": 25,
-        "cost": 90000000  
+        "cost": 12
     },
     {
-        "title": "Thor Ragnorok",
-        "genre": ["action", "adventure","super hero"],
-        "cast": [
-            {
-                "actor": "Chis Hemsworth"
-            },
-            {
-                "actor": "Tom hiddleston"
-            },
-            {
-                "actor": "Anthony Hopkins"
-            }
-        ],
-        "production company": "Marvel Studios",
-        "release date": "november 3, 2017",
-        "quantity": "worldwide",
-        "cost": 180000000
+        "title": "up",
+        "genre": ["adventure", "childrens film", "drama", "comedy drama"],
+        "actors": [" pete docter", " ed asner", " bob peterson"],
+        "productionCompany": ["pixar", "walt disney"],
+        "releaseDate": "may 29, 2009",
+        "quantity": 15,
+        "cost": 15
 
         
     }
