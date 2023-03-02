@@ -55,9 +55,7 @@ html, body {
     padding-top: 10rem;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
 }
-
 .app {
     max-width: 20rem;
     background-color: var(--color-background-blue);
@@ -76,6 +74,7 @@ html, body {
 .m-t-3{margin-top: 3rem;}
 .m-t-4{margin-top: 4rem;}
 .m-t-5{margin-top: 5rem;}
+.m-t-20{margin-top: 50rem;}
 
 
 

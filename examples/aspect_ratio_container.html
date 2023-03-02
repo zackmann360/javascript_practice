@@ -1,0 +1,41 @@
+<!-- # whats the ratio of talls to width -->
+<!-- this is how to calculate aspect ratios -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .ratio {
+            background-color: #444;
+            margin-top: 2rem;
+
+        }
+        .ratio1x1 {
+            padding-top: calc(1/1 * 100%);
+        }
+        .ratio16x9{
+            background-color: red;
+            padding-top: calc(9/16 * 100%);
+
+        }
+        .ratio3x2 {
+            padding-top: calc(2/3 * 100%);
+            background-color: green;
+        }
+        .ratio21x9 {
+            background-color: orange;
+            padding-top: calc(9/21 * 100%);
+        }
+    </style>
+
+    <div class="ratio ratio1x1">1:1</div>
+    <div class="ratio ratio16x9">16:9</div>
+    <div class="ratio ratio3x2">3:2</div>
+    <div class="ratio ratio21x9">21:9</div>
+    
+</body>
+</html>
