@@ -1,0 +1,178 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --color-green: #75b900;
+    --color-text-white: #fff;
+    --text-bold: bolder;
+    --text-larger: 1.2rem;
+    --border: 3px solid #999;
+    --chevron-size: 1.5rem;
+    --icon-size: 3.5rem;
+}
+
+html, body {
+    background: #444;
+}
+
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.componentHeader {
+    border: 2px solid #fff;
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    color: #fff;
+}
+.wrapper {
+    height: 100vh;
+
+}
+.app {
+    background: #111;
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+    padding-top: var(--space-1);
+    padding-bottom: 4rem;
+}
+.app .left {
+    padding-right: var(--space-1);
+}
+
+.page{
+    display: none;
+}
+.page.show {
+    display: block;
+}
+
+
+/*----------------------------------text/utility--------------------------*/
+
+.center {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-green);
+}
+p{
+}
+p, h1, h2 {
+    color: var(--color-text-white);
+    margin: 0;
+    padding: 0;
+}
+.m-t-1{margin-top: 1rem;}
+.m-t-1-5{margin-top: 1.5rem;}
+.m-t-2{margin-top: 2rem;}
+.m-t-2-5{margin-top: 2.5rem;}
+.m-t-3{margin-top: 3rem;}
+.m-t-4{margin-top: 4rem;}
+.m-t-5{margin-top: 5rem;}
+
+.SmallerFont{
+    font-size: 0.9rem;
+}
+/*----------------------------------tab links--------------------------*/
+.tabs{
+    text-align: center;
+    width: 50rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    ccborder-bottom: var(--border);
+}
+.tabs .linkBtn  {
+    padding: var(--space-1) var(--space-1-5);
+    cursor: pointer;
+    width: 100%;
+    border-bottom: var(--border);
+}
+.tabs .linkBtn a {
+    color: var(--color-text-white);
+    
+}
+.tabs .linkBtn.active  {
+    border-bottom: 3px solid var(--color-green);
+}
+.tabs .linkBtn.active a {
+    color: var(--color-green);
+}
+/*----------------------------------button--------------------------*/
+button {
+    color: var(--color-green);
+    display: flex;
+    align-items: center;
+    gap: var(--space-half);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+/*----------------------------------button--------------------------*/
+.icons {
+    display: flex;    
+    gap: 1.25rem;
+    max-width: 18rem;
+    flex-wrap: wrap;
+}
+.icons .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.icons .icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/*----------------------------------img right--------------------------*/
+.imageRight {
+    padding-top: calc(2/3 * 100%);
+    background-color: red;
+    position: relative;
+}
+.imageRight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.imageRight .icon {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    outline: 0.5rem solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.imageRight .icon i {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    margin: 0 auto;
+    color: var(--color-text-white);
+    font-size: 4rem;
+}
+/*----------------------------------grid--------------------------*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
