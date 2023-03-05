@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+html, body {
+    padding: 2rem;
+}
+h1{
+    text-align: center;
+    font-size: 4rem;
+}
+h1, h2 {
+    margin-bottom: 1rem;
+}
+.notes {
+    margin-bottom: 5rem;
+}
+.notes h2 {
+    border-bottom: 2px solid #000;
+    display: inline-block;
+}
+p {
+    text-decoration: underline;
+}
+.boxes {
+    display: flex;
+    gap: 5rem;
+}
+.box {
+    background-color: red;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    animation: num1 1.5s infinite;
+}
+.text {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #000;
+    text-align: center;
+    min-width: 5rem;
+}
+@keyframes num1 {
+    from {top: 0}
+    to {top: 2rem}
+}
+
+/* number 2 */
+@keyframes num2 {
+    from {left: 0;}
+    to {left: 2rem;}
+}
+
+.box.num2 {
+    animation: num2 1s infinite;
+}
+
+/* number 3 */
+@keyframes num3 {
+    from{left: 2rem;}
+    to {left: 0;}
+}
+.box.num3 {
+    animation: num3 2s infinite;
+}
+
+/* number 4 */
+@keyframes num4 {
+    from{top: 2rem;}
+    to {top: 0;}
+}
+.box.num4 {
+    animation: num4 2.5s infinite;
+}
+
+/* number 5 */
+@keyframes num5 {
+    0% {top: 0;}
+    25% {top: 5rem;}
+    50% {top: 2rem;}
+    75% {top: 4rem;}
+    100% {top: 0rem;}
+}
+.box.num5 {
+    animation: num5 3s infinite;
+}
+
+/* number 6 */
+@keyframes num6 {
+    0% {top: 0; background-color: red; width: 1rem;}
+    50% {top: 2rem; background-color: orange; width: 5rem;}
+    100%{top: 0; background-color: red; width: 1rem;}
+}
+.box.num6 {
+    animation: num6 2s infinite;
+}
+
+/* number 7 */
+@keyframes num7 {
+    0% {left: 0; top: 0;}
+    25% {left: 6rem; top: 0;}
+    50% {left: 6rem; top: 6rem;}
+    75% {left: 0; top: 6rem;}
+    100% {left: 0; top: 0;}
+}
+.box.num7 {
+    animation: num7 2s infinite;
+}
+
+/* number 8 */
+@keyframes num8 {
+    0% {top: 0; left: 0;}
+    10% {top: 0.25rem; left: 0.25rem;}
+    20% {top: 0.4rem; left: 0.4rem;}
+    30% {top: 0.6rem; left: 0.6rem;}
+    40% {top: 0.8rem; left: 0.8rem;}
+    50% {top: 0.5rem; left: 0.5rem;}
+}
+.box.num8 {
+    animation: num8 1s infinite;
+}
+
