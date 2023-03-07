@@ -1,0 +1,156 @@
+:root {
+
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --color-blue: #1373e6;
+    --border-radius-button: 3rem;
+    --border-radius-card: 0.35rem;
+    --text-color-white: #fff;
+    --text-color-light: #666;
+    --view-color-light: #888;
+    --border-tabs: 2px solid #eee;
+    --border-tab: 2px solid #000;
+    --border-card: 1px solid #888;
+    --icon-size: 3rem
+}
+
+.componentHeader {
+    border: var(--border-tab);
+    padding: var(--space-1);
+    margin: var(--space-1) 0;
+}
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    padding: var(--space-3);
+}
+.tabContent {
+    display: none;
+}
+.tabContent.show {
+    display: block;
+}
+/*-------------------------------text/utilities----------------------*/
+
+a {
+    text-decoration: none;
+    color: var(--color-blue);
+}
+
+.center {
+    text-align: center;
+}
+
+
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-b-1 {margin-bottom: 1rem;}
+.m-b-2 {margin-bottom: 2rem;}
+.m-b-3 {margin-bottom: 3rem;}
+.m-b-4 {margin-bottom: 4rem;}
+
+
+/*-------------------------------tabs--------------------------------*/
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-light);
+}
+.tabs .tab {
+    border-bottom: var(--border-tabs);
+    padding: var(--space-1) var(--space-1);
+    position: relative;
+    cursor: pointer;
+    
+}
+.tabs .tab.border:after  {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 10%;
+
+    height: 2px;
+    width: 80%;
+    background-color: #000;
+
+}
+
+
+/*-------------------------------buttons--------------------------------*/
+button {
+    background-color: #fff;
+    border-radius: var(--border-radius-button);
+    padding: var(--space-0-5) var(--space-1);
+    border: 2px solid #000;
+}
+
+button.blue {
+    background-color: var(--color-blue);
+    border: none;
+    font-weight: bolder;
+    color: var(--text-color-white);
+}
+/*-------------------------------grid--------------------------------*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1-5);
+}
+/*-------------------------------cards--------------------------------*/
+.textBox {
+    padding: var(--space-1);
+}
+.card {
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    border: var(--border-card);
+}
+.card .topImg{
+    padding-top: calc(2/5 * 100%);
+    background-image: var(--bg);
+    background-repeat: no-repeat;
+}
+.card .cardTitle {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+}
+.card .cardTitle .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+.card .cardTitle .icon img {
+    width: 100%;
+}
+.card .cardTitle h3 {
+    flex: 2;
+}
+.card p {
+    padding-top: var(--space-1);
+    min-height: 6rem;
+}
+.card .cardTitle .cardViews i { 
+    color: var(--view-color-light);
+}
+.card .buttons {
+    display: flex;
+    gap: var(--space-1);
+    justify-content: flex-end;
+    padding-top: var(--space-1);
+}
+
+
+    

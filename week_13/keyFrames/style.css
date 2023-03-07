@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: monospace;
+    font-family: sans-serif;
 }
 html, body {
     padding: 2rem;
@@ -25,7 +25,9 @@ p {
 }
 .boxes {
     display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
+    max-width: 800px;
 }
 .box {
     background-color: red;
@@ -89,7 +91,7 @@ p {
 @keyframes num6 {
     0% {top: 0; background-color: red; width: 1rem;}
     50% {top: 2rem; background-color: orange; width: 5rem;}
-    100%{top: 0; background-color: red; width: 1rem;}
+    100%{top: 0; background-color: red; width: 1r em;}
 }
 .box.num6 {
     animation: num6 2s infinite;
@@ -106,17 +108,3 @@ p {
 .box.num7 {
     animation: num7 2s infinite;
 }
-
-/* number 8 */
-@keyframes num8 {
-    0% {top: 0; left: 0;}
-    10% {top: 0.25rem; left: 0.25rem;}
-    20% {top: 0.4rem; left: 0.4rem;}
-    30% {top: 0.6rem; left: 0.6rem;}
-    40% {top: 0.8rem; left: 0.8rem;}
-    50% {top: 0.5rem; left: 0.5rem;}
-}
-.box.num8 {
-    animation: num8 1s infinite;
-}
-
