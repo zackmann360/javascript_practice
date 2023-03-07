@@ -1,0 +1,200 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --color-blue: #1b4a82;
+    --text-color-white: #fff;
+    --text-color-lighter: #aaa;
+    --color-white: #fff;
+    --border-radius: 0.25rem;
+    --icon-size: 3rem;
+    --eye-size: 1.5rem;
+    --input-height: 4rem;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    background: #111;
+}
+.componentHeader {
+    border: 2px solid #fff;
+    padding: 1rem;
+    margin: 2rem 0;
+    color: #fff;
+}
+.wrapper {
+    min-height: 100vh;
+}
+.wrapper .app {
+    width: 22rem;
+    margin: 5rem auto;
+    background: #222;
+    padding: 5rem;
+    border-radius: var(--border-radius);
+    display: none;
+}
+.wrapper .app.show {
+    display: block;
+}
+
+#successPage {
+    color: var(--text-color-white);
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+/*-------------------------text/utility------------------------*/
+p.white {
+    color: var(--color-white);
+}
+a.link {
+    color: var(--text-color-white);
+
+}
+p.lighter {
+    color: var(--text-color-lighter);
+}
+h3.white {
+    color: var(--text-color-white);
+}
+
+.m-t-1 {margin-top: 1rem;}
+.m-t-1-5 {margin-top: 1.5rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-2-5 {margin-top: 1r2.5m;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+
+.center {text-align: center;}
+
+
+
+/*-------------------------icon------------------------*/
+.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: 0 auto;
+}
+.icon img {
+    width: 100%;
+    filter: invert(1);
+}
+
+/*-------------------------input------------------------*/
+.inputGroup.error input {
+    border-color: red;
+    color: red;
+}
+.inputGroup.error .label {
+    color: red;
+}
+.inputGroup.error .error {
+    color: red;
+    display: block;
+    padding-top: var(--space-half);
+}
+
+.inputGroup .error {
+    display: none;
+}
+
+
+.inputGroup input {
+    width: 100%;
+    height: var(--input-height);
+    padding-top: calc(var(--input-height) - 2.5rem);
+    background: none;
+    border: 1px solid #999;
+    border-radius: var(--border-radius);
+    padding-left: var(--space-1);
+    color: var(--text-color-white);
+    outline: none;
+}
+
+.inputGroup {
+    position: relative;
+    color: var(--text-color-white);
+}
+.inputGroup .icon {
+    position: absolute;
+    top: calc(var(--input-height) / 2);
+    transform: translateY(-50%);
+    right: 1rem;
+    width: var(--eye-size);
+    height: var(--eye-size);
+    cursor: pointer;
+}
+.inputGroup .icon.hide {
+    display: none;
+}
+.inputGroup .label {
+    position: absolute;
+    top: calc(var(--input-height) / 2);
+    transform: translateY(-50%);
+    left: var(--space-1);
+    transition: all 0.25s;
+    pointer-events: none;
+}
+.inputGroup input:focus + .label,
+.inputGroup input:not(:placeholder-shown) + .label {
+    top: var(--space-1);
+}
+
+
+
+
+/*-------------------------remember me------------------------*/
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.remember .left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+.remember .left input {
+    cursor: pointer;
+}
+/*-------------------------button------------------------*/
+button {
+    background: var(--color-blue);
+    border: none;
+    padding: var(--space-1-5);
+    width: 100%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--text-color-white);
+    background-color: #2667b6;
+}
+button:hover {
+    background-color: #3b89e8;
+}
+button:hover p {
+    color: #fff;
+}
+button:disabled {
+    background-color: var(--color-blue);
+    color: var(--text-color-lighter);
+    cursor: not-allowed;
+}
