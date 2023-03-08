@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div id="pageSignUp" class="app ">
+            <div class="icon">
+                <img src="../../images/icons/icon_coffee-to-go.png" alt="">
+            </div>
+            <h2 class="m-t-1 center">Create Account</h2>
+            <div id="inputGroupEmail" class="inputGroup m-t-1">
+                <input type="text" placeholder=" ">
+                <div class="label">Email Address</div>
+                <div class="error">Incorect credential</div>
+            </div>
+            <div id="inputGroupPass" class="inputGroup  m-t-2">
+                <input type="password" placeholder=" ">
+                <div class="label">Password</div>
+                <div class="error">Incorrect credentials</div>
+            </div>
+            <button class="m-t-2">Join</button>
+            <p class="m-t-4 center">Do you have account? <a id="signIn" href="#">Sign In</a></p>
+        </div>
+
+        <div id="pageLogin" class="app show">
+            <div class="icon">
+                <img src="../../images/icons/icon_coffee-to-go.png" alt="">
+            </div>
+            <h2 class="m-t-1 center">Welcome Back!</h2>
+            <div id="inputGroupEmail" class="inputGroup m-t-1">
+                <input type="text" placeholder=" ">
+                <div class="label">Email Address</div>
+                <div class="error">Incorrect Email</div>
+            </div>
+            <div id="inputGroupPass" class="inputGroup  m-t-2">
+                <input type="password" placeholder=" ">
+                <div class="label">Password</div>
+                <div class="error">Incorect PassWord</div>
+            </div>
+            <div class="buttonGroup">
+                <button class="m-t-2">Log In</button>
+                <p class="center m-t-1">Login Failed</p>
+            </div>
+            <p class="m-t-4 center">Don't Have Account? <a id="joinNow" href="#">Join Now</a></p>
+        </div>
+
+        <div id="pageSuccess" class="app">
+            <div class="icon">
+                <img src="../../images/icons/icon_coffee-to-go.png" alt="">
+            </div>
+            <p class="center m-t-1">Successfull Login</p>
+        </div>
+
+        <div id="pageCreateSuccess" class="app">
+            <div class="icon">
+                <img src="../../images/icons/icon_coffee-to-go.png" alt="">
+            </div>
+            <p class="center m-t-1">Successfull Sign Up</p>
+            <button class="m-t-2" id="returnToSignin">Return to Sign In</button>
+        </div>
+    </div>
+
+    <div class="componentHeader">text/utility</div>
+    <h2>header</h2>
+    <p>text <a href="#">a tag</a></p>
+    
+    <div class="componentHeader">icon</div>
+    <div class="icon">
+        <img src="../../images/icons/icon_coffee-to-go.png" alt="">
+    </div>
+    
+    <div class="componentHeader">input</div>
+    <div class="inputGroup">
+        <input type="text" placeholder=" ">
+        <div class="label">email</div>
+    </div>
+    <br>
+    <br>
+    <div class="inputGroup">
+        <input type="text" placeholder=" ">
+        <div class="label">Password</div>
+    </div>
+    <br>
+    <br>
+    <div class="inputGroup error">
+        <input type="text" placeholder=" ">
+        <div class="label">Password</div>
+        <div class="error">error</div>
+    </div>
+    
+    <div class="componentHeader">button</div>
+    <button>Join</button>
+
+
+<!--     
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="50%" alt="">
+    <br>
+    <img src="./example_2.png" width="50%" alt=""> -->
+
+    <script src="js.js"></script>
+</body>
+</html>

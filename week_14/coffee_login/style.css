@@ -1,0 +1,143 @@
+:root {
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --space-4: 4rem;
+    --icon-size: 7rem;
+    --text-color-lighter: #ccc;
+    --text-color-white: #fff;
+    --color-button: #fe7789;
+    --color-app-background: #7a569a;
+    --box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    --input-button-height: 3rem;
+    --button-height: 3.5rem;
+    --border-radius: 1rem;
+    --border: 2px solid #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    background: #444;
+}
+
+.componentHeader {
+    border: 2px solid #fff;
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+.app {
+    max-width: 20rem;
+    background-color: var(--color-app-background);
+    padding: var(--space-2);
+    border-radius: var(--border-radius);
+    margin: 5rem auto;
+    display: none;
+}
+.app.show {
+    display: block;
+}
+
+/*-------------------------text/utility------------------*/
+h2 ,a {
+    color: var(--text-color-white);
+    text-decoration: none;
+}
+p {
+    color: var(--text-color-lighter);
+}
+
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+
+.center {
+    text-align: center;
+}
+/*-------------------------icon------------------*/
+.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: 0 auto;
+}
+.icon img {
+    width: 100%;
+}
+/*-------------------------input------------------*/
+.inputGroup {
+    height: var(--input-button-height);
+    position: relative;
+}
+.inputGroup .error {
+    padding-top: 0.15rem;
+    display: none;
+}
+.inputGroup.error input{
+    border-color: red;
+    
+} 
+.inputGroup.error .error{
+    display: block;
+    color: red;
+}
+.inputGroup.error .label{
+    color: red;
+}
+.inputGroup input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-bottom: var(--border);
+    padding-top: var(--space-1);
+    color: var(--text-color-white);
+    font-size: 1.5rem;
+    outline: none;
+}
+.inputGroup .label {
+    position: absolute;
+    top: 1rem;
+    color: var(--text-color-lighter);
+    pointer-events: none;
+    font-size: 1.25rem;
+    transition: all 0.15s;
+}
+.inputGroup input:focus ~ .label,
+.inputGroup input:not(:placeholder-shown) ~ .label {
+    top: 0;
+    font-size: 0.8rem;
+}
+/*-------------------------button------------------*/
+button {
+    background: var(--color-button);
+    width: 100%;
+    height: var(--button-height);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--text-color-white);
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+button:hover {
+    background-color: rgb(247, 81, 101);
+}
+.buttonGroup p {
+    display: none;
+    color: red;
+}
+.buttonGroup.wrong p{
+    display: block;
+}
