@@ -3,44 +3,46 @@
     --space-1: 1rem;
     --space-1-5: 1.5rem;
     --space-2: 2rem;
-    --space-1-5: 1.5rem;
-    --space-2: 2rem;
     --space-2-5: 2.5rem;
     --space-3: 3rem;
+    --space-3-5: 3.5rem;
     --space-4: 4rem;
-    --color-blue: #1b4a82;
-    --text-color-white: #fff;
-    --text-color-lighter: #aaa;
-    --color-white: #fff;
-    --border-radius: 0.25rem;
-    --icon-size: 3rem;
-    --eye-size: 1.5rem;
-    --input-height: 4rem;
+
+    --input-button-height: 4rem;
+    --color-button-disabled: #1a4a82;
+    --color-button-enabled: #2972c6;
+    --color-text-white: #fff;
+    --color-text-lighter: #999;
+    --border-radius: 0.5rem;
+    --border: 2px solid #999;
+    --icon-top-size: 3rem;
+    --icon-eye-size: 2rem;
+
 }
 
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
 }
-
 html, body {
-    background: #111;
+    background-color: #111;
 }
 .componentHeader {
+    color: var(--color-text-white);
     border: 2px solid #fff;
-    padding: 1rem;
-    margin: 2rem 0;
-    color: #fff;
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
 }
 .wrapper {
     min-height: 100vh;
 }
 .wrapper .app {
-    width: 22rem;
+    text-align: center;
+    width: 30rem;
     margin: 5rem auto;
-    background: #222;
-    padding: 5rem;
+    background-color: #222;
+    padding: var(--space-4);
     border-radius: var(--border-radius);
     display: none;
 }
@@ -48,153 +50,114 @@ html, body {
     display: block;
 }
 
-#successPage {
-    color: var(--text-color-white);
-    text-align: center;
-    font-size: 3rem;
+/*--------------------------------text-utility-----------------------------*/
+h2 {
+    color: var(--color-text-white);
+}
+a {
+    color: var(--color-text-white);
 }
 
-
-
-
-
-
-
-
-/*-------------------------text/utility------------------------*/
-p.white {
-    color: var(--color-white);
-}
-a.link {
-    color: var(--text-color-white);
-
-}
-p.lighter {
-    color: var(--text-color-lighter);
-}
-h3.white {
-    color: var(--text-color-white);
+p {
+    color: var(--color-text-lighter)
 }
 
 .m-t-1 {margin-top: 1rem;}
 .m-t-1-5 {margin-top: 1.5rem;}
 .m-t-2 {margin-top: 2rem;}
-.m-t-2-5 {margin-top: 1r2.5m;}
+.m-t-2-5 {margin-top: 2.5rem;}
 .m-t-3 {margin-top: 3rem;}
 .m-t-4 {margin-top: 4rem;}
 .m-t-5 {margin-top: 5rem;}
 
-.center {text-align: center;}
-
-
-
-/*-------------------------icon------------------------*/
+/*--------------------------------Top Icon-----------------------------*/
 .icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: var(--icon-top-size);
+    height: var(--icon-top-size);
     margin: 0 auto;
 }
 .icon img {
     width: 100%;
     filter: invert(1);
 }
-
-/*-------------------------input------------------------*/
+/*--------------------------------input groups-----------------------------*/
+.inputGroup {
+    position: relative;
+}
+.inputGroup .label {
+    position: absolute;
+    top: calc(var(--input-button-height) / 2);
+    transform: translateY(-50%);
+    left: var(--space-1);
+    color: var(--color-text-lighter);
+}
+.inputGroup input:not(:placeholder-shown) ~ .label {
+    top: 1.25rem;
+}
+.inputGroup .icon {
+    height: var(--icon-eye-size);
+    width: var(--icon-eye-size);
+    position: absolute;
+    top: calc(var(--input-button-height) / 2);
+    transform: translateY(-50%);
+    right: var(--space-1);
+}
+.inputGroup .icon.eye {
+    display: none;
+}
+.inputGroup .icon.eye.active {
+    display: block;
+}
+.inputGroup .icon img {
+    width: 100%;
+    filter: invert(1);
+}
+.inputGroup input {
+    height: var(--input-button-height);
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--color-text-white);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding-left: var(--space-1);
+    padding-top: var(--space-1);
+    outline: none;
+}
 .inputGroup.error input {
     border-color: red;
-    color: red;
 }
-.inputGroup.error .label {
-    color: red;
+.inputGroup .error {
+    display: none;
 }
 .inputGroup.error .error {
     color: red;
     display: block;
-    padding-top: var(--space-half);
 }
 
-.inputGroup .error {
-    display: none;
-}
-
-
-.inputGroup input {
-    width: 100%;
-    height: var(--input-height);
-    padding-top: calc(var(--input-height) - 2.5rem);
-    background: none;
-    border: 1px solid #999;
-    border-radius: var(--border-radius);
-    padding-left: var(--space-1);
-    color: var(--text-color-white);
-    outline: none;
-}
-
-.inputGroup {
-    position: relative;
-    color: var(--text-color-white);
-}
-.inputGroup .icon {
-    position: absolute;
-    top: calc(var(--input-height) / 2);
-    transform: translateY(-50%);
-    right: 1rem;
-    width: var(--eye-size);
-    height: var(--eye-size);
-    cursor: pointer;
-}
-.inputGroup .icon.hide {
-    display: none;
-}
-.inputGroup .label {
-    position: absolute;
-    top: calc(var(--input-height) / 2);
-    transform: translateY(-50%);
-    left: var(--space-1);
-    transition: all 0.25s;
-    pointer-events: none;
-}
-.inputGroup input:focus + .label,
-.inputGroup input:not(:placeholder-shown) + .label {
-    top: var(--space-1);
-}
-
-
-
-
-/*-------------------------remember me------------------------*/
+/*--------------------------------remember-----------------------------*/
 .remember {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 .remember .left {
     display: flex;
     align-items: center;
     gap: var(--space-1);
 }
-.remember .left input {
-    cursor: pointer;
-}
-/*-------------------------button------------------------*/
+/*--------------------------------remember-----------------------------*/
 button {
-    background: var(--color-blue);
-    border: none;
-    padding: var(--space-1-5);
+    height: var(--input-button-height);
+    background: var(--color-button-disabled);
     width: 100%;
+    border: none;
     border-radius: var(--border-radius);
-    cursor: pointer;
-    color: var(--text-color-white);
-    background-color: #2667b6;
-}
-button:hover {
-    background-color: #3b89e8;
-}
-button:hover p {
-    color: #fff;
-}
-button:disabled {
-    background-color: var(--color-blue);
-    color: var(--text-color-lighter);
+    color: var(--color-text-lighter);
     cursor: not-allowed;
+}
+button.enabled {
+    background: var(--color-button-enabled);
+    color: var(--color-text-white);
+    cursor: pointer;
 }
