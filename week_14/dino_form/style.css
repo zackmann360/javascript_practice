@@ -1,0 +1,124 @@
+:root {
+    --space-0-5: 0.25rem;
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --text-color-red: red;
+    --text-color-lighter: #333;
+    --text-color-white: #fff;
+    --color-button-disabled: #a584e3;
+    --color-button-enabled: #8655e0;
+    --font-bold: bolder;
+    --border: 1px solid #222;
+    --icon-size: 10rem;
+    --input-button-height: 2.5rem;
+    --border-radius: 0.25rem;
+    --app-width: 20rem;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+
+    background: #bbb;
+}
+.componentHeader {
+    border: var(--border);
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+}
+.wrapper {
+    min-height: 100vh;
+}
+.wrapper .app {
+    width: var(--app-width);
+    margin: 5rem auto;
+    padding: var(--space-3-5);
+    border-radius: var(--border-radius);
+    background: #fff;
+    display: none;
+}
+.wrapper .app.show {
+    display: block;
+}
+
+/* -------------------text/utility---------------- */
+p {
+    font-weight: var(--font-bold);
+    color: var(--text-color-lighter);
+}
+a {
+    color: #888;
+}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+.m-t-6 {margin-top: 6rem;}
+.center {text-align: center;}
+/* -------------------icon---------------- */
+.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: 0 auto;
+}
+.icon img {
+    width: 100%;
+}
+/* -------------------input groups---------------- */
+.inputGroup {
+    position: relative;
+}
+.inputGroup input {
+    width: 100%;
+    height: var(--input-button-height);
+    border: none;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding-left: var(--space-1);
+}
+.inputGroup .label {
+    padding-bottom: var(--space-0-5);
+    font-weight: var(--font-bold);
+}
+.inputGroup .error {
+    color: var(--text-color-red);
+    display: none;
+}
+.inputGroup.error .error {
+    display: block;
+}
+.inputGroup.error input {
+    border-color: red;
+}
+/* -------------------button---------------- */
+.buttonGroup .text{
+    display: none;
+    color: var(--text-color-red);
+    text-align: center;
+    padding-top: var(--space-0-5);
+}
+.buttonGroup.wrong .text{
+    display: block;
+}
+button {
+    cursor: not-allowed;
+    width: 100%;
+    height: var(--input-button-height);
+    background-color: var(--color-button-disabled);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-color-white);
+}
+button.enabled {
+    background-color: var(--color-button-enabled);
+    cursor: pointer;
+}

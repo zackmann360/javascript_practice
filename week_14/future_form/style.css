@@ -1,0 +1,175 @@
+:root {
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --color-text-blue: aqua;
+    --color-text-white: #fff;
+    --color-error: red;
+    --color-app-background: #0b1522;
+    --color-background: #19263a;
+    --text_bold: bolder;
+    --border-input: 2px solid #fff;
+    --border-radius: 0.5rem;
+    --input-button-height: 2.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--color-text-white);
+}
+html, body {
+    background: var(--color-background);
+}
+.component {
+    margin: var(--space-2) 0;
+    padding: var(--space-1);
+    border: var(--border-input);
+}
+.wrapper {
+    min-height: 100vh;
+    
+}
+.wrapper .app {
+    margin: 5rem auto;
+    padding: var(--space-3);
+    border-radius: var(--border-radius);
+    width: 25rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    background: var(--color-app-background);
+    display: none;
+}
+.wrapper .app.show {
+    display: block;
+}
+/* utility */
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+
+h2{
+    text-align: center;
+}
+
+/*--------------------------------input----------------------------*/
+.inputGroup {
+    position: relative;
+    
+}
+.inputGroup .error {
+    padding-top: var(--space-half);
+    color: var(--color-error);
+    display: none;
+}
+.inputGroup.error .error {
+    display: block;
+}
+.inputGroup.error input {
+    border-color: var(--color-error);
+}
+.inputGroup.error .label {
+    color: var(--color-error);
+}
+.inputGroup input {
+    width: 100%;
+    height: var(--input-button-height);
+    background: none;
+    border: none;
+    border-bottom: var(--border-input);
+    padding-top: var(--space-1);
+    outline: none;
+}
+.inputGroup .label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+.inputGroup input:focus ~ .label,
+.inputGroup input:not(:placeholder-shown) ~ .label {
+    top: 0; 
+    font-size: 0.8rem;
+}
+/*--------------------------------button----------------------------*/
+
+button {
+    position: relative;
+    height: var(--input-button-height);
+    width: 8rem;
+    background: none;
+    border: none;
+    color: var(--color-text-blue);
+    cursor: pointer;
+}
+@keyframes btnAnimationT {
+    0% {left: 0; top: 0;}
+    50% {left: 7rem; top: 0;}
+    100% {left: 0; top: 0;}
+}
+.buttonAnimationTop {
+    height: 0.25rem;
+    width: 1rem;
+    background: aqua;
+    position: absolute;
+    top: 0;
+    animation: btnAnimationT 2s infinite;
+}
+@keyframes btnAnimationB {
+    0% {right: 0; bottom: 0;}
+    50% {right: 7rem; bottom: 0;}
+    100% {right: 0; bottom: 0;}
+}
+.buttonAnimationBottom {
+    height: 0.25rem;
+    width: 1rem;
+    background: aqua;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: btnAnimationB 2s infinite;
+}
+@keyframes  btnAnimationL {
+    0% {left: 0; bottom: 0;}
+    50% {left: 0; bottom: 1.5rem;}
+}
+.buttonAnimationLeft {
+    height: 0.9rem;
+    width: 0.25rem;
+    bottom: 0;
+    left: 0;
+    background-color: aqua;
+    position: absolute;
+    animation: btnAnimationL 2s infinite;
+}
+
+@keyframes  btnAnimationR {
+    0% {right: 0; top: 0;}
+    50% {right: 0; top: 1.5rem;}
+}
+.buttonAnimationRight {
+    height: 0.9rem;
+    width: 0.25rem;
+    top: 0;
+    right: 0;
+    background-color: aqua;
+    position: absolute;
+    animation: btnAnimationR 2s infinite;
+}
+.opacity {
+    opacity: 0.5;
+}
+.text {
+    display: none;
+    padding-top: var(--space-half);
+    color: var(--color-error);
+}
+.text.wrong {
+    display: block;
+}
