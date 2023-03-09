@@ -93,6 +93,9 @@ a {
     color: var(--text-color-red);
     display: none;
 }
+.inputGroup.error .label {
+    color: var(--text-color-red);
+}
 .inputGroup.error .error {
     display: block;
 }

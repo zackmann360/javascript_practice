@@ -17,19 +17,46 @@
             <div id="inputGroupUsername" class="inputGroup m-t-2">
                 <div class="label">Username</div>
                 <input type="text">
-                <div class="error">Incorrect Email</div>
+                <div class="error">Invalid Input</div>
             </div>
             <div id="inputGroupPass" class="inputGroup m-t-1">
                 <div class="label">Password</div>
                 <input type="password">
-                <div class="error">Incorrect Password</div>
+                <div class="error">Invalid Input</div>
             </div>
             <div class="buttonGroup">
                 <button class="m-t-4">Sign In</button>
-                <div class="text">Login Failed try: admin/admin</div>
+                <div class="text">
+                    Login Failed try: admin/admin
+                    <br>
+                    Or Create an Account 
+                </div>
             </div>
             <div class="text m-t-3">
-                <a href="#">Create an account</a>
+               <p>Need an account? <a id="createAccountLink" href="#">Create an account</a></p>
+            </div>
+
+        </div>
+        <div id="pageCreateAccount" class="app">
+            <div class="icon">
+                <img src="../../images/icons/icon_dino.png" alt="">
+            </div>
+            <p class="center">Create Account</p>
+            <div id="createAccountInputGroupUsername" class="inputGroup m-t-2">
+                <div class="label">Username</div>
+                <input type="text">
+                <div class="error">Invalid Input</div>
+            </div>
+            <div id="createAccountInputGroupPass" class="inputGroup m-t-1">
+                <div class="label">Password</div>
+                <input type="password">
+                <div class="error">Invalid Input</div>
+            </div>
+            <div class="buttonGroup">
+                <button id="buttonCreateAccount" class="m-t-4">Create Account</button>
+            </div>
+            <div class="text m-t-3">
+                <p> Already have an account? <a id="signInLink" href="#">Sign In</a></p>
             </div>
 
         </div>
