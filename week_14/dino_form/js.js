@@ -1,129 +1,138 @@
-// create an array to store your accouts 
-var myAccounts = [] 
-console.log(myAccounts)
-//-------------------------------------------------------------------------------
-// login Page
-//-------------------------------------------------------------------------------
 var app = document.querySelector('.app')
-var pageLogin = document.querySelector('#pageLogin')
+var accounts = []
+console.log(accounts)
+//----------------------------------------------
+//  pages
+//----------------------------------------------
+var pageSignIn = document.querySelector('#pageSignIn')
+var pageCreateAccount = document.querySelector('#pageCreateAccount')
 var pageSuccess = document.querySelector('#pageSuccess')
-// select the input groups
-var inputGroupUsername = app.querySelector('#inputGroupUsername')
-var inputGroupPassword = app.querySelector('#inputGroupPass')
-// get the input of each input group
-var UsernameInput = inputGroupUsername.querySelector('input')
-var PasswordInput = inputGroupPassword.querySelector('input')
-// get the button
-var buttonGroup = app.querySelector('.buttonGroup')
-var button = app.querySelector('button')
-button.onclick = onclickButton
 
-//---------------sign in link---------------------------
-var linkSignIn = document.querySelector('#signInLink')
-linkSignIn.onclick = onclikcSignInLink
+//----------------------------------------------
+//  signin page
+//----------------------------------------------
+var pageSignInInputGroupEmail = document.querySelector('#pageSignIninputGroupEmail')
+var pageSignInInputGroupPassword = document.querySelector('#pageSignIninputGroupPassword')
+var pageSignInEmailInput = pageSignInInputGroupEmail.querySelector('input')
+var pageSignInPasswordInput = pageSignInInputGroupPassword.querySelector('input')
+var pageSignInButton = app.querySelector('#pageSignInButton')
+pageSignInButton.onclick = onclickPageSignInButton
+var credentialsText = document.querySelector('.text')
+var createAccountLink = document.querySelector('#linkCreateAnAccount')
+createAccountLink.onclick = onclickCreateAccountLink
 
-//---------------sign up link---------------------------
-var linkCreateAccount = document.querySelector('#createAccountLink')
-linkCreateAccount.onclick = onclickCreateAccountLink 
-
-
-function onclickButton(){
-    console.log(this)
-    if(UsernameInput.value != 'admin' && PasswordInput.value != 'admin'){
-        buttonGroup.classList.add('wrong')        
-    }
-    if(UsernameInput.value === 'admin' && PasswordInput.value === 'admin'){
-        buttonGroup.classList.remove('wrong')
-        pageLogin.classList.remove('show')
-        pageSuccess.classList.add('show')
-    }
-
-    for(var account of myAccounts){
-        if(account.username == UsernameInput.value && account.password == PasswordInput.value){
-            pageLogin.classList.remove('show')
-            pageSuccess.classList.add('show')
-        }
-    }
-}
-
-inputGroupUsername.onkeyup = onkeyupInput
-inputGroupPassword.onkeyup = onkeyupInput
-
-function onkeyupInput(){
-    button.classList.add('enabled')
-    inputGroupPassword.classList.add('error')
-    inputGroupUsername.classList.add('error')
-    if(UsernameInput.value){
-        inputGroupUsername.classList.remove('error')
-    }
-    if(PasswordInput.value){
-        inputGroupPassword.classList.remove('error')
-    }
-}
 
 function onclickCreateAccountLink(){
-    pageLogin.classList.remove('show')
+    console.log(this)
+    pageSignIn.classList.remove('show')
     pageCreateAccount.classList.add('show')
 }
 
+function onclickPageSignInButton(){
+    if(!pageSignInEmailInput.value){
+        pageSignInInputGroupPassword.classList.add('error')
+    }
+    if(!pageSignInPasswordInput.value){
+        pageSignInInputGroupEmail.classList.add('error')
+    }
+    if(pageSignInEmailInput.value != 'admin' && pageSignInPasswordInput.value != 'admin'){
+        credentialsText.classList.add('wrong')
+    }
+    if(pageSignInEmailInput.value == 'admin' && pageSignInPasswordInput.value == 'admin'){
+        credentialsText.classList.remove('wrong')
+        pageSignIn.classList.remove('show')
+        pageSuccess.classList.add('show')
+    }
 
-// dinamic login
-// loop over myaccounts
-
-
-
-//-------------------------------------------------------------------------------
-// Create page
-//-------------------------------------------------------------------------------
-var pageCreateAccount = document.querySelector('#pageCreateAccount')
-var buttonCreateAccount = document.querySelector('#buttonCreateAccount')
-var pageCreateAccountUsernameInputGroup = document.querySelector('#createAccountInputGroupUsername')
-var pageCreateAccountPasswordInputGroup = document.querySelector('#createAccountInputGroupPass')
-var pageCreateAccountUsernameInput = pageCreateAccountUsernameInputGroup.querySelector('input')
-var pageCreateAccountPasswordInput = pageCreateAccountPasswordInputGroup.querySelector('input')
-buttonCreateAccount.onclick = onclickCreateAccountButton
-
-
-function onclikcSignInLink(){
-    pageCreateAccount.classList.remove('show')
-    pageLogin.classList.add('show')
+    for(var account of accounts){
+        console.log(account)
+        if(pageSignInEmailInput.value == account.username && pageSignInPasswordInput.value == account.password){
+            pageSignIn.classList.remove('show')
+            pageSuccess.classList.add('show')
+        }
+    }
+    
 }
 
-pageCreateAccountUsernameInput.onkeyup = onkeyupPageCreateInputUser
-pageCreateAccountPasswordInput.onkeyup = onkeyupPageCreateInputPass
+
+pageSignInInputGroupEmail.onkeyup = onkeyupPageSignIn
+pageSignInInputGroupPassword.onkeyup = onkeyupPageSignIn
+
+function onkeyupPageSignIn(){
+    pageSignInButton.classList.add('enabled')
+    if(pageSignInEmailInput.value){
+        pageSignInInputGroupEmail.classList.remove('error')
+    }
+    if(pageSignInPasswordInput.value){
+        pageSignInInputGroupPassword.classList.remove('error')
+    }
+}
+
+
+
+
+
+//----------------------------------------------
+//  Create account page
+//----------------------------------------------
+var signInLink = document.querySelector("#linkSignIn")
+signInLink.onclick = onclickSignInLink 
+var pageCreatAccountInputGroupEmail = document.querySelector('#pageCreatAccountinputGroupEmail')
+var pageCreateAccountInputGroupPassword = document.querySelector('#pageCreateAccountinputGroupPassWord')
+var pageCreateAccountEmailInput = pageCreatAccountInputGroupEmail.querySelector('input')
+var pageCreateAccountPasswordInput = pageCreateAccountInputGroupPassword.querySelector('input')
+var createAccountButton = document.querySelector('#createAccountButton')
+createAccountButton.onclick = onclickCreateAccountButton
 
 function onclickCreateAccountButton(){
-    if(pageCreateAccountUsernameInput.value && pageCreateAccountPasswordInput.value){
-        pageCreateAccount.classList.remove('show')
-        pageLogin.classList.add('show')
-    }
-    if(!pageCreateAccountUsernameInput.value){
-        pageCreateAccountPasswordInputGroup.classList.add('error')
+    if(!pageCreateAccountEmailInput.value){
+        pageCreatAccountInputGroupEmail.classList.add('error')
     }
     if(!pageCreateAccountPasswordInput.value){
-        pageCreateAccountUsernameInputGroup.classList.add('error')
+        pageCreateAccountInputGroupPassword.classList.add('error')
+    }
+    if(pageCreateAccountEmailInput.value && pageCreateAccountPasswordInput.value){
+        pageCreateAccount.classList.remove('show')
+        pageSignIn.classList.add('show')
+        
+        accounts.push(
+            {
+                username : pageCreateAccountEmailInput.value,
+                password : pageCreateAccountPasswordInput.value
+            }
+        )
     }
 
-    myAccounts.push(
-        {
-            username : pageCreateAccountUsernameInput.value,
-            password : pageCreateAccountPasswordInput.value
-        }
-    )
-
-
+    
 }
 
-function onkeyupPageCreateInputUser(){
-    if(pageCreateAccountUsernameInput.value){
-        pageCreateAccountUsernameInputGroup.classList.remove('error')
-        buttonCreateAccount.classList.add('enabled')
+
+pageCreatAccountInputGroupEmail.onkeyup = onkeyupPageCreateInputGroup
+pageCreateAccountInputGroupPassword.onkeyup = onkeyupPageCreateInputGroup
+
+function onkeyupPageCreateInputGroup(){
+    createAccountButton.classList.add('enabled')
+    if(pageCreateAccountEmailInput.value){
+        pageCreatAccountInputGroupEmail.classList.remove('error')
     }
-}
-
-function onkeyupPageCreateInputPass(){
     if(pageCreateAccountPasswordInput.value){
-        pageCreateAccountPasswordInputGroup.classList.remove('error')
-        buttonCreateAccount.classList.add('enabled')
+        pageCreateAccountInputGroupPassword.classList.remove('error')
     }
 }
+
+
+
+
+
+
+function onclickSignInLink(){
+    pageCreateAccount.classList.remove('show')
+    pageSignIn.classList.add('show')
+    console.log(this)
+}
+
+
+
+//----------------------------------------------
+//  success page
+//----------------------------------------------

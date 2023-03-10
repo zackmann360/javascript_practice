@@ -1,127 +1,134 @@
 :root {
-    --space-0-5: 0.25rem;
-    --space-half: 0.5rem;
+    --space-0-5: 0.5rem;
     --space-1: 1rem;
     --space-1-5: 1.5rem;
     --space-2: 2rem;
     --space-2-5: 2.5rem;
     --space-3: 3rem;
     --space-3-5: 3.5rem;
-    --text-color-red: red;
-    --text-color-lighter: #333;
-    --text-color-white: #fff;
+    --space-4: 4rem;
+    --space-4-5: 4.5rem;
+    --size-icon-dino: 8rem;
+    --size-input-button: 2.5rem;
+    --color-error: red;
+    --border: 1px solid #444;
     --color-button-disabled: #a584e3;
-    --color-button-enabled: #8655e0;
-    --font-bold: bolder;
-    --border: 1px solid #222;
-    --icon-size: 10rem;
-    --input-button-height: 2.5rem;
+    --color-button-enabled: #804be2;
+    --color-text-lighter: #555;
+    --color-text-white: #fff;
+    --color-background-app: #fff;
+    --color-background-page: #eee;
+    --bold-text: bold;
     --border-radius: 0.25rem;
-    --app-width: 20rem;
+    --size-app: 20rem;
 }
-
 * {
-    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 html, body {
+    background-color: var(--color-background-page);
 
-    background: #bbb;
-}
-.componentHeader {
-    border: var(--border);
-    padding: var(--space-1);
-    margin: var(--space-2) 0;
 }
 .wrapper {
     min-height: 100vh;
+    
 }
 .wrapper .app {
-    width: var(--app-width);
+    width: var(--size-app);
+    background: var(--color-background-app);
+    padding: var(--space-3);
     margin: 5rem auto;
-    padding: var(--space-3-5);
-    border-radius: var(--border-radius);
-    background: #fff;
     display: none;
 }
 .wrapper .app.show {
     display: block;
 }
+.component {
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    border: 2px solid #000;
+}
 
-/* -------------------text/utility---------------- */
-p {
-    font-weight: var(--font-bold);
-    color: var(--text-color-lighter);
-}
+/*-----------------text/utillity-----------------*/
 a {
-    color: #888;
+    color: var(--color-button-disabled);
 }
+a:hover {
+    color: var(--color-button-enabled);
+}
+.center {
+    text-align: center;
+}
+.text {
+    text-align: center;
+    padding-top: var(--space-0-5);
+    color: var(--color-error);
+    display: none;
+}
+.text.wrong {
+    display: block;
+}
+
 .m-t-1 {margin-top: 1rem;}
 .m-t-2 {margin-top: 2rem;}
+.m-t-2-5 {margin-top: 2.5rem;}
 .m-t-3 {margin-top: 3rem;}
 .m-t-4 {margin-top: 4rem;}
 .m-t-5 {margin-top: 5rem;}
 .m-t-6 {margin-top: 6rem;}
-.center {text-align: center;}
-/* -------------------icon---------------- */
+/*-----------------------------------icon------------------------------*/
 .icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: var(--size-icon-dino);
+    height: var(--size-icon-dino);
     margin: 0 auto;
 }
 .icon img {
     width: 100%;
 }
-/* -------------------input groups---------------- */
+/*-----------------------------------input------------------------------*/
 .inputGroup {
     position: relative;
 }
 .inputGroup input {
     width: 100%;
-    height: var(--input-button-height);
+    height: var(--size-input-button);
     border: none;
     border: var(--border);
     border-radius: var(--border-radius);
-    padding-left: var(--space-1);
+    padding-left: var(--space-0-5);
 }
 .inputGroup .label {
-    padding-bottom: var(--space-0-5);
-    font-weight: var(--font-bold);
+    position: absolute;
+    top: -1.5rem;
+    font-weight: var(--bold-text);
 }
 .inputGroup .error {
-    color: var(--text-color-red);
+    color: var(--color-error);
     display: none;
-}
-.inputGroup.error .label {
-    color: var(--text-color-red);
 }
 .inputGroup.error .error {
     display: block;
 }
 .inputGroup.error input {
-    border-color: red;
+    border-color: var(--color-error);
+    border: 2px solid red;
 }
-/* -------------------button---------------- */
-.buttonGroup .text{
-    display: none;
-    color: var(--text-color-red);
-    text-align: center;
-    padding-top: var(--space-0-5);
+.inputGroup.error .label {
+    color: var(--color-error);
 }
-.buttonGroup.wrong .text{
-    display: block;
-}
+/*-----------------------------------button------------------------------*/
 button {
-    cursor: not-allowed;
     width: 100%;
-    height: var(--input-button-height);
-    background-color: var(--color-button-disabled);
     border: none;
+    background-color: var(--color-button-disabled);
+    height: var(--size-input-button);
     border-radius: var(--border-radius);
-    color: var(--text-color-white);
+    color: var(--color-text-white);
+    cursor: not-allowed;
 }
 button.enabled {
-    background-color: var(--color-button-enabled);
+    background: var(--color-button-enabled);
     cursor: pointer;
 }

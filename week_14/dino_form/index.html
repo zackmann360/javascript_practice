@@ -9,94 +9,90 @@
 <body>
 
     <div class="wrapper">
-        <div id="pageLogin" class="app show">
+        <div id="pageSignIn" class="app show">
             <div class="icon">
                 <img src="../../images/icons/icon_dino.png" alt="">
             </div>
-            <p class="center">Sign In</p>
-            <div id="inputGroupUsername" class="inputGroup m-t-2">
-                <div class="label">Username</div>
+            <h2 class="center">Sign In</h2>
+            <div id="pageSignIninputGroupEmail" class="inputGroup m-t-3">
                 <input type="text">
-                <div class="error">Invalid Input</div>
+                <div class="label">Username</div>
+                <div class="error">* Must enter a Username</div>
             </div>
-            <div id="inputGroupPass" class="inputGroup m-t-1">
-                <div class="label">Password</div>
+            <div id="pageSignIninputGroupPassWord" class="inputGroup m-t-2-5">
                 <input type="password">
-                <div class="error">Invalid Input</div>
+                <div class="label">Password</div>
+                <div class="error">* Must enter a Password</div>
             </div>
-            <div class="buttonGroup">
-                <button class="m-t-4">Sign In</button>
-                <div class="text">
-                    Login Failed try: admin/admin
-                    <br>
-                    Or Create an Account 
-                </div>
+            <button id="pageSignInButton" class="m-t-4">Sign In</button>
+            <div class="text">
+                - Incorrect Credentials -
+                <br>
+                - Create Account or try admin / admin -
             </div>
-            <div class="text m-t-3">
-               <p>Need an account? <a id="createAccountLink" href="#">Create an account</a></p>
-            </div>
-
+            <p class="m-t-2">Don't have an account? <a id="linkCreateAnAccount" href="#">Create an account</a></p>
         </div>
         <div id="pageCreateAccount" class="app">
             <div class="icon">
                 <img src="../../images/icons/icon_dino.png" alt="">
             </div>
-            <p class="center">Create Account</p>
-            <div id="createAccountInputGroupUsername" class="inputGroup m-t-2">
-                <div class="label">Username</div>
+            <h2 class="center">Create Account</h2>
+            <div id="pageCreatAccountinputGroupEmail" class="inputGroup m-t-3">
                 <input type="text">
-                <div class="error">Invalid Input</div>
+                <div class="label">Username</div>
+                <div class="error">* Must enter a Username</div>
             </div>
-            <div id="createAccountInputGroupPass" class="inputGroup m-t-1">
-                <div class="label">Password</div>
+            <div id="pageCreateAccountinputGroupPassWord" class="inputGroup m-t-2-5">
                 <input type="password">
-                <div class="error">Invalid Input</div>
+                <div class="label">Password</div>
+                <div class="error">* Must enter a Password</div>
             </div>
-            <div class="buttonGroup">
-                <button id="buttonCreateAccount" class="m-t-4">Create Account</button>
-            </div>
-            <div class="text m-t-3">
-                <p> Already have an account? <a id="signInLink" href="#">Sign In</a></p>
-            </div>
-
+            <button id="createAccountButton" class="m-t-4">Create Account</button>
+            <p class="m-t-2">Already have an account? <a id="LinkSignIn" href="#">Sign In!</a></p>
         </div>
         <div id="pageSuccess" class="app">
             <div class="icon">
                 <img src="../../images/icons/icon_dino.png" alt="">
             </div>
-            <div class="success center m-t-3"><h2>You Made it to the End of this program! Thank You for testing!!</h2></div>
+            <h2 class="center">Successfull Login!!</h2>
         </div>
     </div>
-        
-        
 
-    <div class="componentHeader">Icon</div> 
+    <div class="component">Icon</div>
     <div class="icon">
         <img src="../../images/icons/icon_dino.png" alt="">
     </div>
     
-    <div class="componentHeader">Input groups</div> 
-    <div class="inputGroup">
-        <div class="label">label</div>
+    <div class="component">Input Group</div>
+    <div id="inputGroupEmail" class="inputGroup">
         <input type="text">
-        <div class="error">error</div>
+        <div class="label">Username</div>
+        <div class="error">* Must enter a Username</div>
     </div>
     <br>
-    <div class="inputGroup">
-        <div class="label">label</div>
-        <input type="text">
-        <div class="error">error</div>
+    <br>
+    <br>
+    <div id="inputGroupPassWord" class="inputGroup">
+        <input type="password">
+        <div class="label">Password</div>
+        <div class="error">* Must enter a Password</div>
     </div>
+    <br>
+    <br>
     <br>
     <div class="inputGroup error">
-        <div class="label">label</div>
         <input type="text">
+        <div class="label">label</div>
         <div class="error">error</div>
     </div>
     
-    <div class="componentHeader">button</div> 
+    <div class="component">Button</div>
     <button class="">Sign In</button>
-
+    
+    
+    
+    
+    
     <br>
     <br>
     <br>
