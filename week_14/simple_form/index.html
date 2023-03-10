@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div id="pageLogIn" class="app show">
+            <div class="header">
+                <h1>LOG IN</h1>
+                <div class="box"></div>
+            </div>
+            <div class="inputGroupBackground">
+
+                <div id="pageLoginInputGroupEmail" class="inputGroup">
+                    <input type="text" placeholder="Email">
+                    <div class="error">* Email Must be Filled out</div>
+                </div>
+                <div id="pageLoginInputGroupPassword" class="inputGroup m-t-1">
+                    <input type="password" placeholder="Password">
+                    <div class="error">* Email Must be Filled out</div>
+                </div>
+                <div id="buttonGroupLogin" class="buttonGroup m-t-1">
+                    <button  id="pageLoginButton" class="">Log In</button>
+                    <p>
+                        Incorrect credentials
+                        <br>
+                        Create Account or Try admin / admin
+                    </p>
+                </div>
+                <p class="m-t-1">Dont Have Acount? <a id="pageCreateAccountLink" href="#">Create An Account</a></p>
+            </div>
+        </div>
+        <div id="pageCreate" class="app">
+            <div class="header">
+                <h1>Create Account</h1>
+                <div class="box"></div>
+            </div>
+            <div class="inputGroupBackground">
+
+                <div id="pageCreateInputGroupEmail" class="inputGroup">
+                    <input type="text" placeholder="Email">
+                    <div class="error">* Email Must be Filled out</div>
+                </div>
+                <div id="pageCreateInputGroupPassword" class="inputGroup m-t-1">
+                    <input type="password" placeholder="Password">
+                    <div class="error">* Email Must be Filled out</div>
+                </div>
+                <div id="ButtonGroupCreate" class="buttonGroup m-t-1">
+                    <button id="pageCreateButton" class="">Create account</button>
+                    <p>
+                        Incorrect credentials
+                        <br>
+                        Create Account or Try admin / admin
+                    </p>
+                </div>
+                <p class="m-t-1">Have an Account? <a id="pageSigninLink" href="#">Sign In!</a></p>
+            </div>
+        </div>
+        <div id="pageSuccess" class="app">
+            <div class="header">
+                <h1>Success</h1>
+                <div class="box"></div>
+            </div>
+            <div class="inputgroupBackground">
+                <h2 class="center">Successfull Login</h2>
+            </div>
+        </div>
+        <div id="pageCreateSuccess" class="app">
+            <div class="header">
+                <h1>Successfull Account</h1>
+                <div class="box"></div>
+            </div>
+            <div class="inputgroupBackground">
+                <h2 class="center">Account Created!</h2>
+                <button id="goToLogIn" class="m-t-1">Got to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="component">header</div>
+    <div class="header">
+        <h1>Header</h1>
+        <div class="box"></div>
+    </div>
+    
+    <div class="component">Input Groups</div>
+    <div id="pageInputGroupEmail" class="inputGroup">
+        <input type="text" placeholder="Email">
+        <div class="error">* Email Must be Filled out</div>
+    </div>
+    <br>
+    <div id="pageInputGroupPassword" class="inputGroup">
+        <input type="text" placeholder="Email">
+        <div class="error">* Email Must be Filled out</div>
+    </div>
+    <br>
+    <div id="pageInputGroup" class="inputGroup error">
+        <input type="text" placeholder="placeholder">
+        <div class="error">* Email Must be Filled out</div>
+    </div>
+    
+    <div class="component">Button</div>
+    <button disabled class="active">disabled</button>
+    <br>
+    <br>
+    <button class="active">enabled</button>
+
+    
+    
+    
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="50%" alt="">
+    <script src="js.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Game</title>
+</head>
+<style>
+    :root {
+        --size-player: 8rem
+    }
+
+    .player {
+        width: var(--size-player);
+        height: var(--size-player);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .player .animated {
+        display: none;
+    }
+    
+    .player img {
+        width: 100%;
+        image-rendering:pixelated;
+    }
+    .player.animated .animated {
+        display: block;
+    }
+    .player.animated .still {
+        display: none;
+    }
+</style>
+<body tabindex="0">
+    
+    <div class="player">
+        <img class="still" src="./sprite_spaceship.png" width="" alt="">
+        <img class="animated" src="./sprite_spaceship_animated.gif" alt="">
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>

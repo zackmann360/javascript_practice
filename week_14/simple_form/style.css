@@ -1,0 +1,133 @@
+:root {
+
+    --space-half: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --color-blue: #2188dd;
+    --color-button-hover: #2c94e9;
+    --color-text-white: #fff;
+    --color-app-background: #ebebeb;
+    --color-page-backround: #456;
+    --color-error: red;
+    --button-input-height: 3rem;
+    --font-wieght: 300;   
+    --size-app: 25rem
+}
+html, body {
+    background-color: var(--color-page-backround);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.component {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px solid black;
+}
+.wrapper {
+    min-height: 100vh;
+}
+.wrapper .app{
+    display: none;
+    margin: 5rem auto;
+    padding: var(--space-1);
+    width: var(--size-app);
+}
+.wrapper .app.show{
+    display: block;
+}
+.inputGroupBackground {
+    background: var(--color-app-background);
+    padding: var(--space-2);
+}
+
+/* utility */
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+
+a {
+    color: #777;
+    text-decoration: none;
+}
+a:hover {
+    color: #333;
+}
+.center {
+    text-align: center;
+}
+
+/*-----------------------------Header----------------------- */
+.header {
+    position: relative;
+    background: var(--color-blue);
+    text-align: center;
+    padding: var(--space-1) 0;
+    
+}
+.header h1 {
+    color: var(--color-text-white);
+    font-weight: var(--font-wieght);
+}
+.header .box {
+    height: 2rem;
+    width: 2rem;
+    background: var(--color-blue);
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+/*-----------------------------Input Groups----------------------- */
+.inputGroup input {
+    width: 100%;
+    height: var(--button-input-height);
+    padding-left: var(--space-1);
+    border: none;
+    border: 1px solid #444;
+}
+.inputGroup .error {
+    color: var(--color-error);
+    display: none;
+    padding-top: var(--space-half);
+}
+.inputGroup.error .error {
+    display: block;   
+}
+.inputGroup.error input {
+    border-color: var(--color-error);
+}
+/*-----------------------------button----------------------- */
+.buttonGroup {
+    text-align: center;
+}
+.buttonGroup p{
+    display: none;
+    color: var(--color-error);
+}
+.buttonGroup.wrong p{
+    display: block;
+}
+button {
+    width: 100%;
+    height: var(--button-input-height);
+    background: var(--color-blue);
+    border: none;
+    color: var(--color-text-white);
+    cursor: pointer;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+button:hover {
+    background: var(--color-button-hover);
+
+}
