@@ -1,0 +1,237 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bootstrap Side Navigation</title>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+        <h2>Start Bootstrap</h2>
+        <div id="bigNav" class="app hide openNav">
+            <div class="top">
+                <div class="container">
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                        <div class="text">Dashboard</div>
+                    </div>
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                        <div class="text">Charts</div>
+                    </div>
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                        <div class="text">Tables</div>
+                    </div>
+
+                    <div id="componentsDropDown" class="dropDown ">
+                        <button  class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                                <div class="text">Components</div>
+                            </div>
+                            <div class="right">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_chevron_right.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropTab">Component 1</div>
+                        <div class="dropTab">Component 2</div>
+                    </div>
+                    <div id="examplesDropDown" class="dropDown ">
+                        <button class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                                <div class="text">Example Pages</div>
+                            </div>
+                            <div class="right">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_chevron_right.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropTab">page 2</div>
+                        <div class="dropTab">page 2</div>
+                    </div>
+                    <div id="menuDropDown" class="dropDown ">
+                        <button class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                                <div class="text">Menu Levels</div>
+                            </div>
+                            <div class="right">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_chevron_right.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropTab">Level 1</div>
+                        <div class="dropTab">Level 2</div>
+                    </div>
+                    <div class="tab m-b-5">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                        <div class="text">Link</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <button id="OpenSlimNav" class="closeButton ">
+                    <div class="icon">
+                        <img src="../../images/icons/icon_chevron_left.png" alt="">
+                    </div>
+                </button>
+            </div>
+        </div>
+
+
+        <div id="slimNav" class="app hide closed ">
+            <div class="top">
+
+                <div class="container">
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                    </div>
+                    <div dropDownName="componentsDropDown" class="dropDown ">
+                        <button class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div dropDownName="examplesDropDown" class="dropDown ">
+                        <button class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div dropDownName="menuDropDown" class="dropDown ">
+                        <button class="dropDownButton">
+                            <div class="left">
+                                <div class="icon">
+                                    <img src="../../images/icons/icon_app_select.png" alt="">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="tab m-b-5">
+                        <div class="icon">
+                            <img src="../../images/icons/icon-menu.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+
+                <button id="openBigNav" class="closeButton">
+                    <div class="icon">
+                        <img src="../../images/icons/icon_chevron_right.png" alt="">
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="component">tabs</div>
+    <div class="container">
+        <div class="tab">
+            <div class="icon">
+                <img src="../../images/icons/icon-menu.png">
+            </div>
+            <div class="text">tab name</div>
+        </div>
+        <div class="dropDown open">
+
+            <button class="dropDownButton">
+                <div class="left">
+                    <div class="icon">
+                        <img src="../../images/icons/icon_app_select.png" alt="">
+                    </div>
+                    <div class="text">Tab name</div>
+                </div>
+                <div class="right">
+                    <div class="icon">
+                        <img src="../../images/icons/icon_chevron_right.png" alt="">
+                    </div>
+                </div>
+            </button>
+            <div class="dropTab">pagename</div>
+            <div class="dropTab">pagename</div>
+        </div>
+    </div>
+
+    <div class="component">close Button</div>
+    <button class="closeButton">
+        <div class="icon">
+            <img src="../../images/icons/icon_chevron_left.png" alt="">
+        </div>
+    </button>
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="25%" alt="">
+    <br>
+    <br>
+    <img src="./example_2.png" width="25%" alt="">
+    <br>
+    <br>
+    <img src="./example_3.png" width="5%" alt="">
+    <script src="js.js"></script>
+</body>
+
+</html>
