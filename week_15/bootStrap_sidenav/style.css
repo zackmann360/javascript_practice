@@ -34,15 +34,15 @@ html, body {
     border: 2px solid #fff;
 }
 .wrapper {
-    min-height: 100vh;
-    
+    min-height: 100%;    
+    background-color: red;
 }
 .wrapper .app {
     display: flex;
     flex-direction: column;
     background-color: var(--color-tabs);
     width: 15rem;
-    height: 95.5%;
+    height: 96.5%;
 }
 .wrapper .app.hide {
     display: none;

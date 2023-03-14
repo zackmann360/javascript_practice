@@ -21,9 +21,14 @@ function onclickSlimNavDropDown(){
     bigNav.classList.add('openNav')
 
     // open dropdown when you click on the dropdown
-    console.log(this)
     var attribute = this.getAttribute("dropDownName")
-    console.log('#' + attribute) 
+    console.log("." + attribute) 
+
+    var selected = app.querySelector('.' + attribute)
+    selected.classList.add('open')
+    
+    
+    
 }
 
 
@@ -33,10 +38,10 @@ for(var dropdown of dropDowns){
 
 function onclickDropDown(){
     this.classList.toggle('open')
+    
 }
 
 function onclickOpenBig(){
-    console.log(this)
     slimNav.classList.remove('openNav')
     bigNav.classList.add('openNav')
 }
@@ -44,4 +49,10 @@ function onclickOpenBig(){
 function onclickOpenSlim(){
     bigNav.classList.remove('openNav')
     slimNav.classList.add('openNav')
+
+    var currents = app.querySelectorAll('.open')
+    for(var current of currents){
+        console.log(current)
+        current.classList.remove('open')
+    }
 }
