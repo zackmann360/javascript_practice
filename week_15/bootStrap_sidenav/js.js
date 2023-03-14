@@ -1,58 +1,53 @@
 var app = document.querySelector('.app')
+
 var bigNav = document.querySelector('#bigNav')
 var slimNav = document.querySelector('#slimNav')
 
-var openSlimNav = document.querySelector('#OpenSlimNav')
-openSlimNav.onclick= onclickOpenSlim
-var openBigNav = document.querySelector('#openBigNav')
+var openSlimNav = document.querySelector('#showSlimNav')
+openSlimNav.onclick = onclickOpenSlim
+var openBigNav = document.querySelector('#showBigNav')
 openBigNav.onclick = onclickOpenBig
 
+var bigNavdropDowns = bigNav.querySelectorAll('.tabDrop')
+var slimNavDropDowns = slimNav.querySelectorAll('.tabDrop')
 
-var dropDowns = app.querySelectorAll('.dropDown')
-var slimNavDropDowns = slimNav.querySelectorAll('.dropDown')
-
-for(var slimNavDropDown of slimNavDropDowns){
-    slimNavDropDown.onclick = onclickSlimNavDropDown
+for(var dropDown of slimNavDropDowns){
+    dropDown.onclick = onclickDropDownOpen
 }
 
-function onclickSlimNavDropDown(){
-    
-    slimNav.classList.remove('openNav')
-    bigNav.classList.add('openNav')
+function onclickDropDownOpen(){
+    slimNav.classList.remove('showNav')
+    bigNav.classList.add('showNav')
 
-    // open dropdown when you click on the dropdown
-    var attribute = this.getAttribute("dropDownName")
-    console.log("." + attribute) 
-
-    var selected = app.querySelector('.' + attribute)
-    selected.classList.add('open')
-    
-    
-    
+    var tabAttribute = this.getAttribute('tabDrop')
+    var selected = document.querySelector('.' + tabAttribute)
+    selected.classList.add('openDrop')
 }
 
 
-for(var dropdown of dropDowns){
-    dropdown.onclick = onclickDropDown
+for(var dropDown of bigNavdropDowns){
+    dropDown.onclick = onclickDropDown
 }
 
 function onclickDropDown(){
-    this.classList.toggle('open')
-    
+    this.classList.toggle('openDrop')
 }
 
 function onclickOpenBig(){
-    slimNav.classList.remove('openNav')
-    bigNav.classList.add('openNav')
+    slimNav.classList.remove('showNav')
+    bigNav.classList.add('showNav')
+    openBigNav.classList.add('closed')
 }
 
-function onclickOpenSlim(){
-    bigNav.classList.remove('openNav')
-    slimNav.classList.add('openNav')
 
-    var currents = app.querySelectorAll('.open')
+function onclickOpenSlim(){
+    bigNav.classList.remove('showNav')
+    slimNav.classList.add('showNav')
+    slimNav.classList.remove('closed')
+
+    var currents = document.querySelectorAll('.openDrop')
     for(var current of currents){
-        console.log(current)
-        current.classList.remove('open')
+        current.classList.remove('openDrop')
     }
+
 }

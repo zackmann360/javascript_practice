@@ -1,5 +1,5 @@
 :root {
-    --space-0-5: 0.5rem;
+    --space-half: 0.5rem;
     --space-1: 1rem;
     --space-1-5: 1.5rem;
     --space-2: 2rem;
@@ -7,160 +7,121 @@
     --space-3: 3rem;
     --space-3-5: 3.5rem;
     --space-4: 4rem;
-    --color-background: #111;
-    --color-tabs: #343a40;
+    --color-background: #222;
+    --color-tabs: #444;
     --color-text-white: #fff;
-    --color-text-lighter: #999;
-    --size-icons: 1.5rem;
-    --invert: 0.6;
-    --close-button-height: 4rem;
-    --close-button-color: #212529;
+    --color-text-white-darker: #999;
+    --color-button: #333;
+    --icon-size: 1.5rem;
 }
 
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     font-family: sans-serif;
 }
-
-html, body {
-    background: var(--color-background);
-}
-
-.component{
-    color: var(--color-text-white);
-    padding: 1rem;
-    margin: 2rem 0;
-    border: 2px solid #fff;
-}
 .wrapper {
-    min-height: 100%;    
-    background-color: red;
-}
-.wrapper .app {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-tabs);
-    width: 15rem;
-    height: 96.5%;
-}
-.wrapper .app.hide {
-    display: none;
-}
-.wrapper .app.hide.openNav {
-    display: flex;
+    min-height: 100vh;
 }
 .wrapper .app .top {
-    flex: 1;
-}
-.wrapper .closed  {
-    width: 3.5rem;
-    display: flex;
-}
-
-.container {
+    background-color: var(--color-tabs);
     padding: var(--space-1);
 }
-/* text/utility */
-h2{
-    color: var(--color-text-white);
-    font-weight: 400;
-    background-color: var(--color-tabs);
-    line-height: 3rem;
-    width: 100%;
-    padding-left: var(--space-1);
+.wrapper .app {
+    display: none;
 }
-.m-b-5 {margin-bottom: 5rem;}
-
-/*------------------------------------------tabs--------------------------------------*/
-.container {
-    background-color: var(--color-tabs);
+.wrapper .app.showNav {
+    display: block;
 }
-.tab {
-    width: 100%;
-    padding: var(--space-1) 0;
-    color: var(--color-text-lighter);
+#slimNav .mainContainer{
+    width: 4rem;
+}
+.wrapper .app .mainContainer {
+    width: 20rem;
+    height: 95.5%;
+    /* padding: var(--space-1-5); */
+    background-color: var(--color-tabs);
     display: flex;
+    flex-direction: column;
+    
+}
+.wrapper .app .mainContainer .tabContainer {
+    padding: var(--space-1-5);
+    flex: 1;
+}
+html, body {
+    background-color: var(--color-background);
+    
+}
+.component {
+    color: var(--color-text-white);
+    border: 2px solid #fff;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+/* text/utility */
+h2 {
+    color: var(--color-text-white);
+}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+
+/*--------------------------------tab--------------------------*/
+.tab {
+    display: flex;
+    gap: var(--space-half);
+    color: var(--color-text-white-darker);
     align-items: center;
-    gap: var(--space-0-5);
     cursor: pointer;
 }
 .tab:hover {
     color: var(--color-text-white);
 }
 
-.tab .icon {
-    width: var(--size-icons);
-    height: var(--size-icons);
-}
-.tab .icon img {
-    width: 100%;
-    filter: invert(var(--invert));
-}
-.dropDownButton {
+.tabDrop .container {
     display: flex;
-    justify-content: space-between;
-    gap: var(--space-0-5);
-    padding: var(--space-1) 0;
+    color: var(--color-text-white-darker);
     align-items: center;
-    width: 100%;
-    background-color: var(--color-tabs);
-    border: none;
-    color: var(--color-text-lighter);
+    justify-content: space-between;
     cursor: pointer;
 }
-.dropDownButton .left {
-    display: flex;
-    align-items: center;
-    gap: var(--space-0-5);
-}
-.dropDownButton:hover {
+.tabDrop:hover .container{
     color: var(--color-text-white);
 }
-
-.dropDownButton .icon {
-    width: var(--size-icons);
-    height: var(--size-icons);
+.tabDrop .container .left {
+    display: flex;
+    gap: var(--space-half);
 }
-.dropDownButton .icon img {
-    width: 100%;
-    filter: invert(var(--invert));
-}
-.dropDown .dropTab {
+.tabDrop .dropText {
+    color: var(--color-text-white-darker);
     display: none;
-    color: var(--color-text-lighter);
-    padding: var(--space-1) var(--space-1) var(--space-1) var(--space-2);
 }
-.dropDown.open .dropTab {
+.tabDrop .dropText .text {
+    padding: var(--space-2) var(--space-2) 0 var(--space-2);
+}
+.tabDrop.openDrop .dropText {
     display: block;
 }
-.dropDown.open .icon {
+.tabDrop.openDrop .right .icon {
     transform: rotate(90deg);
 }
-.dropTab {
-    cursor: pointer;
-}
-.dropTab:hover {
-    color: var(--color-text-white);
-}
-/*------------------------------------------close button--------------------------------------*/
-.closeButton {
+
+/*--------------------------------button--------------------------*/
+button {
     width: 100%;
-    height: var(--close-button-height);
-    background-color: var(--close-button-color);
+    height: 4rem;
+    background: var(--color-button);
     border: none;
+    color: var(--color-text-white-darker);
     cursor: pointer;
 }
-.closeButton:hover {
-    
-    background: rgb(39, 41, 47);
+button.closed .icon {
+    transform: rotate(180deg);
 }
-.closeButton .icon {
-    margin: 0 auto;
-    width: var(--size-icons);
-    height: var(--size-icons);
-}
-.closeButton .icon img {
-    width: 100%;
-    filter: invert(var(--invert));
+button:hover {
+    color: var(--color-text-white);
 }
