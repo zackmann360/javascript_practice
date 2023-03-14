@@ -1,128 +1,138 @@
 :root {
-    --space-half: 0.5rem;
+    --space-0-5: 0.5rem;
     --space-1: 1rem;
+    --space-1-5: 1.5rem;
     --space-2: 2rem;
     --space-2-5: 2.5rem;
     --space-3: 3rem;
     --space-3-5: 3.5rem;
-    --space-4: 4rem;
-    --space-4-5: 4.5rem;
-    --icon-size: 3rem;
-    --color-text-lighter: #444;
-    --color-text-black: #000;
-    --font-weight: bolder;
-    --box-shadow: 2px 10px 20px rgba(8, 7, 7, 0.5);
-    --iconGroup-width: 8rem;
-    --image-hieght: 5rem;
+    --icon-container-size: 12rem;
+    --icon-container-height: 8rem;
+    --icon-size: 5rem;
+    --highlight-widht: 8rem;
+    --left-right-width: 5.5rem;
+    --font-bold: bolder;
+    --font-weight-header: 400;
+    --line-color: #ddd;
+    --highlight-color-left: linear-gradient(to right, #64bbe6, #d3acf5);
+    --highlight-color-right: linear-gradient(to right, #e798f1, #ce07fb);
+    --color-icon-highlight: rgb(218, 15, 218);
+    --box-shadow: 0 5px 10px rgb(206, 88, 206, 0.5),
+                    5px 8px 20px rgb(206, 88, 206, 0.5),
+                    -5px 10px 30px rgb(206, 88, 206, 0.5);
+    --textBox-size: 50rem;
 }
 * {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
-
-.wrapper {
-    min-height: 100vh;
-}
-.wrapper .app {
-    padding: var(--space-2);
-    position: relative;
-}
-.wrapper .app .grid {
-    justify-content: center;
-}
-
 .component {
+    border: 2px solid #000;
     padding: var(--space-1);
     margin: var(--space-2) 0;
-    border: 2px solid #000;
+}
+.wrapper .app .grid {
+    position: relative;
+    width: 72rem;
+    margin: 5rem auto;
+}
+.wrapper .app .grid .highlight {
+    position: absolute;
+    top: var(--icon-container-height);
+    left: 0;
 }
 
-/* text/ utility */
+.wrapper .app .textBox .titles .title {
+    display: none;
+}
+.wrapper .app .textBox .titles .title.showTitle {
+    display: block;
+}
+
+
+/* text/utility */
 .m-t-1 {margin-top: 1rem;}
 .m-t-2 {margin-top: 2rem;}
 .m-t-3 {margin-top: 3rem;}
 .m-t-4 {margin-top: 4rem;}
 .m-t-5 {margin-top: 5rem;}
-/*----------------------------------icon groups-------------------*/
-.iconGroup {
-    text-align: center;
-    height: 10rem;
-    position: relative;
-}
-.iconGroup .icon {
-    font-size: var(--icon-size);
-    height: var(--image-hieght);
-}
-.iconGroup .icon i{
-    color: #999;
-}
-.iconGroup .text {
-    padding-top: var(--space-2);
-    width: 5rem;
-    text-align: center;
-    margin: 0 auto;
-}
-.line {
-    height: 4px;
-    background-color: #ddd;
-    width: 100%;
-    top: var(--icon-size);
-}
-.line i {
-    margin: -0.35rem;
-    z-index: 100;
-    color: #ddd;
+/*----------------------------------------------action group-------------------------*/
+.actionGroup {
+    max-width: var(--icon-container-size);
     cursor: pointer;
 }
-.line i:hover {
-    color: red;
+.actionGroup.iconHighlight .top{
+    color: var(--color-icon-highlight);
 }
-.highlight {
-    position: absolute;
-    width: var(--iconGroup-width);
+.actionGroup .top {
+    width: var(--icon-container-size);
+    height: var(--icon-container-height);
+}
+.actionGroup .top .icon {
+    font-size: var(--icon-size);
+    text-align: center;
+}
+.actionGroup .line {
+    display: flex;
+    align-items: center;
+}
+.actionGroup .line .right, 
+.actionGroup .line .left {
     height: 4px;
-    left: 1.8rem;
-    top: var(--image-hieght);
-    background-color: red;
+    width: var(--left-right-width);
+    background-color: var(--line-color);
 }
-.iconGroup.selected #dot {
-    color: red;
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px 6px rgba(0, 0, 0, 0.15);
-}
-.iconGroup.selected i {
-    color: red;
-}
-.iconGroup.selected .text {
+.actionGroup .line .middle {
+    font-size: 1rem;
     font-weight: bolder;
+    color: var(--line-color);
+} 
+.actionGroup .text {
+    text-align: center;
+    padding-top: var(--space-2);
+}
+.actionGroup.iconHighlight .text {
+    font-weight: var(--font-bold);
 }
 
-.item {
-    cursor: pointer;
+/*----------------------------------------------highlight-------------------------*/
+.highlight {
+    width: var(--icon-container-size);
+    display: flex;
+    align-items: center;
 }
-.title {
-    display: none;
+.highlight .right,
+.highlight .left {
+    height: 4px;
+    width: var(--left-right-width);
+    background: var(--highlight-color-left);
 }
-.title.show {
-    display: block;
+.highlight .right{
+    background: var(--highlight-color-right);
 }
-/*----------------------------------text box-------------------*/
+.highlight .middle {
+    color: var(--color-icon-highlight);
+}
+/*----------------------------------------------grid-------------------------*/
+.grid {
+    display: grid;
+    grid-template-columns: var(--icon-container-size) var(--icon-container-size) var(--icon-container-size) var(--icon-container-size) var(--icon-container-size) var(--icon-container-size);
+    justify-content: center;
+}
+
+.grid .item {
+    text-align: center;
+}
+/*----------------------------------------------text box-------------------------*/
 .textBox {
-    border: 2px solid #eee;
-    padding: var(--space-2);
+    width: var(--textBox-size);
     box-shadow: var(--box-shadow);
-    width: 35rem;
-    margin: var(--space-3) auto;
+    margin: 5rem auto;
+    border-radius: 0.5rem;
+    padding: var(--space-2);
+    line-height: var(--space-2);
 }
 .textBox h3 {
     padding-bottom: var(--space-1);
 }
-/*----------------------------------grid-------------------*/
-.grid {
-    display: grid;
-    grid-template-columns: var(--iconGroup-width) var(--iconGroup-width) var(--iconGroup-width) var(--iconGroup-width) var(--iconGroup-width) var(--iconGroup-width);
-    text-align: center;
-    position: relative;
-}
-
