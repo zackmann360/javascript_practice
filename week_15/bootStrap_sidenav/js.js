@@ -36,14 +36,16 @@ function onclickDropDown(){
 function onclickOpenBig(){
     slimNav.classList.remove('showNav')
     bigNav.classList.add('showNav')
-    openBigNav.classList.add('closed')
+    // slimNav.classList.add('closed')
 }
 
 
 function onclickOpenSlim(){
     bigNav.classList.remove('showNav')
     slimNav.classList.add('showNav')
-    slimNav.classList.remove('closed')
+    // openBigNav.classList.add('closed')
+    console.log(this)
+    
 
     var currents = document.querySelectorAll('.openDrop')
     for(var current of currents){
