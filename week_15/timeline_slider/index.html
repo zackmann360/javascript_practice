@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
-    <title>Document</title>
+    <title>Timeline Slider</title>
 </head>
 
 <body>
@@ -14,184 +14,222 @@
     <div class="wrapper">
         <div class="app">
             <div class="grid">
-                <div actionPage="brain" class="item">
-                    <div num="0" class="actionGroup  iconHighlight">
-                        <div class="top">
-                            <div class="icon"><i class="fa-solid fa-brain"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer">
+                        <div num="0" boxTitle="brain" class="actionGroup active">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-sharp fa-solid fa-brain"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">Brainstorm</div>
+                            </div>
                         </div>
-                        <div class="text ">Brainstorm</div>
                     </div>
                 </div>
-                <div actionPage="discuss" class="item">
-                    <div num="1" class="actionGroup  ">
-                        <div class="top">
-                            <div class="icon"><i class="fa-regular fa-lightbulb"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer ">
+                        <div num="1" boxTitle="discuss" class="actionGroup ">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-sharp fa-regular fa-lightbulb"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">Discuss Issues</div>
+                            </div>
                         </div>
-                        <div class="text bold">Discuss Ideas</div>
                     </div>
                 </div>
-                <div actionPage="make" class="item">
-                    <div num="2" class="actionGroup ">
-                        <div class="top">
-                            <div class="icon"><i class="fa-solid fa-paper-plane"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer ">
+                        <div num="2" boxTitle="make" class="actionGroup ">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">Make Project</div>
+                            </div>
                         </div>
-                        <div class="text ">Make Project</div>
                     </div>
                 </div>
-                <div actionPage="select" class="item">
-                    <div num="3" class="actionGroup ">
-                        <div class="top">
-                            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer ">
+                        <div num="3" boxTitle="select" class="actionGroup ">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-sharp fa-solid fa-bullseye"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">Select Strategy</div>
+                            </div>
                         </div>
-                        <div class="text ">Select Strategy</div>
                     </div>
                 </div>
-                <div actionPage="seo" class="item">
-                    <div num="4" class="actionGroup ">
-                        <div class="top">
-                            <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer ">
+                        <div num="4" boxTitle="seo" class="actionGroup ">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">SEO Target</div>
+                            </div>
                         </div>
-                        <div class="text ">SEO Target</div>
                     </div>
                 </div>
-                <div actionPage="happy" class="item">
-                    <div num="5" class="actionGroup ">
-                        <div class="top">
-                            <div class="icon"><i class="fa-solid fa-face-smile"></i></div>
-                        </div>
-                        <div class="line">
-                            <div class="left"></div>
-                            <div class="middle">
-                                <i class="fa-regular fa-circle"></i>
+                <div class="item">
+                    <div class="actionGroupContainer ">
+                        <div num="5" boxTitle="happy" class="actionGroup ">
+                            <div class="top">
+                                <div class="icon">
+                                    <i class="fa-sharp fa-regular fa-face-laugh-beam"></i>
+                                </div>
                             </div>
-                            <div class="right"></div>
+                            <div class="middle">
+                                <div class="left"></div>
+                                <div class="icon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="label">Happy Customers</div>
+                            </div>
                         </div>
-                        <div class="text ">Happy Customer</div>
                     </div>
                 </div>
                 <div class="highlight">
                     <div class="left"></div>
                     <div class="middle">
-                        <i class=" fa-regular fa-circle-dot"></i>
+                        <div class="icon">
+                            <i class="fa-regular fa-circle-dot"></i>
+                        </div>
                     </div>
                     <div class="right"></div>
                 </div>
             </div>
             <div class="textBox">
-                <div class="titles">
-                    <div class="title brain showTitle ">
-                        <h3>Brainstorm</h3>
-                    </div>
-                    <div class="title discuss">
-                        <h3>Discuss Ideas</h3>
-                    </div>
-                    <div class="title make">
-                        <h3>Make Project</h3>
-                    </div>
-                    <div class="title select">
-                        <h3>Select Strategy</h3>
-                    </div>
-                    <div class="title seo">
-                        <h3>SEO Target</h3>
-                    </div>
-                    <div class="title happy">
-                        <h3>Happy Customer</h3>
-                    </div>
+                <h2 class="title brain show">Brainstorm</h2>
+                <h2 class="title discuss">Discuss Issues</h2>
+                <h2 class="title make">Make Project</h2>
+                <h2 class="title select">Select Strategy</h2>
+                <h2 class="title seo">SEO Target</h2>
+                <h2 class="title happy">Happy Customers</h2>
+                <div class="text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nam atque a natus earum, nemo consequuntur
+                    tempore quasi dignissimos. Obcaecati porro magni enim veritatis dignissimos eos perferendis corporis. Quasi,
+                    ad.
                 </div>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum tenetur quam quaerat, nulla magnam
-                reiciendis praesentium, beatae odit debitis cum doloremque optio omnis reprehenderit! Impedit quas enim
-                corporis quos eaque.
             </div>
-
         </div>
     </div>
 
-
     <div class="component">action group</div>
-    <div class="actionGroup">
-        <div class="top">
-            <div class="icon"><i class="fa-solid fa-brain"></i></div>
-        </div>
-        <div class="line">
-            <div class="left"></div>
-            <div class="middle">
-                <i class="fa-regular fa-circle"></i>
+    <div class="actionGroupContainer ">
+        <div class="actionGroup ">
+            <div class="top">
+                <div class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
             </div>
-            <div class="right"></div>
+            <div class="middle">
+                <div class="left"></div>
+                <div class="icon">
+                    <i class="fa-regular fa-circle"></i>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="bottom">
+                <div class="label">label name</div>
+            </div>
         </div>
-        <div class="text bold">label</div>
     </div>
 
     <div class="component">highlight</div>
     <div class="highlight">
         <div class="left"></div>
         <div class="middle">
-            <i class=" fa-regular fa-circle-dot"></i>
+            <div class="icon">
+                <i class="fa-regular fa-circle-dot"></i>
+            </div>
         </div>
         <div class="right"></div>
     </div>
 
     <div class="component">grid</div>
     <div class="grid">
+        <div class="item">0</div>
         <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
         <div class="item">4</div>
         <div class="item">5</div>
-        <div class="item">6</div>
     </div>
 
     <div class="component">text box</div>
     <div class="textBox">
-        <h3>title</h3>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum tenetur quam quaerat, nulla magnam reiciendis
-        praesentium, beatae odit debitis cum doloremque optio omnis reprehenderit! Impedit quas enim corporis quos
-        eaque.
+        <h2 class="title">title</h2>
+        <div class="text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nam atque a natus earum, nemo consequuntur
+            tempore quasi dignissimos. Obcaecati porro magni enim veritatis dignissimos eos perferendis corporis. Quasi,
+            ad.
+        </div>
     </div>
 
 
 
 
+
+
+
+
     <br>
     <br>
     <br>
     <br>
-    <img src="./example.png" width="100%">
+    <img src="./example.png" width="75%" alt="">
     <script src="js.js"></script>
 </body>
 
