@@ -1,130 +1,148 @@
 :root {
-    --space-0-5: 0.5rem;
+    --space-0-5: 0.5remrem;
     --space-1: 1rem;
     --space-1-5: 1.5rem;
     --space-2: 2rem;
+    --space-2-5: 2.5rem;
     --space-3: 3rem;
+    --space-3-5: 3.5rem;
     --space-4: 4rem;
+    --space-4-5: 4.5rem;
+    --color-highlight-line: linear-gradient(to right, #b1eaff, #f604f6);
+    --color-purple: #f604f6;
     --color-line: #ccc;
-    --color-highlight-right: linear-gradient(to left, #e66494, rgb(255, 4, 255));
-    --color-highlight-left: linear-gradient(to right, #e66494, rgb(255, 4, 255));
-    --box-shadow: 0px 10px 30px rgb(252, 3, 252, 0.5);
-    --font-bold: bolder;
-    --size-upper-icon-container-width: 12rem;
-    --size-upper-icon-container-height: 6rem;
-    --size-upper-icon: 4rem;
-    --size-dots: 1rem;
-    --size-line-left-right: 5.5rem;
-    --color-purple: rgb(251, 3, 251);
-    --gid: 12rem;
-    --text-box-width: 45rem
+    --box-shadow-dot: 0px 0px 0px 8px rgba(12, 65, 171, 0.2);
+    --text-bold: bolder;
+    --size-action-icon-container-width: 12rem;
+    --size-action-icon-height: 8rem;
+    --size-action-icon: 6rem;
+    --size-line-height: 5px;
+    --size-textbox-width: 45rem;
+    --size-line-width: 12rem;
 }
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-family: sans-serif;
 }
 .component {
     border: 2px solid #000;
-    padding: var(--space-1);
-    margin: var(--space-2) 0;
+    padding: 1rem;
+    margin: 3rem auto  ;
 }
-
 .wrapper {
-    min-height: 100vh;
-    padding-top: var(--space-4);
+    height: 100vh;
+    padding-top: 10rem;
+}
+.wrapper .app {
+    width: 72rem;
+    margin: 0 auto;
 }
 .wrapper .app .grid {
-    margin: 0 auto;
     position: relative;
-    width: 72rem;
+    
 }
 .wrapper .app .grid .highlight {
     position: absolute;
-    top: var(--size-upper-icon-container-height);
+    top: var(--size-action-icon-height);
     left: 0;
 }
-/*----------------------action group---------------------*/
-.actionGroup {
-    width: var(--size-upper-icon-container-width);
-    text-align: center;
+.item {
     cursor: pointer;
 }
-.actionGroup .top {
-    width: var(--size-upper-icon-container-width);
-    height: var(--size-upper-icon-container-height);
-}
-.actionGroup .top .icon i {
-    font-size: var(--size-upper-icon);
-}
-.actionGroup .middle {
-    display: flex;
-    align-items: center;
-    color: var(--color-line);
-    font-weight: bolder;
-}
-.actionGroup .middle .right,
-.actionGroup .middle .left {
-    height: 5px;
-    width: var(--size-line-left-right);
-    background: var(--color-line);
-}
-.actionGroup .bottom {
-    padding-top: var(--space-1-5);
-}
-.actionGroup.active .top .icon {
-    color: var(--color-purple);
-}
-.actionGroup.active .bottom .label {
-    font-weight: bolder;
-}
-
-/*-----------------------highlight---------------------*/
-.highlight {
-    transition: all 0.1s;
-    display: flex;
-    align-items: center;
-    color: var(--color-purple);
-}
-.highlight .right,
-.highlight .left {
-    height: 5px;
-    width: var(--size-line-left-right);
-}
-.highlight .right {
-    background: var(--color-highlight-right);
-}
-.highlight .middle {
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px 8px rgb(132, 60, 246, 0.2);
-}
-.highlight .left {
-    background: var(--color-highlight-left);
-}
-/*-----------------------grid---------------------*/
-.grid {
-    display: grid;
-    grid-template-columns: var(--gid) var(--gid) var(--gid) var(--gid) var(--gid) var(--gid);
-    justify-content: center;
-}
-.grid .item {
+/*-----------------action group---------------------*/
+.actionGroup { 
+    width: var(--size-action-icon-container-width);
     text-align: center;
 }
-
-/*-----------------------text box---------------------*/
-.textBox {
-    width: var(--text-box-width);
-    box-shadow: var(--box-shadow);
-    margin: 5rem auto;
-    padding: var(--space-2);
+.actionGroup .icon { 
+    height: var(--size-action-icon-height);
+    font-size: var(--size-action-icon);
 }
-.textBox .title {
+.actionGroup .line { 
+    position: relative;
+    width: var(--size-line-width);
+    height: var(--size-line-height);
+    background: var(--color-line);
+}
+.actionGroup .line .dot { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 100%;
+    background-color: #fff;
+    color: var(--color-line);
+    font-weight: bolder;
+} 
+.actionGroup .title { 
+    padding-top: var(--space-2);
+}
+.actionGroup.active .icon { 
+    /* color:var(--color-purple); */
+    background: -moz-linear-gradient( right rgb(255, 0, 255));
+    background: -webkit-linear-gradient( left, #63c0f6 , #bf02f8 70%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.actionGroup.active .title { 
+    font-weight: var(--text-bold);
+}
+/*-----------------highlight---------------------*/
+.highlight {
+    position: relative;
+    height: var(--size-line-height);
+    width: var(--size-line-width);
+    background: var(--color-highlight-line);
+}
+.highlight .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-purple);
+    border-radius: 100%;
+    box-shadow: var(--box-shadow-dot);
+}
+/*-----------------grid---------------------*/
+.grid {
+    display: grid;
+    grid-template-columns: 12rem 12rem 12rem 12rem 12rem 12rem;
+    justify-content: center;
+    text-align: center;
+}
+/*-----------------textbox---------------------*/
+.container {
+    width: var(--size-textbox-width);
+    padding: 3rem 7rem 3rem 3rem;
+    margin: 0 auto;
+    position: relative;
+}
+.textBox {
+    width: var(--size-textbox-width);
+    background: #fff;
+    padding: var(--space-2);
+    z-index: 1000;
+    position: absolute;
+}
+.textBox .titles .title {
     padding-bottom: var(--space-2);
     display: none;
 }
-.textBox .text {
-    line-height: var(--space-2);
-}
-.textBox .title.show {
+.textBox .titles .title.showTitle {
     display: block;
+}
+.backDrop {
+    width: var(--size-textbox-width);
+    height: 8rem;
+    padding: 0 6rem 5rem 3rem;
+    background: linear-gradient(to right, #b1eaff, #f604f6);
+    opacity: 0.5;
+    filter: blur(20px);
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
 }

@@ -1,29 +1,24 @@
 var app = document.querySelector('.app')
-var tabs = app.querySelectorAll('.actionGroup')
+var selection = app.querySelectorAll('.actionGroup')
 var highlight = app.querySelector('.highlight')
 
-for(var tab of tabs){
-    tab.onclick = onclickTab
+for(var selected of selection){
+    selected.onclick = onclickSelected
 }
 
-var left = 12
-function onclickTab(){
-    var currentHighlight = app.querySelector('.active')
-    currentHighlight.classList.remove('active')
+var width = 12
+function onclickSelected(){
+    var currentActive = app.querySelector('.active')
+    currentActive.classList.remove('active')
     this.classList.add('active')
     
-    var currentTitle = app.querySelector('.show')
-    currentTitle.classList.remove('show')
+    var number = this.getAttribute('number')
+    var newPostion = number * width
+    highlight.style.left = newPostion + 'rem'
     
-    var titleAtt = this.getAttribute('boxTitle')
-    var newTitle = app.querySelector('.' + titleAtt)
-    newTitle.classList.add('show')
-    console.log(newTitle)
-    console.log(titleAtt)
-    
-    var selectedNum = this.getAttribute('num')
-    highlight.style.left = selectedNum * left + 'rem'
-
-
-
+    var currentTitle = app.querySelector('.showTitle')
+    var pageTitle = this.getAttribute('pageTitle')
+    var nextTitle = app.querySelector('.' + pageTitle)
+    currentTitle.classList.remove('showTitle')
+    nextTitle.classList.add('showTitle')
 }
