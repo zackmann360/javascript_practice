@@ -1,0 +1,281 @@
+:root {
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --space-4: 4rem;
+    --space-4-5: 4.5rem;
+    --space-5: 5rem;
+    --space-5-5: 5.5rem;
+    --space-6: 6rem;
+    --space-6-5: 6.5rem;
+    --border-radius: 1rem;
+    --border-radius-input: 0.25rem;
+    --input-button-height: 3.5rem;
+    --color-text-white: #fff;
+    --color-text-lighter: #ddd;
+    --color-backgroud-form: #fff;
+    --color-backgroud-page: #f2b361;
+    --color-blue: #f89514;
+    --color-blue-hover: #fb7602;
+    --box-shadow-button: 0 0 10px rgba(0, 0, 0, 0.25);
+    --box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.04),
+        0 0 30px 20px rgba(0, 0, 0, 0.09);
+    --color-icon-invert: 1;
+    --icon-card-height: 3rem;
+    --icon-card-width: 4rem;
+    --text-font-larger: 1.5rem;
+    --text-font-name-cvv: 1.1rem;
+    --text-bold: bolder;
+    --card-size-width: 28rem;
+    --card-size-height: 17rem;
+    --form-size-width: 38rem;
+    --card-offset: 11.5rem;
+}
+
+.component {
+    border: 2px solid #000;
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.app {
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: var(--space-1);
+    background: var(--color-backgroud-page);
+}
+
+.app .form {
+    background: var(--color-backgroud-form);
+    max-width: var(--form-size-width);
+    margin: 8rem auto;
+    box-shadow: var(--box-shadow);
+    padding: var(--space-3);
+    margin-top: var(--card-offset);
+    border-radius: var(--border-radius);
+}
+
+.app .form .card {
+    margin-top: calc(var(--card-offset) * -1);
+}
+
+.app .form .inputRow {
+    display: flex;
+}
+
+.app .form .inputRow .left {
+    display: flex;
+    align-items: center;
+}
+
+/* text/utility  */
+.m-t-1 {
+    margin-top: 1rem;
+}
+
+.m-t-2 {
+    margin-top: 2rem;
+}
+
+.m-t-3 {
+    margin-top: 3rem;
+}
+
+.m-t-4 {
+    margin-top: 4rem;
+}
+
+.m-t-5 {
+    margin-top: 5rem;
+}
+
+/*--------------------------------------------card------------------------ */
+.card {
+    max-width: var(--card-size-width);
+    height: var(--card-size-height);
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    url("../../images/background/background_orange.png");
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    padding: 0 var(--space-2);
+    box-shadow: var(--box-shadow);
+}
+
+.card .top .icons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card .top .icons .left {
+    height: var(--icon-card-height);
+    width: var(--icon-card-width);
+}
+
+.card .top .icons .right {
+    height: 6rem;
+    width: 6rem;
+    filter: invert(1);
+}
+
+.card .top .icons .right img,
+.card .top .icons .left img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .middle {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+    width: 100%;
+    ccjustify-content: center;
+    margin-top: var(--space-1-5);
+    
+}
+.highlight {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+    border-radius: 0.25rem;
+}
+
+.card .middle .cardNums {
+    color: var(--color-text-white);
+    font-size: var(--text-font-larger);
+
+}
+
+.card .bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: var(--space-2-5);
+}
+
+.card .bottom .right .text {
+    display: flex;
+    align-items: center;
+}
+
+.card .bottom .left .text,
+.card .bottom .right .text {
+    font-size: var(--text-font-name-cvv);
+    color: var(--color-text-white);
+    text-transform: uppercase;
+}
+
+.card .bottom .left .title,
+.card .bottom .right .title {
+    padding-bottom: var(--space-0-5);
+    color: var(--color-text-lighter);
+}
+
+/*--------------------------------------------input------------------------ */
+.inputGroup input {
+    width: 100%;
+    height: var(--input-button-height);
+    padding-left: var(--space-0-5);
+    border-radius: var(--border-radius-input);
+    border: none;
+    border: 1px solid #bbb;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputGroup input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.inputGroup .title {
+    padding-bottom: var(--space-0-5);
+}
+
+.inputSelect .title {
+    padding-bottom: var(--space-0-5);
+}
+
+.inputSelect select {
+    border-radius: var(--border-radius-input);
+    width: 100%;
+    height: var(--input-button-height);
+    padding-right: var(--space-2);
+    padding-left: var(--space-0-5);
+    appearance: none;
+    border: none;
+    border: 1px solid #bbb;
+
+}
+
+.inputSelect select:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+}
+
+.inputSelect {
+    position: relative;
+
+}
+
+.inputSelect .icon {
+    position: absolute;
+    top: 3rem;
+    right: var(--space-0-5);
+}
+
+/*---------------------------------------button------------------------ */
+button {
+    background: var(--color-blue);
+    color: var(--color-text-white);
+    height: var(--input-button-height);
+    width: 100%;
+    border-radius: var(--border-radius-input);
+    border: none;
+    box-shadow: var(--box-shadow-button);
+    font-size: var(--text-font-name-cvv);
+    cursor: pointer;
+}
+button:hover {
+    background: var(--color-blue-hover);
+}
+
+/*---------------------------------------flex------------------------ */
+.flex {
+    display: flex;
+}
+
+.flex.gap-1 {
+    gap: 1rem;
+}
+
+.flex.gap-2 {
+    gap: 2rem;
+}
+
+.flex .item {
+    flex: 1;
+    /* background: rgba(0, 0, 0, 0.25); */
+}
+
+.flex .item.half {
+    flex: 0.5;
+}

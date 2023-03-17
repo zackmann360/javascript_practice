@@ -10,7 +10,7 @@
 # 2. use an icon
 ## 🆓 use the free icons 
 ```
-1: https://fontawesome.com/search?q=chevron&o=r&m=free    
+https://fontawesome.com/icons
 ```
 
 ## 🔍 search for the icon you want, copy the icon and paste it where you want it.

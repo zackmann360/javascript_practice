@@ -1,0 +1,231 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="app">
+        
+        <div class="form">
+            <div class="card">
+            <div class="top">
+                <div class="icons">
+                    <div class="left">
+                        <img src="../../images/icons/icon_credit_card_chip.png" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="../../images/icons/icon_visa_text.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="CardNumbers" class="middle ">
+                <div class="Cardnums">####</div>
+                <div class="Cardnums">####</div>
+                <div class="Cardnums">####</div>
+                <div class="Cardnums">####</div>
+            </div>
+            <div class="bottom">
+                <div id="cardHolder"  class="left">
+                    <div class="title">Card Holder</div>
+                    <div class="text">Full Name</div>
+                </div>
+                <div id="expires" class="right">
+                    <div class="title">Expires</div>
+                    <div class="text">
+                        <div class="left">mm </div>
+                        /
+                        <div class="right"> yy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id="inputGroupCardNum" class="inputGroup m-t-3">
+                <div  class="title">Card Number</div>
+                <input type="number">
+            </div>
+            <div id="inputGroupCardHolder" class="inputGroup m-t-1">
+                <div class="title">Card Holder</div>
+                <input type="text">
+            </div>
+            <div class="flex gap-2 m-t-1">
+                <div class="item flex gap-1">
+                    <div class="item">
+                        <div class="inputSelect">
+                            <div class="title">Expiration</div>
+                            <select name="Month" id="date">
+                                <option value="month">Month</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                
+                            </select>
+                            <div class="icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="inputSelect">
+                            <div class="title">&nbsp;</div>
+                            <select name="Year" id="date">
+                                <option value="year">Year</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                
+                            </select>
+                            <div class="icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item half">
+                    <div id="cvv" class="inputGroup">
+                        <div   class="title">CVV</div>
+                        <input type="number">
+                    </div>
+                </div>        
+            </div>
+            <button class="m-t-3">Submit</button>
+        </div>
+
+    </div>
+    
+    <div class="component">card</div>
+    <div class="card">
+        <div class="top">
+            <div class="icons">
+                <div class="left">
+                    <img src="../../images/icons/icon_credit_card_chip.png" alt="">
+                </div>
+                <div class="right">
+                    <img src="../../images/icons/icon_visa_text.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="Cardnums">####</div>
+            <div class="Cardnums">####</div>
+            <div class="Cardnums">####</div>
+            <div class="Cardnums">####</div>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <div class="title">title</div>
+                <div class="text">name</div>
+            </div>
+            <div class="right">
+                <div class="title">title</div>
+                <div class="text">
+                    <div class="left">##</div>
+                    /
+                    <div class="right">##</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component">inputs</div>
+    <div class="inputGroup">
+        <div class="title">title</div>
+        <input type="text">
+    </div>
+    
+    <div class="inputSelect">
+        <div class="title">title</div>
+        <select name="Month" id="Month">
+            <option value="month">Month</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            
+        </select>
+        <div class="icon">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+    <div class="inputSelect">
+        <div class="title">title</div>
+        <select name="Year" id="year">
+            <option value="year">Year</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            
+        </select>
+        <div class="icon">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+
+    
+    <div class="component">button</div>
+    <button>Submit</button>
+    
+    <div class="component">flex</div>
+    <div class="flex">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="flex gap-1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="flex gap-2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="flex gap-2">
+        <div class="item flex gap-1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+        </div>
+        <div class="item half">right</div>        
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="75%" alt="">
+    <script src="js.js"></script>
+</body>
+</html>
