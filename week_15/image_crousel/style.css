@@ -1,123 +1,129 @@
 :root {
+    --space-0-5: 0.5rem;
     --space-1: 1rem;
     --space-2: 2rem;
     --space-3: 3rem;
     --space-4: 4rem;
+    --space-5: 5rem;
+    --space-6: 6rem;
+    --space-7: 7rem;
+    --space-8: 8rem;
     --color-white: #fff;
-    --color-button: #aaa;
-    --aspect-ratio: calc(9/16 * 100%)
+    --color-black-lighter: #aaa;
 }
+
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    font-family: sans-serif;
+
 }
 
-.slider {
-    padding-top: var(--aspect-ratio);
-    background-color: red;
+.slideShow {
+    padding-top: calc(4/12 * 100%);
+    width: 100%;
     position: relative;
-    overflow: hidden;
-    color: var(--color-white);
 }
-.slider .slides {
+.slideShow .slider {
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+.slideShow .slider .slides {
+    position: absolute;
     top: 0;
-    left: 0s;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
     transition: all 0.75s;
 }
-.slider.showSlide1 .slides {
-    left: 0;
-}
-.slider.showSlide2 .slides {
-    left: -100%;
-}
-.slider.showSlide3 .slides {
-    left: -200%;
-}
-
-.slider .slides .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.slider .slides .slide .contentText {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    color: var(--color-white);
-    bottom: var(--space-4);
-}
-
-h2 {
-    padding-bottom: var(--space-1);
-}
-
-.slider .slides .slide img {
-    width: 100%;
+.slideShow .slider .slides img {
     object-fit: cover;
+    width: 100vw;
+    height: 100%;
+
 }
-.slider .slides .slide2  {
-    left: 100%;
+.slideShow .slider .slides .slide .lowerContent {
+    position: absolute;
+    bottom: var(--space-6);
+    color: #fff;
 }
-.slider .slides .slide3  {
-    left: 200%;
+h2 {
+    padding-bottom: var(--space-2);
+}
+.slideShow .slider .slides .slide #content1 {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slideShow .slider .slides .slide #content2 {
+    left: 150%;
+    transform: translateX(-50%);
+}
+.slideShow .slider .slides .slide #content3 {
+    left: 250%;
+    transform: translateX(-50%);
 }
 
-.buttons {
-    color: #000;
-    font-size: var(--space-3);
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
+.slideShow .buttons {
     position: absolute;
-    top: 0;
-    color: var(--color-button);
-    text-align: center;
-}
-.buttons .left,
-.buttons .right {
-    height: 100%;
-    width: 15rem;
+    bottom: 0;
+    left: 0;
     display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    color: var(--color-black-lighter);
+    font-size: 2rem;
+}
+.slideShow .buttons .left,
+.slideShow .buttons .right {
+    height: 100%;
+    background-color: red;
+    display: flex;
+    width: 8rem;
     cursor: pointer;
 }
-.buttons .right:hover,
-.buttons .left:hover{
+.slideShow .buttons .left i,
+.slideShow .buttons .right i{
+    margin: auto;
+}
+
+.slideShow .buttons .right {
+    background: linear-gradient(to right, rgb(0, 0, 0, 0.01), rgb(0, 0, 0));
+}
+.slideShow .buttons .left{
+    background: linear-gradient(to left, rgb(0, 0, 0, 0.01), rgb(0, 0, 0));
+    
+}
+.slideShow .buttons .right:hover i {
+    color: var(--color-white);
+
+}
+.slideShow .buttons .left:hover i {
     color: var(--color-white);
 }
-.buttons .left{
-    background: linear-gradient(to left, rgba(0,0,0,0.05) 25%, #000);
-}
-.buttons .right{
-    background: linear-gradient(to right, rgba(0,0,0,0.05) 25%, #000);
-
-}
-.content {
-    text-align: center;
-}
-
-.dots {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-1);
+.slideShow .dots {
     position: absolute;
-    bottom: var(--space-1);
-    width: 100%;
+    bottom: var(--space-2);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-0-5);
+    
 }
-.dots .dot .solid{
+.slideShow .dots .dot #solid {
     display: none;
 }
-.dots .dot.showDot .solid{
+
+
+.slideShow .dots .dot.solid #hollow {
+    display: none;
+}
+.slideShow .dots .dot.solid #solid {
     display: block;
-}
-.dots .dot.showDot .hollow{
-    display: none;
 }
