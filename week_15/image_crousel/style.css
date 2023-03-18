@@ -18,6 +18,9 @@
     font-family: sans-serif;
 
 }
+.app {
+    height: 100vh;
+}
 
 .slideShow {
     padding-top: calc(4/12 * 100%);
