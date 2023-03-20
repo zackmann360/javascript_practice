@@ -9,8 +9,8 @@ var position = 0
 
 function onclickRight(){
     position += 1
-    if(position >= 2){
-        position = 2
+    if(position > 2){
+        position = 0
     }
     slides.style.left = position * -100 + '%'
     moveSolidDot()    
@@ -18,16 +18,16 @@ function onclickRight(){
 
 function onclickLeft(){
     position -= 1
-    if(position <= 0){
-        position = 0
+    if(position < 0){
+        position = 2
     }
+    console.log(position)
     slides.style.left = position * -100 +  '%'
     moveSolidDot()
 }
-
 function moveSolidDot(){
-    dots.classList.remove('dot0')
-    dots.classList.remove('dot1')
-    dots.classList.remove('dot2')
-    dots.classList.add('dot' + position)
+    var currentDot = document.querySelector('.active')
+    currentDot.classList.remove('active')
+    var nextDot = document.querySelector('#dot' + position)
+    nextDot.classList.add('active')
 }

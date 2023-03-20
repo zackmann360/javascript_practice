@@ -12,17 +12,11 @@
     --center-buttons: auto;
     --size-font-larger: 1.25rem;
 }
-
 * {
     padding: 0 ;
     margin: 0 ;
     font-family: monospace;
 }
-
-
-
-
-/*---------------------------images------------------------*/
 .slider {
     position: relative;
     overflow: hidden;
@@ -34,7 +28,8 @@
     display: flex;
     width: 300%;
     position: absolute;
-    left: ;
+    left: 0;
+    transition: all 1s;
 }
 .slider .slides .slide {
     width: 100%;
@@ -49,45 +44,34 @@
 .slider .slides .slide .content {
     position: absolute;
     bottom: var(--space-4);
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     text-align: center;
 }
 .slider .slides .slide .content .title {
     padding-bottom: var(--space-2);
 }
-.slider .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: absolute; 
-    top: 0;   
-}
-.slider .buttons .left,
-.slider .buttons .right {
-    height: 30rem;
-    display: flex;
-    align-items: center;
-    background-color: red;
-    font-size: 3rem;
+.slider .left,
+.slider .right {
+    position: absolute;
     width: 8rem;
     color: var(--color-light-black);
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.slider .buttons .right:hover,
-.slider .buttons .left:hover {
+.slider .left {
+    background: linear-gradient(to left, rgb(0, 0, 0, 0.01), rgb(0, 0, 0, 1 ));
+    left: 0;
+}
+.slider .right {
+    background: linear-gradient(to right, rgb(0, 0, 0, 0.01), rgb(0, 0, 0, 1 ));
+    right: 0;
+}
+.slider .left:hover,
+.slider .right:hover {
     color: var(--color-white);
-}
-
-.slider .buttons .left {
-    background: linear-gradient(to left, rgb(0, 0, 0, 0.01), rgb(0, 0, 0, 0.9));
-}
-.slider .buttons .right {
-    background: linear-gradient(to right, rgb(0, 0, 0, 0.01), rgb(0, 0, 0, 0.9));
-}
-.slider .buttons .left i,
-.slider .buttons .right i {
-    margin: var(--center-buttons);
 }
 .slider .dots {
     position: absolute;
@@ -100,24 +84,9 @@
 .slider .dots .solid {
     display: none;
 }
-.slider .dots.dot0 #dot0 .hollow {
+.slider .dots .dot.active .hollow {
     display: none;
-    
 }
-.slider .dots.dot0 #dot0 .solid {
-    display: block;
-}
-.slider .dots.dot1 #dot1 .hollow {
-    display: none;
-    
-}
-.slider .dots.dot1 #dot1 .solid {
-    display: block;
-}
-.slider .dots.dot2 #dot2 .hollow {
-    display: none;
-    
-}
-.slider .dots.dot2 #dot2 .solid {
+.slider .dots .dot.active .solid {
     display: block;
 }

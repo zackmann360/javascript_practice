@@ -1,0 +1,118 @@
+:root {
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --space-10: 10rem;
+    --space-4: 4rem;
+    --color-white: #fff;
+    --color-button: #111;
+    --color-button-hover: #555;
+    --size-card-height: 35rem;
+    --size-card-width: 10rem;
+    --size-font-larger: 1.3rem;
+    --size-button-width: 10rem;
+    --size-button-height: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    color: var(--color-white);
+}
+html, body {
+    background: #444;
+}
+.component {
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    border: 4px solid black;
+}
+.app {
+    width: 1000px;
+    margin: 5rem auto;
+    overflow: hidden; 
+}
+.app .gridCon #item1 {
+    background-image: url("../../images/background/background_1_game_cards.png");
+    background-position: center;
+}
+.app .gridCon #item2 {
+    background-image: url("../../images/background/background_2_game_cards.png");
+    background-position: center;
+}
+.app .gridCon #item3 {
+    background-image: url("../../images/background/background_3_game_cards.png");
+    background-position: center;
+}
+.app .gridCon #item4 {
+    background-image: url("../../images/background/background_4_game_cards.png");
+    background-position: center;
+}
+.app .gridCon .item {
+    transition: all 1s;
+    position: relative;
+}
+.app .gridCon .item:hover {
+    transform: scale(110%);
+}
+.app .gridCon .item:hover .text {
+    bottom: var(--space-10);
+}
+.app .gridCon .item .text {
+    transition: all 1s;
+    position: absolute;
+    bottom: var(--space-2);
+    width: 100%;
+}
+.app .gridCon .item:hover .slideUp {
+    bottom: var(--space-3);
+}
+.app .gridCon .item .slideUp {
+    transition: all 1s;
+    position: absolute;
+    bottom: -25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*-------------------------------------text/utility-------------------------*/
+.largerFont {
+    font-size: var(--size-font-larger);
+}
+h1{
+    padding-bottom: var(--space-2);
+}
+p {
+    padding-bottom: var(--space-1);
+}
+/*-------------------------------------gridCont-------------------------*/
+.gridCon {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    gap: var(--space-1-5);
+}
+.item {
+    background: green;
+    height: var(--size-card-height);
+}
+/*-------------------------------------button-------------------------*/
+button {
+    background: var(--color-button);
+    border: none;
+    width: var(--size-button-width);
+    height: var(--size-button-height);
+    cursor: pointer;
+}
+button:hover {
+    background: var(--color-button-hover);
+}
