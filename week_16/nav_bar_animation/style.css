@@ -1,0 +1,94 @@
+:root {
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --color-blue: #5260ce;
+    --color-white: #fff;
+    --color-text-light-blue: #c1c4d9;
+    --icon-size: 1.5rem;
+    --border-radius: 0rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+.component {
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    border: 2px solid #000;
+}
+/*---------------------------navBar---------------------------*/
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-0-5) var(--space-1) 0 var(--space-1) ;
+    background-color: var(--color-blue);
+}
+.navBar .left {
+    color: var(--color-white);
+}
+.navBar .left .item h2 {
+    font-weight: 300;
+}
+.navBar .right {
+    display: flex;
+    position: relative;
+}
+.navBar .right .item {
+    z-index: 1000;
+    padding: var(--space-1-5) var(--space-1-5);
+    display: flex;
+    align-items: center;
+    gap: var(--space-0-5);
+    color: var(--color-text-light-blue);
+    cursor: pointer;
+}
+.navBar .right .item.active  {
+    color: var(--color-blue);
+}
+.right .highlight {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    transition: all 0.25s;
+    position: absolute;
+    width: 10rem;
+    height: 4rem;
+    background-color: var(--color-white);
+    left: 0;
+    bottom: 0;
+}
+.right .highlightLeft.one,
+.right .highlightLeft.two {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    background: #fff;
+    left: -4rem;
+    bottom: 0;
+}
+.right .highlightLeft.two {
+    background-color: var(--color-blue);
+    border-radius: 0 0 var(--border-radius) 0;
+}
+.right .highlight .highlightRight.one,
+.right .highlight .highlightRight.two {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-white);
+    position: absolute;
+    right: -4rem;
+    
+}
+.right .highlight .highlightRight.two {
+    background-color: var(--color-blue);
+    border-radius: 0 0 0 var(--border-radius);
+}
+
+.box {
+    padding: var(--space-2);
+}
