@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html>
-
-<body>
-<style>
-.highlight{
-    border: 1px solid black;
-}
-
-</style>
-
-<div class="container0 highlight">123</div> 
-<div class="container1">123</div> 
-<div class="container2">123</div> 
-
-<button onclick="switcher()">clicker</button>
-
-<script>
-    var index = 0
-    function switcher(){
-        index = index + 1
-        if (index > 2){
-            index = 0
+<html lang="en">
+<head>
+    <title>Border Switch</title>
+</head>
+    <style>
+        .container {
+            display: flex;
+            gap: 5rem;
+            justify-content: center;
         }
-        document.querySelector('.highlight').classList.remove('highlight')
-        document.querySelector('.container' + index).classList.add('highlight')
-    }
+        .container .item.active {
+            border: 2px solid #000;
+        }
+    </style>
+<body>
 
-</script>
-
-
+    <div class="container">
+        <div id="num0" class="item active">1</div>
+        <div id="num1" class="item">2</div>
+        <div id="num2" class="item">3</div>
+        <div id="num3" class="item">4</div>
+        <button>Click</button>
+    </div>
+    
+    
+    <script>
+        document.querySelector('button').onclick = onclickButton
+        var num = 0
+            
+        function onclickButton(){
+            num += 1
+            if(num > 3){
+                num = 0
+            }
+            document.querySelector('.active').classList.remove('active')
+            document.querySelector('#num' + num).classList.add('active') 
+        }
+    </script>
 </body>
 </html>

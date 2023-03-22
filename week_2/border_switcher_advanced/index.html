@@ -1,95 +1,106 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <style>
-
-    .grid_container{
-        display:grid;
-        grid-template-columns: 100px 100px 100px 100px;
-        padding: 100px;
-}
-
-    .padding{
-        padding: 20px;
+    .button {
+        text-align: center;
     }
-
-    .highlight{
-        border: 1px solid black;
+    .container {
+        display: grid;
+        grid-template-columns: 6rem 6rem 6rem;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 5rem;
     }
-
+    .container .item {
+        padding: 2rem;
+        text-align: center;
+        border: 2px solid #fff;
+    }
+    .container .item.active {
+        border: 2px solid #000;
+    }
 </style>
-
-<button onclick="right()">right</button>
-<button onclick="down()">down</button>
-<button onclick="left()">left</button>
-<button onclick="up()">up</button>
-
-
 <body>
-   <div class="grid_container">
-        <div class="padding grid0-0 highlight">0-0</div>
-        <div class="padding grid1-0">0-1</div>
-        <div class="padding grid2-0">0-2</div>
-        <div class="padding grid3-0">0-3</div>
-        <div class="padding grid0-1">1-0</div>
-        <div class="padding grid1-1">1-1</div>
-        <div class="padding grid2-1">1-2</div>
-        <div class="padding grid3-1">1-3</div>
-        <div class="padding grid0-2">2-0</div>
-        <div class="padding grid1-2">2-1</div>
-        <div class="padding grid2-2">2-2</div>
-        <div class="padding grid3-2">2-3</div>
-        <div class="padding grid0-3">3-0</div>
-        <div class="padding grid1-3">3-1</div>
-        <div class="padding grid2-3">3-2</div>
-        <div class="padding grid3-3">3-3</div>
-   </div> 
+    <div class="button">
+        <button class="left">Left</button>
+        <button class="right">Right</button>
+        <button class="up">Up</button>
+        <button class="down">Down</button>
+    </div>
+    <div class="container">
+        <div class="item num0-0 active">0-0</div>
+        <div class="item num1-0">1-0</div>
+        <div class="item num2-0">2-0</div>
+        <div class="item num0-1">0-1</div>
+        <div class="item num1-1">1-1</div>
+        <div class="item num2-1">2-1</div>
+        <div class="item num0-2">0-2</div>
+        <div class="item num1-2">1-2</div>
+        <div class="item num2-2">2-2</div>
+    </div>
 
+    
+    <script>
+        document.querySelector('.left').onclick = onclickLeft
+        document.querySelector('.right').onclick = onclickRight
+        document.querySelector('.up').onclick = onclickUp
+        document.querySelector('.down').onclick = onclickDown
 
-<script>
-
-    var x = 0
-    var y = 0
-     
-
-    function right(){
-        x = x + 1
-        if (x > 3){
-            x = 0
+        x = 0
+        y = 0
+        
+        function onclickLeft(){
+            x -= 1
+            if(x < 0){
+                x = 2
+            }
+            var active = document.querySelector('.active')
+            active.classList.remove('active')
+            var nextActive = document.querySelector('.num' + x + '-' + y)
+            nextActive.classList.add('active')
         }
-        document.querySelector('.highlight').classList.remove('highlight')
-        document.querySelector('.grid' + x + '-' + y).classList.add('highlight')
-    }
-
-    function down(){
-        y = y + 1
-        if (y > 3){
-            y = 0
+        
+        function onclickRight(){
+            x += 1
+            if(x > 2){
+                x = 0
+            }
+            var active = document.querySelector('.active')
+            active.classList.remove('active')
+            var nextActive = document.querySelector('.num' + x + '-' + y)
+            nextActive.classList.add('active')
+        }
+        
+        function onclickUp(){
+            y -= 1
+            if(y < 0){
+                y = 2
+            }
             
-        }        
-        document.querySelector('.highlight').classList.remove('highlight')
-        document.querySelector('.grid' + x + '-' + y).classList.add('highlight')
-    }
-
-    function left(){
-        x = x - 1
-        if (x < 0){
-            x = 3
+            console.log(y)
+            var active = document.querySelector('.active')
+            active.classList.remove('active')
+            var nextActive = document.querySelector('.num' + x + '-' + y)
+            nextActive.classList.add('active')
         }
-        document.querySelector('.highlight').classList.remove('highlight')
-        document.querySelector('.grid' + x + '-' + y).classList.add('highlight')
-    }
-
-    function up(){
-        y = y - 1
-        if (y < 0){
-            y = 3
+        function onclickDown(){
+            y += 1
+            if(y > 2){
+                y = 0
+            }
+            
+            console.log(y)
+            var active = document.querySelector('.active')
+            active.classList.remove('active')
+            var nextActive = document.querySelector('.num' + x + '-' + y)
+            nextActive.classList.add('active')
         }
-        document.querySelector('.highlight').classList.remove('highlight')
-        document.querySelector('.grid' + x + '-' + y).classList.add('highlight')
-    }
-
-</script>
-
-
+    </script>
 </body>
 </html>

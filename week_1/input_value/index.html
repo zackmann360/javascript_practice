@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-
+<style>
+    .container {
+        padding: 5rem;
+        text-align: center;
+    }
+</style>
 <body>
 
-<p>Get input value. Change innerHTML of Paragraph to input value.</p>
-<input id="input" type="text">
-<button>click</button>
-<p id="paragraph"></p>
+<div class="container">
+    <h2> Get input.value and use it for innerHTML of a P.</h2>
+    <input id="input" type="text">
+    <button>click</button>
+    <p></p>
+</div>
 
 <script>
-
-    var button = document.querySelector('button')
-    button.onclick = onclickChange
-
-
-    function onclickChange() {
-        // console.log('cats')
-        var input = document.querySelector('input')
-        // console.log(input.value)
-        var p = document.querySelector("#paragraph")
-        // console.log(p)
-        p.innerHTML = input.value
-        input.value = ""
-    }
+    document.querySelector('button').onclick = onclickButton
 
     
+    function onclickButton(){
+        var input = document.querySelector('input')
+        console.log(input.value)
+        document.querySelector('p').innerHTML = input.value
+    }
+
 
 </script>    
 
