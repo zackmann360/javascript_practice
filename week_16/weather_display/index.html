@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
+
+    <title>Weather Display</title>
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="grid">
+            <div class="left">
+                <div class="dayCard">
+                    <div class="top">
+                        <div class="day bold">Wednesday</div>
+                        <div class="date">22 Mar 2023</div>
+                        <div class="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Chicago, IL
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="temperature bold">29°F</div>
+                        <div class="sunny bold">Sunny</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="weatherInfo">
+                    <div  class="item">
+                        <div class="left bold">percipition</div>
+                        <div id="percip" class="right">0 %</div>
+                    </div>
+                    <div  class="item">
+                        <div class="left bold">humidity</div>
+                        <div id="humid" class="right">0 %</div>
+                    </div>
+                    <div  class="item">
+                        <div class="left bold">wind</div>
+                        <div id="wind" class="right">0 mph</div>
+                    </div>
+                </div>
+                <div class="days m-t-4">
+                    <div id="selectedDay0" index="0" class="day active">
+                        <i class="fa-regular fa-sun"></i>
+                        <div id="smallDay" class="text">Wed</div>
+                        <div id="smallTemp" class="text bold">29°F</div>
+                    </div>
+                    <div id="selectedDay1" index="1" class="day">
+                        <i class="fa-regular fa-sun"></i>
+                        <div id="smallDay" class="text">Thurs</div>
+                        <div id="smallTemp" class="text bold">29°F</div>
+                    </div>
+                    <div id="selectedDay2" index="2" class="day">
+                        <i class="fa-regular fa-sun"></i>
+                        <div id="smallDay" class="text">Fri</div>
+                        <div id="smallTemp" class="text bold">29°F</div>
+                    </div>
+                    <div id="selectedDay3" index="3" class="day">
+                        <i class="fa-regular fa-sun"></i>
+                        <div id="smallDay" class="text">Sat</div>
+                        <div id="smallTemp" class="text bold">29°F</div>
+                    </div>
+                </div>
+                <button class="m-t-6 bold">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Change location
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="component">day card</div>
+    <div class="dayCard">
+        <div class="top">
+            <div class="day">Day</div>
+            <div class="date">15 Jan 2019</div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                Chicago, IL
+            </div>
+        </div>
+        <div class="bottom">
+            <i class="fa-regular fa-sun"></i>
+            <div class="temperature">29°F</div>
+            <div class="sunny">Sunny</div>
+        </div>
+    </div>
+
+    <div class="component">Weather Info</div>
+    <div class="weatherInfo">
+        <div class="item">
+            <div class="left">percipition</div>
+            <div class="right">0 %</div>
+        </div>
+        <div class="item">
+            <div class="left">humidity</div>
+            <div class="right">0 %</div>
+        </div>
+        <div class="item">
+            <div class="left">wind</div>
+            <div class="right">0 mph</div>
+        </div>
+    </div>
+
+    <div class="component">Days</div>
+    <div class="days">
+        <div class="day active">
+            <i class="fa-regular fa-sun"></i>
+            <div class="text">Tue</div>
+            <div class="text">29°F</div>
+        </div>
+        <div class="day">
+            <i class="fa-regular fa-sun"></i>
+            <div class="text">Tue</div>
+            <div class="text">29°F</div>
+        </div>
+        <div class="day">
+            <i class="fa-regular fa-sun"></i>
+            <div class="text">Tue</div>
+            <div class="text">29°F</div>
+        </div>
+        <div class="day">
+            <i class="fa-regular fa-sun"></i>
+            <div class="text">Tue</div>
+            <div class="text">29°F</div>
+        </div>
+    </div>
+
+    <div class="component">button</div>
+    <button>
+        <i class="fa-solid fa-location-dot"></i>
+        Change location
+    </button>
+
+    <div class="component">grid</div>
+    <div class="grid">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="100%" alt="">
+    <script src="js.js"></script>
+</body>
+
+</html>

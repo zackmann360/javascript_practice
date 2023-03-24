@@ -1,0 +1,162 @@
+:root {
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-1-5: 1.5rem;
+    --space-2: 2rem;
+    --space-2-5: 2.5rem;
+    --space-3: 3rem;
+    --space-3-5: 3.5rem;
+    --space-4: 4rem;
+    --space-4-5: 4.5rem;
+    --space-5: 5rem;
+    --space-5-5: 5.5rem;
+    --space-8: 10rem;
+    --color-page-background: #343b49;
+    --color-right-background: #20262f;
+    --color-days-background: #292f36;
+    --color-button-background:linear-gradient(to right, #71edf2, #545ce6)  ;
+    --color-white: #fff;
+    --color-black: #222;
+    --font-bold: bolder;
+    --days-icon-size: 2.5rem;
+    --button-icon-size: 2rem;
+    --dayCard-icon-size: 4rem;
+    --size-text-larger: 5rem;
+    --border-radius: 2rem;
+    --font-size-day: 3rem;
+    --font-size-location: 5rem;
+    --font-size-temperature: 5rem;
+    --font-size-sunny: 2rem;
+    --font-size-weather-info: 1.25rem;
+    --border-radius-days: 1rem;
+}
+html, body {
+    background: var(--color-page-background);
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+.component {
+    padding: var(--space-1);
+    margin: var(--space-2) 0;
+    border: 2px solid #fff;
+    color: var(--color-white);
+}
+.app .grid>.right {
+    padding: var(--space-2-5);
+}
+/* text/utility */
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+.m-t-6 {margin-top: 6rem;}
+
+.bold {
+    font-weight: bold;
+}
+/*---------------------------day card----------------------------*/
+.dayCard {
+    color: var(--color-white);
+    background-image: url('https://images.unsplash.com/photo-1615286628718-4a4c8924d0eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3VubnklMjBza3l8ZW58MHx8MHx8&w=1000&q=80');
+    padding: var(--space-2);
+    border-radius: var(--border-radius);
+    background-position: center;
+}
+.dayCard .top {
+    padding-bottom: var(--space-8);
+}
+.dayCard .top .day {
+    font-size: var(--font-size-day);
+    padding-bottom: var(--space-0-5);
+}
+.dayCard .top .date {
+    padding-bottom: var(--space-1);
+}
+.dayCard .bottom i {
+    font-size: var(--dayCard-icon-size);
+    padding-bottom: var(--space-0-5);
+}
+.dayCard .bottom .temperature {
+    font-size: var(--font-size-temperature);
+}
+.dayCard .bottom .sunny {
+    font-size: var(--font-size-sunny);
+}
+/*---------------------------Weather information----------------------------*/
+.weatherInfo {
+    color: var(--color-white);
+}
+.weatherInfo .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-0-5);
+    font-size: var(--font-size-weather-info);
+    text-transform: uppercase;
+}
+
+/*---------------------------days----------------------------*/
+.days {
+    display: flex;
+    color: var(--color-white);
+    background-color: var(--color-days-background);
+    border-radius: var(--border-radius-days);
+    justify-content: space-around;
+    text-align: center;
+}
+.days .day {
+    width: 100%;
+    cursor: pointer;
+}
+
+.days .day .text {
+    padding-bottom: var(--space-0-5);
+    font-size: 1.25rem;
+}
+.days .day i {
+    padding: var(--space-1) 0;
+    font-size: var(--days-icon-size);
+}
+.days .day:hover,
+.days .day.active {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: var(--border-radius-days);
+}
+
+/*---------------------------button----------------------------*/
+button {
+    background: var(--color-button-background);
+    border: none;
+    width: 100%;
+    padding: var(--space-1);
+    color: var(--color-white);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+button:hover {
+    filter: brightness(110%);
+}
+button i {
+    padding-right: var(--space-0-5);
+}
+/*---------------------------button----------------------------*/
+.grid {
+    display: flex;
+    width: 900px;
+    justify-content: center;
+    background: var(--color-right-background);
+    margin: 5rem auto;
+    border-radius: var(--border-radius);
+}
+.grid>.left {
+    width: 100%;
+}
+.grid>.right {
+    width: 100%;
+}

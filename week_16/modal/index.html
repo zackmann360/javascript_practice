@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>modal</title>
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- <div class="trigger boxShadow">
+            <button class="triggerBtn">Add new project</button>        
+        </div>
+        <div id="submit" class="modal submit">
+            <h2>Create new project</h2>
+            <p class="m-t-1">Fill in the informtion for the project</p>
+            <div id="name" class="inputgroup m-t-1">
+                <div class="title">Name</div>
+                <input type="text">
+                <div class="error">error </div>
+            </div>
+            <div id="description" class="inputgroup m-t-1">
+                <div class="title">Description</div>
+                <input type="text">
+                <div class="error">error</div>
+            </div>
+            <button id="submitBtn" class="m-t-2">Submit</button>
+        </div>
+        <div id="submited" class="modal">
+            <h1>New Project Created</h1>
+            <p class="m-t-1">You have successfully created a project</p>
+            <div class="projectName m-t-2">
+                <h2 class="m-t-1">Project Name</h2>
+                <div class="project m-t-0-5"></div>
+                <h2 class="m-t-1">Project Description</h2>
+                <div class="projectDescription m-t-0-5"></div>
+            </div>
+            <button id="returnBtn" class="m-t-2">Return</button>
+        </div> -->
+        <button modalId="appModal" class="togglesModal">Create A Project</button>
+        <div class="projects m-t-2"></div>
+        <div id="appModal" class="modal">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Create new project</h2>
+            <p class="m-t-1">Fill in the informtion for the project</p>
+            <div id="name" class="inputgroup m-t-1">
+                <div class="title">Name</div>
+                <input type="text">
+                <div class="error">error </div>
+            </div>
+            <div id="description" class="inputgroup m-t-1">
+                <div class="title">Description</div>
+                <input type="text">
+                <div class="error">error</div>
+            </div>
+            <button id="submitBtn" class="m-t-2">Submit</button>
+            </div>
+        </div>
+        <div id="submited" class="modal">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>New Project Created</h1>
+                <p class="m-t-1">You have successfully created a project</p>
+                <div class="m-t-2">
+                    <h2 class="m-t-1">Project Name</h2>
+                    <div class="projectName m-t-0-5"></div>
+                    <h2 class="m-t-1">Project Description</h2>
+                    <div class="projectDescription m-t-0-5"></div>
+                </div>
+                <button id="returnBtn" class="m-t-2">Return</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="component">button</div>
+    <button>text</button>
+    
+    
+    <div class="component">input</div>
+    <div class="inputgroup">
+        <div class="title">title</div>
+        <input type="text">
+    </div>
+    
+    <div class="component">modal</div>
+    <button modalId="myModal" class="togglesModal">toggle modal 1</button>
+    <button modalId="myModal1" class="togglesModal m-t-1">toggle modal 2</button>
+
+    <div id="myModal" class="modal">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>hello</h1>
+            <button modalId="myModal" class="togglesModal">close</button>
+        </div>
+    </div>
+
+    <div id="myModal1" class="modal">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>hello2</h1>
+            <button modalId="myModal1" class="togglesModal">close</button>
+        </div>
+    </div>
+
+    <div class="component">project lists</div>
+    <div class="projects">
+        <div class="project">
+            <div class="name">name</div>
+            <div class="description">descr</div>
+        </div>
+        <div class="project">
+            <div class="name">name</div>
+            <div class="description">descr</div>
+        </div>
+        <div class="project">
+            <div class="name">name</div>
+            <div class="description">descr</div>
+        </div>
+        <div class="project">
+            <div class="name">name</div>
+            <div class="description">descr</div>
+        </div>
+    </div>
+    
+    
+    <br>
+    <br>
+    <br>
+    <img src="./example.png" width="100%" alt="">
+    <script src="js.js"></script>
+</body>
+</html>
