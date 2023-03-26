@@ -1,0 +1,98 @@
+:root {
+    --space-0-5: 0.5rem;
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --space-6: 6rem;
+    --color-blue: #4da1f7;
+    --color-blue-darker: #3b6ffb;
+    --color-red: red;
+    --color-white: #fff;
+    --color-text-light-black: #888;
+    --border-radius: 0.5rem;
+    --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    --border-bottom: 2px solid #888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+html, body {
+    background-color: var(--color-blue);
+}
+.app {
+    margin: 5rem auto;
+    width: 30rem;
+    height: 100vh;
+}
+.app .top h1 {
+    color: var(--color-white);
+    text-align: center;
+    padding-bottom: var(--space-2);
+    pointer-events: none;
+}
+.app .top .inputGroup {
+    position: relative;
+}
+.app .top .inputGroup input {
+    width: 100%;
+    padding: var(--space-1);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    font-size: 1.25rem;
+    outline: none;
+    color: var(--color-text-light-black);
+}
+.app .top .inputGroup button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    padding: 0.25rem var(--space-1);
+    background: var(--color-blue-darker);
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--color-white);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.app .top .inputGroup button:hover {
+    filter: brightness(125%);
+}
+.app .bottom {
+    margin-top: var(--space-4);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--space-2) var(--space-1);
+    box-shadow: var(--box-shadow);
+    
+}
+.app .bottom .items .item {
+    padding-top: var(--space-1);
+    padding-left: var(--space-0-5);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--border-bottom);
+    align-items: center;
+    color: var(--color-text-light-black);
+    font-size: 1.25rem;
+}
+.app .bottom .items .item button {
+    color: var(--color-red);
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    padding: var(--space-0-5);
+    cursor: pointer;   
+}
+.app .bottom .items .item .text {
+    pointer-events: none;
+}
+.app .bottom .items .item button:hover {
+    filter: brightness(125%);
+}
