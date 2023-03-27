@@ -1,0 +1,94 @@
+:root {
+    --space-1: 1rem;
+    --space-2: 2rem;
+    --space-3: 3rem;
+    --space-4: 4rem;
+    --space-5: 5rem;
+    --space-6: 6rem;
+    --color-blue: #4d74ea;
+    --color-white: #fff;
+    --color-red: red;
+    --color-background: #79b0ee;
+    --input-height: 4rem;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+html, body {
+    background-color: var(--color-background);
+}
+.app{
+    height: 100vh;
+    width: 30rem;
+    ccbackground-color: #fff;
+    margin: 5rem auto;
+}
+.app h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-white);
+    font-size: 3rem;
+    text-decoration: underline;
+}
+.app .top .inputGroup {
+    position: relative;
+}
+.app .top .inputGroup input {
+    width: 100%;
+    height: var(--input-height);
+    padding-left: var(--space-1);
+    outline: none;
+    border: none;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.app .top .inputGroup button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--space-1);
+    padding: var(--space-1);
+    border-radius: 0.5rem;
+    border: none;
+    background: var(--color-blue);
+    color: var(--color-white);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.app .top .inputGroup button:hover {
+    filter: brightness(120%);
+}
+.app .tasks {
+    background-color: var(--color-white);
+    margin-top: var(--space-2);
+    border-radius: 0.5rem;
+    padding: var(--space-1);
+}
+.app .tasks .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    border-bottom: 2px solid black;
+    padding: var(--space-1);
+}
+.app .tasks .task.done .text {
+    text-decoration: line-through;
+}
+.app .tasks .task button {
+    background: none;
+    border: none;
+    color: var(--color-red);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.app .tasks .task button:hover {
+    filter: brightness(120%);
+}
