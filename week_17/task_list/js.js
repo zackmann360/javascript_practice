@@ -1,76 +1,63 @@
 var app = document.querySelector('.app')
-var addButton = document.querySelector('#add')
-addButton.onclick = onclickAdd
+var addBtn = app.querySelector('#add').onclick = onclickAdd
 
-
-var myList = [
-    {
-        text: "shower",
-        done: false
-    },
-    {
-        text: "wash cloths",
-        done: false
-    }
-]
 function onclickAdd(){
-    var input = app.querySelector('#addToList')
-    
-    // add input Value to myList task
-    myList.push(
-        {
-        text: input.value,
-        done: false
-    }
-    )
-    
-    input.value = ''
-    render()
+   var input = app.querySelector('input')
+   myList.push(
+      {
+         text: input.value,
+         done: false
+      }
+   ) 
+   input.value = ''
+   render()
 }
 
+var myList = [
+   {
+      text: "things to do today",
+      done: true
+   },
+   {
+      text: "play on the computer",
+      done: false
+   }
+]
+
 function render(){
-    var i = 0
-    // clear
-    var tasks = document.querySelector('.tasks') 
-    tasks.innerHTML = ''
-    // create
-    for(var item of myList){        
-
-        var newTask = document.createElement('div')
-        newTask.innerHTML = `
-        <div class="task">
-        <div class="text">${item.text}
-        </div>
-        <button index="${i}" id="delete">
-            <i class="fa-solid fa-trash"></i>
-        </button>
-        </div>
-        `
-
-
-
-        
-        i += 1
-        if(item.done === true){
-            var task = newTask.querySelector('.task')
-            task.classList.add('done')
-        }
-        tasks.append(newTask)
-        var deletebutton = newTask.querySelector('#delete')
-        deletebutton.onclick = onclickDelete
-
-        function onclickDelete() {
-            var indexAtt = Number(this.getAttribute('index'))    
-            console.log(this)
-            console.log(indexAtt)
-            myList[indexAtt].done = true
-                        
-            render()
-        }  
-    }
-    
-   
-
-   
+   var i = 0
+   // clear 
+   var tasks = app.querySelector('.tasks')
+   tasks.innerHTML = ''
+   // create 
+   // first loop over the array
+   for(var item of myList){
+      // create a new div item
+      var newDiv = document.createElement('div')
+      newDiv.innerHTML = `
+      <div class="task">
+         <div class="text">
+            ${item.text}
+         </div>
+         <button index="${i}">
+              <i class="fa-solid fa-trash-can"></i>
+         </button>
+      </div>
+      `
+      tasks.append(newDiv)
+      i++ 
+      if(item.done === true){
+         var task = newDiv.querySelector('.task')
+         task.classList.add('done')
+      }
+      var deleteBtn = newDiv.querySelector('button').onclick = onclickDelete
+      function onclickDelete(){
+         console.log(this)
+         var indexAtt = Number(this.getAttribute('index'))
+         console.log(indexAtt)
+         myList[indexAtt].done = true
+         render()
+      }
+   }
 }
 render()
