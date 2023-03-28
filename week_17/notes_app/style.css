@@ -1,0 +1,124 @@
+:root {
+   --space-0-5: 0.5rem;
+   --space-1: 1rem;
+   --space-1-5: 1.5rem;
+   --space-2: 2rem;
+   --space-2-5: 2.5rem;
+   --space-3: 3rem;
+   --space-3-5: 3.5rem;
+   --space-4: 4rem;
+   --space-4-5: 4.5rem;
+   --color-button: rgb(3, 212, 3);
+   --color-title-background: #aaa;
+   --color-text-white: #fff;
+   --editor-width: 40rem;
+}
+* {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   box-sizing: border-box;
+}
+html, body {
+   background: #444;
+}
+.app {
+   min-height: 100vh;
+   width: var(--editor-width);
+   margin: 5rem auto;
+   position: relative;
+}
+
+/*---------------notes list----------------------- */
+.app h1{
+   color: var(--color-text-white);
+   margin-bottom: var(--space-1);
+}
+.app button {
+   padding: var(--space-0-5) var(--space-2);
+   font-weight: bolder;
+   background: var(--color-button);
+   border-radius: 0.25rem;
+   border: none;
+   cursor: pointer;
+}
+.app button:hover {
+   filter: brightness(150%);
+}
+.app .notes {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: var(--space-2);
+   padding-top: var(--space-2);
+}
+.app .notes .note {
+   background-color: white;
+   padding-top: calc(4/5 * 100%);
+   width: 8rem;
+   cursor: pointer;
+   transition: all 0.25s;
+   border-radius: 0.25rem;
+}
+.app .notes .note .text {
+   display: none;
+}
+.app .notes .note .title {
+   text-align: center;
+   background-color: var(--color-title-background);
+   border-radius: 0 0 0.25rem 0.25rem;
+   font-weight: bolder;
+   width: 100%;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   padding: var(--space-0-5);
+}
+.app .notes .note:hover .title {
+   filter: brightness(120%);
+}
+.app .notes .note:hover {
+   transform: scale(110%);
+}
+/*----------------editor----------------------- */
+.editor {
+   width: var(--editor-width);
+   background-color: var(--color-text-white);
+   position: fixed;
+   display: none;
+   top: 5rem;
+}
+.editor.show {
+   display: block;
+}
+.editor .top {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 var(--space-1);
+   align-items: center;
+}
+.editor .top .left {
+   width: 100%;
+   flex: 2;
+   padding: var(--space-0-5);
+}
+.editor .top .left .title {
+   font-weight: bolder;
+}
+.editor .top .left input {
+   width: 100%;
+   border: none;
+   outline: none;
+   padding-top: var(--space-0-5);
+   background: none;
+}
+.editor .bottom textarea {
+   width: 100%;
+   height: 30rem;
+   border: none;
+   outline: none;
+   padding: var(--space-1);
+   font-size: 1.5rem;
+}
+
+
+
