@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
+   <title>Document</title>
+</head>
+<body>
+
+   <div class="app">
+      <h1>Payment Details</h1>
+      <h3 class="purple m-t-1">Your save payment methods</h3>
+      <div class="componetCards m-t-2">
+         <div class="card ">
+            <div class="left">
+               <div class="icon">
+                  <img src="../../images/icons/icon_amex.png" alt="">
+               </div>
+               <div class="text">
+                  <div class="cardNum">#### #### #### 1234</div>
+                  <div class="expire">expirtation</div>
+               </div>
+            </div>
+            <div class="right">
+               <button>
+                  <i class="fa-regular fa-pen-to-square"></i>
+                 Edit  
+               </button>
+               <button class="delete">
+                  <i class="fa-regular fa-trash-can"></i>
+                  delete
+               </button>
+            </div>
+         </div>
+         <div class="card">
+            <div class="left">
+               <div class="icon">
+                  <img src="../../images/icons/icon_amex.png" alt="">
+               </div>
+               <div class="text">
+                  <div class="cardNum">#### #### #### 1234</div>
+                  <div class="expire">expirtation</div>
+               </div>
+            </div>
+            <div class="right">
+               <button>
+                  <i class="fa-regular fa-pen-to-square"></i>
+                 Edit  
+               </button>
+               <button class="delete">
+                  <i class="fa-regular fa-trash-can"></i>
+                  delete
+               </button>
+            </div>
+         </div>
+      </div>
+      <button id="addNew" class="primary m-t-2">
+         <i class="fa-solid fa-plus"></i>
+         Add new payment method
+      </button>
+      <div class="modal hide">
+         <div class="overlay"></div>
+         <div class="content">
+            <h1>Edit payment</h1>
+            <div id="inputGroupCardNum" class="inputGroup m-t-1">      
+               <label for="">Card Number</label>
+               <input type="number">
+               <div class="error">error</div>
+            </div>
+            <div id="inputGroupCardDate" class="inputGroup m-t-1">      
+               <label for="">label</label>
+               <input type="month" >
+               <div class="error">error</div>
+            </div>
+            <div id="inputGroupCardType" class="inputGroup m-t-1">      
+               <label for="">label</label>
+               <select name="" id="typeelect">
+                  <option value="../../images/icons/icon_amex.png">Amex</option>
+                  <option value="../../images/icons/icon_visa.png">Visa</option>
+                  <option value="../../images/icons/icon_bitcoin.png">Bitcoin</option>
+                  <option value="../../images/icons/icon_mastercard.png">Master Card</option>
+               </select>
+               <div class="error">error</div>
+            </div>
+            <div class="actions m-t-2">
+               <button id="cancel">cancel</button>
+               <button id="save" class="primary">save</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   
+   
+   <div class="component">text/utility</div>
+   <h1>header 1</h1>
+   <h3>header 3</h3>
+   <h3 class="purple">header 3 purple</h3>
+   <p>p tag</p>
+   <p class="light">p tag darker text</p>
+   
+   <div class="component">buttons</div>
+   <button>
+      <i class="fa-regular fa-pen-to-square"></i>
+      button   
+   </button>
+   <button class="delete">delete</button>
+   <button class="primary">
+      <i class="fa-solid fa-plus"></i>
+      primary
+   </button>
+   
+   
+   <div class="component">cards</div>
+   <div class="componetCards">
+      <div class="card">
+         <div class="left">
+            <div class="icon">
+               <img src="../../images/icons/icon_amex.png" alt="">
+            </div>
+            <div class="text">
+               <div class="cardNum">#### #### #### 1234</div>
+               <div class="expire">expirtation</div>
+            </div>
+         </div>
+         <div class="right">
+            <button>
+               <i class="fa-regular fa-pen-to-square"></i>
+               button   
+            </button>
+            <button class="delete">
+               <i class="fa-regular fa-trash-can"></i>
+               delete
+            </button>
+         </div>
+      </div>
+      <div class="card">
+         <div class="left">
+            <div class="icon">
+               <img src="../../images/icons/icon_amex.png" alt="">
+            </div>
+            <div class="text">
+               <div class="cardNum">#### #### #### 1234</div>
+               <div class="expire">expirtation</div>
+            </div>
+         </div>
+         <div class="right">
+            <button>
+               <i class="fa-regular fa-pen-to-square"></i>
+               button   
+            </button>
+            <button class="delete">
+               <i class="fa-regular fa-trash-can"></i>
+               delete
+            </button>
+         </div>
+      </div>
+   </div>
+   
+   <div class="component">input Group</div>
+   <div class="inputGroup">      
+      <label for="">label</label>
+      <input type="text">
+      <div class="error">error</div>
+   </div>
+   <div class="inputGroup">      
+      <label for="">label</label>
+      <input type="date">
+      <div class="error">error</div>
+   </div>
+   <div class="inputGroup">      
+      <label for="">label</label>
+      <select name="" id="">
+         <option value="1">1</option>
+         <option value="2">2</option>
+      </select>
+      <div class="error">error</div>
+   </div>
+
+   <br>
+   <br>
+   <p>error</p>
+   <br>
+   <div class="inputGroup error">      
+      <label for="">label</label>
+      <input type="date">
+      <div class="error">error</div>
+   </div>
+
+   <div class="inputGroup error">      
+      <label for="">label</label>
+      <select name="" id="">
+         <option value="1">1</option>
+         <option value="2">2</option>
+      </select>
+      <div class="error">error</div>
+   </div>
+  
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <br>
+   <br>
+   <img src="./example.png" width="50%" alt="">
+   <br>
+   <br>
+   <img src="./example2.png" width="50%" alt="">
+   <script src="js.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+:root {
+   /* space */
+   --space-0_5: 0.5rem;
+   --space-1: 1rem;
+   --space-1_5: 1.5rem;
+   --space-2: 2rem;
+   --space-2_5: 2.5rem;
+   --space-3: 3rem;
+   --space-3_5: 3.5rem;
+   --space-4: 4rem;
+   --space-4_5: 4.5rem;
+   --space-5: 5rem;
+   /* colors */
+   --color-bg: #0d0f18;
+   --color-bg-2: #161821;
+   --color-bg-3: #404144;
+   --color-white: #fff; 
+   --color-purple: #636ae9;
+   --color-red: #cc4d48;
+   --color-grey: #85878d;
+   /* font */
+   --font: sans-serif;
+   --border-radius: 0.25rem;
+   --border-radius-2: 0.5rem;
+   /* card icon */
+   --card-icon-width: 5rem;
+   
+}
+
+html, body {
+   background: var(--color-bg);
+   color: var(--color-white);
+   padding: var(--space-1);
+}
+* {
+   padding: 0;
+   margin: 0;
+   font-family: var(--font);
+}
+.component {
+   border: 2px solid #fff;
+   padding: 1rem;
+   margin: 2rem 0;
+}
+.app {
+   margin: 5rem auto;
+   min-height: 100vh;
+   max-width: 50rem;
+}
+.app .modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   
+}
+.app .modal.hide {
+   display: none;
+}
+.app .modal .content {
+   position: relative;
+   background-color: var(--color-bg-3);
+   width: 30rem;
+   margin: auto;
+   margin-top: 5rem;
+   padding: var(--space-2);
+   border-radius: var(--border-radius-2);
+   box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.15);
+   z-index: 10000;
+}
+.app .modal .overlay {
+   position: absolute;
+   width: 100%;
+   backdrop-filter: blur(0);
+   filter: blur(10px);
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+.app .modal .content .actions {
+   text-align: right;
+   display: flex;
+   justify-content: flex-end;
+   gap: var(--space-1);
+}
+
+/*----------------text/utility-------------- */
+.purple {
+   color: var(--color-purple);
+}
+.light {
+   color: var(--color-grey);
+}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+/*----------------buttons-------------- */
+button {
+   padding: var(--space-0_5) var(--space-1);
+   background: none;
+   border: 1px solid var(--color-grey);
+   border-radius: var(--border-radius);
+   color: var(--color-white);
+   cursor: pointer;
+}
+button:hover {
+   filter: brightness(150%);
+}
+button.delete {
+   border-color: var(--color-red);
+   color: var(--color-red);
+}
+button.primary {
+   background: var(--color-purple);
+   border: none;
+}
+
+/*----------------card-------------- */
+.componetCards .card {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: var(--color-bg-2);
+   padding: var(--space-2);
+   border-radius: var(--border-radius-2);
+   margin-bottom: var(--space-1);
+}
+.componetCards .card .left {
+   display: flex;
+   gap: var(--space-1);
+   align-items: center;
+}
+.componetCards .card .left .icon {
+   width: var(--card-icon-width);
+}
+.componetCards .card .left .icon img {
+   width: 100%;
+}
+
+.componetCards .card .left .text .cardNum {
+   padding-bottom: var(--space-0_5);
+   font-weight: bolder;
+   
+}
+.componetCards .card .left .text .expire {
+   color: var(--color-grey);
+}
+.componetCards .card .right {
+   display: flex;
+   gap: var(--space-1);
+}
+/*----------------input groups-------------- */
+.inputGroup label {
+   display: block;
+   padding-bottom: var(--space-0_5);
+}
+.inputGroup input, 
+.inputGroup select {
+   width: 100%;
+   padding: var(--space-1);
+   border-radius: var(--border-radius);
+   background: none;
+   border: 1px solid var(--color-grey);
+   color: var(--color-white);
+}
+.inputGroup .error {
+   padding-top: var(--space-0_5);
+   color: var(--color-red);
+   display: none;
+}
+
+.inputGroup.error .error {
+   display: block;
+}
+.inputGroup.error input,
+.inputGroup.error select {
+   border-color: var(--color-red);
+}
+.inputGroup.error label {
+   color: var(--color-red);
+}
