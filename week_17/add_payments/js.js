@@ -1,12 +1,10 @@
 var app = document.querySelector('.app')
-var modal = app.querySelector('.modal')
+var modal = app.querySelector('.modalOverlay')
 // buttons
 var addNew = app.querySelector('#addNew')
 addNew.onclick = onclickAddNew
 var cancelBtn = app.querySelector('#cancel')
 cancelBtn.onclick = onclickCancel
-var saveBtn = app.querySelector('#save')
-saveBtn.onclick = onclickSave
 //----------input fields
 // card number
 var inputGroupCardNum = app.querySelector('#inputGroupCardNum')
@@ -34,11 +32,6 @@ var myCards = [
    }
 ]
 
-function onclickSave(){
-   console.log(inputCardNum.value)
-   console.log(inputCardDate.value)
-}
-
 function onclickCancel(){
    modal.classList.add('hide')
 }
@@ -51,7 +44,7 @@ function onclickAddNew(){
 
 function render(){
    // clear
-   var oldCards = document.querySelector('.componetCards')
+   var oldCards = document.querySelector('.cards')
    oldCards.innerHTML = ''
    // create
    for(var card of myCards){
@@ -61,27 +54,30 @@ function render(){
 
       var newCards = document.createElement('div')
       newCards.innerHTML = `
-      <div class="card ">
-      <div class="left">
-         <div class="icon">
-            <img src="${card.icon}" alt="">
-         </div>
-         <div class="text">
-            <div class="cardNum">${maskedCardNumber}</div>
-            <div class="expire">expirtation ${card.expire}</div>
-         </div>
-      </div>
-      <div class="right">
-         <button>
-            <i class="fa-regular fa-pen-to-square"></i>
-           Edit  
-         </button>
-         <button class="delete">
-            <i class="fa-regular fa-trash-can"></i>
-            delete
-         </button>
-      </div>
-   </div>
+      <div class="card m-t-1">
+               <div class="left">
+                  <div class="icon">
+                     <img src="${card.icon}" alt="">
+                  </div>
+                  <div class="text">
+                     <div class="cardNum">${maskedCardNumber}</div>
+                     <p class="darker">Expiration</p>
+
+                  </div>
+               </div>
+               <div class="right">
+                  <div class="buttons">
+                     <button class="edit">
+                        <i class="fa-sharp fa-regular fa-pen-to-square"></i>
+                        edit
+                     </button>
+                     <button class="delete">
+                        <i class="fa-solid fa-trash"></i>
+                        delete
+                     </button>
+                  </div>
+               </div>
+            </div>
       `
       oldCards.append(newCards)
    }
