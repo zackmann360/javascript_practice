@@ -3,25 +3,28 @@
    --space-1: 1rem;
    --space-1_5: 1.5rem;
    --space-2: 2rem;
+   --space-2_5: 2.5rem;
    --space-3: 3rem;
-   --space-4: 4rem;   
+   --space-3_5: 3.5rem;
+   --space-4: 4rem;
+   --space-4_5: 4.5rem;
 
-   --color-white: #fff;
-   --color-white-2: #a1a0a0;
    --color-purple: #636ae9;
-   --color-red: #df524c;
-   --color-text-darker: #a1a2a3;
+   --color-grey: #88898f;
+   --color-red: #d35049;
+   --color-white: #fff;
+   --color-white-2: #b6b4b4;
+
    --color-bg: #0d0f18;
-   --color-bg-cards: #161821;
+   --color-bg-2: #1b1e28;
+   --color-bg-3: #292a2f;
+
+   --font-family: sans-serif;
 
    --border-radius: 0.5rem;
    --border-radius-2: 0.25rem;
 
-   --width-modal: 30rem;
-   --width-app: 50rem;
-   --width-icon: 5rem;
-
-   --font-family: sans-serif;
+   --width-icon: 6rem;
 }
 
 * {
@@ -30,100 +33,106 @@
    font-family: var(--font-family);
 }
 
-.component {
-   padding: var(--space-1);
-   border-bottom: 2px solid #fff;
-   border-left: 2px solid #fff;
-   margin: var(--space-2) 0;
-}
-
 html, body {
-   background: var(--color-bg);
    padding: var(--space-1);
    color: var(--color-white);
+   background: var(--color-bg);
+}
+
+.component {
+   border-bottom: 1px solid #fff;
+   border-left: 1px solid #fff;
+   padding: 1rem;
+   margin: 2rem 0;
 }
 
 .app {
-   width: var(--width-app);
-   padding: var(--space-2);
+   max-width: 50rem;
    margin: auto;
    min-height: 100vh;
 }
-.app .modalOverlay {
-   background-color: #111;
-   width: 100%;
-   height: 100%;
+.app .modal {
    position: fixed;
    top: 0;
    left: 0;
-   padding-top: 5rem;
+   width: 100%;
+   height: 100%;
 }
-.app .modalOverlay .modal {
-   width: var(--width-modal);
-   background: var(--color-bg-cards);
-   border-radius: var(--border-radius);
-   padding: var(--space-2);
-   margin: auto;
-   position: fixed;
-   left: 50%;
-   transform: translateX(-50%);
-   box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25) ;
-}
-.app .modalOverlay.hide {
+.app .modal.hide {
    display: none;
 }
+.app .modal .content {
+   position: relative;
+   max-width: 40rem;
+   margin: 5rem auto;
+   background: var(--color-bg-3);
+   padding: var(--space-2);
+   border-radius: var(--border-radius);
+}
+.app .modal .overlay {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backdrop-filter: blur(0);
+   filter: blur(10px);
+}
 
+/*---------------------------text/utility-----------------------*/
 
-/*-------------------------------------text/utility--------------------------------------*/
 .purple {
    color: var(--color-purple);
 }
-.darker {
-   color: var(--color-text-darker);
+.grey {
+   color: var(--color-grey);
 }
 
 .m-t-1 {margin-top: 1rem;}
 .m-t-2 {margin-top: 2rem;}
 .m-t-3 {margin-top: 3rem;}
 .m-t-4 {margin-top: 4rem;}
+.m-t-5 {margin-top: 5rem;}
+.m-t-6 {margin-top: 6rem;}
 
-/*-------------------------------------buttons--------------------------------------*/
+
+/*---------------------------button-----------------------*/
+
 button {
+   padding: var(--space-0_5) var(--space-1_5);
    background: none;
    border-radius: var(--border-radius);
    color: var(--color-white);
-   padding: var(--space-0_5) var(--space-1_5);
-   opacity: 0.85;
+   border: 1px solid var(--color-white-2);
    cursor: pointer;
 }
 button:hover {
-   filter: brightness(150%);
+   filter: brightness(130%);
 }
-button.edit {
-   border: 1px solid var(--color-white-2);
-}
-button.delete {
-   border: 1px solid var(--color-red);
+
+button.red {
+   border-color: var(--color-red);
    color: var(--color-red);
 }
 button.primary {
    background: var(--color-purple);
    border: none;
-   
 }
-/*-------------------------------------card--------------------------------------*/
+
+/*---------------------------card-----------------------*/
+
 .cards .card {
    display: flex;
+   justify-content: space-between;   
    align-items: center;
-   justify-content: space-between;
-   background: var(--color-bg-cards);
+   background: var(--color-bg-2);
    padding: var(--space-1_5);
-   border-radius: var(--border-radius );
+   border-radius: var(--border-radius);
 }
+
 .cards .card .left {
    display: flex;
    align-items: center;
-   gap: var(--space-1_5);
+   gap: var(--space-1);
+   
 }
 .cards .card .left .icon {
    width: var(--width-icon);
@@ -131,25 +140,26 @@ button.primary {
 .cards .card .left .icon img {
    width: 100%;
 }
+.cards .card .cardNum {
+   font-weight: bolder;
+}
+/*---------------------------inputgroups-----------------------*/
 
-/*-------------------------------------input group--------------------------------------*/
 .inputGroup select,
-.inputGroup input {
+.inputGroup input{
    width: 100%;
    padding: var(--space-0_5);
-   margin-top: var(--space-0_5);
    border-radius: var(--border-radius);
-   border: 1px solid var(--color-text-darker);
+   margin-top: var(--space-0_5);
    background: none;
+   border: 2px solid var(--color-grey);
    color: var(--color-white);
 }
 .inputGroup .error {
    color: var(--color-red);
    display: none;
 }
-.inputGroup.error #label {
-   color: var(--color-red);
-}
+.inputGroup.error select,
 .inputGroup.error input {
    border-color: var(--color-red);
 }
