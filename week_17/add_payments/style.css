@@ -3,166 +3,116 @@
    --space-1: 1rem;
    --space-1_5: 1.5rem;
    --space-2: 2rem;
-   --space-2_5: 2.5rem;
    --space-3: 3rem;
-   --space-3_5: 3.5rem;
    --space-4: 4rem;
-   --space-4_5: 4.5rem;
+   --space-5: 5rem;
+   --space-6: 6rem;
 
-   --color-purple: #636ae9;
-   --color-grey: #88898f;
-   --color-red: #d35049;
    --color-white: #fff;
-   --color-white-2: #b6b4b4;
-
+   --color-purple: #636ae9;
+   --color-red: #db514b;
    --color-bg: #0d0f18;
-   --color-bg-2: #1b1e28;
-   --color-bg-3: #292a2f;
+   --color-bg-2: #161821;
+   --color-grey: #a0a1a5;
 
-   --font-family: sans-serif;
+   --border-button-white: 1px solid #4e5157;
+   --border-button-red: 1px solid #572b2e;
 
-   --border-radius: 0.5rem;
+   --border-radius: .5rem;
    --border-radius-2: 0.25rem;
 
-   --width-icon: 6rem;
+   --size-icon: 6.5rem;
+   --size-app-width: 60rem;
+   --size-modal-width: 30rem;
 }
-
 * {
+   font-family: sans-serif;
    margin: 0;
    padding: 0;
-   font-family: var(--font-family);
 }
 
 html, body {
+   background: var(--color-bg);
    padding: var(--space-1);
    color: var(--color-white);
-   background: var(--color-bg);
 }
-
 .component {
-   border-bottom: 1px solid #fff;
-   border-left: 1px solid #fff;
+   border-bottom: 2px solid #fff;
+   border-left: 2px solid #fff;
    padding: 1rem;
    margin: 2rem 0;
 }
 
 .app {
-   max-width: 50rem;
-   margin: auto;
-   min-height: 100vh;
-}
-.app .modal {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-}
-.app .modal.hide {
-   display: none;
-}
-.app .modal .content {
-   position: relative;
-   max-width: 40rem;
+   max-width: var(--size-app-width);
    margin: 5rem auto;
-   background: var(--color-bg-3);
-   padding: var(--space-2);
-   border-radius: var(--border-radius);
-}
-.app .modal .overlay {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   backdrop-filter: blur(0);
-   filter: blur(10px);
 }
 
-/*---------------------------text/utility-----------------------*/
+.app .modal {
+   display: fixed;
+   top: 0;
+}
+.modal {
+}
 
+/*-------------------------------text/utility-----------------------*/
 .purple {
    color: var(--color-purple);
+} 
+.danger {
+   color: var(--color-red);
+   border-color: var(--color-red);
 }
 .grey {
    color: var(--color-grey);
 }
-
+.primary {
+   background: var(--color-purple);
+   border: none;
+}
 .m-t-1 {margin-top: 1rem;}
 .m-t-2 {margin-top: 2rem;}
 .m-t-3 {margin-top: 3rem;}
 .m-t-4 {margin-top: 4rem;}
-.m-t-5 {margin-top: 5rem;}
-.m-t-6 {margin-top: 6rem;}
-
-
-/*---------------------------button-----------------------*/
-
+/*-------------------------------buttons-----------------------*/
 button {
-   padding: var(--space-0_5) var(--space-1_5);
-   background: none;
-   border-radius: var(--border-radius);
    color: var(--color-white);
-   border: 1px solid var(--color-white-2);
+   border: var(--border-button-white);
+   border-radius: var(--border-radius);
+   background: none;
+   padding: var(--space-1) var(--space-2);
    cursor: pointer;
+   
 }
 button:hover {
-   filter: brightness(130%);
-}
-
-button.red {
-   border-color: var(--color-red);
-   color: var(--color-red);
-}
-button.primary {
-   background: var(--color-purple);
-   border: none;
-}
-
-/*---------------------------card-----------------------*/
-
-.cards .card {
+   filter: brightness(150%);
+} 
+/*-------------------------------cards-----------------------*/
+.cardsComponent .card {
    display: flex;
-   justify-content: space-between;   
+   justify-content: space-between;
    align-items: center;
    background: var(--color-bg-2);
    padding: var(--space-1_5);
-   border-radius: var(--border-radius);
+   border-radius: var(--border-radius)
 }
-
-.cards .card .left {
+.cardsComponent .card .left {
    display: flex;
    align-items: center;
-   gap: var(--space-1);
-   
+   gap: var(--space-2);
 }
-.cards .card .left .icon {
-   width: var(--width-icon);
+.cardsComponent .card .left .icon {
+   width: var(--size-icon);
 }
-.cards .card .left .icon img {
+.cardsComponent .card .left .icon img {
    width: 100%;
 }
-.cards .card .cardNum {
-   font-weight: bolder;
-}
-/*---------------------------inputgroups-----------------------*/
+/*-------------------------------inputGroups-----------------------*/
 
 .inputGroup select,
-.inputGroup input{
+.inputGroup input {
    width: 100%;
-   padding: var(--space-0_5);
-   border-radius: var(--border-radius);
    margin-top: var(--space-0_5);
-   background: none;
-   border: 2px solid var(--color-grey);
-   color: var(--color-white);
-}
-.inputGroup .error {
-   color: var(--color-red);
-   display: none;
-}
-.inputGroup.error select,
-.inputGroup.error input {
-   border-color: var(--color-red);
-}
-.inputGroup.error .error {
-   display: block;
+   padding: var(--space-1);
+   border-radius: var(--border-radius)
 }
