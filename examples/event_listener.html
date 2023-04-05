@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+
+   <!-- number 1 -->
+   <!-- <div class="container">
+      <input type="text">
+   </div> -->
+
+   <!-- number2 -->
+   <div class="container">mouseOut</div>
+   
+   <script>
+      // number 1
+      // // select the input
+      // var input = document.querySelector('input')
+
+      // // attach an event to input
+      // // you can use event listeners to attach multiple events --> functions 
+      // input.addEventListener('input', changedValue)
+      // input.addEventListener('input', changedValue2)
+
+      // function changedValue(event){
+      //    console.log(event.target.value.length)
+      // }
+
+      // function changedValue2(){
+      //    if(this.value.length > 10){
+      //       console.log('greater than 10')
+      //    }
+      // }
+
+      // number 2
+      // select the container
+      var container = document.querySelector('.container')
+      container.addEventListener('mouse', mouseOut)
+
+      function mouseOut(){
+         console.log(this)
+      }
+
+      
+   </script>
+</body>
+</html>
