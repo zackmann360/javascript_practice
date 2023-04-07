@@ -1,0 +1,56 @@
+:root {
+   --space-0_5: 0.5rem;
+   --space-1: 1rem;
+   --space-1_5: 1.5rem;
+   --space-2: 2rem;
+   --space-2_5: 2.5rem;
+   --space-3: 3rem;
+   --space-3_5: 3.5rem;
+   --space-4: 4rem;
+   --space-4_5: 4.5rem;
+
+   --app-width: 800px;
+
+
+}
+* {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+
+html, body {
+   background: #444;
+   padding: 1rem;
+   color: #fff;
+}
+.center {
+   text-align: center;
+}
+
+.app .accordion {
+   width: 800px;
+   margin: 5rem auto
+}
+.app .accordion .item .label {
+   border: 2px solid #aaa;
+   padding: var(--space-1);
+   display: flex;
+   justify-content: space-between;
+   border-radius: 0.5rem;
+   cursor: pointer;
+   margin: 0.25rem;
+}
+.app .accordion .item .label:hover {
+   filter: brightness(150%)
+}
+.app .accordion .item .content {
+   padding: var(--space-1);
+   display: none;
+}
+.app .accordion .item.show .content {
+   display: block
+}
+.app .accordion .item.show .label .icon {
+   transform: rotate(180deg)
+}
