@@ -8,7 +8,6 @@ var pageLogin = document.querySelector('#pageLogin')
 var pageSignUp = document.querySelector('#pageSignUp')
 var pageCreateSuccess = document.querySelector('#pageCreateSuccess')
 
-
 //----------------------------------------------------------------------
 // login Page
 //----------------------------------------------------------------------
@@ -21,7 +20,6 @@ var button = pageLogin.querySelector('button')
 button.onclick = onclickLogin
 var joinNow = pageLogin.querySelector('#joinNow')
 joinNow.onclick = onclickJoin 
-
 
 //1. when you click the login button show user name and password erors if the inputs are empty
 //2. when you click on the login button if the username is empty show an error for username
@@ -37,8 +35,6 @@ function onclickJoin(){
 
     clearErrorsAndInputs()
 }
-
-
 
 function onclickLogin(){
 
@@ -63,7 +59,6 @@ function onclickLogin(){
         pageSuccess.classList.add('show')
     }
 
-
     // dinamic login
     // 1. loop over the accounts
     console.log("available accounts: ", accounts )
@@ -82,9 +77,6 @@ function onclickLogin(){
     }
 
 }
-
-
-
 
 inputGroupEmail.onkeyup = onkeyEmail
 inputGroupPass.onkeyup = onkeyPass
@@ -112,7 +104,6 @@ var joinInputGroupPass = pageSignUp.querySelector('#inputGroupPass')
 var joinEmailInput = joinInputGroupEmail.querySelector('input')
 var joinPassInput = joinInputGroupPass.querySelector('input')
 
-
 var joinButton = pageSignUp.querySelector('button')
 joinButton.onclick = onclickJoinNow
 
@@ -138,8 +129,6 @@ function onclickJoinNow(){
     }
 }
 
-
-
 joinEmailInput.onkeydown = onkeydownEmailJoin
 joinPassInput.onkeydown = onkeydownPassJoin
 
@@ -151,9 +140,6 @@ function onkeydownEmailJoin(){
 function onkeydownPassJoin(){
     joinInputGroupPass.classList.remove('error')
 }
-
-
-
 
 var signIn = pageSignUp.querySelector('#signIn')
 signIn.onclick = onclickSignIn 
@@ -169,14 +155,12 @@ function onclickSignIn(){
 //---------------------------------------------------------------------
 
 var buttonReturnToSignin = pageCreateSuccess.querySelector('button')
-
 buttonReturnToSignin.onclick = pageCreateSuccessButton
 
 function pageCreateSuccessButton(){
     pageCreateSuccess.classList.remove('show')
     pageLogin.classList.add('show')
 }
-
 
 function clearErrorsAndInputs(){
     inputGroupEmail.classList.remove('error')
@@ -188,7 +172,6 @@ function clearErrorsAndInputs(){
     passInput.value = ''
     joinEmailInput.value = ''
     joinPassInput.value = ''
-
 }
 
 

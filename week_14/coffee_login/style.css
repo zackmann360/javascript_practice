@@ -37,7 +37,7 @@ html, body {
 .wrapper {
     min-height: 100vh;
 }
-.app {
+.container {
     max-width: 20rem;
     background-color: var(--color-app-background);
     padding: var(--space-2);
@@ -45,7 +45,7 @@ html, body {
     margin: 5rem auto;
     display: none;
 }
-.app.show {
+.container.show {
     display: block;
 }
 
