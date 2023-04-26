@@ -23,7 +23,7 @@ html, body {
 
 .grid{
     display: grid;
-    background-color: #999;
+    background-color: #555;
     grid-template-columns: 1fr 1fr;
     padding: var(--space-4);
     width: 50rem;
