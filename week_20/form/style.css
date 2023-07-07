@@ -1,0 +1,139 @@
+:root {
+   --space-0-25: 0.25rem;
+   --space-0-5: 0.5rem;
+   --space-0-75: 0.75rem;
+   --space-1: 1rem;
+   --space-1-5: 1.5rem;
+   --space-2: 2rem;
+   --space-2-5: 2.5rem;
+   --space-3-5: 3.5rem;
+   --space-3: 3rem;
+
+   --color-white: #fff;
+   --color-grey: #777;
+   --color-red: red;
+   --color-primary: #1ab188;
+   --color-bg-1: #bbb8b5;
+   --color-bg-2: #28363e;
+   --color-input-t-b: #aaa;
+
+   --text-bold: bolder;
+   --border-bottom: 2px solid #000;
+   --border-left: 2px solid #000;
+   --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.componentHeader {
+   padding: var(--space-1);
+   margin-top: var(--space-2);
+   margin-bottom: var(--space-1);
+   border-bottom: var(--border-bottom);
+   border-left: var(--border-left);
+}
+* {
+   padding: 0;
+   margin: 0;
+   font-family: sans-serif;
+   color: #fff;
+}
+html, body {
+   background: var(--color-bg-1);
+}
+.space {
+   min-height: 100vh;
+   
+}
+.app {
+   padding: var(--space-3);
+   width: 30rem;
+   margin: auto;
+   background: var(--color-bg-2);
+   border-radius: 0.25rem;
+   box-shadow: var(--box-shadow)
+}
+/* utility classes */
+.flex{
+   display: flex;
+   gap: var(--space-2);
+}
+.displayNone {
+   display: none;
+}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+
+
+
+/*------------------text---------------------------------*/
+h1{
+   color: var(--color-white);
+   font-weight: 500;
+   text-align: center;
+}
+
+/*------------------buttons---------------------------------*/
+.primary:hover {
+   filter: brightness(120%);
+}
+.primary {
+   background: var(--color-primary);
+   padding: var(--space-1);
+   width: 100%;
+   font-size: 2rem;
+   letter-spacing: 0.25rem;
+   font-weight: var(--text-bold);
+   border: none;
+   cursor: pointer;
+}
+.buttons {
+   display: flex;
+   width: 100%;
+   background: red;
+}
+.buttons button {
+   font-size: large;
+   padding: var(--space-1);
+   width: 100%;
+   border: none;
+   cursor: pointer;
+}
+.buttons button:hover {
+   filter: brightness(120%);
+}
+.buttons button.left {
+   background: var(--color-primary);
+}
+.buttons button.right {
+   background: var(--color-grey);
+   color: #ccc;
+}
+/*------------------input---------------------------------*/
+::placeholder {
+   color: var(--color-input-t-b);
+}
+.inputGroup {
+   width: 100%;
+}
+.inputGroup input {
+   padding: var(--space-0-5);
+   font-size: larger;
+   border: 1.5px solid var(--color-input-t-b);
+   background: none;
+   width: 100%;
+}
+.inputGroup .error {
+   display: none;
+
+}
+.inputGroup.error input {
+   border-color: red;
+}
+.inputGroup.error {
+   color: red;
+
+}
+.inputGroup.error .error {
+   display: block;
+}
