@@ -1,0 +1,116 @@
+:root {
+   --space-0-5: 0.5rem;
+   --space-1: 1rem;
+   --space-1-5: 1.5rem;
+   --space-2: 2rem;
+   --space-3: 3rem;
+   --space-4: 4rem;
+   --space-5: 5rem;
+
+   --color-blue: #2188de;
+   --color-light-grey: #ebebeb;
+   --color-dark-grey: #435566;
+   --color-white: #fff;
+
+   --app-width: 25em;
+   --square-width: 2rem;
+
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+
+.container {
+   height: 100vh;
+}
+.app {
+   width: var(--app-width);
+   margin: 10rem auto;
+   position: relative;
+   background: var(--color-light-grey);
+   ccpadding: var(--space-2);
+}
+
+.compHead {
+   padding: var(--space-1);
+   margin: var(--space-2) 0 var(--space-1) 0;
+   border-bottom: 2px solid black;
+   border-left: 2px solid black;
+}
+
+/*-------------------------utility-------------------------------*/
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+
+/*-----------------------------------------------------------------------
+header
+-----------------------------------------------------------------------*/
+.header {
+   background: var(--color-blue);
+   color: var(--color-white);
+   font-size: 2rem;
+   font-weight: 300;
+   padding: var(--space-1);
+   display: flex;
+   justify-content: center;
+}
+/*-----------------------------------------------------------------------
+inputgroups
+-----------------------------------------------------------------------*/
+.inputG.error input {
+   cccolor: red;
+   border: 2px solid red;
+   display: block;
+}
+.inputG input {
+   width: 100%;
+   padding: var(--space-1);
+   font-size: 1rem;
+   border: 1px solid grey
+}
+.inputG .error{ 
+   color: red;
+   display: none;
+}
+.inputG.error .error {
+   display: block;
+}
+.inputCont {
+   padding: var(--space-1-5);
+}
+
+
+/*-----------------------------------------------------------------------
+button
+-----------------------------------------------------------------------*/
+button {
+   background: var(--color-blue);
+   width: 100%;
+   padding: var(--space-1);
+   font-size: 1rem;
+   color: var(--color-white);
+   border: none;
+   cursor: pointer;
+}
+button:hover {
+   filter: brightness(120%);
+}
+
+/*-----------------------------------------------------------------------
+square
+-----------------------------------------------------------------------*/
+.square {
+   background: var(--color-blue);
+   width: var(--square-width);
+   height: var(--square-width);
+   transform: rotate(45deg) translateX(-50%);
+   display: flex;
+   align-items: center;
+   position: absolute;
+   left: 50%;
+   top: 10rem;
+}

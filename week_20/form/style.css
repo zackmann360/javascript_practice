@@ -125,7 +125,7 @@ h1{
 }
 .inputGroup .error {
    display: none;
-
+   color: var(--color-red);
 }
 .inputGroup.error input {
    border-color: red;
