@@ -1,0 +1,81 @@
+:root {
+   --space-1: 1rem;
+   --space-2: 2rem;
+   --space-3: 3rem;
+   --space-4: 4rem;
+
+   --color-text-grey: #979797;
+   --font-family: sans-serif;
+   --text-bold: bold;
+   --font-size: 0.9rem;
+
+   --border-left: 2px solid black;
+   --border-bottom: 2px solid black;
+
+   --app-width: 14rem;
+}
+
+* {
+   font-family: var(--font-family);
+   margin: 0;
+   padding: 0;
+   font-size: var(--font-size)
+}
+
+.app {
+   width: var(--app-width);
+   padding: var(--space-1);
+   height: 100vh;
+}
+
+.compHead {
+   border-left: var(--border-left);
+   border-bottom: var(--border-bottom);
+   padding: var(--space-1);
+   margin-bottom: var(--space-1);
+   margin-top: var(--space-2);
+}
+
+/* utilty */
+.m-t-0-5 {margin-top: 0.5rem;}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
+
+.margin-top-bottom {
+   margin: 2rem 0;
+}
+/*----------------------------------------------------------------
+| text
+----------------------------------------------------------------*/
+.heading {
+   margin-top: var(--space-1);
+   font-weight: var(--text-bold);
+   font-size: 1.1rem;
+}
+.nums {
+   color: var(--color-text-grey)
+}
+.normal, .nums {
+   font-weight: 100;
+}
+
+/*----------------------------------------------------------------
+| row
+----------------------------------------------------------------*/
+.rows {
+   display: flex;
+   justify-content: space-between;
+   margin: var(--space-1) 0;
+}
+.left {
+   display: flex;
+   /* gap: var(--space-1); */
+   gap: .5rem;
+}
+input {
+   width: 1.25rem;
+   height: 1.25rem;
+   background: red;
+}
