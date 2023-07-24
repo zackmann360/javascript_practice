@@ -1,0 +1,89 @@
+:root {
+   --space-1: 1rem;
+   --space-2: 2rem;
+   --space-3: 3rem;
+   --space-4: 4rem;
+   --space-5: 5rem;
+
+   --color-button-add: green;
+   --color-button-done: grey;
+   --color-button-delete: #f12929f7;
+   --color-background-items: #ccc;
+
+   --height-button-input: 2.5rem;
+
+   --border-compHead: 2px solid #000;
+}
+
+html, body {
+   background: #888;
+
+}
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   font-family: sans-serif;
+}
+
+.compHead {
+   border-left: var(--border-compHead);
+   border-bottom: var(--border-compHead);
+   padding: var(--space-1);
+   margin-bottom: var(--space-2);
+   margin-top: var(--space-1);
+}
+
+/*---------------------------------------------
+| input
+---------------------------------------------*/
+input {
+   width: 100%;
+   border: var(--border-compHead);
+   border-radius: 0.25rem;
+}
+input, button {
+   height: var(--height-button-input)
+}
+/*---------------------------------------------
+| button
+---------------------------------------------*/
+
+button {
+   border-radius: 0.25rem;
+   border: var(--border-compHead);
+   font-weight: bold;
+   cursor: pointer;
+   padding: 0 var(--space-1);
+}
+button:hover {
+   filter: brightness(120%);
+}
+button#add {
+   background: var(--color-button-add);
+}
+button#done {
+   background: var(--color-button-done);
+}
+button#delete {
+   background: var(--color-button-delete);
+}
+
+/*---------------------------------------------
+| list item
+---------------------------------------------*/
+ul li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.25rem var(--space-1) ;
+   width: 100%;
+   background: var(--color-background-items);
+   font-weight: bold;
+   border-radius: 0.25rem;
+   border: var(--border-compHead);
+}
+ul li .right {
+   display: flex;
+   gap: var(--space-1);
+}
