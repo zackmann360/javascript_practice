@@ -1,11 +1,12 @@
 :root {
+   --space-0-5: 0.5rem;
    --space-1: 1rem;
    --space-2: 2rem;
    --space-3: 3rem;
    --space-4: 4rem;
    --space-5: 5rem;
 
-   --color-button-add: green;
+   --color-button-add: #13ef13;
    --color-button-done: grey;
    --color-button-delete: #f12929f7;
    --color-background-items: #ccc;
@@ -33,7 +34,25 @@ html, body {
    margin-bottom: var(--space-2);
    margin-top: var(--space-1);
 }
+.container {
+   height: 100vh;
+}
+.app {
+   padding: var(--space-2);
+   width: 50rem;
+   margin: 5rem auto;
+   background: #eee;
+   border-radius: var(--space-0-5)
+}
 
+
+
+/*-------------------------utility------------*/
+.center {text-align: center;}
+.m-t-1 {margin-top: 1rem;}
+.m-t-2 {margin-top: 2rem;}
+.m-t-3 {margin-top: 3rem;}
+.m-t-4 {margin-top: 4rem;}
 /*---------------------------------------------
 | input
 ---------------------------------------------*/
@@ -41,9 +60,16 @@ input {
    width: 100%;
    border: var(--border-compHead);
    border-radius: 0.25rem;
+   font-size: 1.5rem;
+   font-weight: bolder;
+   padding-left: var(--space-0-5)
 }
 input, button {
    height: var(--height-button-input)
+}
+.inputGroup {
+   display: flex;
+   gap: var(--space-1);
 }
 /*---------------------------------------------
 | button
@@ -62,9 +88,6 @@ button:hover {
 button#add {
    background: var(--color-button-add);
 }
-button#done {
-   background: var(--color-button-done);
-}
 button#delete {
    background: var(--color-button-delete);
 }
@@ -82,8 +105,9 @@ ul li {
    font-weight: bold;
    border-radius: 0.25rem;
    border: var(--border-compHead);
+   margin-bottom: var(--space-1);
 }
 ul li .right {
    display: flex;
-   gap: var(--space-1);
+   gap: var(--space-0-5);
 }
