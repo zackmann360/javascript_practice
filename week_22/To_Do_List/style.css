@@ -1,113 +1,92 @@
 :root {
-   --space-0-5: 0.5rem;
    --space-1: 1rem;
    --space-2: 2rem;
    --space-3: 3rem;
-   --space-4: 4rem;
-   --space-5: 5rem;
 
-   --color-button-add: #13ef13;
-   --color-button-done: grey;
-   --color-button-delete: #f12929f7;
-   --color-background-items: #ccc;
+   --color-btn-add: green;
+   --color-btn-delete: red;
 
-   --height-button-input: 2.5rem;
-
-   --border-compHead: 2px solid #000;
-}
-
-html, body {
-   background: #888;
-
-}
-* {
-   box-sizing: border-box;
-   padding: 0;
-   margin: 0;
-   font-family: sans-serif;
+   --border: 2px solid #fff;
+   --text-bold: bolder;
+   --text-size-larger: 1.25rem;
+   --border-radius: 0.25rem;
 }
 
 .compHead {
-   border-left: var(--border-compHead);
-   border-bottom: var(--border-compHead);
+   border-left: var(--border);
+   border-bottom: var(--border);
    padding: var(--space-1);
-   margin-bottom: var(--space-2);
-   margin-top: var(--space-1);
+   margin-bottom: var(--space-1);
+   margin-top: var(--space-2);
+}
+* {
+   color: #fff;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+html, body {
+   background: #555;
 }
 .container {
-   height: 100vh;
+   min-height: 100vh;
 }
 .app {
-   padding: var(--space-2);
-   width: 50rem;
+   width: 30rem;
    margin: 5rem auto;
-   background: #eee;
-   border-radius: var(--space-0-5)
 }
 
 
+/* utility */
+.m-t-1 {margin-top: 1rem}
+.m-t-2 {margin-top: 2rem}
+.m-t-3 {margin-top: 3rem}
 
-/*-------------------------utility------------*/
-.center {text-align: center;}
-.m-t-1 {margin-top: 1rem;}
-.m-t-2 {margin-top: 2rem;}
-.m-t-3 {margin-top: 3rem;}
-.m-t-4 {margin-top: 4rem;}
-/*---------------------------------------------
-| input
----------------------------------------------*/
+.center-text{text-align: center;}
+/*------------input------------*/
 input {
    width: 100%;
-   border: var(--border-compHead);
+   height: var(--space-3);
+   border-radius: var(--border-radius);
+   border: none;
+   background: #fff;
+   color: #000;
+   padding-left: var(--space-1);
+   font-size: var(--text-size-larger);
+}
+/*------------buttons------------*/
+button {
+   height: var(--space-3);
    border-radius: 0.25rem;
-   font-size: 1.5rem;
-   font-weight: bolder;
-   padding-left: var(--space-0-5)
+   border: none;
+   padding: 0 var(--space-1);
+   cursor: pointer;
 }
-input, button {
-   height: var(--height-button-input)
+button:hover {
+   filter: brightness(150%);
 }
-.inputGroup {
+button#add {
+   background: var(--color-btn-add);
+}
+button#delete {
+   background: var(--color-btn-delete);
+}
+/*-----------input-btn---------- */
+.group {
    display: flex;
    gap: var(--space-1);
 }
-/*---------------------------------------------
-| button
----------------------------------------------*/
 
-button {
+/*------------list item---------- */
+ul {
+   list-style-type: none;
+}
+ul li.item {
+   margin-top: 1rem;
+   background: #888;
+   padding: 0.5rem var(--space-1);
    border-radius: 0.25rem;
-   border: var(--border-compHead);
-   font-weight: bold;
-   cursor: pointer;
-   padding: 0 var(--space-1);
-}
-button:hover {
-   filter: brightness(120%);
-}
-button#add {
-   background: var(--color-button-add);
-}
-button#delete {
-   background: var(--color-button-delete);
-}
-
-/*---------------------------------------------
-| list item
----------------------------------------------*/
-ul li {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 0.25rem var(--space-1) ;
-   width: 100%;
-   background: var(--color-background-items);
-   font-weight: bold;
-   border-radius: 0.25rem;
-   border: var(--border-compHead);
-   margin-bottom: var(--space-1);
-}
-ul li .right {
-   display: flex;
-   gap: var(--space-0-5);
 }

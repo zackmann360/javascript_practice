@@ -1,50 +1,55 @@
 var app = document.querySelector(".app")
-//------ add btn---------
-var add = document.querySelector("#add")
-//-------array----------
-var yourArray = ["clean your room", "cook diner"]
+// create an array for your items
+var yourArray = ["clean litter", "clean dishes"]
 
-add.addEventListener("click", function () {
-   // get the input value when clicking add
-   var input = document.querySelector("input")
-   // push input value to yourArray
+// select the input
+var input = document.querySelector("input")
+// select the add button
+var add = document.querySelector("#add")
+add.addEventListener("click", function() {
+   console.log(input.value)
+   // push the input value to yourArray
    yourArray.push(input.value)
-   // clear input after clicking add
    input.value = ""
    render()
 })
 
+
+// create a render function
 function render() {
-   // create an index number
+   // set an index
    var i = 0
    // clear 
-   var currentItems = document.querySelector("ul")
-   currentItems.innerHTML = ""
+   var currentList = document.querySelector('ul')
+   currentList.innerHTML = ""
    // create
-   for (var items of yourArray) {
-      // new list item
-      var newItem = document.createElement("li")
-      newItem.innerHTML =
-         `
-            <div class="left">
-               <p>${items}</p>
-            </div>
-            <div class="right">
-               <button indexDel=${i} id="delete">Delete</button>
-            </div>
-         `
-         i += 1
-         currentItems.append(newItem)
+   for(var item of yourArray){
+      // create a new li
+      var newList = document.createElement('li')
+      // set innerHTML to yourArray
+      newList.innerHTML = `
+            <li class="item">
+               <p>${item}</p>
+               <button index="${i}" id="delete">Delete</button>
+            </li>
+      `
+      // append the newList to the current list
+      currentList.append(newList)
 
-         var del = newItem.querySelector("#delete")
-         del.addEventListener("click", function() {
-            // get the index att of delete as a number
-            var indexAtt = Number(this.getAttribute("indexDel"))
-            // delete item from yourArray from the indexAtt
-            yourArray.splice(indexAtt, 1)
-            render()
-         })
+      // add 1 to i / index
+      i += 1
 
+      // select the delete button
+      var deleteBtn = newList.querySelector('#delete')
+      console.log(deleteBtn)
+      deleteBtn.addEventListener('click', function() {
+         console.log(this)
+         // select the index of the button as a number
+         var selectedIndex = Number(this.getAttribute("index"))
+         console.log(selectedIndex)
+         yourArray.splice(selectedIndex, 1)
+         render()
+      })
    }
 }
 render()
