@@ -8,41 +8,51 @@
    <title>Document</title>
 </head>
 <body>
+
    <div class="container">
+
       <div class="app">
-         <h1 class="center-text">To-Do List</h1>
-         <div class="group m-t-2">
+         <h1 class="center">TO-DO List</h1>
+         <div class="top m-t-4">
             <input type="text">
-            <button id="add">Add</button>
+            <button class="add">Add</button>
          </div>
-         <ul class="m-t-2">
-            <!-- <li>
-               <p>take a nap</p>
-               <button id="delete">Delete</button>
-            </li> -->
+         <ul class="items m-t-2">
+            <li>
+               <p>clean your room</p>
+               <button class="delete">Delete</button>
+            </li>
+            <li>
+               <p>wash the dogs</p>
+               <button class="delete">Delete</button>
+            </li>
          </ul>
       </div>
    </div>
 
-   <div class="compHead">button</div>
-   <button id="add">Add</button>
-   <button id="delete">Delete</button>
-   
-   <div class="compHead">input</div>
+   <div class="compHead">input / buttons</div>
    <input type="text">
+   <br>
+   <br>
+   <button class="add">Add</button>
+   <button class="delete">Delete</button>
    
-   <div class="compHead">input/add btn</div>
-   <div class="group">
-      <input type="text">
-      <button id="add">Add</button>
-   </div>
-   
-   <div class="compHead">list item</div>
-   <ul>
+   <div class="compHead">items</div>
+   <ul class="items">
       <li>
-         <p>take a nap</p>
-         <button id="delete">Delete</button>
+         <p>clean your room</p>
+         <button class="delete">Delete</button>
+      </li>
+      <li>
+         <p>wash the dogs</p>
+         <button class="delete">Delete</button>
       </li>
    </ul>
+   
+   <div class="compHead">input / add</div>
+   <div class="top">
+      <input type="text">
+      <button class="add">Add</button>
+   </div>
 </body>
 </html>

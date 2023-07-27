@@ -1,92 +1,101 @@
 :root {
+   --space-0-5: 0.5rem;
    --space-1: 1rem;
    --space-2: 2rem;
    --space-3: 3rem;
 
+   --height-input-button: 2rem;
    --color-btn-add: green;
-   --color-btn-delete: red;
-
+   --color-btn-dlt: red;
+   --color-bg: #999;
+   --color-bg-2: #777;
+   --color-bg-item: #444;
+   --color-white: #fff;
    --border: 2px solid #fff;
-   --text-bold: bolder;
-   --text-size-larger: 1.25rem;
-   --border-radius: 0.25rem;
+   --font-family: sans-serif;
+   --percent-100: 100%;
+   --width-app: 40rem;
 }
-
+* {
+   margin: 0;
+   padding: 0;
+   font-family: var(--font-family);
+   color: var(--color-white);
+}
+html, body {
+   background: var(--color-bg);
+   padding: var(--space-1);
+}
 .compHead {
    border-left: var(--border);
    border-bottom: var(--border);
    padding: var(--space-1);
-   margin-bottom: var(--space-1);
    margin-top: var(--space-2);
-}
-* {
-   color: #fff;
-   margin: 0;
-   padding: 0;
-   font-family: sans-serif;
-}
-html, body {
-   background: #555;
+   margin-bottom: var(--space-1);
 }
 .container {
    min-height: 100vh;
 }
 .app {
-   width: 30rem;
+   background: var(--color-bg-2);
+   padding: var(--space-2);
+   border-radius: var(--space-1);
+   width: var(--width-app); 
    margin: 5rem auto;
 }
-
-
 /* utility */
 .m-t-1 {margin-top: 1rem}
 .m-t-2 {margin-top: 2rem}
 .m-t-3 {margin-top: 3rem}
+.m-t-4 {margin-top: 4rem}
+.center {text-align: center;}
 
-.center-text{text-align: center;}
-/*------------input------------*/
-input {
-   width: 100%;
-   height: var(--space-3);
-   border-radius: var(--border-radius);
+/*------------------------------------------------------
+| input / buttons
+------------------------------------------------------*/
+input, button {
+   height: var(--height-input-button);
    border: none;
-   background: #fff;
-   color: #000;
-   padding-left: var(--space-1);
-   font-size: var(--text-size-larger);
+   border-radius: var(--space-0-5)
 }
-/*------------buttons------------*/
 button {
-   height: var(--space-3);
-   border-radius: 0.25rem;
-   border: none;
-   padding: 0 var(--space-1);
    cursor: pointer;
 }
 button:hover {
    filter: brightness(150%);
 }
-button#add {
+input {
+   width: 100%;
+}
+.add, .delete{
+   padding: 0 var(--space-0-5);
+}
+.add {
    background: var(--color-btn-add);
 }
-button#delete {
-   background: var(--color-btn-delete);
+.delete {
+   background: var(--color-btn-dlt);
 }
-/*-----------input-btn---------- */
-.group {
-   display: flex;
-   gap: var(--space-1);
-}
-
-/*------------list item---------- */
-ul {
+/*------------------------------------------------------
+| items
+------------------------------------------------------*/
+ul.items {
    list-style-type: none;
 }
-ul li.item {
-   margin-top: 1rem;
-   background: #888;
-   padding: 0.5rem var(--space-1);
-   border-radius: 0.25rem;
+ul.items li {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   background: var(--color-bg-item);
+   margin-bottom: var(--space-1);
+   padding: var(--space-0-5);
+   border-radius: var(--space-0-5)
+}
+
+/*------------------------------------------------------
+| input / add
+------------------------------------------------------*/
+.top {
+   display: flex;
+   gap: var(--space-1);
 }
