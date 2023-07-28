@@ -66,6 +66,8 @@ button:hover {
 }
 input {
    width: 100%;
+   color: #000;
+   padding-left: var(--space-0-5);
 }
 .add, .delete{
    padding: 0 var(--space-0-5);
