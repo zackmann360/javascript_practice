@@ -7,12 +7,10 @@ var input = app.querySelector("input")
 var addBtn = app.querySelector(".add")
 // set a click eventListener for addBtn
 addBtn.addEventListener("click", function() {
-   console.log(input.value)
    // push input value to yourItems
    yourItems.push(input.value)
    // clear input value after clicking add
    input.value = ""
-   console.log(yourItems)
    render()
 })
 
