@@ -71,7 +71,7 @@ html, body {
 .active {
    font-weight: bolder;
 }
-.text:hover {
+.text p:hover {
    font-weight: bolder;
 }
 
