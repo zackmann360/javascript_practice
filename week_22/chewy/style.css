@@ -1,0 +1,216 @@
+:root {
+   --space-0-5: 0.5rem;
+   --space-1: 1rem;
+   --space-1-5: 1.5rem;
+   --space-2: 2rem;
+   --space-2-5: 2.5rem;
+   --space-3: 3rem;
+   --space-6: 10rem;
+
+   --color-white: #fff;
+   --color-blue: #1c49c2;
+   --color-orange: #e7bb27;
+
+   --font-size-logo-open: 3rem;
+   --font-size-logo-closed: 2rem;
+   --font-larger: 1.15rem;
+   --icon-size: 1.5rem;
+   --border-radius: 0.25rem;
+   --border: 2px solid #fff;
+   --bg-page: #999;
+   --font-family-logo: 'Luckiest Guy', cursive;
+   --font-family-page: 'Roboto', sans-serif;
+   --height-input-button: 2.5rem;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html, body {
+   font-family: var(--font-family-page);
+   font-weight: var(--font-weight);
+   background: var(--bg-page);
+   color: var(--color-white);
+}
+
+.compHeader {
+   border-left: var(--border);
+   border-bottom: var(--border);
+   padding: var(--space-1);
+   margin-top: var(--space-2);
+   margin-bottom: var(--space-1);
+}
+
+.container {
+   min-height: 100vh;
+}
+
+.app {
+   background: var(--color-blue);
+   padding: var(--space-1) var(--space-6);
+}
+.app .nav {
+   max-width: 100rem;
+   margin: 0 auto;
+}
+
+/* utility */
+.color-orange {
+   color: var(--color-orange);
+}
+.font-larger {
+   font-size: 1.5rem;
+}
+.m-t-1 {margin-top: 1rem}
+.m-t-2 {margin-top: 2rem}
+.m-t-3 {margin-top: 3rem}
+.m-t-4 {margin-top: 4rem}
+
+.active {
+   font-weight: bolder;
+}
+.text:hover {
+   font-weight: bolder;
+}
+
+/*---------------------------------------------------
+| top layout
+---------------------------------------------------*/
+.top {
+   display: grid;
+   grid-template-columns: 0.5fr 3fr 1fr;
+   align-items: center;
+   margin: auto;
+}
+.top .logo {
+   padding-top: 0.75rem;
+}
+.top .input {
+   width: 100%;
+   padding: 0 var(--space-3) ;
+}
+.top .input input {
+   width: 100%;
+}
+.top .buttons {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 2rem;
+   
+}
+.top .buttons button {
+   max-width: 10rem;
+}
+
+/*---------------------------------------------------
+| bottom layout
+---------------------------------------------------*/
+.bottom .buttons {
+   display: grid;
+   grid-template-columns: 0.75fr 1fr 0.75fr 1fr 1fr 1fr 1fr;
+   gap: 1rem;
+}
+.bottom .buttons button {
+}
+.bottom .buttons button.larger {
+   max-width: 15rem;
+}
+
+/*---------------------------------------------------
+| bottom layout
+---------------------------------------------------*/
+.scrolledLayout {
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   top: -100rem;
+   width: 100%;
+   background: var(--color-blue);
+   padding: var(--space-0-5) var(--space-6);
+}
+.scrolledLayout.displayNone {
+   display: none;
+}
+.scrolledLayout .inputGroup {
+   width: 100%;
+}
+.scrolledLayout .closed {
+   padding-top: 0.75rem;
+   padding-left: var(--space-3);
+   padding-right: var(--space-3);
+}
+.scrolledLayout .buttons {
+   display: flex;
+   gap: var(--space-1);
+   padding-left: var(--space-3)
+}
+
+/*---------------------------------------------------
+| text
+---------------------------------------------------*/
+
+h1.open {
+   font-family: var(--font-family-logo);
+   font-size: var(--font-size-logo-open);
+}
+h1.open.closed {
+   font-size: var(--font-size-logo-closed)
+}
+p {
+   font-size: var(--font-larger)
+}
+
+/*---------------------------------------------------
+| input
+---------------------------------------------------*/
+.inputGroup {
+   position: relative;
+}
+.inputGroup input::placeholder {
+   font-weight: lighter;
+   color: #aaa;
+}
+.inputGroup input {
+   width: 100%;
+   height: var(--height-input-button);
+   border-radius: var(--border-radius);
+   border: none;
+   font-size: var(--font-larger);
+   padding-left: var(--space-0-5)
+}
+.inputGroup .icon {
+   position: absolute;
+   right: var(--space-0-5);
+   top: 50%;
+   transform: translateY(-50%);
+}
+.inputGroup .icon i {
+   color: var(--color-blue);
+   font-size: var(--font-larger);
+}
+/*---------------------------------------------------
+| buttons
+---------------------------------------------------*/
+.fontLarge {
+   font-size: var(--font-larger);
+}
+.fontLarger {
+   font-size: 1.5rem;
+}
+button {
+   background: none;
+   border: none;
+   color: var(--color-white);
+   white-space: nowrap;
+}
+button .text {
+   display: flex;
+   align-items: center;
+   gap: var(--space-0-5);
+}
+/*---------------------------------------------------
+| button/bottom
+---------------------------------------------------*/
